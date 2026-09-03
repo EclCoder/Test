@@ -1,4 +1,4 @@
-name: Download AZ Screen Recorder
+name: Download APKMirror
 
 on:
   push:
@@ -8,41 +8,93 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install tools
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Playwright
         run: |
-          sudo apt-get update
-          sudo apt-get install -y curl wget
-
-      - name: Get APKMirror download URL
-        run: |
-          URL="https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/"
-
-          curl -L \
-            -A "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36" \
-            "$URL" \
-            -o page.html
-
-          echo "=== Download links ==="
-
-          grep -oE 'https://www\.apkmirror\.com/[^"]*download/\?key=[^"]+' page.html \
-            | head -20 || true
+          npm install playwright
+          npx playwright install --with-deps chromium
 
       - name: Download APK
         run: |
-          wget \
-            --content-disposition \
-            --user-agent="Mozilla/5.0" \
-            -O az-screen-recorder.apk \
-            'https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/download/?key=cd7941b0d16e96405437b55aac304cd0e998d42c'
+          mkdir -p downloads
 
-      - name: Check APK
+          cat > download.js <<'EOF'
+          const { chromium } = require("playwright");
+
+          (async () => {
+            const browser = await chromium.launch({
+              headless: true
+            });
+
+            const context = await browser.newContext({
+              acceptDownloads: true,
+              userAgent:
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 " +
+                "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            });
+
+            const page = await context.newPage();
+
+            const url =
+              "https://www.apkmirror.com/apk/az-screen-recorder/" +
+              "az-screen-recorder-no-root/" +
+              "screen-recorder-az-recorder-6-9-10-release/" +
+              "screen-recorder-az-recorder-6-9-10-android-apk-download/";
+
+            console.log("Opening:", url);
+
+            await page.goto(url, {
+              waitUntil: "domcontentloaded",
+              timeout: 120000
+            });
+
+            console.log("Title:", await page.title());
+
+            await page.waitForTimeout(5000);
+
+            const downloadPromise = page.waitForEvent("download", {
+              timeout: 120000
+            });
+
+            const links = await page.locator("a").allTextContents();
+            console.log("Links:", links);
+
+            const downloadButton = page.locator(
+              'a[href*="/download/"]'
+            ).first();
+
+            await downloadButton.click();
+
+            const download = await downloadPromise;
+
+            const filename = download.suggestedFilename();
+            console.log("Filename:", filename);
+
+            await download.saveAs("downloads/" + filename);
+
+            console.log("Download completed.");
+            
+            await browser.close();
+          })();
+          EOF
+
+          node download.js
+
+      - name: List downloaded files
         run: |
-          file az-screen-recorder.apk
-          ls -lh az-screen-recorder.apk
-          sha256sum az-screen-recorder.apk
+          echo "=== Downloads ==="
+          ls -lh downloads/
 
-      - name: Upload artifact
+      - name: Upload APK as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: az-screen-recorder-6.9.10
-          path: az-screen-recorder.apk
+          name: az-screen-recorder
+          path: downloads/
+          if-no-files-found: error
