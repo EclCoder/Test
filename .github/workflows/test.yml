@@ -1,4 +1,60 @@
-- name: Download APKMirror
+- name: name: Download AZ Screen Recorder
+
+on:
+  push:
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl wget
+
+      - name: Get APKMirror download URL
+        run: |
+          URL="https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/"
+
+          curl -L \
+            -A "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36" \
+            "$URL" \
+            -o page.html
+
+          echo "=== Download links ==="
+
+          grep -oE 'https://www\.apkmirror\.com/[^"]*download/\?key=[^"]+' page.html \
+            | head -20 || true
+
+      - name: Download APK
+        run: |
+          URL="https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/download/?key=cd7941b0d16e96405437b55aac304cd0e998d42c"
+
+          wget \
+            --content-disposition \
+            --user-agent="Mozilla/5.0" \
+            "$URL"
+
+      - name: Show downloaded file
+        run: |
+          echo "=== Files ==="
+          ls -lh
+
+          echo "=== File type ==="
+          file ./*
+
+          echo "=== SHA256 ==="
+          sha256sum ./*
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: az-screen-recorder-6.9.10
+          path: |
+            *.apk
+            *.apkm
+            *.xapk APKMirror
   run: |
     wget \
       --content-disposition \
