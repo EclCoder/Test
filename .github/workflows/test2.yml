@@ -1,3 +1,17 @@
 name: Test 2
 on:
-  workflow_dispatch:
+  push:
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check tools
+        run: |
+          which java || true
+          which apktool || true
+          which jadx || true
