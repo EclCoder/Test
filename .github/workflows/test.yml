@@ -55,14 +55,14 @@ jobs:
             *.apk
             *.apkm
             *.xapk APKMirror
-  run: |
-    wget \
-      --content-disposition \
-      -O az-screen-recorder.apk \
+          run: |
+            wget \
+            --content-disposition \
+            -O az-screen-recorder.apk \
       'https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/download/?key=cd7941b0d16e96405437b55aac304cd0e998d42c'
 
-- name: Check APK
-  run: |
-    file az-screen-recorder.apk
-    ls -lh az-screen-recorder.apk
-    sha256sum az-screen-recorder.apk
+      - name: Check APK
+        run: |
+          file az-screen-recorder.apk
+          ls -lh az-screen-recorder.apk
+          sha256sum az-screen-recorder.apk
