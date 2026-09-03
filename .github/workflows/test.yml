@@ -16,12 +16,12 @@ jobs:
       - name: Get download page
         run: |
           curl -L \
-            -A "Mozilla/5.0" \
-            "https://az-screen-recorder.en.uptodown.com/android/download/1207585938-x#versions" \
-            -o page.html
+          -A "Mozilla/5.0 (Linux; Android 11) AppleWebKit/537.36 Chrome/140.0 Mobile Safari/537.36" \
+          -o page.html \
+           "https://az-screen-recorder.en.uptodown.com/android/download/1207585938-x"
 
-      - name: Show download information
+      - name: Inspect download button
         run: |
-          grep -o 'data-url="[^"]*"' page.html || true
-          grep -o 'data-file-id="[^"]*"' page.html || true
-          grep -o 'data-download-version="[^"]*"' page.html || true
+          grep -o '.\{0,300\}detail-download-button.\{0,1000\}' page.html || true
+          echo "=== possible download URLs ==="
+          grep -Eo 'https?[^" ]+' page.html | grep -Ei 'download|dwn|xapk|apk' | head -50 || true
