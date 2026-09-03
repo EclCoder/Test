@@ -1,0 +1,27 @@
+name: Download Uptodown
+
+on:
+  push:
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq
+
+      - name: Get download page
+        run: |
+          curl -L \
+            -A "Mozilla/5.0" \
+            "https://az-screen-recorder.en.uptodown.com/android/download/1207585938-x#versions" \
+            -o page.html
+
+      - name: Show download information
+        run: |
+          grep -o 'data-url="[^"]*"' page.html || true
+          grep -o 'data-file-id="[^"]*"' page.html || true
+          grep -o 'data-download-version="[^"]*"' page.html || true
