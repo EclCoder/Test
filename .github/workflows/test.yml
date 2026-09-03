@@ -1,7 +1,7 @@
 name: Decompile APK
 
 on:
-  workflow_dispatch:
+  push:
 
 permissions:
   contents: write
