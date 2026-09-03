@@ -4,6 +4,7 @@ on:
   push:
 
 permissions:
+  actions: read
   contents: write
 
 jobs:
@@ -19,7 +20,8 @@ jobs:
         with:
           name: az-screen-recorder
           path: input
-
+          run-id: 33771486417
+          github-token: ${{ github.token }}
       - name: Install dependencies
         run: |
           sudo apt-get update
