@@ -1,4 +1,4 @@
-- name: name: Download AZ Screen Recorder
+name: Download AZ Screen Recorder
 
 on:
   push:
