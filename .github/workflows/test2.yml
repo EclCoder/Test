@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check tools
+      - name: Test
         run: |
-          which java || true
-          which apktool || true
-          which jadx || true
+          wget -O file.zip "https://github.com/EclCoder/Test/actions/runs/33771486417/artifacts/9899830069"
+          unzip file.zip
+          ls
+          
