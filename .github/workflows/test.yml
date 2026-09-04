@@ -20,5 +20,15 @@ jobs:
           path: ~/.cache/tools
           key: tools
 
-      - name: Install jadx
+      - name: Install tools
         run: |
+          mkdir -p ~/.cache/tools/
+          if [ ! -d ~/.cache/tools/jadx ]; then
+            curl -L -o jadx.zip "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip"
+            unzip jadx.zip -d ~/.cache/tools
+            rm jadx.zip
+          fi
+          if [ ! -d ~/.cache/tools/apktool ]; then
+
+          fi
+          
