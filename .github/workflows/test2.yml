@@ -25,12 +25,31 @@ jobs:
           path: $HOME/.cache/ghidra
           key: ghidra-12.1.3
 
+
+
       - name: Install ghidra
+        run: |
+          mkdir -p $HOME/.cache/ghidra/
+          if [ ! -d $HOME/.cache/ghidra ]; then
+            curl -L -o ghidra.zip "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.3_build/ghidra_12.1.3_PUBLIC_20260817.zip"
+            unzip ghidra.zip -d $HOME/.cache/ghidra
+            rm ghidra.zip
+          fi
+
+      - name: Setup ghidra
+        run: |
+          chmod +x $HOME/.cache/ghidra/ghidra_12.1.3_PUBLIC/support/analyzeHeadless
+          echo "$HOME/.cache/ghidra/ghidra_12.1.3_PUBLIC/support" >> "$GITHUB_PATH"
+
+      - name: Decompile C File
         run: |
           
         
-      - name: Test
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push
         run: |
-          echo "$HOME"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "Update files" || exit 0
+          git push
