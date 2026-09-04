@@ -1,8 +1,6 @@
 name: Decompile APK
-
 on:
   workflow_dispatch:
-
 permissions:
   actions: read
   contents: write
