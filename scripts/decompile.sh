@@ -5,7 +5,7 @@ mkdir -p src/ res/
 
 echo "=== Decompiling base.apk code ==="
 
-jadx --no-res -d "src/base" base.apk || true
+jadx --no-res -d src/base base.apk 2>&1 | tee jadx.log || true
 
 echo "=== Decompiling base.apk res ==="
 apktool d base.apk -o "res/base" -f --no-src
