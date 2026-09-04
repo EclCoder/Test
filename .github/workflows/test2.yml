@@ -11,8 +11,10 @@ jobs:
 
     steps:
       - name: Test
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          wget -O file.zip "https://github.com/EclCoder/Test/actions/runs/33771486417/artifacts/9899830069"
+          wget --header="Authorization: Bearer $GH_TOKEN" --header="Accept: application/vnd.github+json" -O file.zip "https://api.github.com/repos/EclCoder/Test/actions/artifacts/9899830069/zip"
+
           unzip file.zip
           ls
-          
