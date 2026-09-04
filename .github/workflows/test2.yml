@@ -23,14 +23,14 @@ jobs:
         uses: actions/cache@v4
         with:
           path: $HOME/.cache/ghidra
-          key: ghidra-12.1.3
+          key: ghidra-12.1.3-tool
 
 
 
       - name: Install ghidra
         run: |
-          mkdir -p $HOME/.cache/
-          if [ ! -d $HOME/.cache/ghidra ]; then
+          mkdir -p $HOME/.cache/ghidra
+          if [ ! -d $HOME/.cache/ghidra/ghidra_12.1.3_PUBLIC ]; then
             curl -L -o ghidra.zip "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.3_build/ghidra_12.1.3_PUBLIC_20260817.zip"
             unzip ghidra.zip -d $HOME/.cache/ghidra           
             rm ghidra.zip
