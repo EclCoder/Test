@@ -43,7 +43,7 @@ jobs:
 
       - name: Decompile C File
         run: |
-          
+          analyzeHeadless ghidra-project PairIPCore -import src/armeabi-v7a/libpairipcore.so -scriptPath scripts -postScript ghidra_decompile.java native-src/armeabi-v7a/libpairipcore.c -deleteProject
         
       - name: Commit and push
         run: |
