@@ -1,0 +1,56 @@
+package tn.xQIL;
+
+/* JADX INFO: loaded from: classes2.dex */
+public class Saucuwx {
+    public static String BWg;
+    public static String BoTL;
+    public static String BpoSZgLdyKfxPI;
+    public static String BtVwXLFC;
+    public static String DAAroNvv;
+    public static String DUTWXTLy;
+    public static String DrdGjTINVQ;
+    public static String DzfGcSfRhTRZM;
+    public static String EHUkbOGlVC;
+    public static String EZFgsmgdkny;
+    public static String GmLgA;
+    public static String IEfsrPbMPoMbIH;
+    public static String ISyryehNc;
+    public static String KqNRyhPmTOfIoqC;
+    public static String MOchoxFKNpG;
+    public static String OEsdssThqgzlu;
+    public static String Obgj;
+    public static String SEbUgCd;
+    public static String SmioUB;
+    public static String SuWxVPeT;
+    public static String TZWUO;
+    public static String TbwgVdNjypCLNw;
+    public static String TzFKQNQ;
+    public static String VDxHQKsB;
+    public static String WNrmyybdHDbhDvD;
+    public static String ZRhxxcAzkkZzkAm;
+    public static String ZrCCtM;
+    public static String aeHpvDPzM;
+    public static String bfccpXsizFDrx;
+    public static String dlZk;
+    public static String dqfBN;
+    public static String fQYnwp;
+    public static String ffEj;
+    public static String fyK;
+    public static String hfpuj;
+    public static String ihyTLaIOFXAY;
+    public static String jbcfQzlcEmrIdg;
+    public static String kLbZBUBdwHscUot;
+    public static String lUUCuejusiPSZQR;
+    public static String leVVRAWENUDQa;
+    public static String nZjpOngIgddJYjP;
+    public static String ojQquks;
+    public static String pkH;
+    public static String rqUwwodM;
+    public static String ruvXOlT;
+    public static String sBbeXJZljp;
+    public static String uLVaOKeV;
+    public static String usKPPgkcoTj;
+    public static String vtkxLcGyuyu;
+    public static String xtATwioXLMEiVOz;
+    public static String zujda;
+}

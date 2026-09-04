@@ -1,0 +1,50 @@
+package com.google.android.gms.common.internal;
+
+import android.content.ComponentName;
+import android.content.ServiceConnection;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.IInterface;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes4.dex */
+public final class zze implements ServiceConnection {
+    final /* synthetic */ BaseGmsClient zza;
+    private final int zzb;
+
+    public zze(BaseGmsClient baseGmsClient, int i10) {
+        java.util.Objects.requireNonNull(baseGmsClient);
+        this.zza = baseGmsClient;
+        this.zzb = i10;
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        BaseGmsClient baseGmsClient = this.zza;
+        if (iBinder == null) {
+            baseGmsClient.zzf(16);
+            return;
+        }
+        synchronized (baseGmsClient.zzh()) {
+            try {
+                IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IGmsServiceBroker");
+                baseGmsClient.zzi((iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IGmsServiceBroker)) ? new zzaa(iBinder) : (IGmsServiceBroker) iInterfaceQueryLocalInterface);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        this.zza.zzb(0, null, this.zzb);
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        BaseGmsClient baseGmsClient = this.zza;
+        synchronized (baseGmsClient.zzh()) {
+            baseGmsClient.zzi(null);
+        }
+        BaseGmsClient baseGmsClient2 = this.zza;
+        int i10 = this.zzb;
+        Handler handler = baseGmsClient2.zzb;
+        handler.sendMessage(handler.obtainMessage(6, i10, 1));
+    }
+}

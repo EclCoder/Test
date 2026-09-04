@@ -1,0 +1,18 @@
+package com.google.zxing;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes4.dex */
+public enum c {
+    ERROR_CORRECTION,
+    CHARACTER_SET,
+    DATA_MATRIX_SHAPE,
+    MIN_SIZE,
+    MAX_SIZE,
+    MARGIN,
+    PDF417_COMPACT,
+    PDF417_COMPACTION,
+    PDF417_DIMENSIONS,
+    AZTEC_LAYERS,
+    QR_VERSION,
+    GS1_FORMAT
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/main_content_layout" android:tag="layout/activity_home_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.drawerlayout.widget.DrawerLayout android:id="@id/drawer_layout" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:background="?android:colorBackground" android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.google.android.material.appbar.AppBarLayout android:id="@id/app_bar" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.Toolbar android:id="@id/tool_bar" android:background="?colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" android:title="@string/az_common_setting" app:layout_collapseMode="pin" />
+            </com.google.android.material.appbar.AppBarLayout>
+            <com.google.android.material.tabs.TabLayout android:id="@id/tabs" android:background="?colorSurface" android:layout_width="match_parent" android:layout_height="wrap_content" app:tabIconTint="@color/bright_red" app:tabIndicatorColor="@color/bright_red" app:tabIndicatorHeight="2.0dp" style="@style/Widget.Material3.TabLayout" />
+            <FrameLayout android:background="#4d828282" android:layout_width="match_parent" android:layout_height="0.8000001dp" />
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0">
+                <androidx.viewpager2.widget.ViewPager2 android:id="@id/view_pager" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton android:textColor="@color/white" android:layout_gravity="end|bottom" android:id="@id/record_fab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="30.0dp" android:text="@string/record" android:contentDescription="@string/record" android:layout_marginEnd="20.0dp" android:elevation="@dimen/elevation_fab" app:backgroundTint="@color/bright_red" app:collapsedSize="56.0dp" app:icon="@drawable/ic_record" app:iconTint="@color/white" app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.RecordFab" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/ads_container" android:tag="binding_1" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4.0dp">
+                <include android:id="@id/google_ad_container" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/ad_gg_home" />
+            </FrameLayout>
+        </LinearLayout>
+        <com.google.android.material.navigation.NavigationView android:layout_gravity="start" android:id="@id/left_drawer" android:background="@color/white" android:layout_width="240.0dp" android:layout_height="match_parent">
+            <ScrollView android:tag="binding_2" android:layout_width="match_parent" android:layout_height="match_parent">
+                <include layout="@layout/layout_left_drawer" />
+            </ScrollView>
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>

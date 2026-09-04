@@ -1,0 +1,56 @@
+package com.bytedance.adsdk.ugeno.ojm.hnj.mzIi;
+
+/* JADX INFO: loaded from: classes2.dex */
+public class obFGmWgqyy {
+    public static String AWvPPdDcqOGGu;
+    public static String AwypJLJUZAySha;
+    public static String CcrdFbdugmFm;
+    public static String CfViFqx;
+    public static String CnRdGAEDpcKwT;
+    public static String DfCRasYnFvVBVB;
+    public static String EYE;
+    public static String GHUH;
+    public static String GNxcDuXimY;
+    public static String GmkSAPKBOV;
+    public static String ITZBhrDENrg;
+    public static String JShLDG;
+    public static String LNjUdaBOiFAjGZ;
+    public static String NQvKvzYk;
+    public static String NVdptrzw;
+    public static String NxYjQUH;
+    public static String ODVRlbWBZE;
+    public static String RRXeNKUgHdzmTzQ;
+    public static String SYidIuQMnaUpd;
+    public static String TFZlsclNrZnz;
+    public static String UGGhaIYEtdsd;
+    public static String UTAlmVeNAGyPtD;
+    public static String XyQbWzriHSwZ;
+    public static String XygUbG;
+    public static String YAGwYaXpHDo;
+    public static String YmSIokqAOfCnY;
+    public static String YwOetyQ;
+    public static String ZcuXJBWAWxoNhB;
+    public static String ajeiMoofGFyma;
+    public static String avmIwvxf;
+    public static String bjAcmmRhEXSDMo;
+    public static String cdCpJZNfAI;
+    public static String cuHOF;
+    public static String dpGvADsFWLucs;
+    public static String dyOdegbah;
+    public static String ffxXdjBmliy;
+    public static String iXMTLqe;
+    public static String jqsuBj;
+    public static String jrLxUcv;
+    public static String jyr;
+    public static String kxnVjb;
+    public static String lekmXlUWwbwdFTZ;
+    public static String mMBLwGOrsXc;
+    public static String nfqSHKJt;
+    public static String pFHLrnnEJQmtGSf;
+    public static String uJaKhLKlF;
+    public static String uMXRq;
+    public static String vKbgPZmQbP;
+    public static String wus;
+    public static String zddDNfEEesimFyz;
+    public static String zhDWeTEiRQaVFn;
+}

@@ -1,0 +1,146 @@
+package com.bytedance.sdk.openadsdk.common;
+
+import android.R;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import com.bytedance.sdk.component.utils.wu;
+import com.bytedance.sdk.openadsdk.utils.sq;
+import com.vungle.ads.internal.protos.Sdk$SDKError;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes.dex */
+public class ojm extends RelativeLayout {
+    public ojm(Context context) {
+        super(context);
+        hnj();
+    }
+
+    private void hnj() {
+        setId(com.bytedance.sdk.openadsdk.utils.jip.idl);
+        setBackgroundColor(-1);
+        Context context = getContext();
+        setLayoutParams(new ViewGroup.LayoutParams(-1, sq.hn(context, 44.0f)));
+        int iHn = sq.hn(context, 10.0f);
+        int iHn2 = sq.hn(context, 24.0f);
+        com.bytedance.sdk.openadsdk.core.dkl.gjv gjvVar = new com.bytedance.sdk.openadsdk.core.dkl.gjv(context);
+        int i10 = com.bytedance.sdk.openadsdk.utils.jip.hkr;
+        gjvVar.setId(i10);
+        gjvVar.setClickable(true);
+        gjvVar.setFocusable(true);
+        gjvVar.setImageResource(wu.gjv(context, "tt_titlebar_close_new"));
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_INSIDE;
+        gjvVar.setScaleType(scaleType);
+        gjvVar.setAdjustViewBounds(true);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(iHn2, iHn2);
+        layoutParams.addRule(9);
+        layoutParams.addRule(15);
+        layoutParams.setMargins(iHn, iHn, iHn, iHn);
+        addView(gjvVar, layoutParams);
+        com.bytedance.sdk.openadsdk.core.dkl.gjv gjvVar2 = new com.bytedance.sdk.openadsdk.core.dkl.gjv(context);
+        int i11 = com.bytedance.sdk.openadsdk.utils.jip.znr;
+        gjvVar2.setId(i11);
+        gjvVar2.setClickable(true);
+        gjvVar2.setFocusable(true);
+        gjvVar2.setImageResource(wu.gjv(context, "tt_titlebar_backward"));
+        gjvVar2.setScaleType(scaleType);
+        RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(iHn2, iHn2);
+        layoutParams2.addRule(1, i10);
+        layoutParams2.addRule(15);
+        int i12 = iHn * 2;
+        layoutParams2.setMargins(i12, iHn, iHn, iHn);
+        addView(gjvVar2, layoutParams2);
+        com.bytedance.sdk.openadsdk.core.dkl.sk skVar = new com.bytedance.sdk.openadsdk.core.dkl.sk(context);
+        skVar.setId(com.bytedance.sdk.openadsdk.utils.jip.tll);
+        skVar.setOrientation(1);
+        skVar.setGravity(17);
+        com.bytedance.sdk.openadsdk.core.dkl.aq aqVar = new com.bytedance.sdk.openadsdk.core.dkl.aq(context);
+        aqVar.setId(com.bytedance.sdk.openadsdk.utils.jip.hnj);
+        aqVar.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        aqVar.setEllipsize(truncateAt);
+        aqVar.setTextColor(Color.parseColor("#222222"));
+        aqVar.setTextSize(2, 14.0f);
+        aqVar.setGravity(17);
+        com.bytedance.sdk.openadsdk.core.dkl.aq aqVar2 = new com.bytedance.sdk.openadsdk.core.dkl.aq(context);
+        aqVar2.setId(com.bytedance.sdk.openadsdk.utils.jip.f14661hn);
+        aqVar2.setSingleLine(true);
+        aqVar2.setEllipsize(truncateAt);
+        aqVar2.setTextColor(Color.argb(Sdk$SDKError.b.INVALID_ADS_ENDPOINT_VALUE, 0, 0, 0));
+        aqVar2.setTextSize(2, 12.0f);
+        aqVar2.setGravity(16);
+        aqVar2.setPadding(0, 0, 0, 0);
+        aqVar2.setIncludeFontPadding(false);
+        com.bytedance.sdk.openadsdk.core.dkl.sk skVar2 = new com.bytedance.sdk.openadsdk.core.dkl.sk(context);
+        skVar2.setOrientation(0);
+        skVar2.setGravity(16);
+        com.bytedance.sdk.openadsdk.core.dkl.gjv gjvVar3 = new com.bytedance.sdk.openadsdk.core.dkl.gjv(context);
+        int iGjv = wu.gjv(context, "tt_titlebar_lock");
+        if (iGjv != 0) {
+            gjvVar3.setImageResource(iGjv);
+            int iHn3 = sq.hn(context, 12.0f);
+            LinearLayout.LayoutParams layoutParams3 = new LinearLayout.LayoutParams(iHn3, iHn3);
+            layoutParams3.rightMargin = sq.hn(context, 4.0f);
+            gjvVar3.setLayoutParams(layoutParams3);
+            gjvVar3.setColorFilter(Color.argb(Sdk$SDKError.b.INVALID_ADS_ENDPOINT_VALUE, 0, 0, 0), PorterDuff.Mode.SRC_IN);
+            skVar2.addView(gjvVar3);
+        }
+        skVar.addView(aqVar, new LinearLayout.LayoutParams(-2, -2));
+        ViewGroup.LayoutParams layoutParams4 = new LinearLayout.LayoutParams(-2, -2);
+        skVar2.addView(aqVar2, layoutParams4);
+        skVar.addView(skVar2, layoutParams4);
+        RelativeLayout.LayoutParams layoutParams5 = new RelativeLayout.LayoutParams(-2, -2);
+        layoutParams5.addRule(1, i11);
+        int i13 = com.bytedance.sdk.openadsdk.utils.jip.rq;
+        layoutParams5.addRule(0, i13);
+        layoutParams5.addRule(15);
+        layoutParams5.setMargins(iHn, 0, iHn, 0);
+        addView(skVar, layoutParams5);
+        com.bytedance.sdk.openadsdk.core.dkl.gjv gjvVar4 = new com.bytedance.sdk.openadsdk.core.dkl.gjv(context);
+        gjvVar4.setId(i13);
+        gjvVar4.setClickable(true);
+        gjvVar4.setFocusable(true);
+        gjvVar4.setImageResource(wu.gjv(context, "tt_titlebar_forward"));
+        gjvVar4.setScaleType(scaleType);
+        RelativeLayout.LayoutParams layoutParams6 = new RelativeLayout.LayoutParams(iHn2, iHn2);
+        layoutParams6.addRule(0, 520093740);
+        layoutParams6.addRule(15);
+        layoutParams6.setMargins(iHn, iHn, i12, iHn);
+        addView(gjvVar4, layoutParams6);
+        com.bytedance.sdk.openadsdk.core.dkl.gjv gjvVar5 = new com.bytedance.sdk.openadsdk.core.dkl.gjv(context);
+        gjvVar5.setId(520093740);
+        gjvVar5.setClickable(true);
+        gjvVar5.setFocusable(true);
+        gjvVar5.setImageResource(wu.gjv(context, "tt_titlebar_more"));
+        gjvVar5.setScaleType(scaleType);
+        RelativeLayout.LayoutParams layoutParams7 = new RelativeLayout.LayoutParams(iHn2, iHn2);
+        layoutParams7.addRule(11);
+        layoutParams7.addRule(15);
+        layoutParams7.setMargins(iHn, iHn, iHn, iHn);
+        addView(gjvVar5, layoutParams7);
+        com.bytedance.sdk.openadsdk.core.dkl.dkl dklVar = new com.bytedance.sdk.openadsdk.core.dkl.dkl(context, null, R.style.Widget.ProgressBar.Horizontal);
+        dklVar.setId(com.bytedance.sdk.openadsdk.utils.jip.f14664jo);
+        dklVar.setProgress(1);
+        dklVar.setProgressDrawable(com.bytedance.sdk.openadsdk.utils.dnm.hnj(context, "tt_privacy_progress_style"));
+        RelativeLayout.LayoutParams layoutParams8 = new RelativeLayout.LayoutParams(-1, sq.hn(context, 2.0f));
+        layoutParams8.addRule(12);
+        addView(dklVar, layoutParams8);
+        View view = new View(context);
+        view.setBackgroundColor(Color.parseColor("#1F161823"));
+        RelativeLayout.LayoutParams layoutParams9 = new RelativeLayout.LayoutParams(-1, sq.hn(context, 0.5f));
+        layoutParams9.addRule(12);
+        addView(view, layoutParams9);
+        gjvVar2.setClickable(false);
+        gjvVar4.setClickable(false);
+        int color = Color.parseColor("#A8FFFFFF");
+        PorterDuff.Mode mode = PorterDuff.Mode.ADD;
+        gjvVar2.setColorFilter(color, mode);
+        gjvVar4.setColorFilter(Color.parseColor("#A8FFFFFF"), mode);
+    }
+}

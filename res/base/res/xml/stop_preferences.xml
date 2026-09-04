@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference android:title="@string/stop_on_scr_off" android:key="@string/pref_stop_on_screen_off" android:summary="@string/stop_on_scr_off_summary" android:defaultValue="false" app:iconSpaceReserved="false" />
+    <SwitchPreference android:title="@string/stop_on_shake" android:key="@string/pref_stop_on_shake" android:summary="@string/stop_on_shake_summary" android:defaultValue="false" app:iconSpaceReserved="false" />
+    <SwitchPreference android:title="@string/stop_on_time_limit" android:key="@string/pref_stop_on_time_limit" android:summary="@string/stop_on_time_limit_summary" android:defaultValue="false" app:iconSpaceReserved="false" />
+    <EditTextPreference android:title="@string/time_limit" android:key="@string/pref_time_limit_value" android:summary="@string/stop_on_time_limit_default_summary" android:defaultValue="@string/default_time_limit" android:dialogTitle="@string/time_limit_in_second" app:iconSpaceReserved="false" />
+</PreferenceScreen>

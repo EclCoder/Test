@@ -1,0 +1,59 @@
+package com.google.android.gms.internal.ads;
+
+import android.content.Context;
+import android.os.Bundle;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.mbridge.msdk.MBridgeConstans;
+import com.mbridge.msdk.playercommon.exoplayer2.offline.DownloadService;
+import java.util.Map;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzewa implements zzfck {
+    final Context zza;
+    private final String zzb;
+    private final String zzc;
+    private final long zzd;
+    private final zzczj zze;
+    private final zzfmg zzf;
+    private final zzfky zzg;
+    private final com.google.android.gms.ads.internal.util.zzg zzh = com.google.android.gms.ads.internal.zzt.zzh().zzo();
+    private final zzdzg zzi;
+    private final zzczx zzj;
+
+    public zzewa(Context context, String str, String str2, zzczj zzczjVar, zzfmg zzfmgVar, zzfky zzfkyVar, zzdzg zzdzgVar, zzczx zzczxVar, long j10) {
+        this.zza = context;
+        this.zzb = str;
+        this.zzc = str2;
+        this.zze = zzczjVar;
+        this.zzf = zzfmgVar;
+        this.zzg = zzfkyVar;
+        this.zzi = zzdzgVar;
+        this.zzj = zzczxVar;
+        this.zzd = j10;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzfck
+    public final ListenableFuture zza() {
+        Bundle bundle = new Bundle();
+        zzdzg zzdzgVar = this.zzi;
+        Map mapZzc = zzdzgVar.zzc();
+        String str = this.zzb;
+        mapZzc.put("seq_num", str);
+        if (((Boolean) com.google.android.gms.ads.internal.client.zzba.zzc().zzd(zzbiq.zzcN)).booleanValue()) {
+            zzdzgVar.zzd("tsacc", String.valueOf(com.google.android.gms.ads.internal.zzt.zzk().currentTimeMillis() - this.zzd));
+            com.google.android.gms.ads.internal.zzt.zzc();
+            zzdzgVar.zzd(DownloadService.KEY_FOREGROUND, true != com.google.android.gms.ads.internal.util.zzs.zzJ(this.zza) ? "1" : MBridgeConstans.ENDCARD_URL_TYPE_PL);
+        }
+        zzczj zzczjVar = this.zze;
+        zzfky zzfkyVar = this.zzg;
+        zzczjVar.zzi(zzfkyVar.zzd);
+        bundle.putAll(this.zzf.zzc());
+        return zzhbw.zza(new zzewb(this.zza, bundle, str, this.zzc, this.zzh, zzfkyVar.zzg, this.zzj));
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzfck
+    public final int zzb() {
+        return 12;
+    }
+}

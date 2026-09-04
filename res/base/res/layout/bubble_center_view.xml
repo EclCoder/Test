@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="@dimen/size_button_bubble" android:layout_height="@dimen/size_button_bubble" app:cardBackgroundColor="@color/bright_red" app:cardCornerRadius="@dimen/half_size_button_bubble"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/icon_iv" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_az_bubble" />
+    <TextView android:textSize="9.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/timer_tv" android:background="@color/bright_red" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:id="@id/mini_iv" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_bubble_mini" />
+</androidx.cardview.widget.CardView>

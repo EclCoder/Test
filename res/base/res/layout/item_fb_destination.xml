@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView android:textAppearance="?android:textAppearanceSmall" android:textSize="@dimen/dialog_content_text_size" android:textColor="?android:textColor" android:ellipsize="start" android:gravity="center_vertical" android:id="@id/destinationCtv" android:tag="layout/item_fb_destination_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:checkMark="?android:listChoiceIndicatorSingle" android:minHeight="36.0dp" android:paddingStart="12.0dp" android:paddingEnd="7.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

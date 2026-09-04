@@ -1,0 +1,15 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzaxs implements zziek {
+    static final zziek zza = new zzaxs();
+
+    private zzaxs() {
+    }
+
+    @Override // com.google.android.gms.internal.ads.zziek
+    public final boolean zza(int i10) {
+        return i10 == 0 || i10 == 1 || i10 == 2 || i10 == 3 || i10 == 4;
+    }
+}

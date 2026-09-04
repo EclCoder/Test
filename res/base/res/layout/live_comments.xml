@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/container_ll" android:tag="layout/live_comments_0" android:background="@color/flamingo_opacity_75" android:paddingTop="@dimen/margin_micro" android:paddingBottom="@dimen/margin_micro" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/expand_or_collapse_iv" android:layout_width="@dimen/width_comments_dialog" android:layout_height="@dimen/width_comments_dialog" android:src="@drawable/ic_collapse_chat" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:id="@id/last_comment_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_micro" android:layout_marginBottom="@dimen/margin_micro" android:text="0 comment" android:maxLines="4" android:singleLine="true" android:layout_marginStart="@dimen/margin_normal" android:layout_marginEnd="@dimen/margin_normal" />
+</LinearLayout>

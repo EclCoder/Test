@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/date_video_gallery_row_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:id="@id/date_tv" android:paddingTop="12.0dp" android:paddingBottom="3.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dp" />
+</LinearLayout>

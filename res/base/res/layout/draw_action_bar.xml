@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_layout" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0dp">
+        <ImageButton android:layout_gravity="center_vertical" android:id="@id/screenshot_ib" android:background="@drawable/bg_control_bar_touch_feedback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_screenshot_white" android:layout_marginStart="16.0dp" />
+        <ImageButton android:layout_gravity="center_vertical" android:id="@id/draw_settings_ib" android:background="@drawable/bg_control_bar_touch_feedback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_draw_settings" android:layout_marginStart="16.0dp" />
+        <ImageButton android:id="@id/btn_erase_previous" android:background="@drawable/bg_control_bar_touch_feedback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_undo_24dp" android:layout_marginStart="16.0dp" />
+        <ImageButton android:id="@id/btn_clear_all" android:background="@drawable/bg_control_bar_touch_feedback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_delete_24" android:layout_marginStart="16.0dp" />
+        <ImageButton android:id="@id/btn_exit_drawing" android:background="@drawable/bg_control_bar_touch_feedback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close_24dp" android:tint="@color/white" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+    </LinearLayout>
+</LinearLayout>

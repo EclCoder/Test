@@ -1,0 +1,106 @@
+package com.mbridge.msdk.video.bt.module.orglistener;
+
+import com.mbridge.msdk.out.MBridgeIds;
+import com.mbridge.msdk.out.RewardInfo;
+import com.mbridge.msdk.videocommon.listener.InterVideoOutListener;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes6.dex */
+public class a implements InterVideoOutListener {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    public g f34153a;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    private String f34154b;
+
+    /* JADX INFO: renamed from: c, reason: collision with root package name */
+    private boolean f34155c;
+
+    public a(g gVar, String str, boolean z10) {
+        this.f34153a = gVar;
+        this.f34154b = str;
+        this.f34155c = z10;
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onAdClose(MBridgeIds mBridgeIds, RewardInfo rewardInfo) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onAdClose(mBridgeIds, rewardInfo);
+        }
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onAdShow(MBridgeIds mBridgeIds) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onAdShow(mBridgeIds);
+        }
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onEndcardShow(MBridgeIds mBridgeIds) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onEndcardShow(mBridgeIds);
+        }
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onLoadSuccess(MBridgeIds mBridgeIds) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onLoadSuccess(mBridgeIds);
+        }
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onShowFail(com.mbridge.msdk.foundation.same.report.metrics.c cVar, MBridgeIds mBridgeIds, String str) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onShowFail(mBridgeIds, str);
+        }
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onVideoAdClicked(boolean z10, MBridgeIds mBridgeIds) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onVideoAdClicked(mBridgeIds);
+        }
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onVideoComplete(MBridgeIds mBridgeIds) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onVideoComplete(mBridgeIds);
+        }
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onVideoLoadFail(MBridgeIds mBridgeIds, String str) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onVideoLoadFail(mBridgeIds, str);
+        }
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onVideoLoadSuccess(MBridgeIds mBridgeIds) {
+        g gVar = this.f34153a;
+        if (gVar != null) {
+            gVar.onVideoLoadSuccess(mBridgeIds);
+        }
+    }
+
+    public a(g gVar) {
+        this.f34154b = "";
+        this.f34153a = gVar;
+    }
+
+    @Override // com.mbridge.msdk.videocommon.listener.InterVideoOutListener
+    public void onAdCloseWithIVReward(MBridgeIds mBridgeIds, RewardInfo rewardInfo) {
+    }
+}

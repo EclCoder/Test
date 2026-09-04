@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/root_view" android:tag="layout/tile_trash_media_0" android:padding="2.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:id="@id/thumb_container" android:layout_width="0.0dp" android:layout_height="0.0dp" android:layout_margin="2.0dp" android:foreground="@drawable/bg_ripple" app:cardCornerRadius="4.0dp" app:cardElevation="1.0dp" app:layout_constraintDimensionRatio="1:1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:id="@id/iv_thumb" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/no_image_available" android:layout_centerHorizontal="true" />
+        <RelativeLayout android:background="@drawable/bg_gradient_radial" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="3.0dp" android:includeFontPadding="false" android:shadowColor="@color/black" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="5.0" android:drawablePadding="2.0dp" android:layout_alignParentTop="true" android:layout_alignParentStart="true" app:drawableEndCompat="@drawable/ic_play_circle_14" />
+            <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_expired_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="3.0dp" android:shadowColor="@color/black" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="5.0" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+            <RelativeLayout android:id="@id/checkbox_container" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+                <com.google.android.material.checkbox.MaterialCheckBox android:id="@id/cb_select" android:background="@drawable/bg_touch_feedback_oval" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:layout_alignParentTop="true" android:layout_alignParentEnd="true" app:buttonTint="@color/checkbox_tint" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

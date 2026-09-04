@@ -1,0 +1,30 @@
+package com.apm.insight.j;
+
+import android.os.Handler;
+import android.text.TextUtils;
+import com.apm.insight.e;
+import com.mbridge.msdk.MBridgeConstans;
+import com.mbridge.msdk.interstitial.view.MBInterstitialActivity;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes.dex */
+public final class c extends a {
+    c(Handler handler) {
+        super(handler, MBInterstitialActivity.WEB_LOAD_TIME);
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (e.c().b()) {
+            return;
+        }
+        String strD = e.a().d();
+        if (TextUtils.isEmpty(strD) || MBridgeConstans.ENDCARD_URL_TYPE_PL.equals(strD)) {
+            a(b());
+            com.apm.insight.a.a((Object) "[DeviceIdTask] did is null, continue check.");
+        } else {
+            e.c().a(strD);
+            com.apm.insight.a.a((Object) "[DeviceIdTask] did is ".concat(String.valueOf(strD)));
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/live_facebook_nav" app:startDestination="@id/loginFbFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:name="com.hecorat.screenrecorder.free.ui.live.facebook.LiveFbFragment" android:id="@id/liveFacebookFragment">
+        <action android:id="@id/action_liveFacebookFragment_to_facebookSettingsFragment" app:destination="@id/facebookSettingsFragment" />
+        <action android:id="@id/action_liveFacebookFragment_to_fbDestinationsDialogFragment" app:destination="@id/fbDestinationsDialogFragment" />
+    </fragment>
+    <fragment android:label="@string/az_common_setting" android:name="com.hecorat.screenrecorder.free.ui.live.facebook.settings.FbSettingsFragment" android:id="@id/facebookSettingsFragment">
+        <action android:id="@id/action_facebookSettingsFragment_to_fbResolutionDialogFragment" app:destination="@id/fbResolutionDialogFragment" />
+    </fragment>
+    <dialog android:label="FbDestinationsDialogFragment" android:name="com.hecorat.screenrecorder.free.ui.live.facebook.FbDestinationsDialogFragment" android:id="@id/fbDestinationsDialogFragment" />
+    <fragment android:label="FbResolutionDialogFragment" android:name="com.hecorat.screenrecorder.free.ui.live.facebook.settings.FbResolutionDialogFragment" android:id="@id/fbResolutionDialogFragment" />
+    <fragment android:label="LoginFbFragment" android:name="com.hecorat.screenrecorder.free.ui.live.facebook.LoginFbFragment" android:id="@id/loginFbFragment">
+        <action android:id="@id/action_loginFbFragment_to_liveFacebookFragment" app:destination="@id/liveFacebookFragment" app:launchSingleTop="true" app:popUpTo="@id/live_facebook_nav" app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

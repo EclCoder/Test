@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/action_layout" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" android:paddingStart="1.0dp" android:paddingEnd="1.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/action_iv" android:layout_width="28.0dp" android:layout_height="28.0dp" android:scaleType="fitCenter" />
+    <TextView android:textSize="11.0sp" android:textColor="@color/notification_text_primary" android:ellipsize="end" android:layout_gravity="center_horizontal" android:id="@id/action_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:maxEms="5" />
+</LinearLayout>

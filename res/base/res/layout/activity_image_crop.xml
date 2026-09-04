@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:tag="layout/activity_image_crop_0" android:background="@color/near_black" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/app_bar" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/tool_bar" android:background="@color/near_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="?actionBarSize" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout android:id="@id/content" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/values_layout" android:layout_below="@id/app_bar" />
+    <View android:id="@id/divider" android:background="#858585" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_above="@id/option_layout" />
+    <FrameLayout android:id="@id/values_layout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@id/divider" />
+    <ProgressBar android:id="@id/progress_bar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:layout_centerInParent="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/option_layout" android:background="@color/near_black" android:padding="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/layout_shape" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.5">
+            <ImageView android:id="@id/iv_shape" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_shape_rectangle" />
+            <TextView android:textSize="12.0sp" android:id="@id/tv_shape" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/shape" android:textAllCaps="true" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/layout_ratio" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.5">
+            <TextView android:textSize="16.0sp" android:textColor="#ffffff" android:id="@id/tv_ratio_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ratio_16_9" />
+            <TextView android:textSize="12.0sp" android:id="@id/tv_ratio_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ratio" android:textAllCaps="true" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

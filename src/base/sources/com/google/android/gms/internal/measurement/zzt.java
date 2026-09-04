@@ -1,0 +1,29 @@
+package com.google.android.gms.internal.measurement;
+
+import androidx.core.app.NotificationCompat;
+import java.util.List;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzt extends zzai {
+    private final zzr zza;
+
+    public zzt(zzr zzrVar) {
+        super("internal.logger");
+        this.zza = zzrVar;
+        this.zze.put("log", new zzs(this, false, true));
+        this.zze.put(NotificationCompat.GROUP_KEY_SILENT, new zzp(this, NotificationCompat.GROUP_KEY_SILENT));
+        ((zzai) this.zze.get(NotificationCompat.GROUP_KEY_SILENT)).zzm("log", new zzs(this, true, true));
+        this.zze.put("unmonitored", new zzq(this, "unmonitored"));
+        ((zzai) this.zze.get("unmonitored")).zzm("log", new zzs(this, false, false));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzai
+    public final zzao zza(zzg zzgVar, List list) {
+        return zzao.zzf;
+    }
+
+    final /* synthetic */ zzr zzb() {
+        return this.zza;
+    }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/title_list_dialog_0" android:background="@color/near_white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_size_h4" android:textColor="@color/text_primary" android:id="@id/titleTv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/live_to" android:layout_marginStart="@dimen/margin_normal" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:id="@id/closeBtn" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_marginTop="@dimen/margin_normal" android:scaleType="centerInside" android:layout_marginEnd="@dimen/margin_normal" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_close_gray_24dp" />
+    <View android:id="@id/divider" android:background="@color/lesser_grey" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="16.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/titleTv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

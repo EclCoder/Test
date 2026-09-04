@@ -1,0 +1,11 @@
+package n0;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes.dex */
+public interface p {
+    void addMenuProvider(u uVar);
+
+    void addMenuProvider(u uVar, androidx.lifecycle.b0 b0Var, androidx.lifecycle.s.b bVar);
+
+    void removeMenuProvider(u uVar);
+}

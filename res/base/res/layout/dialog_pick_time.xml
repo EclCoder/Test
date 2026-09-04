@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:tag="layout/dialog_pick_time_0" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <NumberPicker android:id="@id/np_hours" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=":" />
+    <NumberPicker android:id="@id/np_minutes" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=":" />
+    <NumberPicker android:id="@id/np_seconds" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

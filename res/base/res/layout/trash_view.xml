@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:background="@drawable/bg_bubble_standalone" android:padding="@dimen/padding_trash" android:layout_width="@dimen/dimen_trash" android:layout_height="@dimen/dimen_trash" android:src="@drawable/ic_close_24dp" app:tint="@color/white" />
+</FrameLayout>

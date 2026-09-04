@@ -1,0 +1,20 @@
+package com.iab.omid.library.vungle.adsession.media;
+
+import com.mbridge.msdk.foundation.entity.CampaignEx;
+
+/* JADX INFO: loaded from: classes6.dex */
+public enum InteractionType {
+    CLICK(CampaignEx.JSON_NATIVE_VIDEO_CLICK),
+    INVITATION_ACCEPTED("invitationAccept");
+
+    String interactionType;
+
+    InteractionType(String str) {
+        this.interactionType = str;
+    }
+
+    @Override // java.lang.Enum
+    public String toString() {
+        return this.interactionType;
+    }
+}

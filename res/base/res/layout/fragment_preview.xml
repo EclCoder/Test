@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/fragment_preview_0" android:background="@color/near_black" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/middle_view" android:background="@color/black" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/actions_view" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.exoplayer2.ui.PlayerControlView android:id="@id/player_control_view" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" app:ad_marker_color="#ef553f" app:controller_layout_id="@layout/custom_exo_player_control_view" app:hide_on_touch="false" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:show_timeout="0" />
+        <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@id/video_list_rv" android:layout_width="match_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/player_control_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <HorizontalScrollView android:id="@id/actions_view" android:background="@color/near_black" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:buttonBarStyle">
+            <Button android:id="@id/cut_btn" android:tag="binding_1" android:text="@string/cut" android:drawableTop="@drawable/ic_baseline_content_cut_24" style="@style/BarButton" />
+            <Button android:id="@id/music_btn" android:tag="binding_2" android:text="@string/music" android:drawableTop="@drawable/ic_baseline_music_note_24" style="@style/BarButton" />
+            <Button android:tag="binding_3" android:text="@string/text" android:drawableTop="@drawable/ic_baseline_title_24" style="@style/BarButton" />
+            <Button android:tag="binding_4" android:text="@string/sticker" android:drawableTop="@drawable/ic_outline_add_reaction_24" style="@style/BarButton" />
+            <Button android:id="@id/auto_caption_btn" android:tag="binding_5" android:text="@string/auto_caption_short" android:drawableTop="@drawable/ic_closed_caption_24" style="@style/BarButton" />
+            <Button android:tag="binding_6" android:text="@string/crop" android:drawableTop="@drawable/ic_baseline_crop_24" style="@style/BarButton" />
+            <Button android:tag="binding_7" android:text="@string/background" android:drawableTop="@drawable/ic_baseline_wallpaper_24" style="@style/BarButton" />
+            <Button android:tag="binding_8" android:text="@string/ratio" android:drawableTop="@drawable/ic_baseline_aspect_ratio_24" style="@style/BarButton" />
+            <Button android:tag="binding_9" android:text="@string/speed" android:drawableTop="@drawable/ic_baseline_speed_24" style="@style/BarButton" />
+            <Button android:tag="binding_10" android:text="@string/az_common_rotate" android:drawableTop="@drawable/ic_baseline_rotate_right_24" style="@style/BarButton" />
+            <Button android:tag="binding_11" android:text="@string/capture" android:drawableTop="@drawable/ic_capture" style="@style/BarButton" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

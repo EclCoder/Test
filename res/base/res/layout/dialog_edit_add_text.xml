@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/dialog_edit_add_text_0" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="#333333" android:padding="4.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="10.0dp" android:layout_marginEnd="10.0dp">
+        <EditText android:textSize="14.0sp" android:gravity="center" android:id="@id/et_edit_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/color_secondary_text" android:hint="@string/enter_text_hint" android:layout_alignParentStart="true" />
+        <ImageView android:id="@id/iv_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close_grey_12dp" android:layout_centerVertical="true" android:layout_marginEnd="4.0dp" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp">
+        <TextView android:textColor="@color/white" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/text_color" android:layout_weight="1.0" android:layout_marginStart="10.0dp" />
+        <View android:id="@id/v_text_color" android:background="@color/white" android:layout_width="28.0dp" android:layout_height="28.0dp" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp">
+        <TextView android:textColor="@color/white" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/background_color" android:layout_weight="1.0" android:layout_marginStart="10.0dp" />
+        <View android:id="@id/v_bg_color" android:background="@color/white" android:layout_width="28.0dp" android:layout_height="28.0dp" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="32.0dp" android:layout_marginTop="10.0dp">
+        <TextView android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/font" android:layout_marginStart="10.0dp" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/white" android:ellipsize="end" android:gravity="end" android:id="@id/tv_font_name" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/default_font" android:maxLines="1" android:layout_weight="1.0" android:layout_marginStart="10.0dp" android:layout_marginEnd="10.0dp" />
+        <Spinner android:id="@id/spinner_fonts" android:layout_width="44.0dp" android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

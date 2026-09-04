@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/view_image_ll" android:padding="12.0dp" android:layout_width="match_parent" android:layout_height="@dimen/screenshot_notification_height">
+        <ImageView android:id="@id/thumb_iv" android:layout_width="@dimen/screenshot_notification_thumb_size" android:layout_height="@dimen/screenshot_notification_thumb_size" android:layout_marginTop="12.0dp" android:layout_marginBottom="12.0dp" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="12.0dp" android:layout_marginEnd="12.0dp" android:layout_toStartOf="@id/view_tv" android:layout_toEndOf="@id/thumb_iv">
+            <TextView android:textSize="16.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/screenshot_captured" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tap_to_view_screenshot" />
+        </LinearLayout>
+        <TextView android:textSize="14.0sp" android:textColor="@color/white" android:id="@id/view_tv" android:background="@drawable/bg_rounded_red_fill_btn" android:paddingTop="4.0dp" android:paddingBottom="4.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/view" android:layout_centerVertical="true" android:paddingStart="8.0dp" android:paddingEnd="8.0dp" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/white_grey" android:paddingTop="4.0dp" android:paddingBottom="4.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:id="@id/share_ll" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:background="@drawable/bg_touch_feedback_rec" android:padding="@dimen/margin_ads_feature" android:layout_width="36.0dp" android:layout_height="36.0dp" android:src="@drawable/ic_share_white_32dp" app:tint="@color/bright_red" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@id/delete_ll" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:background="@drawable/bg_touch_feedback_rec" android:padding="@dimen/margin_ads_feature" android:layout_width="36.0dp" android:layout_height="36.0dp" android:src="@drawable/ic_delete_24" app:tint="@color/bright_red" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@id/edit_ll" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:background="@drawable/bg_touch_feedback_rec" android:padding="@dimen/margin_ads_feature" android:layout_width="36.0dp" android:layout_height="36.0dp" android:src="@drawable/ic_mode_edit_white_24dp" app:tint="@color/bright_red" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

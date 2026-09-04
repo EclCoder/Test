@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_select_all" android:id="@id/action_select_all" android:orderInCategory="8" android:title="@string/select_all" app:iconTint="?android:colorForeground" app:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_delete_24" android:id="@id/action_delete" android:orderInCategory="9" android:title="@string/delete" app:iconTint="?android:colorForeground" app:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_share_white_24dp" android:id="@id/action_share" android:orderInCategory="10" android:title="@string/share" app:iconTint="?android:colorForeground" app:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_protect_recording" android:id="@id/action_protect_recording" android:orderInCategory="10" android:title="@string/protect_recordings_title" app:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_survey_speaker" android:id="@id/action_survey" android:orderInCategory="11" android:title="@string/survey" app:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_diamond" android:id="@id/action_upgrade" android:orderInCategory="12" android:title="@string/upgrade" app:showAsAction="ifRoom" />
+    <item android:id="@id/action_ads_inspector" android:orderInCategory="100" android:title="Ads inspector" app:showAsAction="never" />
+</menu>

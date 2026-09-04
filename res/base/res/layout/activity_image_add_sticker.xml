@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/near_black" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/app_bar" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/tool_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="?actionBarSize" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/layout_toolbar" android:layout_below="@id/app_bar">
+        <ImageView android:id="@id/iv_sticker" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerInParent="true" />
+        <FrameLayout android:id="@id/sticker_container" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/layout_toolbar" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="@dimen/height_button_text_setting" android:fillViewport="true">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/thumb_container" android:layout_width="wrap_content" android:layout_height="match_parent" />
+        </HorizontalScrollView>
+        <LinearLayout android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="@dimen/height_button_text_setting" android:layout_marginTop="@dimen/margin_top_dialog_setting">
+            <Button android:textSize="16.0sp" android:textColor="@color/white" android:ellipsize="end" android:id="@id/button_add_sticker" android:background="@drawable/bg_button_editor" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/add_sticker" android:maxLines="1" android:textAllCaps="true" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/layout_progress_bar" android:background="@color/silver_chalice_opacity" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ProgressBar android:id="@id/waiting_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:indeterminateDrawable="@drawable/waiting_circle" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

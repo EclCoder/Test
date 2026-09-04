@@ -1,0 +1,42 @@
+package com.google.android.gms.common.api.internal;
+
+import android.util.Log;
+import com.google.android.gms.common.ConnectionResult;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes4.dex */
+final class zabt implements Runnable {
+    final /* synthetic */ ConnectionResult zaa;
+    final /* synthetic */ zabu zab;
+
+    zabt(zabu zabuVar, ConnectionResult connectionResult) {
+        this.zab = zabuVar;
+        this.zaa = connectionResult;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        zabu zabuVar = this.zab;
+        zabq zabqVar = (zabq) zabuVar.zaa.zan.get(zabuVar.zac);
+        if (zabqVar == null) {
+            return;
+        }
+        if (!this.zaa.isSuccess()) {
+            zabqVar.zar(this.zaa, null);
+            return;
+        }
+        this.zab.zaf = true;
+        if (this.zab.zab.requiresSignIn()) {
+            this.zab.zah();
+            return;
+        }
+        try {
+            zabu zabuVar2 = this.zab;
+            zabuVar2.zab.getRemoteService(null, zabuVar2.zab.getScopesForConnectionlessNonSignIn());
+        } catch (SecurityException e10) {
+            Log.e("GoogleApiManager", "Failed to get service from broker. ", e10);
+            this.zab.zab.disconnect("Failed to get service from broker.");
+            zabqVar.zar(new ConnectionResult(10), null);
+        }
+    }
+}

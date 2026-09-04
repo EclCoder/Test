@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:tag="layout/activity_video_repair_0" android:background="@color/near_black" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/layout_status" android:background="#404040" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0sp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/status_with_colon" android:layout_weight="0.3" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/bright_green" android:id="@id/tv_status" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.7" android:layout_marginStart="5.0dp" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/layout_corrupted_video" android:background="#404040" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:layout_below="@id/layout_status">
+        <TextView android:textSize="16.0sp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/corrupted_video_with_colon" android:layout_weight="0.3" />
+        <TextView android:textSize="16.0sp" android:textColor="@android:color/primary_text_dark" android:gravity="start|center" android:layout_gravity="center_vertical" android:id="@id/tv_corrupted_video" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.7" android:layout_marginStart="5.0dp" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/layout_reference_video" android:background="#404040" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:layout_below="@id/layout_corrupted_video">
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="16.0sp" android:layout_gravity="center_vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/reference_video_with_colon" android:layout_weight="0.3" />
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.7" android:layout_marginStart="5.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="@android:color/primary_text_dark" android:gravity="start|center" android:layout_gravity="start" android:id="@id/tv_reference_video" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="12.0sp" android:textStyle="italic" android:textColor="@android:color/secondary_text_dark" android:layout_gravity="start" android:id="@id/tv_reference_video_info" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <View android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="0.3" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.7" android:layout_marginStart="5.0dp">
+                <Button android:gravity="center" android:layout_gravity="start" android:id="@id/btn_change" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/select" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textStyle="italic" android:textColor="@android:color/secondary_text_dark" android:id="@id/txt_repair_hint" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10.0dp" android:text="@string/reference_video_hint" android:layout_below="@id/layout_reference_video" />
+    <Button android:gravity="center" android:id="@id/btn_repair" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:minWidth="200.0dp" android:text="@string/repair" android:layout_below="@id/txt_repair_hint" android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,65 @@
+package com.k2fsa.sherpa.onnx;
+
+import android.content.res.AssetManager;
+import c1.pGX.geAgcEazw;
+import kotlin.Metadata;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.s;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes2.dex */
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 \"2\u00020\u0001:\u0001\"B\u001b\u0012\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0004¢\u0006\u0004\b\u0006\u0010\u0007J \u0010\t\u001a\u00020\b2\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0004H\u0082 ¢\u0006\u0004\b\t\u0010\nJ\u0018\u0010\u000b\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u0004H\u0082 ¢\u0006\u0004\b\u000b\u0010\fJ\u0018\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\r\u001a\u00020\bH\u0082 ¢\u0006\u0004\b\u000f\u0010\u0010J\u0018\u0010\u0011\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\bH\u0082 ¢\u0006\u0004\b\u0011\u0010\u0012J.\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00170\u00162\u0006\u0010\r\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\u0014H\u0082 ¢\u0006\u0004\b\u0018\u0010\u0019J\u000f\u0010\u001a\u001a\u00020\u000eH\u0004¢\u0006\u0004\b\u001a\u0010\u001bJ\r\u0010\u001c\u001a\u00020\u000e¢\u0006\u0004\b\u001c\u0010\u001bJ\r\u0010\u0011\u001a\u00020\u001d¢\u0006\u0004\b\u0011\u0010\u001eJ%\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00170\u00162\u0006\u0010\u001f\u001a\u00020\u001d2\b\b\u0002\u0010\u0015\u001a\u00020\u0014¢\u0006\u0004\b\u0018\u0010 R\u0016\u0010\r\u001a\u00020\b8\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b\r\u0010!¨\u0006#"}, d2 = {"Lcom/k2fsa/sherpa/onnx/AudioTagging;", "", "Landroid/content/res/AssetManager;", "assetManager", "Lcom/k2fsa/sherpa/onnx/AudioTaggingConfig;", "config", "<init>", "(Landroid/content/res/AssetManager;Lcom/k2fsa/sherpa/onnx/AudioTaggingConfig;)V", "", "newFromAsset", "(Landroid/content/res/AssetManager;Lcom/k2fsa/sherpa/onnx/AudioTaggingConfig;)J", "newFromFile", "(Lcom/k2fsa/sherpa/onnx/AudioTaggingConfig;)J", "ptr", "Lfl/g0;", "delete", "(J)V", "createStream", "(J)J", "streamPtr", "", "topK", "", "Lcom/k2fsa/sherpa/onnx/AudioEvent;", "compute", "(JJI)[Lcom/k2fsa/sherpa/onnx/AudioEvent;", "finalize", "()V", "release", "Lcom/k2fsa/sherpa/onnx/OfflineStream;", "()Lcom/k2fsa/sherpa/onnx/OfflineStream;", "stream", "(Lcom/k2fsa/sherpa/onnx/OfflineStream;I)[Lcom/k2fsa/sherpa/onnx/AudioEvent;", "J", "Companion", "sherpa_onnx_release"}, k = 1, mv = {1, 7, 1}, xi = 48)
+public final class AudioTagging {
+    private long ptr;
+
+    public AudioTagging(AssetManager assetManager, AudioTaggingConfig config) {
+        s.h(config, "config");
+        this.ptr = assetManager != null ? newFromAsset(assetManager, config) : newFromFile(config);
+    }
+
+    private final native AudioEvent[] compute(long ptr, long streamPtr, int topK);
+
+    public static /* synthetic */ AudioEvent[] compute$default(AudioTagging audioTagging, OfflineStream offlineStream, int i10, int i11, Object obj) {
+        if ((i11 & 2) != 0) {
+            i10 = -1;
+        }
+        return audioTagging.compute(offlineStream, i10);
+    }
+
+    private final native long createStream(long ptr);
+
+    private final native void delete(long ptr);
+
+    private final native long newFromAsset(AssetManager assetManager, AudioTaggingConfig config);
+
+    private final native long newFromFile(AudioTaggingConfig config);
+
+    public final AudioEvent[] compute(OfflineStream stream, int topK) {
+        s.h(stream, "stream");
+        return compute(this.ptr, stream.getPtr(), topK);
+    }
+
+    public final OfflineStream createStream() {
+        return new OfflineStream(createStream(this.ptr));
+    }
+
+    protected final void finalize() {
+        long j10 = this.ptr;
+        if (j10 != 0) {
+            delete(j10);
+            this.ptr = 0L;
+        }
+    }
+
+    public final void release() {
+        finalize();
+    }
+
+    static {
+        System.loadLibrary(geAgcEazw.XDwmUVqggDtye);
+    }
+
+    public /* synthetic */ AudioTagging(AssetManager assetManager, AudioTaggingConfig audioTaggingConfig, int i10, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i10 & 1) != 0 ? null : assetManager, audioTaggingConfig);
+    }
+}

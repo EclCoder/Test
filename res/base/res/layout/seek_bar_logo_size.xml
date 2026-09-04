@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingTop="8.0dp" android:paddingBottom="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="16.0dp" android:paddingEnd="16.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SeekBar android:id="@id/sb_logo_size" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.9" />
+    <TextView android:id="@id/tv_size_value" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.1" />
+</LinearLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/transparent" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="11.0sp" android:textColor="@color/white" android:layout_gravity="end|center" android:id="@id/volume_btn" android:background="?android:selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="40.0dp" android:text="@string/volume" android:drawableTop="@drawable/baseline_volume_up_24" android:textAllCaps="false" android:layout_marginEnd="36.0dp" />
+</FrameLayout>

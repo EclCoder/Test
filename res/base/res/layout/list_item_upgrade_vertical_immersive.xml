@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_immersive_rounded_corner_subscription_btn" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="5.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RadioButton android:id="@id/iv_selected" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dp" android:layout_centerVertical="true" android:layout_alignParentStart="true" app:buttonTint="@color/radio_button_tint" />
+    <androidx.appcompat.widget.LinearLayoutCompat android:gravity="center_vertical" android:orientation="vertical" android:id="@id/main_text_container" android:paddingTop="12.0dp" android:paddingBottom="12.0dp" android:layout_width="wrap_content" android:layout_height="66.0dp" android:layout_centerVertical="true" android:layout_toEndOf="@id/iv_selected">
+        <androidx.appcompat.widget.LinearLayoutCompat android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/mild_grey" android:id="@id/tv_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/mild_grey" android:id="@id/tv_duration_divider" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dash" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/mild_grey" android:id="@id/tv_main" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="2.0dp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="@color/mild_grey" android:id="@id/tv_sub" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="@color/near_white" android:id="@id/tv_sale" android:background="@drawable/bg_immersive_rounded_corner_sale_horizontal" android:padding="4.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="0.0dp" android:layout_alignParentEnd="true" />
+</RelativeLayout>

@@ -1,0 +1,1745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="GIF">GIF</string>
+    <string name="abc_action_bar_home_description">Navigate home</string>
+    <string name="abc_action_bar_up_description">Navigate up</string>
+    <string name="abc_action_menu_overflow_description">More options</string>
+    <string name="abc_action_mode_done">Done</string>
+    <string name="abc_activity_chooser_view_see_all">See all</string>
+    <string name="abc_activitychooserview_choose_application">Choose an app</string>
+    <string name="abc_capital_off">OFF</string>
+    <string name="abc_capital_on">ON</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">delete</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">space</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">Menu+</string>
+    <string name="abc_search_hint">Search…</string>
+    <string name="abc_searchview_description_clear">Clear query</string>
+    <string name="abc_searchview_description_query">Search query</string>
+    <string name="abc_searchview_description_search">Search</string>
+    <string name="abc_searchview_description_submit">Submit query</string>
+    <string name="abc_searchview_description_voice">Voice search</string>
+    <string name="abc_shareactionprovider_share_with">Share with</string>
+    <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
+    <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="access_storage_permission_message">Storage access permission is needed to use this function. Please grant us Storage access permission.</string>
+    <string name="account_live_stream">Account</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_watch_install_ads">Watch an ad and install the app</string>
+    <string name="add">Add</string>
+    <string name="add_background">Add background</string>
+    <string name="add_sticker">Add Sticker</string>
+    <string name="add_text">Add Text</string>
+    <string name="add_with_count">Add (%d)</string>
+    <string name="adjust_volume">Adjust Volume</string>
+    <string name="advanced_mode">Advanced</string>
+    <string name="advanced_mode_description">More powerful. Recommended for recording with frequent changes on screen</string>
+    <string name="all_audio">All Audio</string>
+    <string name="all_images">All Images</string>
+    <string name="all_videos">All Videos</string>
+    <string name="allow_display_over_other_apps">Allow displaying over other apps</string>
+    <string name="allow_notifications">Allow notification panel</string>
+    <string name="already_vip">Already upgraded?</string>
+    <string name="androidx_startup">androidx.startup</string>
+    <string name="app_id">ca-app-pub-8186292768750139~4993471047</string>
+    <string name="app_image_view">AZ Image Viewer</string>
+    <string name="app_name">AZ Screen Recorder</string>
+    <string name="app_video_view">AZ Video Player</string>
+    <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="are_you_happy">Are you satisfied with the app?</string>
+    <string name="arrow">→</string>
+    <string name="ask_az_recorder_community">Ask %s Community</string>
+    <string name="aspect_ratio">Aspect ratio</string>
+    <string name="attach_screenshots">Attach screenshots</string>
+    <string name="audio">Audio</string>
+    <string name="audio_booster">Audio Booster</string>
+    <string name="audio_recording">Audio recording</string>
+    <string name="audio_source">Audio source</string>
+    <string name="audio_sync">Audio sync</string>
+    <string name="auto">Auto</string>
+    <string name="auto_caption">Auto Captions</string>
+    <string name="auto_caption_short">Captions</string>
+    <string name="auto_recommended">Auto (Recommended)</string>
+    <string name="available_storage">%1$s GB available</string>
+    <string name="average">Average</string>
+    <string name="avoid_unexpected_stop">Avoid unexpected stop</string>
+    <string name="avoid_unexpected_stop_summary">Strengthen recording stability by turning off the system battery optimization for this app</string>
+    <string name="az">AZ</string>
+    <string name="az_common_allow">Allow</string>
+    <string name="az_common_rename">Rename</string>
+    <string name="az_common_rotate">Rotate</string>
+    <string name="az_common_setting">Settings</string>
+    <string name="az_live_description_suffix">Live stream your amazing moments via %1$s: %2$s</string>
+    <string name="az_live_hashtag">#AZScreenRecorder #live</string>
+    <string name="az_live_with_app">My Live stream with %1$s</string>
+    <string name="az_menu_about">About us</string>
+    <string name="az_menu_privacy_options">Privacy options</string>
+    <string name="az_record_hashtag">#AZScreenRecorder</string>
+    <string name="az_recorder">Az Recorder</string>
+    <string name="az_request_popup_permission">Please allow the pop-up permission to use this function.</string>
+    <string name="az_screen_recorder_pro">AZ Screen Recorder PRO</string>
+    <string name="az_share_image_message">Captured by %1$s: %2$s</string>
+    <string name="az_share_video_message">Recorded by %1$s: %2$s</string>
+    <string name="back">Back</string>
+    <string name="background">Background</string>
+    <string name="background_color">Background color</string>
+    <string name="bad">Bad!</string>
+    <string name="bitrate">Bit-rate</string>
+    <string name="black_screen">Black screen</string>
+    <string name="black_white">Black-white</string>
+    <string name="blur_image">Blur image</string>
+    <string name="bottom_sheet_behavior">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
+    <string name="bottomsheet_action_collapse">Collapse</string>
+    <string name="bottomsheet_action_collapse_description">Collapse the bottom sheet</string>
+    <string name="bottomsheet_action_expand">Expand</string>
+    <string name="bottomsheet_action_expand_description">Expand the bottom sheet</string>
+    <string name="bottomsheet_action_expand_halfway">Expand halfway</string>
+    <string name="bottomsheet_action_half_expand_description">Half expand the bottom sheet</string>
+    <string name="bottomsheet_drag_handle_content_description">Drag handle</string>
+    <string name="bottomsheet_state_collapsed">Collapsed</string>
+    <string name="bottomsheet_state_expanded">Expanded</string>
+    <string name="bottomsheet_state_half_expanded">Half expanded</string>
+    <string name="brush">Brush</string>
+    <string name="build_number_position">"Depends on your device brand and version, you may find \"Build Number\" at different place: 
+
+"<b>Samsung:</b>" 
+\"Settings\">\"About Phone\">\"Software Information\">\"Build Number\" 
+
+"<b>Huawei:</b>" 
+\"Settings\">\"System\">\"About Phone\">\"Build Number\" 
+
+"<b>Oppo:</b>" 
+\"Settings\">\"About Phone\">\"Version\">\"Build Number\" 
+
+"<b>Pixel:</b>" 
+\"Settings\">\"About Phone\">\"Build Number\" 
+
+"<b>Xiaomi:</b>" 
+\"Settings\">\"My Devices\">\"All Specs\">\"MIUI Version\" 
+
+"<b>Motorola:</b>" 
+\"Settings\">\"About Phone\">\"ZUI Version\" 
+
+"<b>Asus:</b>" 
+\"Settings\">\"About Phone\">\"Software Information\">\"Build Number\" 
+
+"<b>LG:</b>" 
+\"Settings\">\"About Phone\">Software Information\">\"Build Number\""</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="camera">Camera</string>
+    <string name="campaign.appName">getAppName</string>
+    <string name="campaign.iconUrl">getIconUrl</string>
+    <string name="campaign.imageUrl">getImageUrl</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancel_export_warning">Cancel video export?</string>
+    <string name="cannot_start_recording">Cannot start recording</string>
+    <string name="capital_new">NEW</string>
+    <string name="caption_another_language">Or pick another language to re-transcribe</string>
+    <string name="caption_apply">Apply</string>
+    <string name="caption_cancel">Cancel</string>
+    <string name="caption_cancel_confirm_message">"Cancel transcription? You'll lose the current progress."</string>
+    <string name="caption_change_style">Change style</string>
+    <string name="caption_choose_style">Choose caption style</string>
+    <string name="caption_clear_short">Clear</string>
+    <string name="caption_download_model">Download language model</string>
+    <string name="caption_download_size_fmt">%1$.1f / %2$.1f MB</string>
+    <string name="caption_downloading_model_subtitle">Download once for all languages</string>
+    <string name="caption_downloading_model_title">Downloading speech model</string>
+    <string name="caption_edit">Edit captions</string>
+    <string name="caption_edit_list_empty">No captions yet.</string>
+    <string name="caption_edit_list_hint">Tap a caption to fix the text.</string>
+    <string name="caption_edit_list_title">Captions</string>
+    <string name="caption_edit_short">Edit</string>
+    <string name="caption_error_audio_extract">"Couldn't read this video's audio. The file may be damaged."</string>
+    <string name="caption_error_corrupt">Download was corrupted. Tap to try again.</string>
+    <string name="caption_error_engine">Transcription stopped unexpectedly. Try again, or use a shorter video.</string>
+    <string name="caption_error_incomplete">Language pack is incomplete. Tap to try again.</string>
+    <string name="caption_error_model_missing">"Language pack isn't installed. Pick a language to download it."</string>
+    <string name="caption_error_network">No internet connection. Connect to Wi-Fi and try again.</string>
+    <string name="caption_error_no_audio_track">This video has no audio track. Captions need audio.</string>
+    <string name="caption_error_no_speech">"No speech detected in this video's audio."</string>
+    <string name="caption_error_server">"Server couldn't be reached. Try again in a moment."</string>
+    <string name="caption_error_storage">Not enough storage. Free up some space and try again.</string>
+    <string name="caption_error_unknown">Something went wrong. Please try again.</string>
+    <string name="caption_generate_cta">Pick a language to generate captions</string>
+    <string name="caption_lang_auto">Auto-detect</string>
+    <string name="caption_language">Language</string>
+    <string name="caption_language_fmt">Language: %1$s</string>
+    <string name="caption_language_generic">Language: %1$s</string>
+    <string name="caption_model_download_failed">Download failed. Check your connection and try again.</string>
+    <string name="caption_model_downloading">Downloading… %1$d%%</string>
+    <string name="caption_model_downloading_please_wait">A model is already downloading. Please wait.</string>
+    <string name="caption_model_finalizing">Finalizing…</string>
+    <string name="caption_model_installed">Installed</string>
+    <string name="caption_model_progress_bytes_fmt">%1$.1f / %2$.1f MB · %3$d%%</string>
+    <string name="caption_model_size_mb">%1$d MB</string>
+    <string name="caption_no_audio">This video has no audio to caption.</string>
+    <string name="caption_phase_downloading_subtitle">Download once for all languages</string>
+    <string name="caption_phase_downloading_title">Downloading speech model</string>
+    <string name="caption_phase_installing_title">Setting things up…</string>
+    <string name="caption_phase_loading_title">Warming up…</string>
+    <string name="caption_phase_preparing_subtitle">"Reading your video's soundtrack"</string>
+    <string name="caption_phase_preparing_title">Preparing audio…</string>
+    <string name="caption_phase_transcribing_title">Generating captions…</string>
+    <string name="caption_preview_sample">Sample</string>
+    <string name="caption_pro_footer">Pro feature · pick a language to continue</string>
+    <string name="caption_remove_all">Remove all captions</string>
+    <string name="caption_remove_all_confirm_action">Remove all</string>
+    <string name="caption_remove_all_confirm_message">This removes every auto-generated caption. You can regenerate them later.</string>
+    <string name="caption_remove_all_confirm_title">Remove all captions?</string>
+    <string name="caption_select_language">Select language</string>
+    <string name="caption_show_all_languages">All languages…</string>
+    <string name="caption_storage_low">Not enough storage to download this model.</string>
+    <string name="caption_style_classic">Classic</string>
+    <string name="caption_style_cyan">Cyan</string>
+    <string name="caption_style_minimal">Minimal</string>
+    <string name="caption_style_mono">Mono</string>
+    <string name="caption_style_pink">Pink</string>
+    <string name="caption_style_tiktok">TikTok</string>
+    <string name="caption_style_yellow">Yellow</string>
+    <string name="caption_style_youtube">YouTube</string>
+    <string name="caption_transcribing">Transcribing…</string>
+    <string name="caption_transcribing_estimate">About %1$ds remaining</string>
+    <string name="caption_transcription_failed">Could not generate captions. Please try again.</string>
+    <string name="capture">Capture</string>
+    <string name="cd_stop_recording">Stop recording</string>
+    <string name="change">Change</string>
+    <string name="change_log_bonus_msg_normal">Support us by rating 5 stars?</string>
+    <string name="change_log_msg_normal">"🌟 Introducing a dedicated Utilities Tab for quick access to enhanced features and tools.
+
+🐞 Bug fixes and 🚀 Performance improvements."</string>
+    <string name="change_log_neutral">Later</string>
+    <string name="change_log_new_version_name">Version %s</string>
+    <string name="change_log_positive">OK</string>
+    <string name="change_log_title">What’s new</string>
+    <string name="change_speed">Change speed</string>
+    <string name="character">Character</string>
+    <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
+    <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
+    <string name="character_counter_pattern">%1$d/%2$d</string>
+    <string name="choose_audio">Pick audio</string>
+    <string name="choose_email_title">Send mail…</string>
+    <string name="choose_live_platform">Choose a live platform</string>
+    <string name="choose_storage">Save videos to</string>
+    <string name="choose_visibility">Choose visibility</string>
+    <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="click_continue_to_record_silent">Click CONTINUE to record a silent video.</string>
+    <string name="close">Close</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="colon">:</string>
+    <string name="color">Color</string>
+    <string name="color_picker">Color picker</string>
+    <string name="color_secondary_text">text here</string>
+    <string name="com.google.firebase.crashlytics.mapping_file_id">547f7f27a7bd4882854f225530368423</string>
+    <string name="com.google.firebase.crashlytics.version_control_info">"repositories {
+  system: GIT
+  local_root_path: \"$PROJECT_DIR\"
+  revision: \"2487451522df23017a23b874265989daf3f4e7c1\"
+}
+"</string>
+    <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
+    <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
+    <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
+    <string name="com_facebook_internet_permission_error_title">AndroidManifest Error</string>
+    <string name="com_facebook_like_button_liked">Liked</string>
+    <string name="com_facebook_like_button_not_liked">Like</string>
+    <string name="com_facebook_loading">Loading…</string>
+    <string name="com_facebook_loginview_cancel_action">Cancel</string>
+    <string name="com_facebook_loginview_log_in_button">Log in</string>
+    <string name="com_facebook_loginview_log_in_button_continue">Continue with Facebook</string>
+    <string name="com_facebook_loginview_log_in_button_long">Log in with Facebook</string>
+    <string name="com_facebook_loginview_log_out_action">Log out</string>
+    <string name="com_facebook_loginview_log_out_button">Log out</string>
+    <string name="com_facebook_loginview_logged_in_as">Logged in as: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_using_facebook">Logged in using Facebook</string>
+    <string name="com_facebook_send_button_text">Send</string>
+    <string name="com_facebook_share_button_text">Share</string>
+    <string name="com_facebook_smart_device_instructions">To connect your account, open the Facebook app on your mobile device and check for notifications.</string>
+    <string name="com_facebook_smart_device_instructions_or">- OR -</string>
+    <string name="com_facebook_smart_login_confirmation_cancel">Not you?</string>
+    <string name="com_facebook_smart_login_confirmation_continue_as">Continue as %1$s</string>
+    <string name="com_facebook_smart_login_confirmation_title">Confirm Login</string>
+    <string name="com_facebook_sso_noapp_body">Create your account in seconds with Facebook.</string>
+    <string name="com_facebook_sso_noapp_not_now">Not now</string>
+    <string name="com_facebook_sso_noapp_title">Sign up faster with Facebook</string>
+    <string name="com_facebook_sso_outdated_body">Continue with your Facebook account to get started.</string>
+    <string name="com_facebook_sso_outdated_title">Log in with Facebook</string>
+    <string name="com_facebook_tooltip_default">"You're in control - choose what info you want to share with apps."</string>
+    <string name="common_continue">Continue</string>
+    <string name="common_google_play_services_enable_button">Enable</string>
+    <string name="common_google_play_services_enable_text">"%1$s won't work unless you enable Google Play services."</string>
+    <string name="common_google_play_services_enable_title">Enable Google Play services</string>
+    <string name="common_google_play_services_install_button">Install</string>
+    <string name="common_google_play_services_install_text">"%1$s won't run without Google Play services, which are missing from your device."</string>
+    <string name="common_google_play_services_install_title">Get Google Play services</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play services availability</string>
+    <string name="common_google_play_services_notification_ticker">Google Play services error</string>
+    <string name="common_google_play_services_unknown_issue">%1$s is having trouble with Google Play services. Please try again.</string>
+    <string name="common_google_play_services_unsupported_text">"%1$s won't run without Google Play services, which are not supported by your device."</string>
+    <string name="common_google_play_services_update_button">Update</string>
+    <string name="common_google_play_services_update_text">"%1$s won't run unless you update Google Play services."</string>
+    <string name="common_google_play_services_update_title">Update Google Play services</string>
+    <string name="common_google_play_services_updating_text">"%1$s won't run without Google Play services, which are currently updating."</string>
+    <string name="common_google_play_services_wear_update_text">New version of Google Play services needed. It will update itself shortly.</string>
+    <string name="common_logout">Log out</string>
+    <string name="common_open_on_phone">Open on phone</string>
+    <string name="common_signin_button_text">Sign in</string>
+    <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="company">by RisenApps</string>
+    <string name="compress">Compress</string>
+    <string name="compress_video">Compress Video</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_exit">Confirm Exit</string>
+    <string name="congratulation">Congratulations!</string>
+    <string name="contact_support">Contact support</string>
+    <string name="convert_to_black_white">Convert to Black-white</string>
+    <string name="convert_to_gif">Convert to gif</string>
+    <string name="copy">Copy</string>
+    <string name="copy_toast_msg">Link copied to clipboard</string>
+    <string name="copyright">Copyright © RisenApps %d. All Rights Reserved</string>
+    <string name="corrupted_video">Corrupted video</string>
+    <string name="corrupted_video_with_colon">Corrupted video:</string>
+    <string name="countdown_value">Countdown length</string>
+    <string name="countdown_value_in_second">Countdown length in seconds</string>
+    <string name="crashes_errors">Crash</string>
+    <string name="create_gif">Create GIF</string>
+    <string name="created_1_video">You have created 1 video with %s.</string>
+    <string name="created_3_videos">You have created 3 videos with %s.</string>
+    <string name="crop">Crop</string>
+    <string name="crop_all_caps">CROP</string>
+    <string name="crop_image">Crop image</string>
+    <string name="crop_image_activity_no_permissions">Cancelling, required permissions are not granted</string>
+    <string name="crop_image_activity_title" />
+    <string name="crop_image_menu_crop">Crop</string>
+    <string name="crop_image_menu_flip">Flip</string>
+    <string name="crop_image_menu_flip_horizontally">Flip horizontally</string>
+    <string name="crop_image_menu_flip_vertically">Flip vertically</string>
+    <string name="crop_image_menu_rotate_left">Rotate counter clockwise</string>
+    <string name="crop_image_menu_rotate_right">Rotate</string>
+    <string name="crop_video">Crop video</string>
+    <string name="custom">Custom</string>
+    <string name="custom_percent">Custom (%s)</string>
+    <string name="custom_resolution">Custom resolution</string>
+    <string name="cut">Cut</string>
+    <string name="cut_duration_warning">Video duration must be longer than 1 second</string>
+    <string name="cut_middle">Cut middle</string>
+    <string name="dash"> - </string>
+    <string name="dedicated_auto_caption_name">Get Auto Caption app</string>
+    <string name="dedicated_auto_caption_share_subtitle">More styles • Auto translate • Free</string>
+    <string name="dedicated_video_compressor_name">Get Video Compressor app</string>
+    <string name="dedicated_video_compressor_share_subtitle">Batch compression • Fast mode • Free</string>
+    <string name="default_crop_size">200x200</string>
+    <string name="default_font">Times New Roman</string>
+    <string name="default_mode">Default</string>
+    <string name="default_mode_description">More stable. Recommended for most devices</string>
+    <string name="default_time">10s</string>
+    <string name="default_time_formatted">0:00</string>
+    <string name="default_time_limit">600</string>
+    <string name="default_web_client_id">544061412085-338gvbqjpl638vf7gdvvr383l45lbu75.apps.googleusercontent.com</string>
+    <string name="defaults">default</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all">Delete all</string>
+    <string name="delete_image">Delete image</string>
+    <string name="delete_video">Delete video</string>
+    <string name="description_live_stream_hint_youtube">Description</string>
+    <string name="dest_title">destination title</string>
+    <string name="device">Device</string>
+    <string name="device_language">Device language</string>
+    <string name="device_not_support_overlay">Your device does not support Draw over other apps</string>
+    <string name="device_not_support_permission">Your device does not support this permission</string>
+    <string name="dialog_already_have_premium_msg">Already purchased Premium? Sign in to Google Play with the Google Account used for the purchase, then reinstall AZ Screen Recorder. You can use the purchase on all devices signed in to that account. Contact us if Premium is not restored.</string>
+    <string name="dialog_already_have_premium_title">Already have premium</string>
+    <string name="dialog_ask_for_show_rd_ads">You can unlock all premium features for <b>FREE</b> for one day by watching and installing a video advertisement.</string>
+    <string name="dialog_cancel_repair_msg">Do you want to cancel the repair process?</string>
+    <string name="dialog_confirm_exit_msg">All your changes will be discarded. Do you still want to leave?</string>
+    <string name="dialog_confirm_exit_stitch_images_msg">Do you really want to exit without saving?</string>
+    <string name="dialog_delete_image_msg">Are you sure you want to delete this image?</string>
+    <string name="dialog_delete_video_msg">Are you sure you want to delete this video?</string>
+    <string name="dialog_gif_converter_msg">GIF converter is used to export recorded videos to GIF files.</string>
+    <string name="dialog_grant_popup_window_permission_msg">You need to grant <b>Pop-up window (Alert)</b>" permission to use AZ Screen Recorder.
+
+If you don't know how to grant this permission, please watch the video tutorial."</string>
+    <string name="dialog_msg_not_enough_storage">Clear your phone storage before exporting video.</string>
+    <string name="dialog_rate_btn">Rate us 5 stars</string>
+    <string name="dialog_rate_msg">"Do you like %1$s?
+We need your support!"</string>
+    <string name="dialog_repair_warning_msg">We’ll try to recover missing data from the damaged video, but the result may not be perfect.</string>
+    <string name="dialog_restricted_background_warning_message">To record reliably, allow AZ Screen Recorder to <b>run in the background</b>".
+
+Background restrictions can cause the app to close or produce incomplete videos.
+
+1. Open “App info.”
+2. Tap “Battery.”
+3. Select “Unrestricted” or “Allow in background.”"</string>
+    <string name="dialog_restricted_background_warning_title">📢 Important Notice 📢</string>
+    <string name="dialog_sdcard_warning_msg">The videos and images stored in SD card will be deleted when you uninstall %1$s.</string>
+    <string name="dialog_trash_image_msg">Are you sure you want to move this image to trash?</string>
+    <string name="dialog_trash_video_msg">Are you sure you want to move this video to trash?</string>
+    <string name="dialog_trim_cut_msg">This feature is used to trim or cut middle parts of recorded videos.</string>
+    <string name="dialog_tutorial_stitch_images_msg">"This feature will help you join multiple images into one easily.
+
+Do you want to watch tutorial on how to use it?"</string>
+    <string name="dialog_verify_account_live_stream_title">Verify account</string>
+    <string name="dialog_warning_delete_one_screenshot_msg">Are you sure you want to delete this screenshot?</string>
+    <string name="dialog_warning_for_android_51_msg">"Please do NOT select \"Don't show again\" checkbox on the next screen capture permission dialog to avoid \"System UI crashes\". This is a bug of Android 5.1.
+
+In case you already did, please try to reinstall this app."</string>
+    <string name="dialog_warning_lack_memory_available">Only %d MB available</string>
+    <string name="dialog_warning_lack_memory_external_msg">To process video you need %d MB in external storage.</string>
+    <string name="dialog_warning_lack_memory_internal_msg">To process video you need %d MB in internal storage.</string>
+    <string name="disable">Disable</string>
+    <string name="disable_other_overlay_apps">If you are unable to press the ‘Start now’ button, please disable any apps that overlay the screen (e.g., Blue Light Screen apps).</string>
+    <string name="discount_price_forever">%s - Forever</string>
+    <string name="donate_upgrade_issues">DONATE/UPGRADE QUESTIONS</string>
+    <string name="done">Done</string>
+    <string name="draw_image">Draw on image</string>
+    <string name="duration">Duration:</string>
+    <string name="dyAction.getClick">click</string>
+    <string name="dyAction.getLogicClick">click|alecfc</string>
+    <string name="dyAction.getLongClick">longclick</string>
+    <string name="dyAction.getMove">move</string>
+    <string name="dyAction.getWobble">wobble</string>
+    <string name="dyEffect.getCountDown">countdown</string>
+    <string name="dyEffect.getVisible">visible</string>
+    <string name="dyEffect.getVisibleParam">visible|parent</string>
+    <string name="dyEffect.getWobble">wobble</string>
+    <string name="dyStrategy.feedback">feedback</string>
+    <string name="dyStrategy.getActivity">activity</string>
+    <string name="dyStrategy.getClose">close</string>
+    <string name="dyStrategy.getDeeplink">deeplink</string>
+    <string name="dyStrategy.getDownload">download</string>
+    <string name="dyStrategy.notice">notice</string>
+    <string name="dyStrategy.permissionInfo">permissionInfo</string>
+    <string name="dyStrategy.privateAddress">privateAddress</string>
+    <string name="edit">Edit</string>
+    <string name="edit_audio">Edit audio</string>
+    <string name="edit_image">Edit Image</string>
+    <string name="edit_music">Edit music</string>
+    <string name="edit_video">Edit Video</string>
+    <string name="enable_countdown_timer">Countdown before start</string>
+    <string name="enable_developer_options">"If you can't find \"Developer Options\", you can see how to enable it below."</string>
+    <string name="enable_show_touches_step"><b>Step 2: Enable show touches</b>" 
+
+Scroll down the \"Developer Options\" list to find \"Show touches\" or \"Show taps\" and turn on the options."</string>
+    <string name="enjoy_az_recorder_pro">Enjoy AZ Recorder Pro</string>
+    <string name="enter_text">Enter text</string>
+    <string name="enter_text_hint">Enter text here!</string>
+    <string name="error">Error</string>
+    <string name="error_a11y_label">Error: invalid</string>
+    <string name="error_icon_content_description">Error</string>
+    <string name="error_live_yt_not_supported_browser">Please install Chrome browser</string>
+    <string name="estimated_file_size">Estimated file size: %s MB</string>
+    <string name="exclusive_offer">🎁 Exclusive Offer</string>
+    <string name="exit">Exit</string>
+    <string name="exo_controls_cc_disabled_description">Enable subtitles</string>
+    <string name="exo_controls_cc_enabled_description">Disable subtitles</string>
+    <string name="exo_controls_custom_playback_speed">%1$.2fx</string>
+    <string name="exo_controls_fastforward_description">Fast forward</string>
+    <string name="exo_controls_fullscreen_enter_description">Enter fullscreen</string>
+    <string name="exo_controls_fullscreen_exit_description">Exit fullscreen</string>
+    <string name="exo_controls_hide">Hide player controls</string>
+    <string name="exo_controls_next_description">Next</string>
+    <string name="exo_controls_overflow_hide_description">Hide additional settings</string>
+    <string name="exo_controls_overflow_show_description">Show additional settings</string>
+    <string name="exo_controls_pause_description">Pause</string>
+    <string name="exo_controls_play_description">Play</string>
+    <string name="exo_controls_playback_speed">Speed</string>
+    <string name="exo_controls_previous_description">Previous</string>
+    <string name="exo_controls_repeat_all_description">Current mode: Repeat all. Toggle repeat mode.</string>
+    <string name="exo_controls_repeat_off_description">Current mode: Repeat none. Toggle repeat mode.</string>
+    <string name="exo_controls_repeat_one_description">Current mode: Repeat one. Toggle repeat mode.</string>
+    <string name="exo_controls_rewind_description">Rewind</string>
+    <string name="exo_controls_seek_bar_description">Playback progress</string>
+    <string name="exo_controls_settings_description">Settings</string>
+    <string name="exo_controls_show">Show player controls</string>
+    <string name="exo_controls_shuffle_off_description">Enable shuffle mode</string>
+    <string name="exo_controls_shuffle_on_description">Disable shuffle mode</string>
+    <string name="exo_controls_stop_description">Stop</string>
+    <string name="exo_controls_time_placeholder">00:00:00</string>
+    <string name="exo_controls_vr_description">VR mode</string>
+    <string name="exo_download_completed">Download completed</string>
+    <string name="exo_download_description">Download</string>
+    <string name="exo_download_downloading">Downloading</string>
+    <string name="exo_download_failed">Download failed</string>
+    <string name="exo_download_notification_channel_name">Downloads</string>
+    <string name="exo_download_paused">Downloads paused</string>
+    <string name="exo_download_paused_for_network">Downloads waiting for network</string>
+    <string name="exo_download_paused_for_wifi">Downloads waiting for WiFi</string>
+    <string name="exo_download_removing">Removing downloads</string>
+    <string name="exo_item_list">%1$s, %2$s</string>
+    <string name="exo_track_bitrate">%1$.2f Mbps</string>
+    <string name="exo_track_mono">Mono</string>
+    <string name="exo_track_resolution">%1$d × %2$d</string>
+    <string name="exo_track_role_alternate">Alternate</string>
+    <string name="exo_track_role_closed_captions">CC</string>
+    <string name="exo_track_role_commentary">Commentary</string>
+    <string name="exo_track_role_supplementary">Supplementary</string>
+    <string name="exo_track_selection_auto">Auto</string>
+    <string name="exo_track_selection_none">None</string>
+    <string name="exo_track_selection_title_audio">Audio</string>
+    <string name="exo_track_selection_title_text">Text</string>
+    <string name="exo_track_selection_title_video">Video</string>
+    <string name="exo_track_stereo">Stereo</string>
+    <string name="exo_track_surround">Surround sound</string>
+    <string name="exo_track_surround_5_point_1">5.1 surround sound</string>
+    <string name="exo_track_surround_7_point_1">7.1 surround sound</string>
+    <string name="exo_track_unknown">Unknown</string>
+    <string name="expand_button_title">Advanced</string>
+    <string name="explain_permission_camera">We need camera permission to record screen with your face</string>
+    <string name="explain_permission_camera_edited">"We need camera permission to record screen with your face. Please permit the permission through Settings screen.
+
+Select Permissions -> Enable permission"</string>
+    <string name="explain_permission_contacts">We need contact access permission to verify your purchase</string>
+    <string name="explain_permission_contacts_edited">"We need contact access permission to verify your purchase. Please permit the permission through Settings screen.
+
+Select Permissions -> Enable permission"</string>
+    <string name="explain_permission_record_audio">We need audio recording permission to record your voice.</string>
+    <string name="explain_permission_record_audio_edited">"Microphone permission is needed to record audio. Press \"Allow\" and select 'Permissions -> enable Microphone'."</string>
+    <string name="explain_permission_storage">Storage access permission is needed to use some key features, such as screen recording. Please grant Storage access permission to use %1$s normally.</string>
+    <string name="explain_permission_storage_edited">"Storage permission is needed to record and capture your screen. Press \"Allow\" and select 'Permissions -> enable Storage'."</string>
+    <string name="export_video">Export</string>
+    <string name="exporting">Exporting…</string>
+    <string name="exporting_video">Exporting video</string>
+    <string name="exporting_warning">Creating your video. Please wait a moment.</string>
+    <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
+    <string name="external_sd_card_2">External SD card</string>
+    <string name="extract_frame">Extract frames</string>
+    <string name="extract_frame_at_time">Frame at:</string>
+    <string name="fab_transformation_scrim_behavior">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
+    <string name="fab_transformation_sheet_behavior">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="facebook_app_id">388461518210760</string>
+    <string name="facebook_client_token">9bd24a9e0c40a3fe28e2464aab5ef5be</string>
+    <string name="fallback_menu_item_copy_link">Copy link</string>
+    <string name="fallback_menu_item_open_in_browser">Open in browser</string>
+    <string name="fallback_menu_item_share_link">Share link</string>
+    <string name="faq">FAQ</string>
+    <string name="faq_answer_bad_quality_after_sharing">Most messaging and social apps re-encode videos to save data, which lowers the quality. To keep the original quality, send the file itself, for example through a file manager, a cloud drive, or <b>Wi-Fi transfer</b> in <b>Tools</b>.</string>
+    <string name="faq_answer_black_video">" Apps and services that protect their content, such as streaming services and banking apps, tell Android to block screen capture. The recording comes out black by design, and this cannot be bypassed. 
+
+ Some apps block capture on a single screen only, for example a payment or password screen, so only part of your video is black. 
+
+"<b>If the app you recorded does not protect its content:</b>" 
+ - Check whether the video plays on the editing page. If it does, close other apps and restart AZ Screen Recorder. 
+
+ - Lower "<b>Resolution</b> and <b>Video quality</b>" in Settings, then record again. 
+
+ - If the problem continues, restart your device. "</string>
+    <string name="faq_answer_cant_play_shared_videos"> - Some apps and older devices cannot play video recorded at a high frame rate or a high resolution. Record at a lower <b>Frame rate</b> and <b>Resolution</b>, or run the file through <b>Compress video</b> in <b>Tools</b>" before sharing. 
+
+ - If the recording was interrupted, the file may be damaged. See the question about corrupted videos. "</string>
+    <string name="faq_answer_cant_record_internal_audio">"- Internal audio needs Android 10 or later. On Android 9 and earlier the option is not shown, because the system does not offer audio capture at all. 
+
+ - Even on Android 10 and later, each app decides whether other apps may record its sound. Many streaming and music apps, and some games, opt out. When that happens the capture is silent and no screen recorder can change it. 
+
+ - Set "<b>Audio source</b> to <b>Internal audio and microphone</b>" instead. The microphone picks up what your speaker plays, so the video keeps its audio. 
+
+ - Internal audio captures media and game audio. System sounds such as notification tones, alarms and calls are not included. "</string>
+    <string name="faq_answer_cant_share_recordings">" - The file may be larger than the app you are sharing to accepts. Size limits differ for every app and platform. 
+
+ - Use "<b>Compress video</b> in <b>Tools</b>" to make the file smaller, or trim it in the video editor. 
+
+ - To send the original file at full quality, use "<b>Wi-Fi transfer</b> in <b>Tools</b> or upload it to a cloud drive. </string>
+    <string name="faq_answer_corrupted_video_repair"> If a recording was interrupted, for example by a crash or by the battery running out, the file can be left unplayable. AZ Screen Recorder marks it as <b>Corrupted video</b>" in your video list. 
+
+ - Tap the corrupted video and choose "<b>Repair</b>". 
+
+ - Repair needs a reference video: a working recording made with the same resolution, frame rate and quality settings. If you do not have one, record a short clip with the same settings first. 
+
+ - Repair recovers as much as it can. The result is not always perfect. "</string>
+    <string name="faq_answer_floating_bubble_disappear">" - The system can close the bubble when memory is low. Close apps you are not using, or restart your device. 
+
+ - Check that "<b>Display over other apps</b>" is still allowed for AZ Screen Recorder in your system settings. Some battery saving tools revoke it. 
+
+ - Open Settings and tap "<b>Avoid unexpected stop</b>" so the system does not shut the app down in the background. 
+
+ - You can always start and stop recording from the notification. "</string>
+    <string name="faq_answer_hide_floating_bubble">- Open Settings and turn on <b>Hide floating bubble during recording</b>". The bubble is hidden while you record and comes back when you stop. 
+
+ - Turn on "<b>Magic button: invisible control</b>" to keep an invisible control on screen instead. Tap it to pause or resume, long press to stop. 
+
+ - You can also start and stop recording from the notification. "</string>
+    <string name="faq_answer_is_az_recorder_safe">" Yes. What you record stays on your device. 
+
+ - Recordings and screenshots are saved to your device storage. We never upload them, and we cannot see them. 
+
+ - "<b>Auto Caption</b>" transcribes on your device. Your audio is never sent to a server. The app downloads a speech model once, and after that captions work offline. 
+
+ - Android shows a screen sharing notification for as long as recording is active, so it is always clear when the screen is being captured. "</string>
+    <string name="faq_answer_manage_subscription">" Subscriptions are handled by Google Play, not inside AZ Screen Recorder. 
+
+ - Open Google Play, tap your profile icon, then "<b>Payments and subscriptions</b> and <b>Subscriptions</b>". 
+
+ - Select AZ Screen Recorder to change or cancel your plan. 
+
+ - Cancelling stops the next renewal. Pro stays active until the end of the period you already paid for. 
+
+ - A lifetime purchase is a one time payment. It never renews and there is nothing to cancel. "</string>
+    <string name="faq_answer_pro_account_not_work">" Pro belongs to the Google account that made the purchase, not to the device. 
+
+ - Open Google Play, tap your profile icon, and check that you are signed in with the account you used to buy Pro. If several accounts are signed in, Pro is only restored for the account that paid. 
+
+ - On the upgrade screen, open the menu and tap "<b>Already upgraded?</b>" 
+
+ - If you bought a subscription, check that it is still active in Google Play under "<b>Payments and subscriptions</b>". 
+
+ - Restart your device after switching accounts. 
+
+ - If Pro is still missing, write to az.screen.recorder@gmail.com with the order number from your Google Play receipt. "</string>
+    <string name="faq_answer_record_sound_with_earphones"><b>Android 10 and later</b>" 
+ - Set "<b>Audio source</b> to <b>Internal audio</b>" to record what the device plays, including sound sent to your earphones. 
+
+ - Set "<b>Audio source</b> to <b>Internal audio and microphone</b>" to record the device audio and your own voice together. 
+
+ "<b>Android 9 and earlier</b>" 
+ - Only microphone recording is available. The microphone cannot hear audio sent to your earphones, so unplug or disconnect them if you need the device sound in the video. "</string>
+    <string name="faq_answer_record_zoom_meet"><b>Phone calls and video calls</b>" 
+ - Android gives call audio and the microphone to the calling app and blocks other apps from capturing them. No screen recorder can record a call with sound. 
+
+ "<b>Meeting apps such as Zoom or Google Meet</b>" 
+ - If you only need to watch, join with your microphone muted, set "<b>Audio source</b> to <b>Internal audio and microphone</b>", and keep the meeting on the speaker so the microphone can pick it up. 
+
+ - If the meeting app handles the session as a call, Android will still block the capture and the video will be silent. 
+
+ "<b>The reliable way</b>" 
+ - Record the meeting with a second device, or use the recording feature built into the meeting app. "</string>
+    <string name="faq_answer_recorded_videos_not_appear">" - Your recordings always appear in the AZ Screen Recorder video list right away. The system gallery can take a few minutes to index a new file. 
+
+ - Check "<b>Trash</b> if you may have deleted the video. On Android 11 and later, deleted files are kept there while <b>Use trash</b>" is on. 
+
+ - Open the folder shown under "<b>Output directory</b>" in Settings with a file manager. 
+
+ - If you changed the save location to an SD card, the videos are on the SD card and not in internal storage. 
+
+ - Long recordings are saved in parts, so look for more than one file. "</string>
+    <string name="faq_answer_recording_has_no_sound">First check that <b>Audio source</b> in Settings is not set to <b>Mute</b>". 
+
+ If a finished recording turned out silent, AZ Screen Recorder marks it in your video list. Tap the hint on that video to see what happened. 
+
+ "<b>The recorded app blocked its audio</b>" 
+ - Android lets every app decide whether other apps may capture its sound. Streaming apps, music apps and some games refuse, and the capture comes out silent. No screen recorder can override this. 
+
+ - Set "<b>Audio source</b> to <b>Internal audio and microphone</b>". The microphone still picks up the sound from your speaker, so the video keeps its audio. Turn the volume up and do not use earphones. 
+
+ "<b>You were in a call</b>" 
+ - Android reserves call audio and the microphone for the calling app, so calls cannot be recorded with sound. 
+
+ "<b>Microphone recording</b>" 
+ - Only one app can use the microphone at a time. If a game or a meeting app is holding it, your recording will be silent. 
+
+ - Make sure nothing is covering the microphone while you record. 
+
+ - Internal audio needs Android 10 or later. On Android 9 and earlier, only "<b>Microphone</b> is available. </string>
+    <string name="faq_answer_recording_orientation_not_auto_rotate">"The orientation is decided when the recording starts and stays the same for the whole video, so turning the device during a recording does not rotate the video. 
+
+ - With "<b>Orientation</b> set to <b>Auto</b>" in Settings, AZ Screen Recorder uses the orientation your device is in at the moment recording starts. Turn the device first, then start recording. 
+
+ - You can also set "<b>Orientation</b> to <b>Landscape</b> or <b>Portrait</b> in Settings to fix it yourself, whichever way the device is held. </string>
+    <string name="faq_answer_recording_stops_by_itself">Check <b>Stop options</b>" in Settings first. A recording ends on its own if any of these is turned on: 
+ - "<b>Stop when screen off</b>" 
+ - "<b>Stop when shaking device</b>" 
+ - "<b>Enable time limit</b>", which stops the recording at the limit you set 
+
+ Other causes: 
+ - You tapped "<b>Stop sharing</b>" in the screen sharing notification or dialog shown by Android. That ends the capture immediately. 
+
+ - The system stopped the app in the background. Open Settings and tap "<b>Avoid unexpected stop</b>". 
+
+ - Your device ran out of free storage. 
+
+ - The device got too hot, so the system throttled the encoder. "</string>
+    <string name="faq_answer_screen_freeze_while_recording"> - Lower <b>Resolution</b>, <b>Frame rate</b> and <b>Video quality</b>" in Settings. Recording at the maximum settings can be more than the device can encode in real time. 
+
+ - Close background apps and keep only AZ Screen Recorder and the app you want to record. 
+
+ - Turn off battery saver, which slows down the encoder. 
+
+ - If another app is holding the microphone, set "<b>Audio source</b> to <b>Internal audio</b>", or close that app. 
+
+ - If the screen stays frozen, restart your device. "</string>
+    <string name="faq_answer_single_app_recording">" Yes, on Android 14 and later. Everything outside the app you choose, including your notifications and other apps, stays out of the video. 
+
+ - Open Settings and turn on "<b>Single-app recording</b>". 
+
+ - When you start recording, pick the app in the confirmation dialog Android shows. 
+
+ - If you leave or close the app you picked, Android ends the capture and the recording stops. 
+
+ - The option is not shown on Android 13 and earlier, because the system does not support it. "</string>
+    <string name="faq_answer_start_button_does_not_respond">" - Apps that draw over the screen, such as blue light filters and brightness controls, can block the system permission dialog. Turn them off and try again. 
+
+ - Android asks you to confirm screen capture before recording. You have to tap "<b>Start now</b>. If you tap <b>Cancel</b>", recording does not start. 
+
+ - You can also start and stop recording from the notification. 
+
+ - If the button still does not respond, restart AZ Screen Recorder. "</string>
+    <string name="faq_answer_system_prompts"><b>Screen capture confirmation</b>" 
+ - Android asks you to confirm before any app may capture the screen. On Android 14 and later this confirmation is required for every single recording and screenshot, which is why you see it each time. It is a system rule and cannot be skipped or remembered. 
+
+ "<b>Recording notification</b>" 
+ - Android shows a notification for the whole time the screen is being captured. It cannot be removed while recording. 
+
+ "<b>Display over other apps</b>" 
+ - This permission is what lets the floating bubble and the recording controls appear on top of other apps. Without it the bubble cannot work. 
+
+ These prompts are normal Android privacy features. They do not send anything anywhere. "</string>
+    <string name="faq_answer_video_audio_not_sync">" - Audio and video drift apart when the device is under heavy load, for example when several apps are running while you record. 
+
+ - Close background apps, then lower "<b>Resolution</b> and <b>Frame rate</b>" in Settings and record again. 
+
+ - Choosing a frame rate higher than your screen refresh rate does not help. AZ Screen Recorder already limits recording to what your display supports. "</string>
+    <string name="faq_answer_video_divided">" Long recordings are saved in parts so that a single file never grows large enough to be rejected by the file system or by other apps. 
+
+ - A new part starts at about 10 GB when videos are saved to internal storage, and at about 3.5 GB when they are saved to an SD card. 
+
+ - Nothing is lost. The parts are recorded one after another and all of them appear in your video list. 
+
+ - You can join them again with "<b>Merge videos</b> in the video editor. </string>
+    <string name="faq_answer_video_with_odd_colors">" - This is usually a playback problem rather than a recording problem. Try the video in another player first. 
+
+ - Restart the app and play the video again. 
+
+ - Record a short test clip at a lower "<b>Resolution</b> and <b>Video quality</b>". If the test clip looks correct, keep the lower settings. 
+
+ - If the issue continues, restart your device. "</string>
+    <string name="faq_answer_why_crash_when_recording">"- Turn off battery saver or low power mode. These modes slow down the video encoder and can stop a recording. 
+
+ - Open Settings and tap "<b>Avoid unexpected stop</b>". This lets AZ Screen Recorder keep running when the system tries to restrict it in the background. 
+
+ - Lower "<b>Resolution</b>, <b>Frame rate</b> and <b>Video quality</b>" in Settings. Recording at the highest settings is more than many devices can encode in real time, and this is the most common cause of a failed recording. 
+
+ - Close apps you are not recording to free up memory, then start again. 
+
+ - If another app is holding the microphone, recording can fail to start. Close that app, or set "<b>Audio source</b> to <b>Internal audio</b>". 
+
+ - Open the screen you want to capture first, then start recording. 
+
+ - If none of this helps, restart your device and try again. "</string>
+    <string name="faq_question_bad_quality_after_sharing">Why does the video quality drop after sharing?</string>
+    <string name="faq_question_black_video">Why is my video black?</string>
+    <string name="faq_question_cant_play_shared_videos">My shared video will not play</string>
+    <string name="faq_question_cant_record_internal_audio">Why am I unable to record internal audio?</string>
+    <string name="faq_question_cant_share_recordings">Why am I unable to share my recordings?</string>
+    <string name="faq_question_corrupted_video_repair">My video is corrupted and will not play</string>
+    <string name="faq_question_floating_bubble_disappear">Why does the floating button disappear?</string>
+    <string name="faq_question_hide_floating_bubble">How do I hide the floating record button?</string>
+    <string name="faq_question_is_az_recorder_safe">Is AZ Screen Recorder safe to use?</string>
+    <string name="faq_question_manage_subscription">How do I manage or cancel my subscription?</string>
+    <string name="faq_question_pro_account_not_work">Why is my Pro account not working?</string>
+    <string name="faq_question_record_sound_with_earphones">How do I record sound while using earphones?</string>
+    <string name="faq_question_record_zoom_meet">Can I record calls, Zoom or Google Meet with sound?</string>
+    <string name="faq_question_recorded_videos_not_appear">Why are my recordings not appearing?</string>
+    <string name="faq_question_recording_has_no_sound">Why is there no sound in my recording?</string>
+    <string name="faq_question_recording_orientation_not_auto_rotate">The recording does not rotate when I turn my device</string>
+    <string name="faq_question_recording_stops_by_itself">Why does my recording stop by itself?</string>
+    <string name="faq_question_screen_freeze_while_recording">Why does my screen freeze while recording?</string>
+    <string name="faq_question_single_app_recording">Can I record just one app instead of the whole screen?</string>
+    <string name="faq_question_start_button_does_not_respond">The Start button does not respond</string>
+    <string name="faq_question_system_prompts">Why does the system keep showing permission prompts?</string>
+    <string name="faq_question_video_audio_not_sync">Audio and video are out of sync</string>
+    <string name="faq_question_video_divided">Why is my recorded video split into parts?</string>
+    <string name="faq_question_video_with_odd_colors">My video shows odd colors (green, purple, etc.)</string>
+    <string name="faq_question_why_crash_when_recording">What causes AZ Screen Recorder to crash while recording?</string>
+    <string name="fb_login_protocol_scheme">fb388461518210760</string>
+    <string name="feature_information">Feature information</string>
+    <string name="feedback">Feedback</string>
+    <string name="feedback_and_suggestion">Feedback &amp; Suggestion</string>
+    <string name="feedback_and_suggestion_hint">"For better troubleshooting insights, please utilize the following feedback template: 
+
+- Specify the functions or steps involved when the issue occurred. 
+- Share additional screenshots of the problem as you encounter it."</string>
+    <string name="feedback_hint">Bug report or suggestion</string>
+    <string name="feedback_premium_issue_email_subject">Problem with premium purchase</string>
+    <string name="feedback_premium_issue_hint">Let us know if you have any problems with premium purchase</string>
+    <string name="feedback_premium_issue_title">Premium issue</string>
+    <string name="feedback_rate_hint">We welcome any feedback</string>
+    <string name="file_info">File information</string>
+    <string name="file_recovery">File Recovery</string>
+    <string name="file_size">File size: %s MB</string>
+    <string name="firebase_database_url">https://az-screen-recorder-f680b.firebaseio.com</string>
+    <string name="fit">Fit</string>
+    <string name="floating_button">Floating Button</string>
+    <string name="follow_steps_show_touches">The steps are as follows:</string>
+    <string name="font">Font</string>
+    <string name="frame_rate">Fps</string>
+    <string name="frame_rate_2">Frame rate</string>
+    <string name="frame_rate_warning">Higher frame rate makes videos smoother but uses more CPU</string>
+    <string name="free">FREE</string>
+    <string name="free_crop">Free</string>
+    <string name="free_to_unlock">Watch ads to unlock</string>
+    <string name="gcm_defaultSenderId">544061412085</string>
+    <string name="get_free_trial">GET FREE TRIAL</string>
+    <string name="get_pro_forever">Get Pro Forever</string>
+    <string name="gif">Gif</string>
+    <string name="gif_exporter">GIF exporter</string>
+    <string name="good">Good</string>
+    <string name="google_api_key">AIzaSyD-HpVEl6rDpvIxkkh-xOrbw4FjyRl_nQo</string>
+    <string name="google_app_id">1:544061412085:android:5c1debf8e4479dd9</string>
+    <string name="google_crash_reporting_api_key">AIzaSyD-HpVEl6rDpvIxkkh-xOrbw4FjyRl_nQo</string>
+    <string name="google_storage_bucket">az-screen-recorder-f680b.appspot.com</string>
+    <string name="grant_permission">Grant permission</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="help_center">Help Center</string>
+    <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="hide_floating_during_recording">Hide floating bubble during recording</string>
+    <string name="hide_popup">Hide popup window</string>
+    <string name="hide_popup_after_screenshot">Hide popup window after taking screenshot</string>
+    <string name="hide_popup_window_after_recording">Hide popup window after recording video</string>
+    <string name="high">High</string>
+    <string name="highest_quality">High quality: 2K resolution, 120 FPS</string>
+    <string name="hint_got_it">Got it!</string>
+    <string name="hint_magic_button">"Here is the magic button.
+
+During recording, it will be invisible. Tap to pause/resume, long press to stop recording."</string>
+    <string name="hint_start_recording">Touch to start recording</string>
+    <string name="horrible">Horrible!!!</string>
+    <string name="how_do_you_rate_app">How do you rate your experience with %1$s?</string>
+    <string name="how_to_enable_developer_options">"1. Find “Build number,” usually under Settings › About phone › Build number.
+
+2. Tap “Build number” 5–7 times until your device confirms that developer mode is enabled."</string>
+    <string name="how_to_get_5_stars">How can we get a 5-star rating?</string>
+    <string name="icon_auth">Icon made by Icon Pond, Freepik from www.flaticon.com</string>
+    <string name="icon_content_description">Dialog Icon</string>
+    <string name="ignore_warning">Ignore warning</string>
+    <string name="image">Image</string>
+    <string name="in_weekly_price"> ≈ %1$s%2$s</string>
+    <string name="install">Install</string>
+    <string name="internal_audio_and_microphone">Internal audio and microphone</string>
+    <string name="internal_audio_android_10">Internal audio</string>
+    <string name="internal_audio_warning_message">Internal Audio only works if the Other Apps/Games allow their audio to be recorded. So if you find that your videos have no sound, please ask the owners of the Other Apps/Games to authorize audio recording.</string>
+    <string name="internal_audio_warning_title">Internal Audio Warning</string>
+    <string name="internal_storage">Internal storage</string>
+    <string name="internal_storage_w_duration">Internal storage (%1$s can be recorded)</string>
+    <string name="item_view_role_description">Tab</string>
+    <string name="join_az_recorder_community">Join %s Community</string>
+    <string name="join_community">Join community</string>
+    <string name="label_new">New</string>
+    <string name="landscape">Landscape</string>
+    <string name="language">Language</string>
+    <string name="later">Later</string>
+    <string name="lifetime">Lifetime</string>
+    <string name="lifetime_access">Lifetime Access</string>
+    <string name="limited_time_offer">🔥 LIMITED TIME OFFER</string>
+    <string name="line">Line</string>
+    <string name="live">Live</string>
+    <string name="live_authorization_failed">Authorization failed</string>
+    <string name="live_authorization_successful">Authorization successful</string>
+    <string name="live_connection_failed">Connection failed!</string>
+    <string name="live_friends">Friends</string>
+    <string name="live_friends_of_friends">Friends of friends</string>
+    <string name="live_only_me">Only me</string>
+    <string name="live_public">Public</string>
+    <string name="live_resolution">Stream resolution</string>
+    <string name="live_share_link">Share link to…</string>
+    <string name="live_share_subject">Live stream with AZ Screen Recorder</string>
+    <string name="live_stream">Live Stream</string>
+    <string name="live_streaming">Live streaming</string>
+    <string name="live_to">Broadcast to</string>
+    <string name="logo">LOGO</string>
+    <string name="loop_music">Loop music</string>
+    <string name="low">Low</string>
+    <string name="m3_exceed_max_badge_text_suffix">%1$s%2$s</string>
+    <string name="m3_loading_indicator_content_description">Loading</string>
+    <string name="m3_overflow_linear_layout_button_content_description">Overflow menu</string>
+    <string name="m3_overflow_linear_layout_button_tooltip_text">More options</string>
+    <string name="m3_ref_typeface_brand_medium">sans-serif-medium</string>
+    <string name="m3_ref_typeface_brand_regular">sans-serif</string>
+    <string name="m3_ref_typeface_plain_medium">sans-serif-medium</string>
+    <string name="m3_ref_typeface_plain_regular">sans-serif</string>
+    <string name="m3_sys_motion_easing_emphasized">path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)</string>
+    <string name="m3_sys_motion_easing_emphasized_path_data">M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1</string>
+    <string name="m3_sys_motion_easing_legacy_accelerate">cubic-bezier(0.4, 0, 1, 1)</string>
+    <string name="m3_sys_motion_easing_legacy_decelerate">cubic-bezier(0, 0, 0.2, 1)</string>
+    <string name="m3_sys_motion_easing_linear">cubic-bezier(0, 0, 1, 1)</string>
+    <string name="m3_sys_motion_easing_standard">cubic-bezier(0.2, 0, 0, 1)</string>
+    <string name="magic_button">Magic button</string>
+    <string name="magic_button_invisible_control">Magic button: invisible control</string>
+    <string name="magic_button_position">Magic button position</string>
+    <string name="magic_button_summary">Pause, resume, or stop recording without leaving visible controls in the exported video.</string>
+    <string name="magic_button_summary_ticked">Single tap to pause/resume recording, long press to stop</string>
+    <string name="material_clock_display_divider">:</string>
+    <string name="material_clock_toggle_content_description">Select AM or PM</string>
+    <string name="material_hour_24h_suffix">%1$s hours</string>
+    <string name="material_hour_selection">Select hour</string>
+    <string name="material_hour_suffix">"%1$s o'clock"</string>
+    <string name="material_minute_selection">Select minutes</string>
+    <string name="material_minute_suffix">%1$s minutes</string>
+    <string name="material_motion_easing_accelerated">cubic-bezier(0.4, 0.0, 1.0, 1.0)</string>
+    <string name="material_motion_easing_decelerated">cubic-bezier(0.0, 0.0, 0.2, 1.0)</string>
+    <string name="material_motion_easing_emphasized">path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)</string>
+    <string name="material_motion_easing_linear">cubic-bezier(0.0, 0.0, 1.0, 1.0)</string>
+    <string name="material_motion_easing_standard">cubic-bezier(0.4, 0.0, 0.2, 1.0)</string>
+    <string name="material_slider_range_end">Range end</string>
+    <string name="material_slider_range_start">Range start</string>
+    <string name="material_slider_value">Value</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">Switch to clock mode for the time input.</string>
+    <string name="material_timepicker_clock_mode_tooltip">Switch to clock mode</string>
+    <string name="material_timepicker_hour">Hour</string>
+    <string name="material_timepicker_hour_error">Hour must be 1–12</string>
+    <string name="material_timepicker_hour_error_24h">Hour must be 0–23</string>
+    <string name="material_timepicker_minute">Minute</string>
+    <string name="material_timepicker_minute_error">Minute must be 0–59</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">Select time</string>
+    <string name="material_timepicker_text_input_mode_description">Switch to text input mode for the time input.</string>
+    <string name="material_timepicker_text_input_mode_tooltip">Switch to text input mode</string>
+    <string name="max_percent">100%</string>
+    <string name="mbridge_cm_feedback_btn_text">feedback</string>
+    <string name="mbridge_cm_feedback_dialog_close_close">Close</string>
+    <string name="mbridge_cm_feedback_dialog_close_submit">Submit</string>
+    <string name="mbridge_cm_feedback_dialog_content_fraud">Fraud</string>
+    <string name="mbridge_cm_feedback_dialog_content_misleading">Misleading</string>
+    <string name="mbridge_cm_feedback_dialog_content_not_play">Not playing</string>
+    <string name="mbridge_cm_feedback_dialog_content_other">Other issues</string>
+    <string name="mbridge_cm_feedback_dialog_content_por_violence">Pornography &amp; Violence</string>
+    <string name="mbridge_cm_feedback_dialog_content_sound_problems">Sound problems</string>
+    <string name="mbridge_cm_feedback_dialog_privacy_des">Mintegral Privacy Policy</string>
+    <string name="mbridge_cm_feedback_dialog_submit_notice">Thanks for your feedback</string>
+    <string name="mbridge_cm_feedback_dialog_title">Report Ads</string>
+    <string name="mbridge_download_notify_cancel">取消</string>
+    <string name="mbridge_download_notify_continue">继续</string>
+    <string name="mbridge_download_notify_download_failed">下载失败</string>
+    <string name="mbridge_download_notify_download_finish_to_install">下载完成，点击安装</string>
+    <string name="mbridge_download_notify_download_interrupt">下载失败，请检查网络</string>
+    <string name="mbridge_download_notify_downloading">下载中</string>
+    <string name="mbridge_download_notify_ins">安装</string>
+    <string name="mbridge_download_notify_ins_progress_des">下载完成</string>
+    <string name="mbridge_download_notify_network_error">网络异常</string>
+    <string name="mbridge_download_notify_open">打开</string>
+    <string name="mbridge_download_notify_open_progress_des">安装完成</string>
+    <string name="mbridge_download_notify_pause">暂停</string>
+    <string name="mbridge_download_notify_prefix_download">下载：</string>
+    <string name="mbridge_download_notify_prefix_pause">暂停:</string>
+    <string name="mbridge_download_notify_start_download">开始下载</string>
+    <string name="mbridge_download_notify_update_finish_to_install">更新完成，点击安装</string>
+    <string name="mbridge_download_notify_update_package">正在更新安装包</string>
+    <string name="mbridge_reward_appdesc">app desc</string>
+    <string name="mbridge_reward_apptitle">app title</string>
+    <string name="mbridge_reward_clickable_cta_btntext">Play Game</string>
+    <string name="mbridge_reward_dialog_close">Close it</string>
+    <string name="mbridge_reward_dialog_content">You will not be rewarded after closing the window</string>
+    <string name="mbridge_reward_dialog_continue">Continue</string>
+    <string name="mbridge_reward_dialog_title">Confirm to close?</string>
+    <string name="mbridge_reward_endcard_ad">AD</string>
+    <string name="mbridge_reward_endcard_vast_notice">Do you want to learn more?</string>
+    <string name="mbridge_reward_heat_count_unit">w</string>
+    <string name="mbridge_reward_install">Install Now</string>
+    <string name="mbridge_reward_video_view_reward_time_complete">you have been rewarded</string>
+    <string name="mbridge_reward_video_view_reward_time_left">s left to be rewarded</string>
+    <string name="mbridge_reward_video_view_reward_time_left_skip_time">s left to skip</string>
+    <string name="mbridge_reward_viewed_text_str">Viewed</string>
+    <string name="mbridge_splash_count_time_can_skip">SKIP</string>
+    <string name="mbridge_splash_count_time_can_skip_not">Auto close after</string>
+    <string name="mbridge_splash_count_time_can_skip_s">s</string>
+    <string name="medium">Medium</string>
+    <string name="merge_videos">Merge videos</string>
+    <string name="message_get_rating_bottom">Please consider rating us!</string>
+    <string name="message_get_rating_top">We work tirelessly to enhance your experience with %s.</string>
+    <string name="messenger_send_button_text">Send</string>
+    <string name="mic">Mic</string>
+    <string name="microphone">Microphone</string>
+    <string name="microphone_occupied_below_10">Another app is using the microphone. Close it and try again.</string>
+    <string name="microphone_occupied_from_10">Another app is using the microphone. The recording will be muted.</string>
+    <string name="microphone_unavailable">Microphone is unavailable</string>
+    <string name="migrate_files_android11">Updating AZ Recorder…</string>
+    <string name="monthly">Monthly</string>
+    <string name="more_apps">More Apps</string>
+    <string name="more_features">More features coming soon</string>
+    <string name="move_to_trash">Move to trash</string>
+    <string name="mtrl_badge_numberless_content_description">New notification</string>
+    <string name="mtrl_button_collapsed_content_description">Collapsed</string>
+    <string name="mtrl_button_expanded_content_description">Expanded</string>
+    <string name="mtrl_button_overflow_icon_content_description">Overflow menu</string>
+    <string name="mtrl_button_snackbar_close_content_description">Close</string>
+    <string name="mtrl_checkbox_button_icon_path_checked">M14,18.2 11.4,15.6 10,17 14,21 22,13 20.6,11.6z</string>
+    <string name="mtrl_checkbox_button_icon_path_group_name">icon</string>
+    <string name="mtrl_checkbox_button_icon_path_indeterminate">M13.4,15 11,15 11,17 13.4,17 21,17 21,15z</string>
+    <string name="mtrl_checkbox_button_icon_path_name">icon path</string>
+    <string name="mtrl_checkbox_button_path_checked">M23,7H9C7.9,7,7,7.9,7,9v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V9C25,7.9,24.1,7,23,7z</string>
+    <string name="mtrl_checkbox_button_path_group_name">button</string>
+    <string name="mtrl_checkbox_button_path_name">button path</string>
+    <string name="mtrl_checkbox_button_path_unchecked">M23,7H9C7.9,7,7,7.9,7,9v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V9C25,7.9,24.1,7,23,7z M23,23H9V9h14V23z</string>
+    <string name="mtrl_checkbox_state_description_checked">Checked</string>
+    <string name="mtrl_checkbox_state_description_indeterminate">Partially checked</string>
+    <string name="mtrl_checkbox_state_description_unchecked">Not checked</string>
+    <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">More than %1$d new notifications</string>
+    <string name="mtrl_exceed_max_badge_number_suffix">%1$d%2$s</string>
+    <string name="mtrl_picker_a11y_next_month">Change to next month</string>
+    <string name="mtrl_picker_a11y_prev_month">Change to previous month</string>
+    <string name="mtrl_picker_announce_current_range_selection">Start date selection: %1$s – End date selection: %2$s</string>
+    <string name="mtrl_picker_announce_current_selection">Current selection: %1$s</string>
+    <string name="mtrl_picker_announce_current_selection_none">none</string>
+    <string name="mtrl_picker_cancel">Cancel</string>
+    <string name="mtrl_picker_confirm">OK</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Select Date</string>
+    <string name="mtrl_picker_date_header_unselected">Selected date</string>
+    <string name="mtrl_picker_day_of_week_column_header">%1$s</string>
+    <string name="mtrl_picker_end_date_description">End date %1$s</string>
+    <string name="mtrl_picker_invalid_format">Invalid format.</string>
+    <string name="mtrl_picker_invalid_format_example">Example: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Use: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Invalid range.</string>
+    <string name="mtrl_picker_navigate_to_current_year_description">Navigate to current year %1$d</string>
+    <string name="mtrl_picker_navigate_to_year_description">Navigate to year %1$d</string>
+    <string name="mtrl_picker_next_month_tooltip">Next month</string>
+    <string name="mtrl_picker_out_of_range">Out of range: %1$s</string>
+    <string name="mtrl_picker_pane_title_calendar_view">Calendar view</string>
+    <string name="mtrl_picker_pane_title_year_view">Year view</string>
+    <string name="mtrl_picker_prev_month_tooltip">Previous month</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Start date – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – End date</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">Select Range</string>
+    <string name="mtrl_picker_range_header_unselected">Start date – End date</string>
+    <string name="mtrl_picker_save">Save</string>
+    <string name="mtrl_picker_start_date_description">Start date %1$s</string>
+    <string name="mtrl_picker_text_input_date_hint">Date</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">End date</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Start date</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">y</string>
+    <string name="mtrl_picker_today_description">Today %1$s</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Switch to calendar input mode</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode_tooltip">Switch to calendar</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Switch to Calendar view</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Switch to text input mode</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode_tooltip">Switch to text input</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Switch to year view</string>
+    <string name="mtrl_switch_thumb_group_name">circle_group</string>
+    <string name="mtrl_switch_thumb_path_checked">M4,16 A12,12 0 0,1 16,4 H16 A12,12 0 0,1 16,28 H16 A12,12 0 0,1 4,16</string>
+    <string name="mtrl_switch_thumb_path_morphing">M0,16 A11,11 0 0,1 11,5 H21 A11,11 0 0,1 21,27 H11 A11,11 0 0,1 0,16</string>
+    <string name="mtrl_switch_thumb_path_name">circle</string>
+    <string name="mtrl_switch_thumb_path_pressed">M2,16 A14,14 0 0,1 16,2 H16 A14,14 0 0,1 16,30 H16 A14,14 0 0,1 2,16</string>
+    <string name="mtrl_switch_thumb_path_unchecked">M8,16 A8,8 0 0,1 16,8 H16 A8,8 0 0,1 16,24 H16 A8,8 0 0,1 8,16</string>
+    <string name="mtrl_switch_track_decoration_path">M1,16 A15,15 0 0,1 16,1 H36 A15,15 0 0,1 36,31 H16 A15,15 0 0,1 1,16</string>
+    <string name="mtrl_switch_track_path">M0,16 A16,16 0 0,1 16,0 H36 A16,16 0 0,1 36,32 H16 A16,16 0 0,1 0,16</string>
+    <string name="mtrl_timepicker_cancel">Cancel</string>
+    <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="music">Music</string>
+    <string name="mute">Mute</string>
+    <string name="name_toast_will_not_record_audio">The recorded video will have no audio.</string>
+    <string name="native_body">Body</string>
+    <string name="native_headline">Headline</string>
+    <string name="native_media_view">Media View</string>
+    <string name="nav_app_bar_navigate_up_description">Navigate up</string>
+    <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
+    <string name="nav_rail_collapsed_a11y_label">Collapsed</string>
+    <string name="nav_rail_expanded_a11y_label">Expanded</string>
+    <string name="need_feedback">We are in need of your feedback to improve.</string>
+    <string name="need_improvement">Needs improvement</string>
+    <string name="new_color">New color</string>
+    <string name="no">No</string>
+    <string name="no_ads">No ads</string>
+    <string name="no_audio">No Audio</string>
+    <string name="no_countdown">No countdown</string>
+    <string name="no_image">No image</string>
+    <string name="no_internet">"Can't load online audio, please check your internet connection and try again."</string>
+    <string name="no_payment_now">No payment now</string>
+    <string name="no_rotate">No rotate</string>
+    <string name="no_screenshot_captured_msg">No screenshot has been captured</string>
+    <string name="no_sound">No sound</string>
+    <string name="no_sound_call_dialog_message">Android blocks call sound and gives the microphone to the calling app, so no screen recorder can record calls. To capture a meeting, record it with another device.</string>
+    <string name="no_sound_call_dialog_title">Calls cannot be recorded</string>
+    <string name="no_sound_dialog_title">Why does this video have no sound?</string>
+    <string name="no_sound_hint">No sound? Tap to see why</string>
+    <string name="no_sound_hint_call">Call audio missing? Tap to see why</string>
+    <string name="no_sound_reason_app_desc">Streaming, banking and many game apps protect their sound. Android enforces this, so no screen recorder can capture it.</string>
+    <string name="no_sound_reason_app_title">The recorded app blocks audio capture</string>
+    <string name="no_sound_switched_toast">Audio source changed to Internal audio and microphone</string>
+    <string name="no_sound_tip_desc">The microphone also picks up sound from your speaker, so videos keep their audio even when an app blocks capture.</string>
+    <string name="no_sound_tip_title">Tip: use Internal audio and microphone</string>
+    <string name="no_space_warning">Less than 100 MB of storage remains. Free up space before recording.</string>
+    <string name="no_subscription">No subscription</string>
+    <string name="no_video">No Video</string>
+    <string name="no_video_recorded_msg">No video has been recorded</string>
+    <string name="no_watermark">No watermark</string>
+    <string name="no_wifi">No Wifi</string>
+    <string name="not_ask_again">"Don't ask again"</string>
+    <string name="not_enough_space">Not Enough Storage</string>
+    <string name="not_set">Not set</string>
+    <string name="not_show_again">"Don't show again"</string>
+    <string name="notification">notification</string>
+    <string name="notification_channel_saved">Saved recordings</string>
+    <string name="notification_guide">You can also use the notification panel to control recording</string>
+    <string name="notification_idle_content">Tap here to start recording</string>
+    <string name="notification_idle_title">Recorder is ready</string>
+    <string name="notification_pausing_content">Tap here to resume recording</string>
+    <string name="notification_pausing_title">Recording paused</string>
+    <string name="notification_recording_content">Tap here to stop recording</string>
+    <string name="notification_recording_title">Recording in progress</string>
+    <string name="notification_saved_tap_to_view">Tap to view</string>
+    <string name="notifications_permission_confirm">Allow</string>
+    <string name="notifications_permission_decline">"Don't allow"</string>
+    <string name="notifications_permission_title">Allow app to send you notifications?</string>
+    <string name="off">OFF</string>
+    <string name="offer_ends_in">⏰ Offer ends in:</string>
+    <string name="offline_dialog_image_description">Icon</string>
+    <string name="offline_dialog_text">"Thanks for your interest.
+We will share more once you're back online."</string>
+    <string name="offline_notification_title">"You are back online! Let's pick up where we left off"</string>
+    <string name="offline_notification_title_with_advertiser">You are back online! Continue learning about %s</string>
+    <string name="offline_opt_in_confirm">OK</string>
+    <string name="offline_opt_in_decline">No thanks</string>
+    <string name="offline_opt_in_message">"We'll send you a notification with a link to the advertiser site."</string>
+    <string name="offline_opt_in_title">"Open ad when you're back online."</string>
+    <string name="ok">OK</string>
+    <string name="ok_understand">OK, I understand</string>
+    <string name="old_color">Old color</string>
+    <string name="on_device_audio">On Device</string>
+    <string name="on_sale">On sale</string>
+    <string name="one_time_payment">One-time payment</string>
+    <string name="online_audio">Online Audio</string>
+    <string name="only_with">Only With</string>
+    <string name="opacity">Opacity</string>
+    <string name="open_app_info">Open app info</string>
+    <string name="open_developer_options_step"><b>Step 1: Enable &amp; open \"Developer Options\" in Settings</b>" 
+
+Find \"Developer Options\" on \"Settings\" page or \"Additional Settings\" page of your phone."</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="or">or</string>
+    <string name="orientation">Orientation</string>
+    <string name="original_audio">Original audio</string>
+    <string name="other_faqs">OTHER FAQ</string>
+    <string name="others">OTHERS</string>
+    <string name="others_lowercase">Others</string>
+    <string name="output_directory">Output directory</string>
+    <string name="output_settings">Settings</string>
+    <string name="password_toggle_content_description">Show password</string>
+    <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
+    <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
+    <string name="pause">Pause</string>
+    <string name="per_lifetime">/lifetime</string>
+    <string name="per_month">/month</string>
+    <string name="per_quarter">/quarter</string>
+    <string name="per_week">/week</string>
+    <string name="per_year">/year</string>
+    <string name="percent">%d%%</string>
+    <string name="permission_cast_denied">Screen-capture permission is required.</string>
+    <string name="permission_required">Permission required</string>
+    <string name="pick_image_intent_chooser_title">Select source</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="play_pause">Play/Pause</string>
+    <string name="please_give_us_feedback">%1$s We appreciate your feedback to help us improve this app.</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="portrait">Portrait</string>
+    <string name="pref_ads_view">prefAdsView</string>
+    <string name="pref_all_inapp_products">all_inapp_products</string>
+    <string name="pref_all_subs_products">all_subs_products</string>
+    <string name="pref_anchor_product">anchor_product</string>
+    <string name="pref_app_version_code">prefAppVersionCode</string>
+    <string name="pref_audio_record_enable">prefAudioRecordEnable</string>
+    <string name="pref_audio_source">prefAudioSource</string>
+    <string name="pref_auth_state">AUTH_STATE</string>
+    <string name="pref_avoid_unexpected_stop">prefAvoidUnexpectedStop</string>
+    <string name="pref_bitrate">PrefBitrate</string>
+    <string name="pref_bought_products">bought_products</string>
+    <string name="pref_cam_size">camera_size</string>
+    <string name="pref_category_others">pref_category_others</string>
+    <string name="pref_category_recording_controls">prefCategoryRecordingControl</string>
+    <string name="pref_category_stability">pref_category_stability</string>
+    <string name="pref_category_toolbox">prefCategoryToolbox</string>
+    <string name="pref_category_video">prefCategoryVideo</string>
+    <string name="pref_category_view">prefCategoryView</string>
+    <string name="pref_clicked_ok_ask_for_review">clicked_ok_ask_for_rate_dialog</string>
+    <string name="pref_countdown">prefCountdownTimerValue</string>
+    <string name="pref_current_promo_duration">current_promo_duration</string>
+    <string name="pref_current_promo_product">current_promo_product</string>
+    <string name="pref_current_promo_start_time">current_promo_start_time</string>
+    <string name="pref_current_survey_url">current_survey_url</string>
+    <string name="pref_current_survey_view_times">current_survey_view_times</string>
+    <string name="pref_default_bitrate">0</string>
+    <string name="pref_default_folder_image">default_folder_image</string>
+    <string name="pref_display_language">prefDisplayLanguage</string>
+    <string name="pref_dont_show_repair_warning_dialog">dont_show_repair_warning_dialog</string>
+    <string name="pref_drawing_color">prefDrawingColor</string>
+    <string name="pref_drawing_size">prefDrawingSize</string>
+    <string name="pref_enable_countdown_timer">prefEnableCountdownTimerStartRecording</string>
+    <string name="pref_enable_logo">prefEnableLogo</string>
+    <string name="pref_enable_single_app">prefEnableSingleApp</string>
+    <string name="pref_enable_watermark">prefEnableWatermark</string>
+    <string name="pref_expired_promo_products">expired_promo_products</string>
+    <string name="pref_first_launch_time">pref_first_launch_time</string>
+    <string name="pref_frame_rate">prefFramerate</string>
+    <string name="pref_gif_fps">prefGifFps</string>
+    <string name="pref_gif_size">prefGifSize</string>
+    <string name="pref_has_reported_draw_over_apps_permission">pref_has_reported_draw_over_apps_permission</string>
+    <string name="pref_has_shown_battery_prompt">pref_has_shown_battery_prompt</string>
+    <string name="pref_has_shown_promo_dialog">pref_has_shown_promo_dialog</string>
+    <string name="pref_hide_record_window">prefHideRecordWindow</string>
+    <string name="pref_hide_saved_window_after_recording">hide_video_saved_window</string>
+    <string name="pref_hide_screenshot_saved_window">disable_review_popup</string>
+    <string name="pref_internal_app_rating">internal_app_rating</string>
+    <string name="pref_last_bubble_height">last_height_bubble</string>
+    <string name="pref_last_bubble_side">last_bubble_in_left_side</string>
+    <string name="pref_last_live_bubble_height">last_live_bubble_height</string>
+    <string name="pref_last_live_bubble_side">last_live_bubble_side</string>
+    <string name="pref_live_category_twitch_key">live_stream_category_twitch_key</string>
+    <string name="pref_live_comment_enabled">live_comment_enabled</string>
+    <string name="pref_live_facebook_destination">fb_live_destination</string>
+    <string name="pref_live_facebook_title">fb_live_title</string>
+    <string name="pref_live_fb_encode_param">live_fb_encode_param</string>
+    <string name="pref_live_resolution_twitch_key">live_resolution_twitch_key</string>
+    <string name="pref_live_share_link_twitch_key">live_share_twitch_key</string>
+    <string name="pref_live_stream">prefLiveStream</string>
+    <string name="pref_live_token_id_twitch_key">live_token_id_twitch_key</string>
+    <string name="pref_live_twitch_title">liveTwitchTitle</string>
+    <string name="pref_live_youtube_description">liveYoutubeDescription</string>
+    <string name="pref_live_youtube_privacy_status">liveYoutubePrivacyStatus</string>
+    <string name="pref_live_youtube_title">liveYoutubeTitle</string>
+    <string name="pref_live_yt_encode_param">live_yt_encode_param</string>
+    <string name="pref_logo_image_path">prefLogoImagePath</string>
+    <string name="pref_logo_pos_x">prefLogoPosX</string>
+    <string name="pref_logo_pos_y">prefLogoPosY</string>
+    <string name="pref_logo_size">prefLogoSize</string>
+    <string name="pref_logo_url">prefLogoUrl</string>
+    <string name="pref_magic_button_position">prefMagicButtonPosition</string>
+    <string name="pref_need_to_show_tutorial">need_to_show_tutorial</string>
+    <string name="pref_never_show_account_permission_dialog">never_show_account_pd</string>
+    <string name="pref_never_show_camera_permission_dialog">never_show_camera_pd</string>
+    <string name="pref_never_show_microphone_permission_dialog">never_show_microphone_pd</string>
+    <string name="pref_never_show_storage_permission_dialog">never_show_write_external_pd</string>
+    <string name="pref_new_session">new_session_twitch_key</string>
+    <string name="pref_not_again_ask_overlay_permission">not_again_ask_overlay_permission</string>
+    <string name="pref_number_of_recordings">pref_number_of_recordings</string>
+    <string name="pref_orientation">PrefOrientation</string>
+    <string name="pref_output_directory">prefOutputDirectory</string>
+    <string name="pref_overlay_warning_not_again">preOverlayWarningNotAgain</string>
+    <string name="pref_recording_mode">prefRecordingMode</string>
+    <string name="pref_resolution">PrefResolution</string>
+    <string name="pref_screen_root">prefScreenRoot</string>
+    <string name="pref_screen_watermark_logo">prefPreferenceScreenWatermarkLogo</string>
+    <string name="pref_show_camera">prefShowFacecam</string>
+    <string name="pref_show_change_log">prefShowChangeLog</string>
+    <string name="pref_show_confirm_exit_editor">show_confirm_exit_editor</string>
+    <string name="pref_show_dialog_review">prefShowedDialogReview</string>
+    <string name="pref_show_screendraw">prefShowScreendraw</string>
+    <string name="pref_show_screenshot">prefShowScreenshot</string>
+    <string name="pref_show_stitch_img_tutorial">show_stitch_tutorial</string>
+    <string name="pref_show_stop_options">prefPreferenceScreenStopOptions</string>
+    <string name="pref_show_touches">prefShowTouches</string>
+    <string name="pref_show_warning_for_5_1">prefShowWarningFor51</string>
+    <string name="pref_shown_products">shown_products</string>
+    <string name="pref_silent_flagged_videos">pref_silent_flagged_videos</string>
+    <string name="pref_stop_on_screen_off">prefStopOnScreenOff</string>
+    <string name="pref_stop_on_shake">prefStopOnShake</string>
+    <string name="pref_stop_on_time_limit">prefTimeLimitEnable</string>
+    <string name="pref_time_limit_value">TimeLimit</string>
+    <string name="pref_trash_folder">pref_trash_folder</string>
+    <string name="pref_use_internal_storage">prefOutputDirInternal</string>
+    <string name="pref_use_magic_button">prefUseMagicButton</string>
+    <string name="pref_use_trash">pref_use_trash</string>
+    <string name="pref_uuid">PrefUUID</string>
+    <string name="pref_vip">pref_vip2</string>
+    <string name="pref_was_recording">pref_was_recording</string>
+    <string name="pref_watermark_bg_color">prefWatermarkBgColor</string>
+    <string name="pref_watermark_font">prefWatermarkFont</string>
+    <string name="pref_watermark_font_name">prefWatermarkFontName</string>
+    <string name="pref_watermark_pos_x">prefWatermarkPosX</string>
+    <string name="pref_watermark_pos_y">prefWatermarkPosY</string>
+    <string name="pref_watermark_text">prefWatermarkText</string>
+    <string name="pref_watermark_text_color">prefWatermarkTextColor</string>
+    <string name="pref_watermark_text_size">prefWatermarkTextSize</string>
+    <string name="preference_copied">\"%1$s\" copied to clipboard.</string>
+    <string name="prefix_pref_shared_packages">shared_packages_</string>
+    <string name="preparing_images">Preparing images…</string>
+    <string name="privacy">Privacy</string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
+    <string name="privacy_policy_without_link"><u>Privacy Policy</u></string>
+    <string name="pro">Pro</string>
+    <string name="pro_account">Pro Account</string>
+    <string name="pro_benefit_list">"✓ Unlimited features
+✓ No ads"</string>
+    <string name="pro_benefits">No ads. Unlimited features.</string>
+    <string name="progress_bar_scan_file">Scanning files. Please wait!</string>
+    <string name="progress_bar_title_move_sd_file">Moving recordings to the standard SD card folder to fix editing issues</string>
+    <string name="project_id">az-screen-recorder-f680b</string>
+    <string name="protect_recordings_message">To prevent Android from stopping your recordings, please disable battery optimization for AZ Screen Recorder.</string>
+    <string name="protect_recordings_title">Avoid interrupted recordings</string>
+    <string name="quality">Quality</string>
+    <string name="quarterly">Quarterly</string>
+    <string name="rate_5_stars">Rate 5 stars</string>
+    <string name="rate_5_stars_on_google_play">Rate us 5 stars on Google Play</string>
+    <string name="rate_on_google_play">Rate on google play</string>
+    <string name="rate_us">Rate us</string>
+    <string name="rate_us_on_google_play_suggestion">%1$s Can you please also give us 5 stars on Google Play?</string>
+    <string name="ratio">Ratio</string>
+    <string name="ratio_16_9">16:9</string>
+    <string name="ratio_4_3">4:3</string>
+    <string name="read_warning_carefully">I have read CAREFULLY</string>
+    <string name="record">Record</string>
+    <string name="record_screen">Record screen</string>
+    <string name="recording_controls">Recording controls</string>
+    <string name="recording_error">Recording error</string>
+    <string name="recording_error_message">The recording stopped unexpectedly due to system errors.</string>
+    <string name="recording_failed_please_try_again">Recording failed. Please try again!</string>
+    <string name="recording_mode">Recording mode</string>
+    <string name="reference_status_broken">Cannot get information</string>
+    <string name="reference_status_error">Reference video error</string>
+    <string name="reference_status_no_audio">Video has no audio</string>
+    <string name="reference_video_hint">Reference video is a normal working video. It is used to recover missing data from the corrupted videos. Thus, this video should have the same type of encoder, resolution and quality settings.</string>
+    <string name="reference_video_with_colon">Reference video:</string>
+    <string name="refund_policy">* We apply 3-day refund policy so feel free to try out everything</string>
+    <string name="remove_middle">Remove middle</string>
+    <string name="repair">Repair</string>
+    <string name="repair_status_cancel">Cancelling</string>
+    <string name="repair_status_cannot_repair">Cannot repair this video</string>
+    <string name="repair_status_exporting_video">Exporting video</string>
+    <string name="repair_status_failed">Repairing failed</string>
+    <string name="repair_status_no_reference">No reference video</string>
+    <string name="repair_status_ready">Ready to repair</string>
+    <string name="repair_status_success">Video has been repaired</string>
+    <string name="repair_title">Repair Corrupted Video</string>
+    <string name="repeat_audio">Repeat</string>
+    <string name="report_error">Report error</string>
+    <string name="request_audio_access_permission_rational">"Allow audio access permission to use this function. 
+
+ 1. Open Settings 
+ 2. Select Permissions 
+ 3. Turn on Music and audio."</string>
+    <string name="request_floating_permission_description">Allow this permission to enjoy pop-up control buttons, countdown and other convenient operations.</string>
+    <string name="request_floating_permission_title">Allow pop-up button</string>
+    <string name="request_notification_permission_msg">Allow notification controls so recording can continue reliably.</string>
+    <string name="request_read_external_permission_rational">"Allow media file access permission to show missing photos/videos and use other functions properly. 
+
+ 1. Open Settings 
+ 2. Select Permissions 
+ 3. Turn on Files and media (or Storage)."</string>
+    <string name="request_video_access_permission">Allow access to videos so the app can work properly.</string>
+    <string name="request_video_access_permission_rational">"Allow video and photo access permission to show missing photos/videos and use other functions properly. 
+
+ 1. Open Settings 
+ 2. Select Permissions 
+ 3. Turn on Photos and videos."</string>
+    <string name="request_xiaomi_bg_permission">Improve recording reliability by allowing “…running in the background.”</string>
+    <string name="resolution">Resolution</string>
+    <string name="restore">Restore</string>
+    <string name="restore_all">Restore all</string>
+    <string name="resume">Resume</string>
+    <string name="rewarded_video_not_available">Cannot load rewarded video. Please try again later.</string>
+    <string name="s1">Save image</string>
+    <string name="s2">Allow Ad to store image in Picture gallery?</string>
+    <string name="s3">Accept</string>
+    <string name="s4">Decline</string>
+    <string name="s5">Create calendar event</string>
+    <string name="s6">Allow Ad to create a calendar event?</string>
+    <string name="s7">Test Ad</string>
+    <string name="sale_percentage">Save %d%%</string>
+    <string name="save">Save</string>
+    <string name="save_all_caps">SAVE</string>
+    <string name="scale">Scale</string>
+    <string name="scr_off">Screen locked</string>
+    <string name="screen_mirroring">Screen Mirroring</string>
+    <string name="screen_record_lock_dialog_api35">On Android 15 QPR1 and later, locking the screen automatically stops screen recording. This is an Android system restriction.</string>
+    <string name="screen_record_lock_dialog_api35_title">Required on Android 15 QPR1 and later</string>
+    <string name="screenshot">Screenshot</string>
+    <string name="screenshot_captured">Screenshot captured</string>
+    <string name="screenshot_captured2">Screenshot captured, please go to app gallery to see it</string>
+    <string name="screenshot_failed_please_try_again">Screenshot failed. Please try again!</string>
+    <string name="screenshots">Screenshots</string>
+    <string name="sd_card_w_duration">SD card (%1$s can be recorded)</string>
+    <string name="search_menu_title">Search</string>
+    <string name="searchbar_scrolling_view_behavior">com.google.android.material.search.SearchBar$ScrollingViewBehavior</string>
+    <string name="searchview_clear_text_content_description">Clear text</string>
+    <string name="searchview_navigation_content_description">Back</string>
+    <string name="select">Select</string>
+    <string name="select_all">Select all</string>
+    <string name="select_audio">Select audio</string>
+    <string name="select_color">Select color</string>
+    <string name="send_feedback">Send feedback</string>
+    <string name="server_live_stream_twitch">Choose a server</string>
+    <string name="set_default">Default</string>
+    <string name="shake_device">shake device</string>
+    <string name="shape">Shape</string>
+    <string name="share">Share</string>
+    <string name="share_app">Share app</string>
+    <string name="share_app_title">Share app to…</string>
+    <string name="share_link_live">Share live stream</string>
+    <string name="share_link_live_stream_message">Choose whom you want to share with</string>
+    <string name="show_logo">Show logo</string>
+    <string name="show_me_how_developer_options"><b><u>See how to enable \"Developer Options\"</u></b></string>
+    <string name="show_text">Show text</string>
+    <string name="show_touch_intro">To show where you tap while recording, turn on “Show touches” in your device settings.</string>
+    <string name="show_touches">Show touches</string>
+    <string name="side_sheet_accessibility_pane_title">Side Sheet</string>
+    <string name="side_sheet_behavior">com.google.android.material.sidesheet.SideSheetBehavior</string>
+    <string name="single_app_recording">Single-app recording</string>
+    <string name="single_app_recording_summary">Record full screen only</string>
+    <string name="single_app_recording_summary_ticked">Let users pick one app to record</string>
+    <string name="size">Size</string>
+    <string name="size_in_mb">%s MB</string>
+    <string name="sorry_to_disappoint">Sorry for the disappointment.</string>
+    <string name="speed">Speed</string>
+    <string name="speed_max">2.0x</string>
+    <string name="speed_min">0.5x</string>
+    <string name="stability">Stability (less buggy)</string>
+    <string name="stability_options">Stability Options</string>
+    <string name="standard">Standard</string>
+    <string name="start_now">Start now</string>
+    <string name="start_stream">Start live streaming</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="status_with_colon">Status:</string>
+    <string name="sticker">Sticker</string>
+    <string name="stitch_images">Stitch Images</string>
+    <string name="stop">Stop</string>
+    <string name="stop_during_recording">Stop during recording</string>
+    <string name="stop_on_scr_off">Stop on screen off</string>
+    <string name="stop_on_scr_off_summary">Lock the screen to stop recording</string>
+    <string name="stop_on_shake">Stop by shaking</string>
+    <string name="stop_on_shake_summary">Shake device to stop recording</string>
+    <string name="stop_on_time_limit">Enable time limit</string>
+    <string name="stop_on_time_limit_default_summary">Unlimited</string>
+    <string name="stop_on_time_limit_summary">Stop recording when the time limit is reached</string>
+    <string name="stop_options">Stop options</string>
+    <string name="submit">Submit</string>
+    <string name="suggest_close_others_to_record_sound">Please make sure microphone is not occupied by other apps if you want to keep recording with sound.</string>
+    <string name="summary_collapsed_preference_list">%1$s, %2$s</string>
+    <string name="survey">Survey</string>
+    <string name="survey_dialog_message">Please spend a few minutes to share your experience with AZ Screen Recorder so we can improve the app for you.</string>
+    <string name="survey_dialog_title">Feedback</string>
+    <string name="survey_positive_act">Answer survey</string>
+    <string name="switch_to_internal_and_mic">Switch audio source</string>
+    <string name="system_projection_dialog_header">Start recording or casting with AZ Screen Recorder</string>
+    <string name="tap_to_view_screenshot">Tap here to view your screenshot</string>
+    <string name="terms_of_use"><u>Terms of Use</u></string>
+    <string name="terms_of_use_without_link"><u>Terms of Use</u></string>
+    <string name="text">Text</string>
+    <string name="text_all_caps">TEXT</string>
+    <string name="text_and_logo">Text and logo</string>
+    <string name="text_color">Text color</string>
+    <string name="text_here">Text here</string>
+    <string name="text_logo_both_summary">Show text and logo</string>
+    <string name="text_logo_none_summary">No text or logo is shown</string>
+    <string name="text_logo_only_logo_summary">Show logo only</string>
+    <string name="text_logo_only_text_summary">Show text only</string>
+    <string name="text_size">Text size</string>
+    <string name="thank_you">Thank you.</string>
+    <string name="the_rating_we_hope_to_get">The rating we hope to get</string>
+    <string name="then_price">Then %1$s%2$s %3$s</string>
+    <string name="time_can_be_recorded">%1$s can be recorded</string>
+    <string name="time_can_be_recorded_in_bracket">(%1$s can be recorded)</string>
+    <string name="time_limit">Time limit</string>
+    <string name="time_limit_in_second">Time limit in seconds</string>
+    <string name="time_out">time out</string>
+    <string name="tips_for_you">Tips for you!</string>
+    <string name="toast_add_audio_error">Cannot add new audio</string>
+    <string name="toast_add_icon_to_export">Please add stickers to video first</string>
+    <string name="toast_audio_error">"Can't load audio"</string>
+    <string name="toast_background_not_found">Can not load background</string>
+    <string name="toast_can_not_create_too_small_video">The video you are trying to create is too short. Please try again with a longer video.</string>
+    <string name="toast_can_not_crop_image">An error occurred, cannot crop image.</string>
+    <string name="toast_can_not_delete_file_now">"Can't delete video now, please exit the gallery window and try again"</string>
+    <string name="toast_can_not_delete_image">An error occurred, cannot delete this image.</string>
+    <string name="toast_can_not_delete_images">An error occurred, cannot delete these files.</string>
+    <string name="toast_can_not_load_some_resource">Some resources can not be loaded</string>
+    <string name="toast_can_not_load_video_for_edit">Cannot load video for editing</string>
+    <string name="toast_can_not_open_file">Can not open file</string>
+    <string name="toast_can_not_rename_file">An error occurred, cannot rename this file.</string>
+    <string name="toast_can_not_save_image">An error occurred, cannot save image.</string>
+    <string name="toast_can_not_take_image">An error occurred, cannot extract frame.</string>
+    <string name="toast_cancel_export">Export canceled</string>
+    <string name="toast_cannot_delete_video_merge">Cannot delete this video</string>
+    <string name="toast_cannot_load_font">Cannot load selected font</string>
+    <string name="toast_cannot_load_logo">Cannot load selected logo</string>
+    <string name="toast_cannot_record_audio_in_time_lapse">Cannot record audio in time-lapse mode, please disable time-lapse mode and try again</string>
+    <string name="toast_cannot_use_add_background">Adding background to horizontal video is not supported.</string>
+    <string name="toast_cant_open_video">"Can't open this file"</string>
+    <string name="toast_cant_start_camera">Error while opening camera</string>
+    <string name="toast_cant_use_without_grant_micro_permission">AZ Screen Recorder needs microphone permission to record audio.</string>
+    <string name="toast_cant_use_without_grant_permission_edited">AZ Screen Recorder needs access to photos, media, files to store the recorded videos, captured images.</string>
+    <string name="toast_change_preference_during_recording">"Can't change this preference during recording"</string>
+    <string name="toast_click_so_quickly">Please wait for everything to finish loading.</string>
+    <string name="toast_common_error">An error occurred, please try again</string>
+    <string name="toast_cut_video_parts">You can cut another part</string>
+    <string name="toast_error_get_file">Input video cannot be read, please try again later</string>
+    <string name="toast_error_get_internet">No internet connection</string>
+    <string name="toast_export_failed">Failed to export video</string>
+    <string name="toast_export_gif_20s">GIF duration must be less than 20 seconds</string>
+    <string name="toast_export_gif_failed">Converting failed</string>
+    <string name="toast_fail_video">Cannot find video or audio source in this file</string>
+    <string name="toast_file_not_found">File not found</string>
+    <string name="toast_font_size_out_of_range">Text size must be greater than 7 and less than 73</string>
+    <string name="toast_image_have_been_deleted">Image has been deleted</string>
+    <string name="toast_image_have_been_moved_to_trash">Image has been moved to trash</string>
+    <string name="toast_image_was_not_deleted">Image was not deleted</string>
+    <string name="toast_install_mail_app_to_send_feedback">Please install a mail app to your device to send feedback</string>
+    <string name="toast_live_login_cancel">Login cancelled</string>
+    <string name="toast_live_login_fall">Login failed</string>
+    <string name="toast_live_stream_stopped">Live stream was stopped</string>
+    <string name="toast_low_free_space">You need at least 100 MB to start recording</string>
+    <string name="toast_market_not_installed">Cannot open Google Play Store</string>
+    <string name="toast_music_duration_must_not_be_0">Music duration must be greater than 0 seconds.</string>
+    <string name="toast_must_grant_permission_alert">You must grant drawing over other apps permission to use this app</string>
+    <string name="toast_name_exists">This name already exists</string>
+    <string name="toast_new_audio_ready">New audio is ready</string>
+    <string name="toast_no_action_performed">No action was performed</string>
+    <string name="toast_no_media_selected">No media file was selected</string>
+    <string name="toast_no_screenshot_was_selected">No screenshot was selected</string>
+    <string name="toast_no_video_was_deleted">No video was deleted</string>
+    <string name="toast_not_found_background">No backgrounds found on this device.</string>
+    <string name="toast_not_supported_device">Sorry, your phone is not supported yet.</string>
+    <string name="toast_out_of_maximum_capture_frame">You cannot capture more images at this time</string>
+    <string name="toast_out_of_memory">Out of memory error</string>
+    <string name="toast_output_dir_error">Please select another output folder</string>
+    <string name="toast_process_not_allowed_due_to_background_restriction">Process was not allowed due to background restriction.</string>
+    <string name="toast_projection_permission_denied">Please allow permission to record video</string>
+    <string name="toast_purchase_fail">Purchase failed</string>
+    <string name="toast_purchase_pending">Purchase verification is pending and may take several hours.</string>
+    <string name="toast_recorder_is_recording">Screen recording has already started</string>
+    <string name="toast_recording_interrupted">Recording was stopped unexpectedly</string>
+    <string name="toast_recording_interrupted_permission">Recording was stopped because microphone permission was revoked</string>
+    <string name="toast_recording_stopped">Recording was stopped</string>
+    <string name="toast_require_set_media_player">Set MediaPlayer before continuing</string>
+    <string name="toast_select_images_for_stitch">You must select at least 2 images</string>
+    <string name="toast_start_capture_fail">Recording couldn’t start. Restart the app. If the problem continues, try different video settings.</string>
+    <string name="toast_stop_on_low_memory">Free space is not enough</string>
+    <string name="toast_thanks_for_donation">Thank you for donation!</string>
+    <string name="toast_thanks_for_feedback">Thank you for your feedback!</string>
+    <string name="toast_thanks_for_upgrading">Thanks for upgrading!</string>
+    <string name="toast_try_again">An error occurred, please try again.</string>
+    <string name="toast_video_does_not_exit">Video does not exist</string>
+    <string name="toast_video_have_been_deleted">Video has been deleted</string>
+    <string name="toast_video_have_been_moved_to_trash">Video has been moved to trash</string>
+    <string name="toast_video_saved">Video saved</string>
+    <string name="toast_video_was_not_deleted">Video was not deleted</string>
+    <string name="toast_warning_mic_busy">Cannot record sound. Microphone is busy</string>
+    <string name="toast_warning_selected_over_max_images">You can only select up to %s images</string>
+    <string name="toast_yt_livestream_quota_exceeded">Youtube live stream quota is exceeded at the moment, please try again later.</string>
+    <string name="today">Today</string>
+    <string name="toolbox">Toolbox</string>
+    <string name="tools">Tools</string>
+    <string name="top_left_screen">Top left of screen</string>
+    <string name="top_right_screen">Top right of screen</string>
+    <string name="translation_quality">Translation quality</string>
+    <string name="translation_rating_question">Please rate your satisfaction with the translation of this app in the language: %s</string>
+    <string name="trash">Trash</string>
+    <string name="trash_day_explanation">Photos and videos show the days remaining before they will be deleted permanently.</string>
+    <string name="trash_folder">Trash folder</string>
+    <string name="trash_is_empty">Trash is empty</string>
+    <string name="trim">Trim</string>
+    <string name="trim_video">Trim video</string>
+    <string name="trusted_by_users_worldwide">Trusted by 100M+ users worldwide</string>
+    <string name="try_now">Try now</string>
+    <string name="tt_00_00">00:00</string>
+    <string name="tt_ad_close_text">Ad closed</string>
+    <string name="tt_ad_data_error">Response data error</string>
+    <string name="tt_ad_is_closed">Ads Closed</string>
+    <string name="tt_ad_logo_txt">AD</string>
+    <string name="tt_add_bad_reason">Add the reason you think bad</string>
+    <string name="tt_adslot_empty">No request ad slot</string>
+    <string name="tt_adslot_id_error">Illegal ad slot id</string>
+    <string name="tt_adslot_size_empty">Empty ad slot size</string>
+    <string name="tt_app_empty">No request app</string>
+    <string name="tt_bad">Bad</string>
+    <string name="tt_banner_ad_load_image_error">Banner loading failed</string>
+    <string name="tt_choose_language">en</string>
+    <string name="tt_comment_num">%1$s reviews</string>
+    <string name="tt_content_type">Http content type error</string>
+    <string name="tt_count_down_view">Skip</string>
+    <string name="tt_dislike_header_tv_back">Back</string>
+    <string name="tt_dislike_header_tv_title">Select</string>
+    <string name="tt_display_error">Display error</string>
+    <string name="tt_done">Done</string>
+    <string name="tt_error_access_method_pass">Illegal access method</string>
+    <string name="tt_error_ad_able_false_msg">Prohibit request ads by compliance, please check GDPR settings</string>
+    <string name="tt_error_ad_type">Illegal ad type</string>
+    <string name="tt_error_adtype_differ">Ad type error</string>
+    <string name="tt_error_apk_sign_check_error">Illegal apk sha1 value</string>
+    <string name="tt_error_bidding_type">Placement is not bidding type, please check placement bidding type</string>
+    <string name="tt_error_code_adcount_error">Incorrect number of ad</string>
+    <string name="tt_error_code_click_event_error">Click event error</string>
+    <string name="tt_error_device_ip">Please check the country of the IP of the ad requesting device in service country</string>
+    <string name="tt_error_empty_content">IP is empty or ua is empty</string>
+    <string name="tt_error_image_size">Illegal image size</string>
+    <string name="tt_error_interstitial_version">The sdk version used for the new insertion style is too low. Please upgrade to version 3550 and above</string>
+    <string name="tt_error_media_id">Illegal media id</string>
+    <string name="tt_error_media_type">Illegal media type</string>
+    <string name="tt_error_new_register_limit">New ad slot exceeded daily request limit</string>
+    <string name="tt_error_origin_ad_error">Origin type error</string>
+    <string name="tt_error_package_name">Package name error</string>
+    <string name="tt_error_redirect">Redirect error</string>
+    <string name="tt_error_request_invalid">Invalid request</string>
+    <string name="tt_error_slot_id_app_id_differ">SlotId and AppId match error</string>
+    <string name="tt_error_splash_ad_type">Splash ad type error</string>
+    <string name="tt_error_union_os_error">Os type error</string>
+    <string name="tt_error_union_sdk_too_old">Sdk version too low</string>
+    <string name="tt_error_unknow">Unknown error</string>
+    <string name="tt_error_update_version">Please update to version 2310 or later</string>
+    <string name="tt_error_verify_reward">Reward verify error</string>
+    <string name="tt_feedback_experience_text">"We'll continue to improve our service."</string>
+    <string name="tt_feedback_submit_text">"You've submitted feedback! Please don't submit again."</string>
+    <string name="tt_feedback_thank_text">Thanks for your feedback!</string>
+    <string name="tt_feel_hint">Tell us how this ad made you feel</string>
+    <string name="tt_frequent_call_erroe">Ad requests are too frequent</string>
+    <string name="tt_full_screen_skip_tx">Skip after 5S</string>
+    <string name="tt_good">Good</string>
+    <string name="tt_init_setting_config_not_complete">Setting initialization is not completed</string>
+    <string name="tt_insert_ad_load_image_error">Interstitial loading failed</string>
+    <string name="tt_lack_android_manifest_configuration">Initialization check error, please check the AndroidManifest</string>
+    <string name="tt_like_this_ad">Like this ad?</string>
+    <string name="tt_list_end_tip">"You've seen all the content"</string>
+    <string name="tt_load_creative_icon_error">Icon loading failed</string>
+    <string name="tt_load_creative_icon_response_error">Icon loading error</string>
+    <string name="tt_loading_language">Landing page loading……</string>
+    <string name="tt_loading_more">Loading more...</string>
+    <string name="tt_logo_cn">AD</string>
+    <string name="tt_logo_en">Ad</string>
+    <string name="tt_more_copy_link">Copy Link</string>
+    <string name="tt_more_history">History</string>
+    <string name="tt_more_open_browser">Open in Browser</string>
+    <string name="tt_more_report">Report</string>
+    <string name="tt_more_retry">Retry</string>
+    <string name="tt_more_title">More</string>
+    <string name="tt_msgPlayable">Finish playing to get rewards</string>
+    <string name="tt_multiple_ad_indicator">ad %1$d of %2$d</string>
+    <string name="tt_multiple_playable_next_ad_tips">Next Ad</string>
+    <string name="tt_multiple_playable_wait_tips">Next ad in %1$ds</string>
+    <string name="tt_negtiveBtnBtnText">Leave</string>
+    <string name="tt_negtive_txt">Cancel</string>
+    <string name="tt_net_error">Network error</string>
+    <string name="tt_no_ad">No ad</string>
+    <string name="tt_no_ad_parse">Parsing data without ad</string>
+    <string name="tt_no_network">Network is unavailable, please try again later.</string>
+    <string name="tt_not_bad">Not bad</string>
+    <string name="tt_other_reason">Other reasons</string>
+    <string name="tt_parse_fail">Parsing error</string>
+    <string name="tt_postiveBtnText">Resume</string>
+    <string name="tt_postiveBtnTextPlayable">Continue playing</string>
+    <string name="tt_postive_txt">OK</string>
+    <string name="tt_privacy_title">Privacy Policy</string>
+    <string name="tt_reder_ad_load_timeout">Template loading timeout</string>
+    <string name="tt_render_diff_template_invalid">Template diff invalid</string>
+    <string name="tt_render_fail_meta_invalid">Template invalid</string>
+    <string name="tt_render_fail_template_parse_error">Template parsing error</string>
+    <string name="tt_render_fail_timeout">Render timeout</string>
+    <string name="tt_render_fail_unknown">Render failed unknown</string>
+    <string name="tt_render_main_template_invalid">Main template invalid</string>
+    <string name="tt_render_render_parse_error">Render parsing failed</string>
+    <string name="tt_report_this_ad">Report this ad to help us improve</string>
+    <string name="tt_request_body_error">Request entity is empty</string>
+    <string name="tt_request_pb_error">Http request pb error</string>
+    <string name="tt_reward_feedback">Feedback</string>
+    <string name="tt_reward_full_skip">Skip after %1$ss</string>
+    <string name="tt_reward_msg">Watch the entire video to claim your reward</string>
+    <string name="tt_reward_screen_skip_tx">Skip</string>
+    <string name="tt_ror_code_show_event_error">Show event error</string>
+    <string name="tt_select_reason">Please select reason</string>
+    <string name="tt_skip_ad_time_text">Skip after %ds</string>
+    <string name="tt_slide_up_3d">wipe up</string>
+    <string name="tt_splash_ad_load_image_error">Splash loading failed</string>
+    <string name="tt_splash_brush_mask_hint">Jump to details page or third party application</string>
+    <string name="tt_splash_brush_mask_title">Slide or click to Polish</string>
+    <string name="tt_splash_cache_expired_error">Cache expired</string>
+    <string name="tt_splash_cache_parse_error">Cache parsing failed</string>
+    <string name="tt_splash_default_click_shake">Shake or click to learn more</string>
+    <string name="tt_splash_not_have_cache_error">No splash cache</string>
+    <string name="tt_splash_rock_text">Go to details page or third-party application</string>
+    <string name="tt_splash_rock_top_text">Shake or click the icon</string>
+    <string name="tt_splash_wriggle_text">Go to details page or third-party application</string>
+    <string name="tt_splash_wriggle_top_text">Twist the phone</string>
+    <string name="tt_splash_wriggle_top_text_style_17">Twist the phone or tap the icon</string>
+    <string name="tt_suggestion_commit">Submit</string>
+    <string name="tt_sys_error">System error</string>
+    <string name="tt_template_load_fail">main template load fail !</string>
+    <string name="tt_text_privacy_app_version">Version：V</string>
+    <string name="tt_text_privacy_development">Developer：</string>
+    <string name="tt_try_now">Try now</string>
+    <string name="tt_video_bytesize">Data</string>
+    <string name="tt_video_dial_phone">DialNow</string>
+    <string name="tt_video_download_apk">Download Now</string>
+    <string name="tt_video_mobile_go_detail">View Now</string>
+    <string name="tt_video_retry_des_txt">load fail ，please retry</string>
+    <string name="tt_video_without_wifi_tips">Playing this content will use %.2f MB of data</string>
+    <string name="tt_wap_empty">No request wap</string>
+    <string name="tt_web_title_default">Advertise</string>
+    <string name="turn_it_on">Turn it on >></string>
+    <string name="tutorial">Tutorial</string>
+    <string name="ultra_high">Ultra high</string>
+    <string name="undo">Undo</string>
+    <string name="unlock_failed">Couldn’t unlock Premium. Watch the entire video, then install the advertised app or game.</string>
+    <string name="unlock_susses">Premium is unlocked for the next 24 hours.</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="upgrade_donate">Upgrade (Donate)</string>
+    <string name="upgrade_or_watch_ads_message">Upgrade to Pro version for unlimited access to all features. Or, watch a short video to try this feature for free.</string>
+    <string name="upgrade_suggest1">Make a one-time purchase to remove ads.</string>
+    <string name="upgrade_suggest2">Thank you for using our app.</string>
+    <string name="upgrade_suggest3">Help us to improve app quality</string>
+    <string name="upgrade_term">Unlock all premium features with AZ Screen Recorder PRO. Free trial available, cancel anytime. After the trial, your subscription auto-renews via Google Play.</string>
+    <string name="upgrade_to_pro">Upgrade to PRO</string>
+    <string name="use_notification_to_record">Use notification to record</string>
+    <string name="use_trash">Use trash</string>
+    <string name="use_trash_disable_summary">Files will be deleted permanently</string>
+    <string name="use_trash_enable_summary">Deleted files will be moved to trash</string>
+    <string name="user_interface">User interface</string>
+    <string name="utilities">Utilities</string>
+    <string name="v7_preference_off">OFF</string>
+    <string name="v7_preference_on">ON</string>
+    <string name="verify_account_live_stream_message">You must verify your account before starting Live stream to YouTube. Please follow the verification process, required by YouTube. You can contact us via az.screen.recorder@gmail.com for more support</string>
+    <string name="version_app">Version</string>
+    <string name="very_dissatisfied">Very dissatisfied</string>
+    <string name="very_high">Very high</string>
+    <string name="very_satisfied">Very satisfied</string>
+    <string name="video">Video</string>
+    <string name="video_audio_issues">VIDEO/AUDIO ISSUES</string>
+    <string name="video_compression">Video compression</string>
+    <string name="video_configuration">VIDEO CONFIGURATION</string>
+    <string name="video_downloader">Video Downloader</string>
+    <string name="video_editor">Video editor</string>
+    <string name="video_is_saving">Video is saving</string>
+    <string name="video_lag">Video lag</string>
+    <string name="video_quality">Video quality</string>
+    <string name="video_quality_warning">Higher quality means larger video file sizes</string>
+    <string name="video_volume">Video Volume</string>
+    <string name="videos">Videos</string>
+    <string name="videos_and_settings">Videos &amp; Settings</string>
+    <string name="view">View</string>
+    <string name="view_options">View Options</string>
+    <string name="volume">Volume</string>
+    <string name="warning">Warning</string>
+    <string name="warning_add_background_feature">Adding a background can take several minutes. For best results, use videos under 2 minutes. Continue?</string>
+    <string name="warning_cannot_start_when_click_cancel">Recording won’t start if you click ‘Cancel’ on the pop-up. Please click ‘Start now’ to begin recording.</string>
+    <string name="warning_enable_fix_green_screen">Only enable if you have green screen problem</string>
+    <string name="warning_to_save">Export the edited video?</string>
+    <string name="warning_wif_transfer">Make sure that your device is connected to the same Wi-Fi network as your computer.</string>
+    <string name="water_mark">Watermark</string>
+    <string name="watermark_label_prefix">"AdMob - "</string>
+    <string name="we_love_you_too">We love you too!!!</string>
+    <string name="weekly">Weekly</string>
+    <string name="what_issue_experiencing">What issue are you experiencing?</string>
+    <string name="what_to_improve">What should we improve the most in this app?</string>
+    <string name="width_x_height" formatted="false">%dx%d</string>
+    <string name="wifi_access_suggest">Open this address in your computer’s browser to download your videos.</string>
+    <string name="wifi_access_warning_exit_msg">Do you want to stop wifi transfer mode?</string>
+    <string name="wifi_name">Wifi name:</string>
+    <string name="wifi_transfer">Wifi Transfer</string>
+    <string name="x_day_free_trial">%d-day free trial</string>
+    <string name="xiaomi_background_permission">Display popup windows while running in the background</string>
+    <string name="xiaomi_background_permission_msg">To record reliably, allow “Display pop-up windows while running in the background” for AZ Screen Recorder.</string>
+    <string name="xiaomi_background_permission_steps">"1. Open Settings 
+2. Tap Other permissions 
+3. Allow this permission"</string>
+    <string name="yearly">Yearly</string>
+    <string name="yes">Yes</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="yours_forever">Yours forever</string>
+    <string name="yt_live_privacy_status_private">Private</string>
+    <string name="yt_live_privacy_status_public">Public</string>
+    <string name="yt_live_privacy_status_unlisted">Unlisted</string>
+</resources>

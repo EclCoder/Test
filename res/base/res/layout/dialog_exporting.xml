@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.hecorat.screenrecorder.free.widget.CircularProgressBar android:id="@id/circular_progressBar" android:layout_width="300.0dp" android:layout_height="300.0dp" android:layout_marginTop="100.0dp" android:layout_centerHorizontal="true" app:marker_progress="1.0" app:progress="0.0" app:progress_background_color="@color/grey" app:progress_color="@color/monte_carlo" app:stroke_width="5.0dp" app:text_visible="true" />
+    <Button android:textColor="@drawable/color_text_dialog_dark" android:id="@id/btn_cancel" android:background="@drawable/bg_button_ok_dialog_info_dark" android:visibility="invisible" android:layout_width="200.0dp" android:layout_height="40.0dp" android:layout_marginTop="40.0dp" android:text="@string/cancel" android:layout_below="@id/circular_progressBar" android:layout_centerHorizontal="true" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/layout_status" android:layout_width="match_parent" android:layout_height="100.0dp" android:layout_alignParentBottom="true">
+        <TextView android:textSize="20.0sp" android:textColor="@color/white" android:id="@id/tv_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/exporting_video" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/white" android:id="@id/tv_dot" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=". " />
+        <TextView android:textSize="20.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/please_wait" />
+    </LinearLayout>
+</RelativeLayout>

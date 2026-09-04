@@ -1,0 +1,20 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzhfe {
+    public static final zzhfe zza = new zzhfe("SHA1");
+    public static final zzhfe zzb = new zzhfe("SHA224");
+    public static final zzhfe zzc = new zzhfe("SHA256");
+    public static final zzhfe zzd = new zzhfe("SHA384");
+    public static final zzhfe zze = new zzhfe("SHA512");
+    private final String zzf;
+
+    private zzhfe(String str) {
+        this.zzf = str;
+    }
+
+    public final String toString() {
+        return this.zzf;
+    }
+}

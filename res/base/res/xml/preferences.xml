@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="@string/pref_screen_root"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.hecorat.screenrecorder.free.data.prefs.AdsPreference android:layout="@layout/preference_ads" android:key="@string/pref_ads_view" />
+    <PreferenceCategory android:layout="@layout/preference_category_layout" android:title="@string/video_configuration" android:key="@string/pref_category_video">
+        <com.hecorat.screenrecorder.free.data.prefs.SingleLineListPreference android:icon="@drawable/ic_resolution" android:entries="@array/resolution_entries" android:layout="@layout/preference_bold_summary_layout" android:title="@string/resolution" android:key="@string/pref_resolution" android:defaultValue="720" android:entryValues="@array/resolution_entry_values" />
+        <com.hecorat.screenrecorder.free.data.prefs.SingleLineListPreference android:icon="@drawable/ic_video_quality" android:entries="@array/bitrate_entries" android:layout="@layout/preference_layout" android:title="@string/video_quality" android:key="@string/pref_bitrate" android:defaultValue="0" android:entryValues="@array/bitrate_entry_values" />
+        <com.hecorat.screenrecorder.free.data.prefs.SingleLineListPreference android:icon="@drawable/ic_frame_rate_outline" android:entries="@array/framerate_entries" android:layout="@layout/preference_layout" android:title="@string/frame_rate_2" android:key="@string/pref_frame_rate" android:defaultValue="0" android:entryValues="@array/framerate_values" />
+        <com.hecorat.screenrecorder.free.data.prefs.SingleLineListPreference android:icon="@drawable/ic_rotation_outline" android:entries="@array/orientation_entries" android:layout="@layout/preference_bold_summary_layout" android:title="@string/orientation" android:key="@string/pref_orientation" android:defaultValue="0" android:entryValues="@array/orientation_entry_values" />
+        <com.hecorat.screenrecorder.free.data.prefs.SingleLineListPreference android:icon="@drawable/ic_microphone_outline" android:entries="@array/audio_source_entries" android:layout="@layout/preference_bold_summary_layout" android:title="@string/audio_source" android:key="@string/pref_audio_source" android:defaultValue="0" android:entryValues="@array/audio_source_values" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/preference_category_layout" android:title="@string/stability_options" android:key="@string/pref_category_stability">
+        <Preference android:icon="@drawable/ic_record_mode" android:layout="@layout/preference_bold_summary_layout" android:title="@string/recording_mode" android:key="@string/pref_recording_mode" />
+        <Preference android:icon="@drawable/ic_battery_2_bar" android:layout="@layout/preference_layout" android:title="@string/avoid_unexpected_stop" android:key="@string/pref_avoid_unexpected_stop" android:summary="@string/avoid_unexpected_stop_summary" />
+        <Preference android:icon="@drawable/ic_folder_outline" android:layout="@layout/preference_layout" android:title="@string/output_directory" android:key="@string/pref_use_internal_storage" android:summary="%s" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/preference_category_layout" android:title="@string/recording_controls" android:key="@string/pref_category_recording_controls">
+        <SwitchPreference android:icon="@drawable/outline_cast_single_app" android:layout="@layout/preference_layout" android:title="@string/single_app_recording" android:key="@string/pref_enable_single_app" android:order="0" android:defaultValue="false" android:summaryOn="@string/single_app_recording_summary_ticked" android:summaryOff="@string/single_app_recording_summary" />
+        <SwitchPreference android:icon="@drawable/ic_hide_record_window" android:layout="@layout/preference_layout" android:title="@string/hide_floating_during_recording" android:key="@string/pref_hide_record_window" android:order="1" android:defaultValue="false" />
+        <SwitchPreference android:icon="@drawable/ic_magic_button_outline" android:layout="@layout/preference_layout" android:title="@string/magic_button_invisible_control" android:key="@string/pref_use_magic_button" android:order="2" android:defaultValue="false" android:summaryOn="@string/magic_button_summary_ticked" android:summaryOff="@string/magic_button_summary" />
+        <Preference android:icon="@drawable/ic_stop_options_outline" android:layout="@layout/preference_bold_summary_layout_with_arrow" android:title="@string/stop_options" android:key="@string/pref_show_stop_options" android:order="4" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/preference_category_layout" android:title="@string/view_options" android:key="@string/pref_category_view">
+        <SwitchPreference android:icon="@drawable/ic_disable_popup" android:layout="@layout/preference_layout" android:title="@string/hide_popup_after_screenshot" android:key="@string/pref_hide_screenshot_saved_window" android:defaultValue="false" />
+        <SwitchPreference android:icon="@drawable/ic_saved_window" android:layout="@layout/preference_layout_vip" android:title="@string/hide_popup_window_after_recording" android:key="@string/pref_hide_saved_window_after_recording" android:defaultValue="false" />
+        <com.hecorat.screenrecorder.free.data.prefs.SingleLineListPreference android:icon="@drawable/ic_countdown_timer_outline" android:entries="@array/countdown_entries" android:layout="@layout/preference_bold_summary_layout" android:title="@string/enable_countdown_timer" android:key="@string/pref_countdown" android:defaultValue="0" android:entryValues="@array/countdown_values" />
+        <Preference android:icon="@drawable/ic_watermark_outline" android:layout="@layout/preference_layout_with_arrow" android:title="@string/text_and_logo" android:key="@string/pref_screen_watermark_logo" />
+        <Preference android:icon="@drawable/ic_touch_app" android:layout="@layout/preference_layout_with_arrow" android:title="@string/show_touches" android:key="@string/pref_show_touches" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/preference_category_layout" android:title="@string/toolbox" android:key="@string/pref_category_toolbox">
+        <SwitchPreference android:icon="@drawable/ic_screenshot_24" android:layout="@layout/preference_layout" android:title="@string/screenshot" android:key="@string/pref_show_screenshot" android:defaultValue="false" />
+        <SwitchPreference android:icon="@drawable/ic_camera_24" android:layout="@layout/preference_layout" android:title="@string/camera" android:key="@string/pref_show_camera" android:defaultValue="false" />
+        <SwitchPreference android:icon="@drawable/ic_brush_24" android:layout="@layout/preference_layout" android:title="@string/brush" android:key="@string/pref_show_screendraw" android:defaultValue="false" />
+        <Preference android:icon="@drawable/ic_live_tv" android:layout="@layout/preference_layout_with_arrow" android:title="@string/live_stream" android:key="@string/pref_live_stream" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/preference_category_layout" android:title="@string/others" android:key="@string/pref_category_others">
+        <SwitchPreference android:icon="@drawable/ic_delete_settings_24" android:layout="@layout/preference_layout" android:title="@string/use_trash" android:key="@string/pref_use_trash" android:defaultValue="true" android:summaryOn="@string/use_trash_enable_summary" android:summaryOff="@string/use_trash_disable_summary" />
+        <Preference android:icon="@drawable/ic_folder_delete_settings_24" android:layout="@layout/preference_layout_with_arrow" android:title="@string/trash_folder" android:key="@string/pref_trash_folder" />
+    </PreferenceCategory>
+</PreferenceScreen>

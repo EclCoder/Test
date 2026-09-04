@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:tag="layout/activity_trash_folder_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/app_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <androidx.appcompat.widget.Toolbar android:id="@id/tool_bar" android:background="?colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="?actionBarSize" app:contentInsetStartWithNavigation="0.0dp" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:gravity="center_horizontal" android:id="@id/trash_day_explanation_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="6.0dp" android:text="@string/trash_day_explanation" android:layout_below="@id/app_bar" />
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipe_refresh_ll" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@id/trash_day_explanation_tv">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/media_rv" android:padding="4.0dp" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <TextView android:id="@id/empty_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/trash_is_empty" android:layout_centerInParent="true" />
+    <include android:id="@id/permission_ll" layout="@layout/permission_request_layout" />
+</RelativeLayout>

@@ -1,0 +1,45 @@
+package com.k2fsa.sherpa.onnx;
+
+import android.content.res.AssetManager;
+import kotlin.Metadata;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.s;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes6.dex */
+@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\u0018\u0000 \u00032\u00020\u0001:\u0001\u0003B\u0005¢\u0006\u0002\u0010\u0002¨\u0006\u0004"}, d2 = {"Lcom/k2fsa/sherpa/onnx/WaveReader;", "", "()V", "Companion", "sherpa_onnx_release"}, k = 1, mv = {1, 7, 1}, xi = 48)
+public final class WaveReader {
+
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
+    public static final Companion INSTANCE = new Companion(null);
+
+    /* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0016\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bJ\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\bJ\u0019\u0010\t\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0086 J\u0011\u0010\n\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\bH\u0086 ¨\u0006\u000b"}, d2 = {"Lcom/k2fsa/sherpa/onnx/WaveReader$Companion;", "", "()V", "readWave", "Lcom/k2fsa/sherpa/onnx/WaveData;", "assetManager", "Landroid/content/res/AssetManager;", "filename", "", "readWaveFromAsset", "readWaveFromFile", "sherpa_onnx_release"}, k = 1, mv = {1, 7, 1}, xi = 48)
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        public final WaveData readWave(AssetManager assetManager, String filename) {
+            s.h(assetManager, "assetManager");
+            s.h(filename, "filename");
+            return readWaveFromAsset(assetManager, filename);
+        }
+
+        public final native WaveData readWaveFromAsset(AssetManager assetManager, String filename);
+
+        public final native WaveData readWaveFromFile(String filename);
+
+        private Companion() {
+        }
+
+        public final WaveData readWave(String filename) {
+            s.h(filename, "filename");
+            return readWaveFromFile(filename);
+        }
+    }
+
+    static {
+        System.loadLibrary("sherpa-onnx-jni");
+    }
+}

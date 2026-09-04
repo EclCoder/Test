@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:id="@id/et_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dp" android:layout_marginRight="12.0dp" />
+    <TextView android:textStyle="italic" android:textColor="@color/strange_blue" android:id="@id/tv_msg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="5.0dp" />
+</LinearLayout>

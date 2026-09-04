@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/dialog_share_bottom_sheet_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dp" android:layout_marginTop="20.0dp" android:layout_marginRight="12.0dp" android:layout_marginBottom="16.0dp">
+        <View android:background="@color/lesser_grey" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_centerVertical="true" android:layout_toEndOf="@id/suggestion_tv" android:layout_alignParentEnd="true" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/black" android:id="@id/suggestion_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dp" android:layout_marginRight="16.0dp" android:text="@string/share" android:layout_centerInParent="true" />
+        <View android:background="@color/lesser_grey" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_centerVertical="true" android:layout_toStartOf="@id/suggestion_tv" android:layout_alignParentStart="true" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/share_rv" android:layout_width="match_parent" android:layout_height="match_parent" />
+</LinearLayout>

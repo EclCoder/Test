@@ -1,0 +1,70 @@
+package tf;
+
+import android.util.SparseIntArray;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import com.google.android.material.radiobutton.MaterialRadioButton;
+import com.hecorat.screenrecorder.free.R;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes6.dex */
+public class n2 extends m2 {
+    private static final androidx.databinding.p.i F = null;
+    private static final SparseIntArray G;
+    private final LinearLayout D;
+    private long E;
+
+    static {
+        SparseIntArray sparseIntArray = new SparseIntArray();
+        G = sparseIntArray;
+        sparseIntArray.put(R.id.mode_rg, 1);
+        sparseIntArray.put(R.id.basic_mode_rb, 2);
+        sparseIntArray.put(R.id.advanced_mode_rb, 3);
+    }
+
+    public n2(androidx.databinding.f fVar, View view) {
+        this(fVar, view, androidx.databinding.p.I(fVar, view, 4, F, G));
+    }
+
+    @Override // androidx.databinding.p
+    public boolean D() {
+        synchronized (this) {
+            try {
+                return this.E != 0;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // androidx.databinding.p
+    public void F() {
+        synchronized (this) {
+            this.E = 1L;
+        }
+        N();
+    }
+
+    @Override // androidx.databinding.p
+    protected boolean J(int i10, Object obj, int i11) {
+        return false;
+    }
+
+    @Override // androidx.databinding.p
+    protected void s() {
+        synchronized (this) {
+            this.E = 0L;
+        }
+    }
+
+    private n2(androidx.databinding.f fVar, View view, Object[] objArr) {
+        super(fVar, view, 0, (MaterialRadioButton) objArr[3], (MaterialRadioButton) objArr[2], (RadioGroup) objArr[1]);
+        this.E = -1L;
+        LinearLayout linearLayout = (LinearLayout) objArr[0];
+        this.D = linearLayout;
+        linearLayout.setTag(null);
+        T(view);
+        F();
+    }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView android:background="@drawable/bg_ads" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.google.android.gms.ads.nativead.MediaView android:id="@id/gg_ad_media_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@id/gg_ad_details" android:layout_alignParentTop="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/gg_ad_details" android:background="@color/near_white" android:layout_width="match_parent" android:layout_height="45.0dp" android:layout_marginTop="2.0dp" android:layout_marginBottom="2.0dp" android:layout_above="@id/gg_ad_call_to_action_btn">
+            <ImageView android:id="@id/gg_ad_icon" android:padding="2.0dp" android:layout_width="45.0dp" android:layout_height="45.0dp" android:src="@drawable/ic_app_icon" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" android:paddingStart="3.0dp" android:paddingEnd="3.0dp">
+                <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:ellipsize="end" android:id="@id/gg_ad_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" />
+                <TextView android:textSize="12.0sp" android:textColor="@color/text_primary" android:ellipsize="end" android:id="@id/gg_ad_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" />
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton android:textSize="13.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/gg_ad_call_to_action_btn" android:background="@drawable/bg_button_ads_call_action_review" android:layout_width="match_parent" android:layout_height="36.0dp" android:text="@string/install" android:maxLines="1" android:layout_alignParentBottom="true" app:backgroundTint="@null" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_ad_badge" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    </RelativeLayout>
+</com.google.android.gms.ads.nativead.NativeAdView>

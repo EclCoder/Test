@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:tag="layout/fragment_image_gallery_0" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipe_refresh_ll" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/image_rv" android:padding="4.0dp" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <TextView android:textColor="@color/text_secondary" android:id="@id/empty_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_screenshot_captured_msg" android:layout_centerInParent="true" />
+    <include android:id="@id/permission_ll" layout="@layout/permission_request_layout" />
+</RelativeLayout>

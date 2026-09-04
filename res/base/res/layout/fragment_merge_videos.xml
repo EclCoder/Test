@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:tag="layout/fragment_merge_videos_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/video_container" android:background="@color/near_black" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/controller_layout">
+        <com.google.android.exoplayer2.ui.StyledPlayerView android:id="@id/exo_player_view" android:layout_width="match_parent" android:layout_height="match_parent" app:controller_layout_id="@layout/exo_custom_layout" app:show_timeout="5000" app:use_controller="false" />
+    </RelativeLayout>
+    <include android:id="@id/controller_layout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@id/layout_pick_time" layout="@layout/video_controller" />
+    <LinearLayout android:gravity="bottom" android:id="@id/layout_pick_time" android:layout_width="match_parent" android:layout_height="32.0dp" android:baselineAligned="false" android:layout_above="@id/layout_range_seek_bar">
+        <TextView android:textSize="@dimen/video_editor_text_size" android:textColor="?colorAccent" android:id="@id/select_time_start" android:background="@drawable/bg_touch_feedback_oval" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dp" android:text="@string/default_time_formatted" android:layout_marginStart="@dimen/editor_chosen_time_margin" android:layout_marginEnd="5.0dp" />
+        <TextView android:textSize="@dimen/video_editor_text_size" android:textColor="?colorAccent" android:ellipsize="end" android:gravity="center_horizontal" android:id="@id/tv_video_name" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginBottom="2.0dp" android:maxLines="1" android:layout_weight="1.0" />
+        <ImageView android:id="@id/iv_delete" android:background="@drawable/bg_touch_feedback_oval" android:padding="2.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_delete_accent_24dp" android:contentDescription="@string/delete" android:layout_marginEnd="5.0dp" />
+        <TextView android:textSize="@dimen/video_editor_text_size" android:textColor="?colorAccent" android:id="@id/select_time_end" android:background="@drawable/bg_touch_feedback_oval" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dp" android:text="@string/default_time_formatted" android:layout_marginEnd="@dimen/editor_chosen_time_margin" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/layout_range_seek_bar" android:layout_width="match_parent" android:layout_height="38.0dp" android:layout_above="@id/scroll_view" />
+    <HorizontalScrollView android:id="@id/scroll_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_alignParentStart="true">
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/bottom_action_bar" android:paddingTop="8.0dp" android:paddingBottom="8.0dp" android:layout_width="wrap_content" android:layout_height="@dimen/editor_action_bar_height" android:layout_marginTop="5.0dp" android:layout_marginBottom="5.0dp" />
+    </HorizontalScrollView>
+</RelativeLayout>

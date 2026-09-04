@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root" android:tag="layout/activity_faq_0" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/app_bar" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/tool_bar" android:background="?colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="?actionBarSize" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ExpandableListView android:id="@id/exp_list_view" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="5.0dp" android:groupIndicator="@null" />
+</LinearLayout>

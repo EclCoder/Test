@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="dialog_warning_delete_several_screenshots_mgs">
+        <item quantity="one">Are you sure you want to delete %d screenshot?</item>
+        <item quantity="other">Are you sure you want to delete %d screenshots?</item>
+    </plurals>
+    <plurals name="dialog_warning_delete_several_videos_msg">
+        <item quantity="one">Are you sure you want to delete %d video?</item>
+        <item quantity="other">Are you sure you want to delete %d videos?</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="one">Fast forward %d second</item>
+        <item quantity="other">Fast forward %d seconds</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="one">Rewind %d second</item>
+        <item quantity="other">Rewind %d seconds</item>
+    </plurals>
+    <plurals name="free_trial_for_x_days">
+        <item quantity="one">Free trial for %d day</item>
+        <item quantity="other">Free trial for %d days</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d new notification</item>
+        <item quantity="other">%d new notifications</item>
+    </plurals>
+    <plurals name="rotate_degrees">
+        <item quantity="one">Rotate %d degree</item>
+        <item quantity="other">Rotate %d degrees</item>
+    </plurals>
+    <plurals name="toast_deleted_several_images">
+        <item quantity="one">Deleted %d image</item>
+        <item quantity="other">Deleted %d images</item>
+    </plurals>
+    <plurals name="toast_deleted_several_media_files">
+        <item quantity="one">Deleted %d media file</item>
+        <item quantity="other">Deleted %d media files</item>
+    </plurals>
+    <plurals name="toast_deleted_several_video">
+        <item quantity="one">Deleted %d video</item>
+        <item quantity="other">Deleted %d videos</item>
+    </plurals>
+    <plurals name="toast_moved_several_images_to_trash">
+        <item quantity="one">Moved %d image to trash</item>
+        <item quantity="other">Moved %d images to trash</item>
+    </plurals>
+    <plurals name="toast_moved_several_videos_to_trash">
+        <item quantity="one">Moved %d video to trash</item>
+        <item quantity="other">Moved %d videos to trash</item>
+    </plurals>
+    <plurals name="toast_restored_several_media_files">
+        <item quantity="one">Restored %d media file</item>
+        <item quantity="other">Restored %d media files</item>
+    </plurals>
+</resources>

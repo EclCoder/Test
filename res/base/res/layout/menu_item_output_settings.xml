@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/bg_slightly_rounded_corner" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="13.0sp" android:textColor="@color/white" android:id="@id/video_type_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" android:layout_marginBottom="4.0dp" android:text="1080P" android:layout_marginStart="4.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/menu_state_iv" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:id="@id/menu_state_iv" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_marginTop="4.0dp" android:layout_marginBottom="4.0dp" android:src="@drawable/ic_baseline_arrow_drop_down_24" android:layout_marginEnd="4.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/video_type_tv" app:layout_constraintTop_toTopOf="parent" app:tint="@color/white" />
+</androidx.constraintlayout.widget.ConstraintLayout>

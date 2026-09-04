@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_app_icon" android:scaleType="fitXY" />
+    <ImageView android:id="@id/delete" android:background="@drawable/bg_circle_dark" android:padding="1.0dp" android:focusable="true" android:clickable="true" android:layout_width="20.0dp" android:layout_height="20.0dp" android:src="@drawable/ic_close_24dp" android:layout_alignTop="@id/image" android:layout_alignEnd="@id/image" />
+</RelativeLayout>

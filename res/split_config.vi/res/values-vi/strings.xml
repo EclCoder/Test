@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="GIF">GIF</string>
+    <string name="abc_action_bar_home_description">Chỉ đường về nhà</string>
+    <string name="abc_action_bar_up_description">Di chuyển lên</string>
+    <string name="abc_action_menu_overflow_description">Tùy chọn khác</string>
+    <string name="abc_action_mode_done">Xong</string>
+    <string name="abc_activity_chooser_view_see_all">Xem tất cả</string>
+    <string name="abc_activitychooserview_choose_application">Chọn một ứng dụng</string>
+    <string name="abc_capital_off">TẮT</string>
+    <string name="abc_capital_on">BẬT</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">delete</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">space</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">Menu+</string>
+    <string name="abc_search_hint">Tìm kiếm…</string>
+    <string name="abc_searchview_description_clear">Xóa truy vấn</string>
+    <string name="abc_searchview_description_query">Truy vấn tìm kiếm</string>
+    <string name="abc_searchview_description_search">Tìm kiếm</string>
+    <string name="abc_searchview_description_submit">Gửi truy vấn</string>
+    <string name="abc_searchview_description_voice">Tìm kiếm bằng giọng nói</string>
+    <string name="abc_shareactionprovider_share_with">Chia sẻ với</string>
+    <string name="abc_shareactionprovider_share_with_application">Chia sẻ với %s</string>
+    <string name="abc_toolbar_collapse_description">Thu gọn</string>
+    <string name="access_storage_permission_message">Cần có quyền Truy cập bộ nhớ để dùng chức năng này. Vui lòng cấp quyền Truy cập bộ nhớ và thử lại.</string>
+    <string name="account_live_stream">Tài khoản</string>
+    <string name="action_watch_install_ads">Xem quảng cáo và cài đặt</string>
+    <string name="add">Thêm</string>
+    <string name="add_background">Thêm hình nền</string>
+    <string name="add_sticker">Thêm Sticker</string>
+    <string name="add_text">Thêm chữ</string>
+    <string name="add_with_count">Thêm (%d)</string>
+    <string name="adjust_volume">Chỉnh âm lượng</string>
+    <string name="advanced_mode">Nâng cao</string>
+    <string name="advanced_mode_description">Mạnh hơn. Được đề xuất để quay với những thay đổi thường xuyên trên màn hình</string>
+    <string name="all_audio">Tất cả âm thanh</string>
+    <string name="all_images">Tất cả ảnh</string>
+    <string name="all_videos">Tất cả video</string>
+    <string name="allow_display_over_other_apps">Cho phép hiển thị trên các ứng dụng khác</string>
+    <string name="allow_notifications">Cho phép bảng thông báo</string>
+    <string name="already_vip">Bạn đã nâng cấp?</string>
+    <string name="are_you_happy">Bạn có hài lòng với ứng dụng không?</string>
+    <string name="arrow">→</string>
+    <string name="ask_az_recorder_community">Hỏi Cộng đồng %s</string>
+    <string name="aspect_ratio">Tỉ lệ</string>
+    <string name="attach_screenshots">Đính kèm ảnh chụp màn hình</string>
+    <string name="audio">Âm thanh</string>
+    <string name="audio_booster">Bộ Tăng Cường Âm Thanh</string>
+    <string name="audio_recording">Ghi âm</string>
+    <string name="audio_source">Nguồn âm thanh</string>
+    <string name="audio_sync">Đồng bộ âm thanh</string>
+    <string name="auto">Tự động</string>
+    <string name="auto_caption">Phụ đề tự động</string>
+    <string name="auto_caption_short">Phụ đề</string>
+    <string name="auto_recommended">Tự động (Khuyến nghị)</string>
+    <string name="available_storage">%1$s GB trống</string>
+    <string name="average">Trung bình</string>
+    <string name="avoid_unexpected_stop">Tránh dừng đột ngột</string>
+    <string name="avoid_unexpected_stop_summary">Tăng cường độ ổn định của quá trình ghi bằng cách tắt tính năng tối ưu hóa pin cho ứng dụng này</string>
+    <string name="az_common_allow">Cho phép</string>
+    <string name="az_common_rename">Đổi tên</string>
+    <string name="az_common_rotate">Xoay</string>
+    <string name="az_common_setting">Cài đặt</string>
+    <string name="az_live_description_suffix">Phát trực tiếp qua %1$s: %2$s</string>
+    <string name="az_live_with_app">Phát trực tiếp với %1$s</string>
+    <string name="az_menu_about">Giới thiệu</string>
+    <string name="az_menu_privacy_options">Tùy chọn quyền riêng tư</string>
+    <string name="az_request_popup_permission">Vui lòng cho phép quyền hiện nổi để sử dụng chức năng này</string>
+    <string name="az_screen_recorder_pro">AZ Screen Recorder PRO</string>
+    <string name="az_share_image_message">Chụp bởi %1$s: %2$s</string>
+    <string name="az_share_video_message">Ghi bởi %1$s: %2$s</string>
+    <string name="back">Trở lại</string>
+    <string name="background">Nền</string>
+    <string name="background_color">Màu nền</string>
+    <string name="bad">Tồi!</string>
+    <string name="bitrate">Bitrate</string>
+    <string name="black_screen">Màn hình đen</string>
+    <string name="black_white">Đen-trắng</string>
+    <string name="blur_image">Làm mờ ảnh</string>
+    <string name="bottomsheet_action_collapse">Thu gọn</string>
+    <string name="bottomsheet_action_collapse_description">Thu gọn bảng dưới cùng</string>
+    <string name="bottomsheet_action_expand">Mở rộng</string>
+    <string name="bottomsheet_action_expand_description">Mở rộng bảng dưới cùng</string>
+    <string name="bottomsheet_action_expand_halfway">Mở rộng một nửa</string>
+    <string name="bottomsheet_action_half_expand_description">Mở rộng một nửa bảng dưới cùng</string>
+    <string name="bottomsheet_drag_handle_content_description">Nút kéo</string>
+    <string name="bottomsheet_state_collapsed">Đã thu gọn</string>
+    <string name="bottomsheet_state_expanded">Đã mở rộng</string>
+    <string name="bottomsheet_state_half_expanded">Đã mở rộng một nửa</string>
+    <string name="brush">Bút lông</string>
+    <string name="build_number_position">"Tùy thuộc vào thương hiệu và phiên bản thiết bị của bạn, bạn có thể tìm thấy \"Số bản dựng \" ở những nơi khác nhau: 
+
+"<b> SAMSUNG:</b>" 
+\"Cài đặt \"> \"Giới thiệu về Điện thoại \"> \"Thông tin Phần mềm \"> \"Số bản dựng \" 
+
+"<b> Huawei:</b>" 
+\"Cài đặt \"> \"Hệ thống \"> \"Giới thiệu về điện thoại \"> \"Số bản dựng \" 
+
+"<b> Oppo:</b>" 
+\"Cài đặt \"> \"Giới thiệu về điện thoại \"> \"Phiên bản \"> \"Số bản dựng \" 
+
+"<b> Pixel:</b>" 
+\"Cài đặt \"> \"Giới thiệu về điện thoại \"> \"Số bản dựng \" 
+
+"<b> Xiaomi:</b>" 
+\"Cài đặt \"> \"Thiết bị của tôi \"> \"Tất cả thông số kỹ thuật \"> \"Phiên bản MIUI \" 
+
+"<b> Motorola:</b>" 
+\"Cài đặt \"> \"Giới thiệu về Điện thoại \"> \"Phiên bản ZUI \" 
+
+"<b> Asus:</b>" 
+\"Cài đặt \"> \"Giới thiệu về Điện thoại \"> \"Thông tin Phần mềm \"> \"Số bản dựng \" 
+
+"<b> LG:</b>" 
+\"Cài đặt \"> \"Giới thiệu về điện thoại \"> Thông tin phần mềm \"> \" Số bản dựng \""</string>
+    <string name="call_notification_answer_action">Trả lời</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Từ chối</string>
+    <string name="call_notification_hang_up_action">Kết thúc</string>
+    <string name="call_notification_incoming_text">Cuộc gọi đến</string>
+    <string name="call_notification_ongoing_text">Cuộc gọi đang thực hiện</string>
+    <string name="call_notification_screening_text">Đang sàng lọc cuộc gọi đến</string>
+    <string name="camera">Camera</string>
+    <string name="cancel">Huỷ</string>
+    <string name="cancel_export_warning">Bạn có muốn hủy xuất video không?</string>
+    <string name="cannot_start_recording">Không thể bắt đầu quay</string>
+    <string name="capital_new">MỚI</string>
+    <string name="caption_another_language">Hoặc chọn ngôn ngữ khác để phiên âm lại</string>
+    <string name="caption_apply">Áp dụng</string>
+    <string name="caption_cancel">Hủy</string>
+    <string name="caption_cancel_confirm_message">Huỷ tạo phụ đề? Bạn sẽ mất tiến trình hiện tại.</string>
+    <string name="caption_change_style">Đổi kiểu</string>
+    <string name="caption_choose_style">Chọn kiểu phụ đề</string>
+    <string name="caption_clear_short">Xóa</string>
+    <string name="caption_download_model">Tải gói ngôn ngữ</string>
+    <string name="caption_download_size_fmt">%1$.1f / %2$.1f MB</string>
+    <string name="caption_downloading_model_subtitle">Tải một lần — dùng được cho mọi ngôn ngữ</string>
+    <string name="caption_downloading_model_title">Đang tải mô hình giọng nói</string>
+    <string name="caption_edit">Sửa phụ đề</string>
+    <string name="caption_edit_list_empty">Chưa có phụ đề nào.</string>
+    <string name="caption_edit_list_hint">Chạm vào một phụ đề để sửa văn bản.</string>
+    <string name="caption_edit_list_title">Phụ đề</string>
+    <string name="caption_edit_short">Sửa</string>
+    <string name="caption_error_audio_extract">Không thể đọc âm thanh của video. Tệp có thể bị hỏng.</string>
+    <string name="caption_error_corrupt">Tải xuống bị hỏng. Chạm để thử lại.</string>
+    <string name="caption_error_engine">Quá trình phiên âm dừng đột ngột. Thử lại hoặc dùng video ngắn hơn.</string>
+    <string name="caption_error_incomplete">Gói ngôn ngữ không hoàn chỉnh. Chạm để thử lại.</string>
+    <string name="caption_error_model_missing">Gói ngôn ngữ chưa được cài đặt. Chọn ngôn ngữ để tải.</string>
+    <string name="caption_error_network">Không có kết nối internet. Kết nối Wi-Fi và thử lại.</string>
+    <string name="caption_error_no_audio_track">Video này không có bản âm thanh. Phụ đề cần âm thanh.</string>
+    <string name="caption_error_no_speech">Không phát hiện giọng nói trong âm thanh của video.</string>
+    <string name="caption_error_server">Không thể kết nối máy chủ. Vui lòng thử lại sau giây lát.</string>
+    <string name="caption_error_storage">Bộ nhớ không đủ. Giải phóng dung lượng và thử lại.</string>
+    <string name="caption_error_unknown">Đã có lỗi xảy ra. Vui lòng thử lại.</string>
+    <string name="caption_generate_cta">Chọn một ngôn ngữ để tạo phụ đề</string>
+    <string name="caption_lang_auto">Tự động nhận diện</string>
+    <string name="caption_language">Ngôn ngữ</string>
+    <string name="caption_language_fmt">Ngôn ngữ: %1$s</string>
+    <string name="caption_language_generic">Ngôn ngữ: %1$s</string>
+    <string name="caption_model_download_failed">Tải xuống thất bại. Kiểm tra kết nối và thử lại.</string>
+    <string name="caption_model_downloading">Đang tải… %1$d%%</string>
+    <string name="caption_model_downloading_please_wait">Một mô hình đang được tải. Vui lòng đợi.</string>
+    <string name="caption_model_finalizing">Đang hoàn tất…</string>
+    <string name="caption_model_installed">Đã cài đặt</string>
+    <string name="caption_model_progress_bytes_fmt">%1$.1f / %2$.1f MB · %3$d%%</string>
+    <string name="caption_model_size_mb">%1$d MB</string>
+    <string name="caption_no_audio">Video này không có âm thanh để tạo phụ đề.</string>
+    <string name="caption_phase_downloading_subtitle">Dùng cho mọi ngôn ngữ · tải một lần</string>
+    <string name="caption_phase_downloading_title">Đang tải mô hình giọng nói</string>
+    <string name="caption_phase_installing_title">Đang chuẩn bị…</string>
+    <string name="caption_phase_loading_title">Đang khởi động…</string>
+    <string name="caption_phase_preparing_subtitle">Đang đọc âm thanh của video</string>
+    <string name="caption_phase_preparing_title">Đang xử lý âm thanh…</string>
+    <string name="caption_phase_transcribing_title">Đang tạo phụ đề…</string>
+    <string name="caption_preview_sample">Mẫu</string>
+    <string name="caption_pro_footer">Tính năng Pro · chọn một ngôn ngữ để tiếp tục</string>
+    <string name="caption_remove_all">Xóa tất cả phụ đề</string>
+    <string name="caption_remove_all_confirm_action">Xóa tất cả</string>
+    <string name="caption_remove_all_confirm_message">Thao tác này xóa toàn bộ phụ đề tự động. Bạn có thể tạo lại sau.</string>
+    <string name="caption_remove_all_confirm_title">Xóa tất cả phụ đề?</string>
+    <string name="caption_select_language">Chọn ngôn ngữ</string>
+    <string name="caption_show_all_languages">Tất cả ngôn ngữ…</string>
+    <string name="caption_storage_low">Bộ nhớ không đủ để tải mô hình này.</string>
+    <string name="caption_style_classic">Cổ điển</string>
+    <string name="caption_style_cyan">Xanh lơ</string>
+    <string name="caption_style_minimal">Minimal</string>
+    <string name="caption_style_mono">Mono</string>
+    <string name="caption_style_pink">Hồng</string>
+    <string name="caption_style_tiktok">TikTok</string>
+    <string name="caption_style_yellow">Vàng</string>
+    <string name="caption_style_youtube">YouTube</string>
+    <string name="caption_transcribing">Đang phiên âm…</string>
+    <string name="caption_transcribing_estimate">Còn khoảng %1$d giây</string>
+    <string name="caption_transcription_failed">Không thể tạo phụ đề. Vui lòng thử lại.</string>
+    <string name="capture">Chụp</string>
+    <string name="cd_stop_recording">Dừng ghi</string>
+    <string name="change">Thay đổi</string>
+    <string name="change_speed">Thay đổi tốc độ</string>
+    <string name="character">Ký tự</string>
+    <string name="character_counter_content_description">Đã nhập %1$d trong số %2$d ký tự</string>
+    <string name="character_counter_overflowed_content_description">Đã vượt quá giới hạn ký tự %1$d/%2$d</string>
+    <string name="choose_audio">Chọn âm thanh</string>
+    <string name="choose_email_title">Gửi email…</string>
+    <string name="choose_live_platform">Chọn nền tảng để phát trực tiếp</string>
+    <string name="choose_storage">Lưu trữ video tại</string>
+    <string name="choose_visibility">Chọn quyền riêng tư</string>
+    <string name="clear_text_end_icon_content_description">Xóa văn bản</string>
+    <string name="click_continue_to_record_silent">Bấm TIẾP TỤC để quay video im lặng.</string>
+    <string name="close">Đóng</string>
+    <string name="color">Màu sắc</string>
+    <string name="color_picker">Chọn màu</string>
+    <string name="com_facebook_device_auth_instructions">Truy cập &lt;b>facebook.com/device&lt;/b> và nhập mã hiển thị bên dưới.</string>
+    <string name="com_facebook_image_download_unknown_error">Lỗi không mong muốn khi tải hình ảnh xuống.</string>
+    <string name="com_facebook_internet_permission_error_message">Đăng nhập chế độ xem web yêu cầu quyền INTERNET</string>
+    <string name="com_facebook_internet_permission_error_title">Lỗi AndroidManifest</string>
+    <string name="com_facebook_like_button_liked">Đã thích</string>
+    <string name="com_facebook_like_button_not_liked">Thích</string>
+    <string name="com_facebook_loading">Đang tải…</string>
+    <string name="com_facebook_loginview_cancel_action">Hủy</string>
+    <string name="com_facebook_loginview_log_in_button">Đăng nhập</string>
+    <string name="com_facebook_loginview_log_in_button_continue">Tiếp tục với Facebook</string>
+    <string name="com_facebook_loginview_log_in_button_long">Đăng nhập bằng Facebook</string>
+    <string name="com_facebook_loginview_log_out_action">Đăng xuất</string>
+    <string name="com_facebook_loginview_log_out_button">Đăng xuất</string>
+    <string name="com_facebook_loginview_logged_in_as">Đã đăng nhập với tên: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_using_facebook">Đã đăng nhập bằng Facebook</string>
+    <string name="com_facebook_send_button_text">Gửi</string>
+    <string name="com_facebook_share_button_text">Chia sẻ</string>
+    <string name="com_facebook_smart_device_instructions">Để kết nối tài khoản của bạn, hãy mở ứng dụng Facebook trên thiết bị di động và kiểm tra thông báo.</string>
+    <string name="com_facebook_smart_device_instructions_or">- HOẶC -</string>
+    <string name="com_facebook_smart_login_confirmation_cancel">Không phải bạn?</string>
+    <string name="com_facebook_smart_login_confirmation_continue_as">Tiếp tục dưới tên %1$s</string>
+    <string name="com_facebook_smart_login_confirmation_title">Xác nhận đăng nhập</string>
+    <string name="com_facebook_tooltip_default">Bạn nắm quyền kiểm soát - chọn thông tin bạn muốn chia sẻ với ứng dụng.</string>
+    <string name="common_continue">Tiếp tục</string>
+    <string name="common_google_play_services_enable_button">Bật</string>
+    <string name="common_google_play_services_enable_text">%1$s sẽ không hoạt động nếu bạn không bật dịch vụ của Google Play.</string>
+    <string name="common_google_play_services_enable_title">Bật dịch vụ của Google Play</string>
+    <string name="common_google_play_services_install_button">Cài đặt</string>
+    <string name="common_google_play_services_install_text">%1$s sẽ không chạy nếu không có dịch vụ của Google Play. Thiết bị của bạn bị thiếu dịch vụ này.</string>
+    <string name="common_google_play_services_install_title">Cài đặt dịch vụ của Google Play</string>
+    <string name="common_google_play_services_notification_channel_name">Phạm vi cung cấp Dịch vụ Google Play</string>
+    <string name="common_google_play_services_notification_ticker">Lỗi dịch vụ của Google Play</string>
+    <string name="common_google_play_services_unknown_issue">%1$s đang gặp sự cố với Dịch vụ Google Play. Hãy thử lại.</string>
+    <string name="common_google_play_services_unsupported_text">%1$s sẽ không chạy nếu không có Dịch vụ Google Play. Thiết bị của bạn không hỗ trợ các dịch vụ này.</string>
+    <string name="common_google_play_services_update_button">Cập nhật</string>
+    <string name="common_google_play_services_update_text">%1$s sẽ không chạy trừ khi bạn cập nhật Dịch vụ Google Play.</string>
+    <string name="common_google_play_services_update_title">Cập nhật dịch vụ của Google Play</string>
+    <string name="common_google_play_services_updating_text">%1$s sẽ không chạy nếu không có dịch vụ của Google Play. Dịch vụ này hiện đang cập nhật.</string>
+    <string name="common_google_play_services_wear_update_text">Cần phiên bản mới của dịch vụ Google Play. Dịch vụ sẽ sớm tự động cập nhật.</string>
+    <string name="common_logout">Đăng xuất</string>
+    <string name="common_open_on_phone">Mở trên điện thoại</string>
+    <string name="common_signin_button_text">Đăng nhập</string>
+    <string name="common_signin_button_text_long">Đăng nhập bằng Google</string>
+    <string name="compress">Nén</string>
+    <string name="compress_video">Nén video</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="confirm_exit">Xác nhận thoát</string>
+    <string name="congratulation">Chúc mừng!</string>
+    <string name="contact_support">Liên hệ hỗ trợ</string>
+    <string name="convert_to_black_white">Đổi sang Đen-trắng</string>
+    <string name="convert_to_gif">Tạo file gif</string>
+    <string name="copy">Sao chép</string>
+    <string name="copy_toast_msg">Đã sao chép đường liên kết vào bảng nhớ tạm</string>
+    <string name="corrupted_video">Video hỏng</string>
+    <string name="corrupted_video_with_colon">Video hỏng:</string>
+    <string name="countdown_value">Giá trị đếm ngược</string>
+    <string name="countdown_value_in_second">Giá trị đếm ngược (giây)</string>
+    <string name="crashes_errors">CÁC LỖI DỪNG ỨNG DỤNG</string>
+    <string name="create_gif">Tạo GIF</string>
+    <string name="created_1_video">Bạn đã tạo 1 video với %s.</string>
+    <string name="created_3_videos">Bạn đã tạo 3 video với %s.</string>
+    <string name="crop">Cắt</string>
+    <string name="crop_all_caps">CẮT</string>
+    <string name="crop_image">Cắt ảnh</string>
+    <string name="crop_image_activity_no_permissions">Đang hủy, các quyền đã yêu cầu không được cấp</string>
+    <string name="crop_image_activity_title" />
+    <string name="crop_image_menu_crop">Cắt</string>
+    <string name="crop_image_menu_flip">Lật</string>
+    <string name="crop_image_menu_flip_horizontally">Lật theo chiều ngang</string>
+    <string name="crop_image_menu_flip_vertically">Lật theo chiều dọc</string>
+    <string name="crop_image_menu_rotate_left">Xoay theo chiều kim đồng hồ</string>
+    <string name="crop_image_menu_rotate_right">Xoay</string>
+    <string name="crop_video">Cắt video</string>
+    <string name="custom">Tuỳ chỉnh</string>
+    <string name="custom_percent">Tuỳ chỉnh (%s)</string>
+    <string name="custom_resolution">Tuỳ chỉnh độ phân giải</string>
+    <string name="cut">Cắt</string>
+    <string name="cut_duration_warning">Thời lượng video phải dài hơn 1 giây</string>
+    <string name="cut_middle">Cắt ở giữa</string>
+    <string name="dedicated_auto_caption_name">Nhận ứng dụng Auto Caption</string>
+    <string name="dedicated_auto_caption_share_subtitle">Nhiều phong cách hơn • Tự động dịch • Miễn phí</string>
+    <string name="dedicated_video_compressor_name">Nhận ứng dụng Video Compressor</string>
+    <string name="dedicated_video_compressor_share_subtitle">Nén hàng loạt • Chế độ nhanh • Miễn phí</string>
+    <string name="default_mode">Mặc định</string>
+    <string name="default_mode_description">Ổn định hơn. Được đề xuất cho hầu hết các thiết bị</string>
+    <string name="delete">Xoá</string>
+    <string name="delete_all">Xóa hết</string>
+    <string name="delete_image">Xóa ảnh</string>
+    <string name="delete_video">Xoá video</string>
+    <string name="description_live_stream_hint_youtube">Mô tả</string>
+    <string name="device">Thiết bị</string>
+    <string name="device_language">Ngôn ngữ của thiết bị</string>
+    <string name="device_not_support_overlay">Máy của bạn không hỗ trợ Vẽ lên ứng dụng khác</string>
+    <string name="device_not_support_permission">Máy của bạn không hỗ trợ quyền này</string>
+    <string name="dialog_already_have_premium_msg">Nếu bạn đã mua phiên bản nâng cấp, bạn có thể sử dụng nó trên tất cả các thiết bị bạn có. Vui lòng mở <b> phần Cài đặt của thiết bị</b> - <b> Tài khoản</b> và <b> đăng nhập</b> với tài khoản Google bạn đã sử dụng để mua ứng dụng. Sau đó vào Cửa hàng Google play để cài đặt ứng dụng. <b> Nếu bạn có bất kì vấn đề gì, hãy liên hệ vào email az.screen.recorder@gmail.com để được hỗ trợ.</b></string>
+    <string name="dialog_already_have_premium_title">Bạn đã có phiên bản nâng cấp.</string>
+    <string name="dialog_ask_for_show_rd_ads">Bạn có thể mở khoá tất cả tính năng nâng cấp <b> MIỄN PHÍ</b> trong một ngày bằng cách xem và cài đặt một video quảng cáo.</string>
+    <string name="dialog_cancel_repair_msg">Bạn muốn huỷ tác vụ khôi phục video?</string>
+    <string name="dialog_confirm_exit_msg">Tất cả các thay đổi sẽ bị xóa, bạn có chắc chắn muốn thoát không?</string>
+    <string name="dialog_confirm_exit_stitch_images_msg">Bạn có chắc chắn muốn thoát mà không lưu hình ảnh?</string>
+    <string name="dialog_delete_image_msg">Bạn có chắc chắn muốn xóa hình ảnh này?</string>
+    <string name="dialog_delete_video_msg">Bạn có chắc chắn muốn xoá video này?</string>
+    <string name="dialog_gif_converter_msg">Tính năng này cho phép chuyển đổi video thành file GIF</string>
+    <string name="dialog_grant_popup_window_permission_msg">Bạn cần cấp quyền <b> Pop-up window (Alert)</b>" để chạy AZ Screen Recorder.
+
+Nếu bạn không biết cách để cấp quyền này, hãy xem video hướng dẫn."</string>
+    <string name="dialog_msg_not_enough_storage">Xóa bộ nhớ điện thoại trước khi xuất video.</string>
+    <string name="dialog_rate_btn">Đánh giá chúng tôi 5 sao</string>
+    <string name="dialog_rate_msg">"Bạn có thích %1$s không?
+ Chúng tôi rất mong nhận được sự hỗ trợ từ bạn!"</string>
+    <string name="dialog_repair_warning_msg">Chúng tôi sẽ cố gắng hết sức để khôi phục video này. Kết quả có thể sẽ không hoàn hảo.</string>
+    <string name="dialog_restricted_background_warning_message">Để ghi lại màn hình, vui lòng cho phép ứng dụng này<b> chạy trong nền</b>" .
+
+Hạn chế nền có thể dẫn đến"<b> sự cố ứng dụng và video không hoàn chỉnh</b>" .
+
+Để đảm bảo ứng dụng chạy chính xác:
+1. Mở phần \"Thông tin ứng dụng\".
+2. Chọn 'Pin'.
+3. Chọn 'Không hạn chế' hoặc 'Cho phép trong nền'."</string>
+    <string name="dialog_restricted_background_warning_title">📢 Thông báo quan trọng 📢</string>
+    <string name="dialog_sdcard_warning_msg">Video và ảnh được lưu trữ trong thẻ SD sẽ bị xóa khi bạn gỡ cài đặt %1$s.</string>
+    <string name="dialog_trash_image_msg">Bạn có chắc chắn muốn chuyển hình ảnh này vào thùng rác không?</string>
+    <string name="dialog_trash_video_msg">Bạn có chắc chắn muốn chuyển video này vào thùng rác không?</string>
+    <string name="dialog_trim_cut_msg">Tính năng này cho phép bạn cắt gọn hoặc xoá những đoạn giữa video.</string>
+    <string name="dialog_tutorial_stitch_images_msg">Chức năng này sẽ giúp bạn ghép nhiều hình ảnh lại với nhau, bạn có muốn xem video hướng dẫn cách sử dụng không?</string>
+    <string name="dialog_verify_account_live_stream_title">Xác thực tài khoản</string>
+    <string name="dialog_warning_delete_one_screenshot_msg">Bạn có chắc chắn muốn xóa ảnh chụp màn hình này?</string>
+    <string name="dialog_warning_for_android_51_msg">"Vui lòng KHÔNG chọn \"Không hiện lại\" ở màn hình hỏi quyền tiếp theo để tránh lỗi \"Giao diện hệ thống bị dừng\". Đây là một lỗi của Android 5.1.
+
+Trong trường hợp bạn đã làm vậy, vui lòng cài lại ứng dụng."</string>
+    <string name="dialog_warning_lack_memory_available">Hiện tại chỉ còn trống %d MB</string>
+    <string name="dialog_warning_lack_memory_external_msg">Để xử lý video bạn cần có %d MB trong thẻ nhớ ngoài.</string>
+    <string name="dialog_warning_lack_memory_internal_msg">Để xử lý video bạn cần có %d MB trong bộ nhớ trong.</string>
+    <string name="disable">Tắt</string>
+    <string name="disable_other_overlay_apps">"Nếu bạn không thể nhấn nút 'Bắt đầu ngay', vui lòng tắt các ứng dụng khác che màn hình (ví dụ như các ứng dụng màn hình ánh sáng xanh)."</string>
+    <string name="discount_price_forever">%s - Mãi mãi</string>
+    <string name="donate_upgrade_issues">THẮC MẮC VỀ BẢN PREMIUM</string>
+    <string name="done">Hoàn thành</string>
+    <string name="draw_image">Vẽ lên ảnh</string>
+    <string name="duration">Thời gian:</string>
+    <string name="edit">Chỉnh sửa</string>
+    <string name="edit_audio">Sửa âm thanh</string>
+    <string name="edit_image">Chỉnh sửa hình ảnh</string>
+    <string name="edit_music">Chỉnh sửa âm nhạc</string>
+    <string name="edit_video">Chỉnh sửa video</string>
+    <string name="enable_countdown_timer">Đếm ngược trước khi bắt đầu</string>
+    <string name="enable_developer_options">Nếu bạn không thể tìm thấy \"Tùy chọn nhà phát triển \", bạn có thể xem cách bật nó bên dưới.</string>
+    <string name="enable_show_touches_step"><b> Bước 2: Bật hiển thị chạm</b>" 
+
+Cuộn xuống danh sách \"Tùy chọn nhà phát triển \" để tìm \"Hiển thị các lần chạm \" hoặc \"Hiển thị các lần chạm \" và bật các tùy chọn."</string>
+    <string name="enjoy_az_recorder_pro">Thưởng thức AZ Recorder Pro</string>
+    <string name="enter_text">Nhập văn bản</string>
+    <string name="enter_text_hint">Điền chữ vào đây!</string>
+    <string name="error">Lỗi</string>
+    <string name="error_a11y_label">Lỗi: không hợp lệ</string>
+    <string name="error_icon_content_description">Lỗi</string>
+    <string name="error_live_yt_not_supported_browser">Vui lòng cài trình duyệt Chrome</string>
+    <string name="estimated_file_size">Kích thước tệp ước tính: %s Mb</string>
+    <string name="exclusive_offer">🎁 Ưu đãi độc quyền</string>
+    <string name="exit">Thoát</string>
+    <string name="exo_controls_cc_disabled_description">Bật phụ đề</string>
+    <string name="exo_controls_cc_enabled_description">Tắt phụ đề</string>
+    <string name="exo_controls_fastforward_description">Tua đi</string>
+    <string name="exo_controls_fullscreen_enter_description">Chuyển sang chế độ toàn màn hình</string>
+    <string name="exo_controls_fullscreen_exit_description">Thoát khỏi chế độ toàn màn hình</string>
+    <string name="exo_controls_hide">Ẩn các nút điều khiển trình phát</string>
+    <string name="exo_controls_next_description">Tiếp theo</string>
+    <string name="exo_controls_overflow_hide_description">Ẩn các tùy chọn cài đặt bổ sung</string>
+    <string name="exo_controls_overflow_show_description">Hiện các tùy chọn cài đặt bổ sung</string>
+    <string name="exo_controls_pause_description">Tạm dừng</string>
+    <string name="exo_controls_play_description">Phát</string>
+    <string name="exo_controls_playback_speed">Tốc độ</string>
+    <string name="exo_controls_previous_description">Trước</string>
+    <string name="exo_controls_repeat_all_description">Chế độ hiện tại: Lặp lại tất cả nội dung. Bật/tắt chế độ lặp lại.</string>
+    <string name="exo_controls_repeat_off_description">Chế độ hiện tại: Không lặp lại. Bật/tắt chế độ lặp lại.</string>
+    <string name="exo_controls_repeat_one_description">Chế độ hiện tại: Lặp lại một nội dung. Bật/tắt chế độ lặp lại.</string>
+    <string name="exo_controls_rewind_description">Tua lại</string>
+    <string name="exo_controls_seek_bar_description">Tiến trình phát</string>
+    <string name="exo_controls_settings_description">Cài đặt</string>
+    <string name="exo_controls_show">Hiển thị các nút điều khiển trình phát</string>
+    <string name="exo_controls_shuffle_off_description">Bật chế độ trộn bài</string>
+    <string name="exo_controls_shuffle_on_description">Tắt chế độ trộn bài</string>
+    <string name="exo_controls_stop_description">Dừng</string>
+    <string name="exo_controls_vr_description">Chế độ thực tế ảo</string>
+    <string name="exo_download_completed">Đã hoàn tất tải xuống</string>
+    <string name="exo_download_description">Tải xuống</string>
+    <string name="exo_download_downloading">Đang tải xuống</string>
+    <string name="exo_download_failed">Không tải xuống được</string>
+    <string name="exo_download_notification_channel_name">Tài nguyên đã tải xuống</string>
+    <string name="exo_download_paused">Đã tạm dừng tải xuống</string>
+    <string name="exo_download_paused_for_network">Đang chờ có mạng để tải xuống</string>
+    <string name="exo_download_paused_for_wifi">Đang chờ có Wi-Fi để tải xuống</string>
+    <string name="exo_download_removing">Đang xóa các mục đã tải xuống</string>
+    <string name="exo_item_list">%1$s, %2$s</string>
+    <string name="exo_track_bitrate">%1$.2f Mb/giây</string>
+    <string name="exo_track_mono">Đơn âm</string>
+    <string name="exo_track_resolution">%1$d × %2$d</string>
+    <string name="exo_track_role_alternate">Thay thế</string>
+    <string name="exo_track_role_closed_captions">Phụ đề</string>
+    <string name="exo_track_role_commentary">Bình luận</string>
+    <string name="exo_track_role_supplementary">Bổ sung</string>
+    <string name="exo_track_selection_auto">Tự động</string>
+    <string name="exo_track_selection_none">Không</string>
+    <string name="exo_track_selection_title_audio">Âm thanh</string>
+    <string name="exo_track_selection_title_text">Văn bản</string>
+    <string name="exo_track_selection_title_video">Video</string>
+    <string name="exo_track_stereo">Âm thanh nổi</string>
+    <string name="exo_track_surround">Âm thanh vòm</string>
+    <string name="exo_track_surround_5_point_1">Âm thanh vòm 5.1</string>
+    <string name="exo_track_surround_7_point_1">Âm thanh vòm 7.1</string>
+    <string name="exo_track_unknown">Không xác định</string>
+    <string name="expand_button_title">Nâng cao</string>
+    <string name="explain_permission_camera">Chúng tôi cần quyền truy cập camera để ghi hình với khuôn mặt của bạn.</string>
+    <string name="explain_permission_camera_edited">"Chúng tôi cần quyền truy cập camera nếu bạn muốn ghi hình có cả khuôn mặt của bạn. Vui lòng cấp quyền ở phần Cài đặt của máy.
+
+Chọn quyền -> Cấp quyền"</string>
+    <string name="explain_permission_contacts">Chúng tôi cần quyền truy cập vào các liên hệ để xác nhận việc bạn đã mua ứng dụng.</string>
+    <string name="explain_permission_contacts_edited">"Chúng tôi cần quyền truy cập vào các liên hệ để xác thực thanh toán của bạn. Vui lòng cấp quyền ở phần Cài đặt của máy.
+
+Chọn quyền -> Cấp quyền"</string>
+    <string name="explain_permission_record_audio">Chúng tôi cần quyền ghi âm thanh để ghi âm giọng nói của bạn.</string>
+    <string name="explain_permission_record_audio_edited">"Chúng tôi cần quyền truy cập micro để ghi âm audio. Ấn \"Cho phép\" và chọn 'Quyền -> cho phép Audio'."</string>
+    <string name="explain_permission_storage">Cần có quyền Truy cập bộ nhớ để dùng một số tính năng chính như quay màn hình. Vui lòng cấp quyền Truy cập bộ nhớ để dùng %1$s bình thường.</string>
+    <string name="explain_permission_storage_edited">"Chúng tôi cần quyền truy cập bộ nhớ để lưu lại video và hình ảnh. Ấn \"Cho phép\" và chọn 'Quyền -> cho phép Bộ nhớ'."</string>
+    <string name="export_video">Xuất</string>
+    <string name="exporting">Đang xuất…</string>
+    <string name="exporting_video">Đang xuất video</string>
+    <string name="exporting_warning">Tạo video của bạn. Xin vui lòng chờ trong giây lát.</string>
+    <string name="exposed_dropdown_menu_content_description">Hiển thị menu thả xuống</string>
+    <string name="external_sd_card_2">Thẻ nhớ ngoài</string>
+    <string name="extract_frame">Lấy ảnh từ video</string>
+    <string name="extract_frame_at_time">Khung hình tại:</string>
+    <string name="fallback_menu_item_copy_link">Sao chép đường liên kết</string>
+    <string name="fallback_menu_item_open_in_browser">Mở trong trình duyệt</string>
+    <string name="fallback_menu_item_share_link">Chia sẻ đường liên kết</string>
+    <string name="faq">Trợ giúp</string>
+    <string name="faq_answer_bad_quality_after_sharing">Hầu hết các ứng dụng nhắn tin và mạng xã hội đều mã hóa lại video để tiết kiệm dữ liệu, điều này làm giảm chất lượng. Gửi trực tiếp tệp để giữ nguyên chất lượng gốc, ví dụ qua trình quản lý tệp, lưu trữ đám mây, hoặc <b>Truyền File Wifi</b> trong <b>Tiện ích</b>.</string>
+    <string name="faq_answer_black_video">"Các ứng dụng và dịch vụ bảo vệ nội dung của họ, chẳng hạn như dịch vụ phát trực tuyến và ứng dụng ngân hàng, ra lệnh cho Android chặn việc quay màn hình. Bản ghi cố ý ra màu đen và điều này không thể vượt qua được. 
+
+ Một số ứng dụng chỉ chặn việc quay trên một màn hình, chẳng hạn như trang thanh toán hoặc màn hình mật khẩu, vì vậy có thể chỉ một phần video của bạn bị đen. 
+
+"<b>Nếu ứng dụng bạn đã quay không bảo vệ nội dung của nó-</b>" 
+ - Kiểm tra xem video có phát trên trang chỉnh sửa hay không. Nếu có, hãy đóng các ứng dụng khác và khởi động lại AZ Screen Recorder. 
+
+ - Giảm "<b>Độ phân giải</b> và <b>Chất lượng video</b>" trong cài đặt và quay lại. 
+
+ - Nếu vấn đề vẫn tiếp diễn, hãy khởi động lại thiết bị. "</string>
+    <string name="faq_answer_cant_play_shared_videos">- Một số ứng dụng và thiết bị cũ hơn không thể phát video có tốc độ khung hình hoặc độ phân giải cao. Hãy quay với <b>Tốc độ khung hình</b> và <b>Độ phân giải</b> thấp hơn, hoặc nén tệp bằng <b>Nén video</b> trong <b>Tiện ích</b>" trước khi chia sẻ. 
+
+ - Nếu việc quay bị gián đoạn, tệp có thể bị hỏng. Xem câu hỏi về video bị hỏng. "</string>
+    <string name="faq_answer_cant_record_internal_audio">"- Âm thanh hệ thống yêu cầu Android 10 trở lên. Trên Android 9 và các phiên bản cũ hơn, hệ thống không hiển thị tùy chọn này vì nó không cung cấp khả năng ghi âm ở cấp hệ thống. 
+
+ - Ngay cả trên Android 10 và các phiên bản mới hơn, mỗi ứng dụng quyết định liệu các ứng dụng khác có thể ghi âm thanh của nó hay không. Nhiều ứng dụng phát trực tuyến và nhạc, cùng một số trò chơi, từ chối điều này. Khi điều đó xảy ra, bản ghi ra không có âm thanh và không có công cụ quay màn hình nào có thể thay đổi điều đó. 
+
+ - Thay vào đó, hãy đặt "<b>Nguồn âm thanh</b> thành <b>Âm thanh bên trong và micrô</b>". Micrô sẽ thu lại những gì đang phát qua loa của bạn, vì vậy video vẫn giữ được âm thanh của nó. 
+
+ - Âm thanh hệ thống thu âm thanh của media và trò chơi. Các âm thanh hệ thống như âm báo thông báo, chuông báo thức và cuộc gọi không được bao gồm. "</string>
+    <string name="faq_answer_cant_share_recordings">"- Tệp có thể lớn hơn mức mà ứng dụng bạn đang chia sẻ chấp nhận. Giới hạn kích thước khác nhau tùy theo ứng dụng và nền tảng. 
+
+ - Sử dụng "<b>Nén video</b> trong <b>Tiện ích</b>" để giảm kích thước tệp, hoặc cắt nó trong trình chỉnh sửa video. 
+
+ - Sử dụng "<b>Truyền File Wifi</b> trong <b>Tiện ích</b> để gửi tệp gốc với chất lượng đầy đủ, hoặc tải nó lên lưu trữ đám mây. </string>
+    <string name="faq_answer_corrupted_video_repair">Nếu việc quay bị gián đoạn bởi điều gì đó như sự cố ứng dụng hoặc pin cạn kiệt, tệp có thể trở nên không thể phát được. AZ Screen Recorder sẽ đánh dấu điều này trong danh sách video của bạn là <b>Video hỏng</b>". 
+
+ - Chạm vào video bị hỏng và chọn "<b>Khôi phục</b>". 
+
+ - Việc khôi phục cần một video tham chiếu: một bản ghi hoạt động tốt được quay với cùng cài đặt độ phân giải, tốc độ khung hình và chất lượng. Nếu bạn không có video đó, hãy quay một video ngắn với cùng cài đặt trước. 
+
+ - Việc khôi phục sẽ phục hồi càng nhiều càng tốt. Kết quả không phải lúc nào cũng hoàn hảo. "</string>
+    <string name="faq_answer_floating_bubble_disappear">"- Khi bộ nhớ thấp, hệ thống có thể đóng bong bóng. Đóng các ứng dụng bạn không sử dụng, hoặc khởi động lại thiết bị. 
+
+ - Kiểm tra xem "<b>Cho phép hiển thị trên các ứng dụng khác</b>" có còn được cho phép cho AZ Screen Recorder trong cài đặt hệ thống không. Một số công cụ tiết kiệm pin tắt tính năng này. 
+
+ - Mở cài đặt và bật "<b>Tránh dừng đột ngột</b>", để hệ thống không đóng ứng dụng ở chế độ nền. 
+
+ - Thông báo luôn có thể bắt đầu và dừng việc quay. "</string>
+    <string name="faq_answer_hide_floating_bubble">- Mở cài đặt và bật <b>Ẩn bong bóng nổi trong khi ghi</b>". Bong bóng sẽ ẩn khi bạn đang quay và xuất hiện lại khi bạn dừng. 
+
+ - Thay vào đó, hãy bật "<b>Nút ma thuật: điều khiển vô hình</b>" để giữ một nút điều khiển vô hình trên màn hình. Chạm vào nó để tạm dừng hoặc tiếp tục, và giữ để dừng. 
+
+ - Thông báo cũng có thể bắt đầu và dừng việc quay. "</string>
+    <string name="faq_answer_is_az_recorder_safe">"Có. Những gì bạn quay vẫn ở trên thiết bị của bạn. 
+
+ - Các bản ghi và ảnh chụp màn hình được lưu trữ trong bộ nhớ thiết bị của bạn. Chúng tôi không bao giờ tải chúng lên hoặc xem chúng. 
+
+ - "<b>Phụ đề tự động</b>" chuyển đổi lời nói thành văn bản ngay trên thiết bị của bạn. Âm thanh của bạn không bao giờ được gửi đến máy chủ. Ứng dụng tải xuống một mô hình giọng nói một lần, sau đó phụ đề hoạt động ngoại tuyến. 
+
+ - Trong khi bản ghi đang hoạt động, Android hiển thị thông báo chia sẻ màn hình, vì vậy luôn rõ ràng khi màn hình của bạn đang được ghi lại. "</string>
+    <string name="faq_answer_manage_subscription">"Gói đăng ký được quản lý bởi Google Play, không phải từ AZ Screen Recorder. 
+
+ - Mở Google Play, chạm vào biểu tượng hồ sơ của bạn và đi đến "<b>Thanh toán và đăng ký</b> rồi <b>Đăng ký</b>". 
+
+ - Chọn AZ Screen Recorder để thay đổi hoặc hủy gói đăng ký của bạn. 
+
+ - Việc hủy sẽ dừng lần gia hạn tiếp theo. Pro sẽ vẫn hoạt động cho đến hết thời gian bạn đã thanh toán. 
+
+ - Mua trọn đời là khoản thanh toán một lần. Nó không bao giờ gia hạn và không cần phải hủy. "</string>
+    <string name="faq_answer_pro_account_not_work">"Pro được gắn với tài khoản Google mà bạn đã mua, không phải với thiết bị. 
+
+ - Mở Google Play, chạm vào biểu tượng hồ sơ của bạn và xác minh bạn đã đăng nhập bằng tài khoản mà bạn đã sử dụng để mua Pro. Nếu có nhiều tài khoản đăng nhập, Pro sẽ chỉ được khôi phục cho tài khoản đã thanh toán. 
+
+ - Mở menu trên trang nâng cấp và chạm vào "<b>Bạn đã nâng cấp?</b>". 
+
+ - Nếu bạn đã mua gói đăng ký, hãy kiểm tra xem nó có còn hoạt động trong mục "<b>Thanh toán và đăng ký</b>" trên Google Play hay không. 
+
+ - Khởi động lại thiết bị sau khi chuyển đổi tài khoản. 
+
+ - Nếu Pro vẫn không có, hãy gửi email đến az.screen.recorder@gmail.com kèm theo số đơn hàng từ biên lai thanh toán Google Play của bạn. "</string>
+    <string name="faq_answer_record_sound_with_earphones"><b>Android 10 và các phiên bản sau</b>" 
+ - Đặt "<b>Nguồn âm thanh</b> thành <b>Âm thanh hệ thống</b>" để ghi lại những gì thiết bị đang phát, bao gồm cả âm thanh được gửi đến tai nghe của bạn. 
+
+ - Đặt "<b>Nguồn âm thanh</b> thành <b>Âm thanh bên trong và micrô</b>" để ghi âm thanh thiết bị cùng với giọng nói của chính bạn. 
+
+ "<b>Android 9 và các phiên bản trước</b>" 
+ - Chỉ có ghi âm bằng micrô khả dụng. Hãy tháo tai nghe nếu bạn cần âm thanh thiết bị trong video, vì micrô không thể nghe được những gì đang được gửi đến chúng. "</string>
+    <string name="faq_answer_record_zoom_meet"><b>Cuộc gọi điện thoại và cuộc gọi video</b>" 
+ - Android dành riêng âm thanh cuộc gọi và micrô cho ứng dụng gọi điện và ngăn các ứng dụng khác thu lại chúng. Không có công cụ quay màn hình nào có thể ghi lại một cuộc gọi cùng âm thanh. 
+
+ "<b>Các ứng dụng họp như Zoom hoặc Google Meet</b>" 
+ - Nếu bạn chỉ cần xem, hãy tham gia với micrô tắt tiếng, đặt "<b>Nguồn âm thanh</b> thành <b>Âm thanh bên trong và micrô</b>", và giữ cuộc họp trên loa để micrô có thể thu được. 
+
+ - Nếu ứng dụng họp coi phiên đó là một cuộc gọi, Android sẽ tiếp tục chặn việc quay và video sẽ ra không có âm thanh. 
+
+ "<b>Cách đáng tin cậy</b>" 
+ - Quay cuộc họp bằng một thiết bị thứ hai, hoặc sử dụng tính năng quay được tích hợp sẵn trong chính ứng dụng họp. "</string>
+    <string name="faq_answer_recorded_videos_not_appear">"- Bản ghi của bạn luôn xuất hiện ngay lập tức trong danh sách video của AZ Screen Recorder. Thư viện hệ thống có thể mất vài phút để lập chỉ mục tệp mới. 
+
+ - Nếu bạn có thể đã xóa video, hãy kiểm tra "<b>Thư mục thùng rác</b>. Trên Android 11 và các phiên bản mới hơn, các tệp đã xóa được lưu giữ ở đó miễn là <b>Sử dụng thùng rác</b>" được bật. 
+
+ - Mở thư mục được hiển thị tại "<b>Thư mục lưu trữ</b>" trong cài đặt bằng một trình quản lý tệp. 
+
+ - Nếu bạn đã thay đổi vị trí lưu trữ sang thẻ SD, video sẽ nằm trên thẻ SD thay vì bộ nhớ trong. 
+
+ - Các bản ghi dài được lưu thành nhiều đoạn, vì vậy hãy tìm nhiều hơn một tệp. "</string>
+    <string name="faq_answer_recording_has_no_sound">Trước tiên, hãy kiểm tra <b>Nguồn âm thanh</b> trong cài đặt không được đặt thành <b>Tắt tiếng</b>". 
+
+ Nếu một bản ghi đã hoàn thành xuất hiện không có âm thanh, AZ Screen Recorder sẽ đánh dấu nó trong danh sách video của bạn. Chạm vào lý do bên cạnh video đó để xem điều gì đã xảy ra. 
+
+ "<b>Ứng dụng bạn đã quay đã chặn âm thanh của chính nó</b>" 
+ - Android cho phép mỗi ứng dụng quyết định liệu các ứng dụng khác có thể ghi âm thanh của nó hay không. Các ứng dụng phát trực tuyến, ứng dụng nhạc và một số trò chơi từ chối điều này, khiến bản ghi ra không có âm thanh. Không có công cụ quay màn hình nào có thể vượt qua điều này. 
+
+ - Đặt "<b>Nguồn âm thanh</b> thành <b>Âm thanh bên trong và micrô</b>". Micrô sẽ tiếp tục thu âm thanh phát ra từ loa của bạn, vì vậy video vẫn giữ được âm thanh của nó. Tăng âm lượng và không sử dụng tai nghe. 
+
+ "<b>Bạn đang trong một cuộc gọi điện thoại</b>" 
+ - Android dành riêng âm thanh cuộc gọi và micrô cho ứng dụng gọi điện, vì vậy các cuộc gọi không thể được ghi lại cùng âm thanh. 
+
+ "<b>Ghi âm bằng micrô</b>" 
+ - Chỉ có một ứng dụng có thể sử dụng micrô tại một thời điểm. Nếu một trò chơi hoặc ứng dụng họp đang sử dụng nó, bản ghi của bạn sẽ không có âm thanh. 
+
+ - Đảm bảo không có gì che micrô trong khi quay. 
+
+ - Âm thanh hệ thống yêu cầu Android 10 trở lên. Trên Android 9 và các phiên bản cũ hơn, chỉ có "<b>Mic</b> khả dụng. </string>
+    <string name="faq_answer_recording_orientation_not_auto_rotate">"Hướng được xác định khi bắt đầu quay và giữ nguyên trong suốt video, vì vậy việc xoay thiết bị của bạn trong khi quay sẽ không làm xoay video. 
+
+ - Nếu "<b>Hướng</b> trong cài đặt được đặt thành <b>Tự động</b>", AZ Screen Recorder sẽ sử dụng hướng mà thiết bị của bạn đang ở vào thời điểm bắt đầu quay. Xoay thiết bị trước khi bắt đầu quay. 
+
+ - Bạn cũng có thể đặt "<b>Hướng</b> trong cài đặt thành <b>Ngang</b> hoặc <b>Dọc</b> để khóa thủ công, bất kể bạn cầm thiết bị như thế nào.</string>
+    <string name="faq_answer_recording_stops_by_itself">Trước tiên, hãy kiểm tra <b>Tuỳ chọn dừng</b>" trong cài đặt. Nếu bất kỳ tùy chọn nào sau đây được bật, việc quay sẽ tự động kết thúc- 
+ - "<b>Dừng ghi hình khi tắt màn hình</b>" 
+ - "<b>Dừng khi lắc máy</b>" 
+ - "<b>Bật giới hạn thời gian</b>", giúp dừng quay khi đạt giới hạn bạn đã đặt 
+
+ Các nguyên nhân khác- 
+ - Bạn đã vô tình chạm vào "<b>Dừng chia sẻ</b>" trong thông báo chia sẻ màn hình hoặc hộp thoại mà Android hiển thị. Điều này sẽ kết thúc việc quay ngay lập tức. 
+
+ - Hệ thống đã dừng ứng dụng ở chế độ nền. Mở cài đặt và bật "<b>Tránh dừng đột ngột</b>". 
+
+ - Dung lượng lưu trữ trống của thiết bị bạn đã hết. 
+
+ - Thiết bị quá nóng và hệ thống đã giới hạn hiệu suất của codec. "</string>
+    <string name="faq_answer_screen_freeze_while_recording">- Giảm <b>Độ phân giải</b>, <b>Tốc độ khung hình</b> và <b>Chất lượng video</b>" trong cài đặt. Quay với cài đặt cao nhất có thể vượt quá khả năng mã hóa theo thời gian thực của thiết bị bạn. 
+
+ - Đóng các ứng dụng nền và chỉ mở AZ Screen Recorder cùng ứng dụng bạn muốn quay. 
+
+ - Tắt chế độ tiết kiệm pin, vì nó làm chậm codec. 
+
+ - Nếu một ứng dụng khác đang chiếm micrô, đặt "<b>Nguồn âm thanh</b> thành <b>Âm thanh hệ thống</b>", hoặc đóng ứng dụng đó. 
+
+ - Nếu màn hình vẫn tiếp tục đứng, hãy khởi động lại thiết bị. "</string>
+    <string name="faq_answer_single_app_recording">"Có, khả dụng trên Android 14 và các phiên bản mới hơn. Mọi thứ bên ngoài ứng dụng bạn chọn, bao gồm cả thông báo và các ứng dụng khác của bạn, sẽ không xuất hiện trong video. 
+
+ - Mở cài đặt và bật "<b>Ghi hình một ứng dụng</b>". 
+
+ - Khi bạn bắt đầu quay, hãy chọn ứng dụng trong hộp thoại xác nhận mà Android hiển thị. 
+
+ - Nếu bạn rời khỏi ứng dụng đã chọn hoặc đóng nó, Android sẽ kết thúc việc chụp và việc quay sẽ dừng lại. 
+
+ - Tùy chọn này không xuất hiện trên Android 13 và các phiên bản cũ hơn, vì hệ thống không hỗ trợ ở đó. "</string>
+    <string name="faq_answer_start_button_does_not_respond">"- Các ứng dụng vẽ đè lên màn hình, chẳng hạn như bộ lọc ánh sáng xanh và điều khiển độ sáng, có thể chặn hộp thoại quyền của hệ thống. Hãy tắt chúng và thử lại. 
+
+ - Android sẽ yêu cầu bạn xác nhận việc quay màn hình trước khi bắt đầu quay. Bạn cần chạm vào "<b>Bắt đầu ngay</b>". Nếu bạn chạm vào Hủy, việc quay sẽ không bắt đầu. 
+
+ - Thông báo cũng có thể bắt đầu và dừng việc quay. 
+
+ - Nếu nút vẫn tiếp tục không phản hồi, hãy khởi động lại AZ Screen Recorder. "</string>
+    <string name="faq_answer_system_prompts"><b>Xác nhận quay màn hình</b>" 
+ - Trước khi bất kỳ ứng dụng nào có thể quay màn hình, Android sẽ yêu cầu bạn xác nhận điều này. Trên Android 14 và các phiên bản mới hơn, xác nhận này được yêu cầu riêng biệt cho mỗi lần quay và ảnh chụp màn hình, vì vậy bạn thấy nó mỗi lần. Đây là một quy tắc hệ thống và không thể bỏ qua hoặc ghi nhớ. 
+
+ "<b>Thông báo quay</b>" 
+ - Khi màn hình đang được quay, Android hiển thị một thông báo. Nó không thể bị xóa trong khi đang quay. 
+
+ "<b>Hiển thị trên các ứng dụng khác</b>" 
+ - Quyền này cho phép bong bóng nổi và các điều khiển quay xuất hiện trên các ứng dụng khác. Nếu không có nó, bong bóng sẽ không hoạt động. 
+
+ Những yêu cầu này là các biện pháp bảo vệ quyền riêng tư tiêu chuẩn của Android. Chúng không bao giờ gửi bất cứ điều gì đến bất cứ đâu. "</string>
+    <string name="faq_answer_video_audio_not_sync">" - Âm thanh và video mất đồng bộ khi thiết bị của bạn đang chịu tải nặng, chẳng hạn như khi nhiều ứng dụng chạy cùng lúc trong khi quay. 
+
+ - Đóng các ứng dụng nền và giảm "<b>Độ phân giải</b> và <b>Tốc độ khung hình</b>" trong cài đặt trước khi quay lại. 
+
+ - Chọn tốc độ khung hình cao hơn tốc độ làm mới của màn hình bạn sẽ không giúp ích gì. AZ Screen Recorder dù sao cũng giới hạn việc quay ở mức mà màn hình của bạn hỗ trợ. "</string>
+    <string name="faq_answer_video_divided">"Các bản ghi dài được lưu thành nhiều đoạn để một tệp không trở nên quá lớn khiến hệ thống tệp hoặc các ứng dụng khác từ chối nó. 
+
+ - Khi lưu vào bộ nhớ trong, một đoạn mới bắt đầu ở khoảng 10 GB; khi lưu vào thẻ SD, khoảng 3,5 GB. 
+
+ - Không có gì bị mất. Các đoạn được quay nối tiếp nhau và tất cả sẽ xuất hiện trong danh sách video của bạn. 
+
+ - Bạn có thể ghép chúng lại với nhau bằng "<b>Ghép video</b> trong trình chỉnh sửa video. </string>
+    <string name="faq_answer_video_with_odd_colors">"- Đây thường là vấn đề phát lại, không phải vấn đề quay. Hãy thử phát video trên trình phát khác trước. 
+
+ - Khởi động lại ứng dụng và phát lại video. 
+
+ - Quay một video thử nghiệm ngắn với cài đặt "<b>Độ phân giải</b> và <b>Chất lượng video</b>" thấp hơn. Nếu đoạn thử nghiệm phát đúng, hãy giữ nguyên các cài đặt thấp hơn. 
+
+ - Nếu vấn đề vẫn tiếp diễn, hãy khởi động lại thiết bị. "</string>
+    <string name="faq_answer_why_crash_when_recording">"- Tắt chế độ tiết kiệm pin hoặc chế độ tiết kiệm năng lượng để tránh các sự cố quay có thể xảy ra. Các chế độ này làm chậm codec video và có thể khiến việc quay dừng lại. 
+
+ - Mở cài đặt và bật "<b>Tránh dừng đột ngột</b>". Điều này giúp AZ Screen Recorder tiếp tục chạy ngay cả khi hệ thống cố gắng giới hạn nó ở chế độ nền. 
+
+ - Giảm "<b>Độ phân giải</b>, <b>Tốc độ khung hình</b> và <b>Chất lượng video</b>" trong cài đặt. Quay với các cài đặt cao nhất vượt quá khả năng mã hóa theo thời gian thực của hầu hết các thiết bị, và đây là nguyên nhân phổ biến nhất khiến việc quay thất bại. 
+
+ - Đóng các ứng dụng không quay, xóa bộ nhớ và thử bắt đầu lại. 
+
+ - Nếu một ứng dụng khác đang chiếm micrô, việc quay có thể không bắt đầu được. Đóng ứng dụng đó hoặc đặt "<b>Nguồn âm thanh</b> thành <b>Âm thanh hệ thống</b>". 
+
+ - Mở màn hình bạn muốn quay trước khi bắt đầu quay. 
+
+ - Nếu không có cách nào trong số này giúp ích, hãy khởi động lại thiết bị và thử lại. "</string>
+    <string name="faq_question_bad_quality_after_sharing">Tại sao chất lượng video của tôi giảm sau khi chia sẻ?</string>
+    <string name="faq_question_black_video">Tại sao video của tôi bị đen?</string>
+    <string name="faq_question_cant_play_shared_videos">Tại sao video chia sẻ của tôi không thể phát lại?</string>
+    <string name="faq_question_cant_record_internal_audio">Tại sao tôi không thể ghi âm thanh nội bộ?</string>
+    <string name="faq_question_cant_share_recordings">Tại sao tôi không thể chia sẻ bản ghi của mình?</string>
+    <string name="faq_question_corrupted_video_repair">Video của tôi bị hỏng và không phát được</string>
+    <string name="faq_question_floating_bubble_disappear">Tại sao nút nổi biến mất?</string>
+    <string name="faq_question_hide_floating_bubble">Làm thế nào để ẩn nút quay nổi?</string>
+    <string name="faq_question_is_az_recorder_safe">Az Recorder có an toàn cho việc ghi màn hình không?</string>
+    <string name="faq_question_manage_subscription">Làm thế nào để quản lý hoặc hủy gói đăng ký của tôi?</string>
+    <string name="faq_question_pro_account_not_work">Tại sao tài khoản Pro của tôi không hoạt động?</string>
+    <string name="faq_question_record_sound_with_earphones">Làm thế nào để ghi âm thanh khi đang sử dụng tai nghe?</string>
+    <string name="faq_question_record_zoom_meet">Tôi có thể quay cuộc gọi, Zoom hoặc Google Meet với âm thanh không?</string>
+    <string name="faq_question_recorded_videos_not_appear">Tại sao bản ghi của tôi không xuất hiện?</string>
+    <string name="faq_question_recording_has_no_sound">Tại sao bản ghi của tôi không có âm thanh?</string>
+    <string name="faq_question_recording_orientation_not_auto_rotate">Hướng quay không tự động xoay.</string>
+    <string name="faq_question_recording_stops_by_itself">Tại sao bản ghi của tôi tự động dừng lại?</string>
+    <string name="faq_question_screen_freeze_while_recording">Tại sao màn hình của tôi đóng băng khi quay?</string>
+    <string name="faq_question_single_app_recording">Tôi có thể chỉ quay một ứng dụng thay vì toàn bộ màn hình không?</string>
+    <string name="faq_question_start_button_does_not_respond">Nút Bắt đầu không phản hồi</string>
+    <string name="faq_question_system_prompts">Tại sao hệ thống liên tục hiển thị yêu cầu cấp quyền?</string>
+    <string name="faq_question_video_audio_not_sync">Đồng bộ âm thanh và video không chính xác</string>
+    <string name="faq_question_video_divided">Tại sao video đã quay của tôi được chia thành nhiều đoạn?</string>
+    <string name="faq_question_video_with_odd_colors">Video của tôi hiển thị màu kỳ lạ (xanh lá, tím, v.v.)</string>
+    <string name="faq_question_why_crash_when_recording">Tại sao AZ Screen Recorder bị crash khi đang quay?</string>
+    <string name="feature_information">Thông tin tính năng</string>
+    <string name="feedback">Phản hồi</string>
+    <string name="feedback_and_suggestion">Phản hồi và Đề xuất</string>
+    <string name="feedback_and_suggestion_hint">"Để có cái nhìn sâu sắc hơn về việc khắc phục sự cố, vui lòng sử dụng mẫu phản hồi sau: 
+
+- Chỉ định các chức năng hoặc bước liên quan khi sự cố xảy ra.
+- Chia sẻ thêm ảnh chụp màn hình về vấn đề khi bạn gặp phải nó."</string>
+    <string name="feedback_hint">Báo lỗi hoặc đề xuất</string>
+    <string name="feedback_premium_issue_email_subject">Vấn đề với giao dịch nâng cấp</string>
+    <string name="feedback_premium_issue_hint">Cho chúng tôi biết nếu bạn gặp phải vấn đề khi nâng cấp</string>
+    <string name="feedback_premium_issue_title">Vấn đề nâng cấp</string>
+    <string name="feedback_rate_hint">Chúng tôi hy vọng nhận được phản hồi</string>
+    <string name="file_info">Thông tin file</string>
+    <string name="file_recovery">Khôi phục tệp</string>
+    <string name="file_size">Kích thước tệp: %s Mb</string>
+    <string name="fit">Vừa vặn</string>
+    <string name="floating_button">Nút Nổi</string>
+    <string name="follow_steps_show_touches">Các bước như sau:</string>
+    <string name="font">Font</string>
+    <string name="frame_rate">FPS</string>
+    <string name="frame_rate_2">Tốc độ khung hình</string>
+    <string name="frame_rate_warning">Tốc độ khung hình cao hơn giúp video mượt mà hơn nhưng sử dụng nhiều CPU hơn</string>
+    <string name="free">MIỄN PHÍ</string>
+    <string name="free_crop">Cắt tự do</string>
+    <string name="free_to_unlock">Xem quảng cáo để mở khóa</string>
+    <string name="get_free_trial">DÙNG THỬ MIỄN PHÍ</string>
+    <string name="get_pro_forever">Sở hữu Pro vĩnh viễn</string>
+    <string name="gif">GIF</string>
+    <string name="gif_exporter">Xuất GIF</string>
+    <string name="good">Tốt</string>
+    <string name="grant_permission">Cấp quyền</string>
+    <string name="help_center">Trợ giúp</string>
+    <string name="hide_floating_during_recording">Ẩn bong bóng nổi trong khi ghi</string>
+    <string name="hide_popup">Ẩn cửa sổ pop-up</string>
+    <string name="hide_popup_after_screenshot">Ẩn cửa sổ bật lên sau khi chụp ảnh màn hình</string>
+    <string name="hide_popup_window_after_recording">Ẩn cửa sổ bật lên sau khi quay video</string>
+    <string name="high">Cao</string>
+    <string name="highest_quality">Chất lượng cao: Độ phân giải 2K, 120 FPS</string>
+    <string name="hint_got_it">Đã hiểu!</string>
+    <string name="hint_magic_button">"Đây là nút ma thuật.
+
+Trong khi ghi, nút này sẽ ẩn đi. Nhấn để tạm dừng/tiếp tục, nhấn và giữ để dừng ghi."</string>
+    <string name="hint_start_recording">Chạm để bắt đầu ghi hình</string>
+    <string name="horrible">Kinh khủng!!!</string>
+    <string name="how_do_you_rate_app">Bạn đánh giá thế nào về trải nghiệm với %1$s?</string>
+    <string name="how_to_enable_developer_options">"1. Tìm \"Số bản dựng \" thường có trong \"Cài đặt \"&amp;gt; \"Giới thiệu về điện thoại \"&amp;gt; \"Số bản dựng \". 
+
+2. Nhấp \"Số bản dựng \" 5–7 lần cho đến khi bạn nhận được thông báo rằng chế độ nhà phát triển đã được bật."</string>
+    <string name="how_to_get_5_stars">Làm thế nào để chúng ta có thể đạt được đánh giá 5 sao?</string>
+    <string name="icon_content_description">Biểu tượng hộp thoại</string>
+    <string name="ignore_warning">Bỏ qua cảnh báo</string>
+    <string name="image">Ảnh</string>
+    <string name="in_weekly_price"> ≈ %1$s%2$s</string>
+    <string name="install">Cài đặt</string>
+    <string name="internal_audio_and_microphone">Âm thanh bên trong và micrô</string>
+    <string name="internal_audio_android_10">Âm thanh hệ thống</string>
+    <string name="internal_audio_warning_message">Âm thanh hệ thống chỉ có tác dụng khi Ứng dụng/Games khác cho phép âm thanh của họ được ghi lại. Vì vậy nếu bạn thấy video của mình không có âm thanh, vui lòng yêu cầu Ứng dụng/Games đó cho phép ghi âm thanh của họ.</string>
+    <string name="internal_audio_warning_title">Cảnh báo Âm thanh Hệ thống</string>
+    <string name="internal_storage">Bộ nhớ trong</string>
+    <string name="internal_storage_w_duration">Bộ nhớ trong (có thể ghi %1$s)</string>
+    <string name="item_view_role_description">Thẻ</string>
+    <string name="join_az_recorder_community">Tham gia Cộng đồng %s</string>
+    <string name="join_community">Tham gia cộng đồng</string>
+    <string name="label_new">Mới</string>
+    <string name="landscape">Ngang</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="later">Để sau</string>
+    <string name="lifetime">Trọn đời</string>
+    <string name="lifetime_access">Truy cập trọn đời</string>
+    <string name="limited_time_offer">🔥 ƯU ĐÃI CÓ HẠN</string>
+    <string name="line">Dòng</string>
+    <string name="live">Trực tiếp</string>
+    <string name="live_authorization_failed">Xác thực thất bại</string>
+    <string name="live_authorization_successful">Xác thực thành công</string>
+    <string name="live_connection_failed">Kết nối thất bại</string>
+    <string name="live_friends">Bạn bè</string>
+    <string name="live_friends_of_friends">Bạn của bạn</string>
+    <string name="live_only_me">Chỉ mình tôi</string>
+    <string name="live_public">Công khai</string>
+    <string name="live_resolution">Độ phân giải khi live stream</string>
+    <string name="live_share_link">Chia sẻ link tới…</string>
+    <string name="live_share_subject">Live stream với AZ Screen Recorder</string>
+    <string name="live_stream">Trình phát trực tiếp</string>
+    <string name="live_streaming">Phát trực tiếp</string>
+    <string name="live_to">Live tới</string>
+    <string name="logo">LOGO</string>
+    <string name="loop_music">Lặp lại nhạc</string>
+    <string name="low">Thấp</string>
+    <string name="m3_loading_indicator_content_description">Đang tải</string>
+    <string name="m3_overflow_linear_layout_button_content_description">Trình đơn mục bổ sung</string>
+    <string name="m3_overflow_linear_layout_button_tooltip_text">Tuỳ chọn khác</string>
+    <string name="magic_button">Nút ma thuật</string>
+    <string name="magic_button_invisible_control">Nút ma thuật: điều khiển vô hình</string>
+    <string name="magic_button_position">Vị trí nút ma thuật</string>
+    <string name="magic_button_summary">Tạm dừng/tiếp tục hoặc dừng quay mà không để lại dấu vết rõ ràng trên video kết quả</string>
+    <string name="magic_button_summary_ticked">Nhấn một lần để tạm dừng/tiếp tục ghi, nhấn lâu để dừng</string>
+    <string name="material_clock_toggle_content_description">Chọn SA hoặc CH</string>
+    <string name="material_hour_24h_suffix">%1$s giờ</string>
+    <string name="material_hour_selection">Chọn giờ</string>
+    <string name="material_hour_suffix">%1$s giờ</string>
+    <string name="material_minute_selection">Chọn phút</string>
+    <string name="material_minute_suffix">%1$s phút</string>
+    <string name="material_slider_range_end">Điểm kết thúc phạm vi</string>
+    <string name="material_slider_range_start">Điểm bắt đầu phạm vi</string>
+    <string name="material_slider_value">Giá trị</string>
+    <string name="material_timepicker_am">SA</string>
+    <string name="material_timepicker_clock_mode_description">Chuyển sang chế độ đồng hồ để nhập thời gian.</string>
+    <string name="material_timepicker_clock_mode_tooltip">Chuyển sang chế độ đồng hồ</string>
+    <string name="material_timepicker_hour">Giờ</string>
+    <string name="material_timepicker_hour_error">Số giờ phải từ 1 đến 12</string>
+    <string name="material_timepicker_hour_error_24h">Số giờ phải từ 0 đến 23</string>
+    <string name="material_timepicker_minute">Phút</string>
+    <string name="material_timepicker_minute_error">Số phút phải từ 0 đến 59</string>
+    <string name="material_timepicker_pm">CH</string>
+    <string name="material_timepicker_select_time">Chọn thời gian</string>
+    <string name="material_timepicker_text_input_mode_description">Chuyển sang chế độ nhập văn bản để nhập thời gian.</string>
+    <string name="material_timepicker_text_input_mode_tooltip">Chuyển sang chế độ nhập văn bản</string>
+    <string name="medium">Trung bình</string>
+    <string name="merge_videos">Ghép video</string>
+    <string name="message_get_rating_bottom">Vui lòng xem xét việc đánh giá chúng tôi!</string>
+    <string name="message_get_rating_top">Chúng tôi không ngừng làm việc để nâng cao trải nghiệm của bạn với %s.</string>
+    <string name="mic">Mic</string>
+    <string name="microphone">Mic</string>
+    <string name="microphone_occupied_below_10">Ứng dụng khác đang chiếm mic. Bạn có thể đóng nó và thử lại.</string>
+    <string name="microphone_occupied_from_10">Ứng dụng khác đang chiếm mic. Ghi âm tiếp theo sẽ bị tắt tiếng.</string>
+    <string name="microphone_unavailable">Không thể dùng Mic</string>
+    <string name="migrate_files_android11">Đang cập nhật AZ Recorder…</string>
+    <string name="monthly">Hàng tháng</string>
+    <string name="more_apps">Ứng Dụng Khác</string>
+    <string name="more_features">Các tính năng khác sẽ sớm được cập nhật</string>
+    <string name="move_to_trash">Di chuyển vào thùng rác</string>
+    <string name="mtrl_badge_numberless_content_description">Thông báo mới</string>
+    <string name="mtrl_button_collapsed_content_description">Đã thu gọn</string>
+    <string name="mtrl_button_expanded_content_description">Đã mở rộng</string>
+    <string name="mtrl_button_overflow_icon_content_description">Trình đơn mục bổ sung</string>
+    <string name="mtrl_button_snackbar_close_content_description">Đóng</string>
+    <string name="mtrl_checkbox_state_description_checked">Đã đánh dấu</string>
+    <string name="mtrl_checkbox_state_description_indeterminate">Đã đánh dấu một phần</string>
+    <string name="mtrl_checkbox_state_description_unchecked">Chưa đánh dấu</string>
+    <string name="mtrl_chip_close_icon_content_description">Xóa %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">Hơn %1$d thông báo mới</string>
+    <string name="mtrl_picker_a11y_next_month">Chuyển sang tháng tiếp theo</string>
+    <string name="mtrl_picker_a11y_prev_month">Chuyển về tháng trước</string>
+    <string name="mtrl_picker_announce_current_range_selection">Ngày bắt đầu được chọn: %1$s – Ngày kết thúc được chọn: %2$s</string>
+    <string name="mtrl_picker_announce_current_selection">Lựa chọn hiện tại: %1$s</string>
+    <string name="mtrl_picker_announce_current_selection_none">không có</string>
+    <string name="mtrl_picker_cancel">Hủy</string>
+    <string name="mtrl_picker_confirm">OK</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Chọn ngày</string>
+    <string name="mtrl_picker_date_header_unselected">Ngày đã chọn</string>
+    <string name="mtrl_picker_day_of_week_column_header">%1$s</string>
+    <string name="mtrl_picker_end_date_description">Ngày kết thúc %1$s</string>
+    <string name="mtrl_picker_invalid_format">Định dạng không hợp lệ.</string>
+    <string name="mtrl_picker_invalid_format_example">Ví dụ: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Sử dụng: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Phạm vi không hợp lệ.</string>
+    <string name="mtrl_picker_navigate_to_current_year_description">Chuyển đến năm hiện tại %1$d</string>
+    <string name="mtrl_picker_navigate_to_year_description">Chuyển tới năm %1$d</string>
+    <string name="mtrl_picker_next_month_tooltip">Tháng tiếp theo</string>
+    <string name="mtrl_picker_out_of_range">Nằm ngoài phạm vi: %1$s</string>
+    <string name="mtrl_picker_pane_title_calendar_view">Chế độ xem theo lịch</string>
+    <string name="mtrl_picker_pane_title_year_view">Chế độ xem theo năm</string>
+    <string name="mtrl_picker_prev_month_tooltip">Tháng trước</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Ngày bắt đầu – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – Ngày kết thúc</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">Chọn dải ô</string>
+    <string name="mtrl_picker_range_header_unselected">Ngày bắt đầu – Ngày kết thúc</string>
+    <string name="mtrl_picker_save">Lưu</string>
+    <string name="mtrl_picker_start_date_description">Ngày bắt đầu %1$s</string>
+    <string name="mtrl_picker_text_input_date_hint">Ngày</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Ngày kết thúc</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Ngày bắt đầu</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">y</string>
+    <string name="mtrl_picker_today_description">Hôm nay %1$s</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Chuyển sang chế độ nhập lịch</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode_tooltip">Chuyển sang lịch</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Chuyển sang chế độ xem theo Lịch</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Chuyển sang chế độ nhập văn bản</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode_tooltip">Chuyển sang nhập văn bản</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Chuyển sang chế độ xem theo năm</string>
+    <string name="mtrl_timepicker_cancel">Huỷ</string>
+    <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="music">Âm nhạc</string>
+    <string name="mute">Tắt tiếng</string>
+    <string name="name_toast_will_not_record_audio">Video được ghi sẽ không có tiếng</string>
+    <string name="native_body">Nội dung</string>
+    <string name="native_headline">Tiêu đề</string>
+    <string name="native_media_view">Nội dung nghe nhìn</string>
+    <string name="nav_app_bar_navigate_up_description">Di chuyển lên</string>
+    <string name="nav_app_bar_open_drawer_description">Mở ngăn điều hướng</string>
+    <string name="need_feedback">Chúng tôi cần phản hồi của bạn để cải thiện.</string>
+    <string name="need_improvement">Cần cải thiện</string>
+    <string name="new_color">Màu mới</string>
+    <string name="no">Không</string>
+    <string name="no_ads">Không quảng cáo</string>
+    <string name="no_audio">Không có âm thanh</string>
+    <string name="no_countdown">Không đếm ngược</string>
+    <string name="no_image">Không có hình ảnh</string>
+    <string name="no_internet">Không thể tải audio trên mạng, vui lòng kiểm tra đường truyền internet và thử lại.</string>
+    <string name="no_payment_now">Chưa cần thanh toán</string>
+    <string name="no_rotate">Không xoay</string>
+    <string name="no_screenshot_captured_msg">Không có ảnh nào</string>
+    <string name="no_sound">Không có âm thanh</string>
+    <string name="no_sound_call_dialog_message">Android chặn âm thanh cuộc gọi và giao micrô cho ứng dụng gọi, nên không trình ghi màn hình nào ghi được cuộc gọi. Để thu lại cuộc họp, hãy ghi bằng một thiết bị khác.</string>
+    <string name="no_sound_call_dialog_title">Không thể ghi âm cuộc gọi</string>
+    <string name="no_sound_dialog_title">Vì sao video này không có âm thanh?</string>
+    <string name="no_sound_hint">Không có âm thanh? Chạm để xem lý do</string>
+    <string name="no_sound_hint_call">Thiếu âm thanh cuộc gọi? Chạm để xem lý do</string>
+    <string name="no_sound_reason_app_desc">Các ứng dụng phát trực tuyến, ngân hàng và nhiều trò chơi bảo vệ âm thanh của họ. Android bắt buộc điều này, nên không trình ghi màn hình nào thu được.</string>
+    <string name="no_sound_reason_app_title">Ứng dụng được ghi chặn thu âm thanh</string>
+    <string name="no_sound_switched_toast">Đã đổi nguồn âm thanh sang \"Âm thanh bên trong và micrô\"</string>
+    <string name="no_sound_tip_desc">Micrô cũng thu âm thanh từ loa, nên video vẫn giữ được âm thanh ngay cả khi ứng dụng chặn thu âm.</string>
+    <string name="no_sound_tip_title">Mẹo: dùng \"Âm thanh bên trong và micrô\"</string>
+    <string name="no_space_warning">Dung lượng bộ nhớ của bạn còn ít hơn 100 MB. Bạn cần giải phóng dung lượng bộ nhớ để quay màn hình.</string>
+    <string name="no_subscription">Không cần đăng ký</string>
+    <string name="no_video">Không có video</string>
+    <string name="no_video_recorded_msg">Không có video nào</string>
+    <string name="no_watermark">Không có hình mờ</string>
+    <string name="no_wifi">Không có Wifi</string>
+    <string name="not_ask_again">Đừng hỏi lại</string>
+    <string name="not_enough_space">Thiếu bộ nhớ</string>
+    <string name="not_set">Chưa đặt</string>
+    <string name="not_show_again">Không hiển thị lại</string>
+    <string name="notification">thông báo</string>
+    <string name="notification_channel_saved">Bản ghi đã lưu</string>
+    <string name="notification_guide">Bạn cũng có thể sử dụng bảng thông báo để điều khiển khi quay video màn hình</string>
+    <string name="notification_idle_content">Nhấn vào đây để bắt đầu ghi</string>
+    <string name="notification_idle_title">Trình ghi màn hình đã sẵn sàng</string>
+    <string name="notification_pausing_content">Nhấn vào đây để tiếp tục ghi</string>
+    <string name="notification_pausing_title">Đang tạm dừng ghi</string>
+    <string name="notification_recording_content">Nhấn vào đây để dừng ghi</string>
+    <string name="notification_recording_title">Đang ghi màn hình</string>
+    <string name="notification_saved_tap_to_view">Nhấn để xem</string>
+    <string name="notifications_permission_confirm">Cho phép</string>
+    <string name="notifications_permission_decline">Không cho phép</string>
+    <string name="notifications_permission_title">Cho phép ứng dụng gửi thông báo cho bạn?</string>
+    <string name="off">GIẢM GIÁ</string>
+    <string name="offer_ends_in">⏰ Ưu đãi kết thúc trong:</string>
+    <string name="offline_dialog_image_description">Biểu tượng</string>
+    <string name="offline_dialog_text">"Cảm ơn bạn đã quan tâm.
+Chúng tôi sẽ chia sẻ nhiều hơn khi bạn kết nối mạng trở lại."</string>
+    <string name="offline_notification_title">Bạn đã kết nối mạng trở lại! Hãy tiếp tục từ thời điểm chúng ta dừng lại lần trước</string>
+    <string name="offline_notification_title_with_advertiser">Bạn đã kết nối mạng trở lại! Tiếp tục tìm hiểu về %s</string>
+    <string name="offline_opt_in_confirm">OK</string>
+    <string name="offline_opt_in_decline">Để sau</string>
+    <string name="offline_opt_in_message">Chúng tôi sẽ gửi thông báo cho bạn kèm theo đường liên kết đến trang web của nhà quảng cáo.</string>
+    <string name="offline_opt_in_title">Mở quảng cáo khi bạn có kết nối mạng trở lại.</string>
+    <string name="ok">OK</string>
+    <string name="ok_understand">OK, tôi hiểu</string>
+    <string name="old_color">Màu cũ</string>
+    <string name="on_device_audio">Trên Thiết Bị</string>
+    <string name="on_sale">Đang giảm giá</string>
+    <string name="one_time_payment">Thanh toán một lần</string>
+    <string name="online_audio">Audio Online</string>
+    <string name="only_with">Chỉ Với</string>
+    <string name="opacity">Độ mờ</string>
+    <string name="open_app_info">Mở thông tin ứng dụng</string>
+    <string name="open_developer_options_step"><b> Bước 1: Bật</b>" 
+
+Tìm \"Tùy chọn nhà phát triển \" trên trang \"Cài đặt \" hoặc trang \"Cài đặt bổ sung \" trên điện thoại của bạn."</string>
+    <string name="open_settings">Mở cài đặt</string>
+    <string name="or">hoặc</string>
+    <string name="orientation">Hướng</string>
+    <string name="original_audio">Audio gốc</string>
+    <string name="other_faqs">CÂU HỎI THƯỜNG GẶP KHÁC</string>
+    <string name="others">KHÁC</string>
+    <string name="others_lowercase">Khác</string>
+    <string name="output_directory">Thư mục lưu trữ</string>
+    <string name="output_settings">Cài đặt đầu ra</string>
+    <string name="password_toggle_content_description">Hiện mật khẩu</string>
+    <string name="pause">Tạm dừng</string>
+    <string name="per_lifetime">/trọn đời</string>
+    <string name="per_month">/tháng</string>
+    <string name="per_quarter">/quý</string>
+    <string name="per_week">/tuần</string>
+    <string name="per_year">/năm</string>
+    <string name="percent">%d%%</string>
+    <string name="permission_cast_denied">Trước tiên cần có quyền truyền video</string>
+    <string name="permission_required">Cần có quyền</string>
+    <string name="pick_image_intent_chooser_title">Chọn nguồn</string>
+    <string name="pick_time">Chọn thời gian</string>
+    <string name="play_pause">Phát/Tạm dừng</string>
+    <string name="please_give_us_feedback">%1$s Hy vọng chúng tôi sẽ nhận được phản hồi của bạn để có thể cải thiện ứng dụng này.</string>
+    <string name="please_wait">Vui lòng đợi…</string>
+    <string name="portrait">Dọc</string>
+    <string name="preference_copied">Đã sao chép \"%1$s\" vào bảng nhớ tạm.</string>
+    <string name="preparing_images">Đang chuẩn bị hình ảnh.…</string>
+    <string name="privacy">Quyền Riêng Tư</string>
+    <string name="privacy_policy_without_link"><u> Chính sách bảo mật</u></string>
+    <string name="pro">Pro</string>
+    <string name="pro_account">Tài Khoản Pro</string>
+    <string name="pro_benefit_list">"✓ Tính năng không giới hạn
+✓ Không có quảng cáo"</string>
+    <string name="pro_benefits">Không quảng cáo. Tính năng không giới hạn.</string>
+    <string name="progress_bar_scan_file">Đang quét tập tin. Vui lòng đợi!</string>
+    <string name="progress_bar_title_move_sd_file">Chuyển video sang SD Card để sửa lỗi biên tập video</string>
+    <string name="protect_recordings_message">Để ngăn Android tự động dừng quá trình ghi hình, vui lòng tắt tính năng tối ưu hóa pin cho AZ Screen Recorder.</string>
+    <string name="protect_recordings_title">Tránh bị dừng ghi hình</string>
+    <string name="quality">Chất lượng</string>
+    <string name="quarterly">Hàng quý</string>
+    <string name="rate_5_stars">Đánh giá 5 sao</string>
+    <string name="rate_5_stars_on_google_play">Đánh giá chúng tôi 5 sao trên Google Play</string>
+    <string name="rate_on_google_play">Đánh giá trên Google Play</string>
+    <string name="rate_us">Đánh giá chúng tôi</string>
+    <string name="rate_us_on_google_play_suggestion">%1$s Bạn có thể vui lòng đánh giá chúng tôi 5 sao trên Google Play không?</string>
+    <string name="ratio">Tỉ lệ</string>
+    <string name="read_warning_carefully">Tôi đã đọc cảnh báo này</string>
+    <string name="record">Ghi hình</string>
+    <string name="record_screen">Ghi màn hình</string>
+    <string name="recording_controls">Điều khiển ghi hình</string>
+    <string name="recording_error">Lỗi ghi video màn hình</string>
+    <string name="recording_error_message">Quá trình ghi bị dừng đột ngột do lỗi hệ thống.</string>
+    <string name="recording_failed_please_try_again">Ghi thất bại. Vui lòng thử lại!</string>
+    <string name="recording_mode">Chế độ ghi hình</string>
+    <string name="reference_status_broken">Không lấy được thông tin</string>
+    <string name="reference_status_error">Video mẫu bị lỗi</string>
+    <string name="reference_status_no_audio">Video không có âm thanh</string>
+    <string name="reference_video_hint">Video mẫu là một video xem được bình thường. Nó được sử dụng để khôi phục những dự liệu bị mất trong video hỏng. Vì thế, video mẫu cần phải có cùng độ phân giải và các thông số cấu hình giống hệt như video hỏng.</string>
+    <string name="reference_video_with_colon">Video mẫu:</string>
+    <string name="refund_policy">* Chúng tôi áp dụng chính sách hoàn trả trong 3 ngày. Hãy yên tâm thử nghiệm tất cả các tính năng</string>
+    <string name="remove_middle">Xóa phần giữa</string>
+    <string name="repair">Khôi phục</string>
+    <string name="repair_status_cancel">Đang huỷ</string>
+    <string name="repair_status_cannot_repair">Không khôi phục được video</string>
+    <string name="repair_status_exporting_video">Đang lưu video</string>
+    <string name="repair_status_failed">Gặp lỗi khi khôi phục video</string>
+    <string name="repair_status_no_reference">Chưa có video mẫu</string>
+    <string name="repair_status_ready">Sẵn sàng khôi phục video</string>
+    <string name="repair_status_success">Video đã được khôi phục</string>
+    <string name="repair_title">Khôi phục video bị hỏng</string>
+    <string name="repeat_audio">Lặp lại</string>
+    <string name="report_error">Báo cáo lỗi</string>
+    <string name="request_audio_access_permission_rational">"Cho phép quyền truy cập âm thanh để sử dụng chức năng này. 
+
+1. Mở Cài đặt 
+2. Chọn Quyền 
+3. Bật Nhạc và âm thanh."</string>
+    <string name="request_floating_permission_description">Cho phép quyền này để tận hưởng các nút điều khiển nổi, đếm ngược và các thao tác thuận tiện khác.</string>
+    <string name="request_floating_permission_title">Cho phép nút hiện nổi</string>
+    <string name="request_notification_permission_msg">Cho phép bảng điều khiển thông báo xuất hiện để tăng cường độ ổn định của bản ghi và đảm bảo quá trình ghi bình thường.</string>
+    <string name="request_read_external_permission_rational">"Cho phép quyền truy cập tệp phương tiện để hiển thị ảnh/video bị thiếu và sử dụng các chức năng khác đúng cách. 
+
+1. Mở Cài đặt 
+2. Chọn Quyền 
+3. Bật Tệp và phương tiện (hoặc Bộ nhớ)."</string>
+    <string name="request_video_access_permission">Cho phép quyền truy cập video để đảm bảo ứng dụng này được sử dụng đúng cách</string>
+    <string name="request_video_access_permission_rational">"Cho phép quyền truy cập video và ảnh để hiển thị ảnh/video bị thiếu và sử dụng các chức năng khác đúng cách. 
+
+1. Mở Cài đặt 
+2. Chọn Quyền 
+3. Bật Ảnh và video."</string>
+    <string name="request_xiaomi_bg_permission">"Tăng cường tính ổn định bằng cách cho phép '…chạy trong nền'."</string>
+    <string name="resolution">Độ phân giải</string>
+    <string name="restore">Khôi phục</string>
+    <string name="restore_all">Khôi phục lại tất cả</string>
+    <string name="resume">Tiếp tục</string>
+    <string name="rewarded_video_not_available">Không thể tải video thưởng. Vui lòng thử lại sau.</string>
+    <string name="s1">Lưu hình ảnh</string>
+    <string name="s2">Cho phép Quảng cáo lưu trữ hình ảnh trong thư viện Ảnh?</string>
+    <string name="s3">Chấp nhận</string>
+    <string name="s4">Từ chối</string>
+    <string name="s5">Tạo sự kiện lịch</string>
+    <string name="s6">Cho phép Quảng cáo tạo sự kiện lịch?</string>
+    <string name="s7">Quảng cáo thử nghiệm</string>
+    <string name="sale_percentage">Tiết kiệm %d%%</string>
+    <string name="save">Lưu</string>
+    <string name="save_all_caps">LƯU</string>
+    <string name="scale">Tỉ lệ</string>
+    <string name="scr_off">khoá màn hình</string>
+    <string name="screen_mirroring">Phản chiếu màn hình</string>
+    <string name="screen_record_lock_dialog_api35">"Bắt đầu từ Android 15, hệ điều hành tự động dừng tất cả các hoạt động ghi màn hình khi bạn khóa màn hình.
+
+Đây là hạn chế của hệ thống Android và chúng tôi không thể can thiệp được."</string>
+    <string name="screen_record_lock_dialog_api35_title">Yêu cầu bởi Android 15+</string>
+    <string name="screenshot">Chụp màn hình</string>
+    <string name="screenshot_captured">Màn hình đã được chụp.</string>
+    <string name="screenshot_captured2">Ảnh màn hình đã được chụp, vui lòng xem trong gallery của ứng dụng</string>
+    <string name="screenshot_failed_please_try_again">Chụp ảnh màn hình thất bại. Vui lòng thử lại!</string>
+    <string name="screenshots">Ảnh chụp màn hình</string>
+    <string name="sd_card_w_duration">Thẻ SD (có thể ghi %1$s)</string>
+    <string name="search_menu_title">Tìm kiếm</string>
+    <string name="searchview_clear_text_content_description">Xoá văn bản</string>
+    <string name="searchview_navigation_content_description">Quay lại</string>
+    <string name="select">Chọn</string>
+    <string name="select_all">Chọn tất cả</string>
+    <string name="select_audio">Chọn âm thanh</string>
+    <string name="select_color">Chọn màu</string>
+    <string name="send_feedback">Gửi phản hồi</string>
+    <string name="server_live_stream_twitch">Chọn một máy chủ</string>
+    <string name="set_default">Mặc định</string>
+    <string name="shake_device">lắc máy</string>
+    <string name="shape">Dạng</string>
+    <string name="share">Chia sẻ</string>
+    <string name="share_app">Chia sẻ app</string>
+    <string name="share_app_title">Chia sẻ ứng dụng này tới…</string>
+    <string name="share_link_live">Chia sẻ live stream</string>
+    <string name="share_link_live_stream_message">Chọn người bạn muốn chia sẻ</string>
+    <string name="show_logo">Hiển thị logo</string>
+    <string name="show_me_how_developer_options"><b> <u>Xem cách bật \"Tùy chọn nhà phát triển\"</u></b> </string>
+    <string name="show_text">Hiển thị chữ</string>
+    <string name="show_touch_intro">Để hiển thị điểm chạm khi quay màn hình, bạn cần bật chức năng \"Hiện điểm chạm\" trong Cài đặt của máy.</string>
+    <string name="show_touches">Hiện điểm chạm</string>
+    <string name="side_sheet_accessibility_pane_title">Trang bên</string>
+    <string name="single_app_recording">Ghi hình một ứng dụng</string>
+    <string name="single_app_recording_summary">Chỉ ghi toàn màn hình</string>
+    <string name="single_app_recording_summary_ticked">Cho phép người dùng chọn một ứng dụng để ghi hình</string>
+    <string name="size">Kích cỡ</string>
+    <string name="size_in_mb">%s MB</string>
+    <string name="sorry_to_disappoint">Rất tiếc đã làm bạn thất vọng.</string>
+    <string name="speed">Tốc độ</string>
+    <string name="stability">Sự ổn định (ít lỗi hơn)</string>
+    <string name="stability_options">Tùy chọn ổn định</string>
+    <string name="standard">Tiêu chuẩn</string>
+    <string name="start_now">Bắt đầu ngay</string>
+    <string name="start_stream">Bắt đầu livestream</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="status_with_colon">Trạng thái:</string>
+    <string name="sticker">Nhãn dán</string>
+    <string name="stitch_images">Ghép ảnh</string>
+    <string name="stop">Dừng</string>
+    <string name="stop_during_recording">Dừng trong quá trình ghi hình</string>
+    <string name="stop_on_scr_off">Dừng ghi hình khi tắt màn hình</string>
+    <string name="stop_on_scr_off_summary">Hãy khoá màn hình để dừng ghi hình</string>
+    <string name="stop_on_shake">Dừng khi lắc máy</string>
+    <string name="stop_on_shake_summary">Hãy lắc điện thoại để dừng ghi hình</string>
+    <string name="stop_on_time_limit">Bật giới hạn thời gian</string>
+    <string name="stop_on_time_limit_default_summary">Không giới hạn</string>
+    <string name="stop_on_time_limit_summary">Dừng ghi khi hết thời gian</string>
+    <string name="stop_options">Tuỳ chọn dừng</string>
+    <string name="submit">Gửi</string>
+    <string name="suggest_close_others_to_record_sound">Hãy đảm bảo rằng mic không bị các ứng dụng khác chiếm giữ nếu bạn muốn tiếp tục quay có âm thanh.</string>
+    <string name="summary_collapsed_preference_list">%1$s, %2$s</string>
+    <string name="survey">Khảo sát</string>
+    <string name="survey_dialog_message">Vui lòng dành vài phút để chia sẻ trải nghiệm của bạn về AZ Screen Recorder để chúng tôi có thể cải thiện ứng dụng cho bạn.</string>
+    <string name="survey_dialog_title">Phản hồi</string>
+    <string name="survey_positive_act">Trả lời khảo sát</string>
+    <string name="switch_to_internal_and_mic">Đổi nguồn âm thanh</string>
+    <string name="system_projection_dialog_header">Bắt đầu ghi hoặc phát trên AZ Screen Recorder</string>
+    <string name="tap_to_view_screenshot">Nhấn vào đây để xem ảnh chụp màn hình</string>
+    <string name="terms_of_use_without_link"><u> Điều khoản sử dụng</u></string>
+    <string name="text">Chữ</string>
+    <string name="text_all_caps">TEXT</string>
+    <string name="text_and_logo">Chữ và logo</string>
+    <string name="text_color">Màu chữ</string>
+    <string name="text_logo_both_summary">Hiển thị chữ và logo</string>
+    <string name="text_logo_none_summary">Không hiển thị chữ và logo</string>
+    <string name="text_logo_only_logo_summary">Chỉ hiển thị logo</string>
+    <string name="text_logo_only_text_summary">Chỉ hiển thị chữ</string>
+    <string name="text_size">Cỡ chữ</string>
+    <string name="thank_you">Cảm ơn bạn.</string>
+    <string name="the_rating_we_hope_to_get">Điểm đánh giá mà chúng tôi hy vọng nhận được</string>
+    <string name="then_price">Sau đó %1$s%2$s %3$s</string>
+    <string name="time_can_be_recorded">Có thể ghi %1$s</string>
+    <string name="time_can_be_recorded_in_bracket">(Có thể ghi %1$s)</string>
+    <string name="time_limit">Giới hạn thời gian</string>
+    <string name="time_limit_in_second">Giới hạn thời gian (giây)</string>
+    <string name="time_out">giới hạn thời gian</string>
+    <string name="tips_for_you">Gợi ý cho bạn!</string>
+    <string name="toast_add_audio_error">Không thể thêm âm thanh</string>
+    <string name="toast_add_icon_to_export">Hãy thêm ít nhất một sticker</string>
+    <string name="toast_audio_error">Không thể tải âm thanh</string>
+    <string name="toast_background_not_found">Không thể tải ảnh nền</string>
+    <string name="toast_can_not_create_too_small_video">Video bạn tạo ra quá ngắn, vui lòng thử lại với video dài hơn.</string>
+    <string name="toast_can_not_crop_image">Có lỗi xảy ra, không thể cắt hình ảnh này.</string>
+    <string name="toast_can_not_delete_file_now">Không thể xoá video này, vui lòng thoát khỏi gallery và thử lại</string>
+    <string name="toast_can_not_delete_image">Có lỗi xảy ra, không thể xóa hình ảnh này.</string>
+    <string name="toast_can_not_delete_images">Có lỗi xảy ra, không thể xóa những tập tin này.</string>
+    <string name="toast_can_not_load_some_resource">Một số tài nguyên không được tải</string>
+    <string name="toast_can_not_load_video_for_edit">Không thể tải video để chỉnh sửa.</string>
+    <string name="toast_can_not_open_file">Không thể mở file</string>
+    <string name="toast_can_not_rename_file">Đã xảy ra lỗi, không thể đổi tên tệp này.</string>
+    <string name="toast_can_not_save_image">Có lỗi xảy ra, không thể lưu hình ảnh này.</string>
+    <string name="toast_can_not_take_image">Có lỗi xảy ra, không thể lấy ảnh.</string>
+    <string name="toast_cancel_export">Đã huỷ lưu file</string>
+    <string name="toast_cannot_delete_video_merge">Không thể xoá video này</string>
+    <string name="toast_cannot_load_font">Không thể tải font đã chọn</string>
+    <string name="toast_cannot_load_logo">Không thể tải logo đã chọn</string>
+    <string name="toast_cannot_record_audio_in_time_lapse">Bạn không thể ghi âm thanh khi đang ở chế độ Time-lapse</string>
+    <string name="toast_cannot_use_add_background">Thêm ảnh nền vào video ngang không được hỗ trợ.</string>
+    <string name="toast_cant_open_video">Không mở được file này</string>
+    <string name="toast_cant_start_camera">Lỗi khi mở camera</string>
+    <string name="toast_cant_use_without_grant_micro_permission">AZ Screen Recorder cần quyền truy cập micro để ghi lại âm thanh.</string>
+    <string name="toast_cant_use_without_grant_permission_edited">AZ Screen Recorder cần quyền truy cập vào file ảnh và media để lưu trữ video và ảnh mà bạn ghi lại.</string>
+    <string name="toast_change_preference_during_recording">Không thể thay đổi tuỳ chọn này khi đang ghi hình</string>
+    <string name="toast_click_so_quickly">Rất tiếc, vui lòng đợi đến khi tài nguyên được tải hết</string>
+    <string name="toast_common_error">Có lỗi xảy ra, vui lòng thử lại</string>
+    <string name="toast_cut_video_parts">Bạn có thể cắt thêm phần khác</string>
+    <string name="toast_error_get_file">Không đọc được video đầu vào, vui lòng thử lại</string>
+    <string name="toast_error_get_internet">Không có kết nối internet</string>
+    <string name="toast_export_failed">Không thể xuất video.</string>
+    <string name="toast_export_gif_20s">Độ dài của file GIF phải ít hơn 20 giây</string>
+    <string name="toast_export_gif_failed">Tạo GIF thất bại</string>
+    <string name="toast_fail_video">Không tìm thấy nguồn video hoặc audio ở file này</string>
+    <string name="toast_file_not_found">Không tìm thấy file</string>
+    <string name="toast_font_size_out_of_range">Cỡ chữ phải lớn hơn 7 và nhỏ hơn 73.</string>
+    <string name="toast_image_have_been_deleted">Ảnh đã bị xoá</string>
+    <string name="toast_image_have_been_moved_to_trash">Hình ảnh đã được chuyển vào thùng rác</string>
+    <string name="toast_image_was_not_deleted">Hình ảnh không bị xóa</string>
+    <string name="toast_install_mail_app_to_send_feedback">Vui lòng cài đặt một ứng dụng email vào thiết bị để gửi phản hồi</string>
+    <string name="toast_live_login_cancel">Đăng nhập bị huỷ</string>
+    <string name="toast_live_login_fall">Đăng nhập thất bại</string>
+    <string name="toast_live_stream_stopped">Live stream đã dừng</string>
+    <string name="toast_low_free_space">Bạn cần có ít nhất 100MB để ghi hình</string>
+    <string name="toast_market_not_installed">Không thể mở CH Play</string>
+    <string name="toast_music_duration_must_not_be_0">Thời lượng âm nhạc phải lớn hơn 0 giây.</string>
+    <string name="toast_must_grant_permission_alert">Bạn phải cấp quyền hiển thị trên các ứng dụng khác để sử dụng AZ Screen Recorder</string>
+    <string name="toast_name_exists">Tên này đã tồn tại</string>
+    <string name="toast_new_audio_ready">Audio mới đã sẵn sàng</string>
+    <string name="toast_no_action_performed">Không có hành động nào được thực hiện</string>
+    <string name="toast_no_media_selected">Không có tệp phương tiện nào được chọn</string>
+    <string name="toast_no_screenshot_was_selected">Bạn chưa chọn ảnh nào</string>
+    <string name="toast_no_video_was_deleted">Không xoá video nào</string>
+    <string name="toast_not_found_background">Không tìm thấy ảnh nền trên thiết bị này</string>
+    <string name="toast_not_supported_device">Rất tiếc, thiết bị bạn đang dùng chưa được hỗ trợ.</string>
+    <string name="toast_out_of_maximum_capture_frame">Bạn không thể chụp thêm ảnh vào lúc này</string>
+    <string name="toast_out_of_memory">Lỗi hết bộ nhớ</string>
+    <string name="toast_output_dir_error">Vui lòng chọn thư mục đầu ra khác</string>
+    <string name="toast_process_not_allowed_due_to_background_restriction">Quá trình không được phép do hạn chế nền.</string>
+    <string name="toast_projection_permission_denied">Vui lòng chấp nhận quyền để quay video</string>
+    <string name="toast_purchase_fail">Giao dịch thất bại</string>
+    <string name="toast_purchase_pending">Đang đợi xác nhận giao dịch. Có thể cần tới vài giờ</string>
+    <string name="toast_recorder_is_recording">Ghi màn hình đã bắt đầu</string>
+    <string name="toast_recording_interrupted">Quá trình ghi đã dừng lại bất ngờ</string>
+    <string name="toast_recording_interrupted_permission">Quá trình ghi đã dừng lại do quyền truy cập micrô bị thu hồi</string>
+    <string name="toast_recording_stopped">Ghi hình đã dừng</string>
+    <string name="toast_require_set_media_player">Chọn MediaPlayer để tiếp tục</string>
+    <string name="toast_select_images_for_stitch">Bạn phải chọn ít nhất 2 hình ảnh.</string>
+    <string name="toast_start_capture_fail">Có lỗi xảy ra, hãy khởi động lại ứng dụng, nếu thông báo này vẫn xuất hiện hãy đổi sang Cấu hình quay khác.</string>
+    <string name="toast_stop_on_low_memory">Thiếu bộ nhớ</string>
+    <string name="toast_thanks_for_donation">Cảm ơn vì đã ủng hộ!</string>
+    <string name="toast_thanks_for_feedback">Cảm ơn bạn đã phản hồi!</string>
+    <string name="toast_thanks_for_upgrading">Cảm ơn bạn đã nâng cấp!</string>
+    <string name="toast_try_again">Có lỗi xảy ra, vui lòng thử lại.</string>
+    <string name="toast_video_does_not_exit">Video không tồn tại</string>
+    <string name="toast_video_have_been_deleted">Video đã được xoá</string>
+    <string name="toast_video_have_been_moved_to_trash">Video đã được chuyển vào thùng rác</string>
+    <string name="toast_video_saved">Video đã lưu.</string>
+    <string name="toast_video_was_not_deleted">Video không bị xóa</string>
+    <string name="toast_warning_mic_busy">Không thể ghi âm. Microphone đang bị sử dụng bởi ứng dụng khác</string>
+    <string name="toast_warning_selected_over_max_images">Bạn chỉ có thể chọn tối đa %s hình ảnh.</string>
+    <string name="toast_yt_livestream_quota_exceeded">Hạn mức live stream Youtube đang đạt giới hạn, vui lòng thử lại sau.</string>
+    <string name="today">Hôm nay</string>
+    <string name="toolbox">Hộp công cụ</string>
+    <string name="tools">Công cụ</string>
+    <string name="top_left_screen">Trên cùng bên trái của màn hình</string>
+    <string name="top_right_screen">Trên cùng bên phải của màn hình</string>
+    <string name="translation_quality">Chất lượng bản dịch</string>
+    <string name="translation_rating_question">Vui lòng đánh giá chất lượng bản dịch của ứng dụng ở ngôn ngữ: %s</string>
+    <string name="trash">Thùng rác</string>
+    <string name="trash_day_explanation">Ảnh và video hiển thị số ngày còn lại trước khi chúng bị xóa vĩnh viễn.</string>
+    <string name="trash_folder">Thư mục thùng rác</string>
+    <string name="trash_is_empty">Thùng rác trống</string>
+    <string name="trim">Cắt hai đầu</string>
+    <string name="trim_video">Cắt video</string>
+    <string name="trusted_by_users_worldwide">Được hơn 100 triệu người dùng trên toàn thế giới tin tưởng</string>
+    <string name="try_now">Thử ngay</string>
+    <string name="tt_ad_close_text">Quảng cáo đã đóng</string>
+    <string name="tt_ad_is_closed">Quảng cáo đã đóng</string>
+    <string name="tt_ad_logo_txt">AD</string>
+    <string name="tt_add_bad_reason">Thêm lý do khiến bạn nghĩ đây là nội dung tệ</string>
+    <string name="tt_bad">Tồi tệ</string>
+    <string name="tt_choose_language">vi</string>
+    <string name="tt_comment_num">%1$s lượt đánh giá</string>
+    <string name="tt_count_down_view">Bỏ qua</string>
+    <string name="tt_dislike_header_tv_back">Quay lại</string>
+    <string name="tt_dislike_header_tv_title">Chọn</string>
+    <string name="tt_display_error">Lỗi hiển thị</string>
+    <string name="tt_done">Xong</string>
+    <string name="tt_feedback_experience_text">Chúng tôi sẽ không ngừng cải thiện dịch vụ.</string>
+    <string name="tt_feedback_submit_text">Bạn đã gửi phản hồi xong! Vui lòng không gửi lại.</string>
+    <string name="tt_feedback_thank_text">Cảm ơn bạn đã phản hồi!</string>
+    <string name="tt_feel_hint">Hãy chia sẻ cảm nhận của bạn về quảng cáo này</string>
+    <string name="tt_good">Tuyệt vời</string>
+    <string name="tt_like_this_ad">Bạn thích quảng cáo này chứ?</string>
+    <string name="tt_list_end_tip">Bạn đã xem tất cả nội dung</string>
+    <string name="tt_loading_more">Đang tải…</string>
+    <string name="tt_logo_en">Quảng cáo</string>
+    <string name="tt_more_copy_link">Sao Chép Liên Kết</string>
+    <string name="tt_more_history">Lịch Sử</string>
+    <string name="tt_more_open_browser">Mở Trong Trình Duyệt</string>
+    <string name="tt_more_report">Báo Cáo</string>
+    <string name="tt_more_retry">Thử Lại</string>
+    <string name="tt_more_title">Thêm</string>
+    <string name="tt_msgPlayable">Chơi hết để giành phần thưởng</string>
+    <string name="tt_multiple_ad_indicator">quảng cáo %1$d/%2$d</string>
+    <string name="tt_negtiveBtnBtnText">Rời đi</string>
+    <string name="tt_negtive_txt">Hủy</string>
+    <string name="tt_no_network">Không có kết nối mạng, vui lòng thử lại sau.</string>
+    <string name="tt_not_bad">Không tệ lắm</string>
+    <string name="tt_other_reason">Lý do khác</string>
+    <string name="tt_postiveBtnText">Tiếp tục</string>
+    <string name="tt_postiveBtnTextPlayable">Tiếp tục chơi</string>
+    <string name="tt_postive_txt">OK</string>
+    <string name="tt_privacy_title">Chính sách quyền riêng tư</string>
+    <string name="tt_report_this_ad">Báo cáo quảng cáo này để giúp chúng tôi cải thiện</string>
+    <string name="tt_reward_feedback">Phản hồi</string>
+    <string name="tt_reward_full_skip">Bỏ qua sau %1$s giây</string>
+    <string name="tt_reward_msg">Xem hết video để nhận phần thưởng</string>
+    <string name="tt_reward_screen_skip_tx">Bỏ qua</string>
+    <string name="tt_select_reason">Vui lòng chọn lý do</string>
+    <string name="tt_skip_ad_time_text">Bỏ qua sau %ds giây</string>
+    <string name="tt_suggestion_commit">Gửi</string>
+    <string name="tt_try_now">Thử ngay bây giờ</string>
+    <string name="tt_video_bytesize">Dữ liệu</string>
+    <string name="tt_video_dial_phone">Gọi ngay</string>
+    <string name="tt_video_download_apk">Tải xuống ngay</string>
+    <string name="tt_video_mobile_go_detail">Xem ngay</string>
+    <string name="tt_video_retry_des_txt">Không tải được. Vui lòng thử lại.</string>
+    <string name="tt_video_without_wifi_tips">Bạn sẽ mất %.2f MB dữ liệu để phát nội dung này</string>
+    <string name="tt_web_title_default">Quảng cáo</string>
+    <string name="turn_it_on">Bật ngay >></string>
+    <string name="tutorial">Hướng dẫn</string>
+    <string name="ultra_high">Cực cao</string>
+    <string name="undo">Hoàn tác</string>
+    <string name="unlock_failed">Mở tính năng nâng cấp thất bại, bạn cần xem toàn bộ video sau đó tải ứng dụng/game.</string>
+    <string name="unlock_susses">Tính năng nâng cấp được mở, bạn có thể sử dụng trong 1 ngày từ bây giờ. Cảm ơn!</string>
+    <string name="upgrade">Nâng cấp</string>
+    <string name="upgrade_donate">Nâng cấp và ủng hộ</string>
+    <string name="upgrade_or_watch_ads_message">Nâng cấp lên phiên bản Pro để truy cập không giới hạn vào tất cả các tính năng. Hoặc xem một đoạn video ngắn để dùng thử miễn phí tính năng này.</string>
+    <string name="upgrade_suggest1">Nâng cấp lên VIP để gỡ bỏ quảng cáo</string>
+    <string name="upgrade_suggest2">Cảm ơn bạn đã dùng ứng dụng của chúng tôi.</string>
+    <string name="upgrade_suggest3">Hỗ trợ chúng tôi để cải thiện chất lượng ứng dụng</string>
+    <string name="upgrade_term">Mở khóa toàn bộ tính năng cao cấp với AZ Screen Recorder PRO. Có bản dùng thử miễn phí — hủy bất kỳ lúc nào. Sau thời gian dùng thử, gói đăng ký sẽ tự động gia hạn qua Google Play.</string>
+    <string name="upgrade_to_pro">Nâng cấp lên Pro</string>
+    <string name="use_notification_to_record">Dùng thanh thông báo để ghi</string>
+    <string name="use_trash">Sử dụng thùng rác</string>
+    <string name="use_trash_disable_summary">Tệp sẽ bị xóa vĩnh viễn</string>
+    <string name="use_trash_enable_summary">Các tệp đã xóa sẽ được chuyển vào thùng rác</string>
+    <string name="user_interface">Giao diện người dùng</string>
+    <string name="utilities">Tiện ích</string>
+    <string name="v7_preference_off">TẮT</string>
+    <string name="v7_preference_on">BẬT</string>
+    <string name="verify_account_live_stream_message">Bạn cần xác thực tài khoản trước khi có thể live stream Youtube. Vui lòng làm theo quy trình xác thực được yêu cầu bởi Youtube. Bạn có thể liên hệ với chúng tôi qua az.screen.recorder@gmail.com để được hỗ trợ.</string>
+    <string name="version_app">Phiên bản</string>
+    <string name="very_dissatisfied">Rất không hài lòng</string>
+    <string name="very_high">Rất cao</string>
+    <string name="very_satisfied">Rất hài lòng</string>
+    <string name="video">Video</string>
+    <string name="video_audio_issues">VẤN ĐỀ VỚI VIDEO/AUDIO</string>
+    <string name="video_compression">Nén video</string>
+    <string name="video_configuration">CẤU HÌNH VIDEO</string>
+    <string name="video_downloader">Trình tải xuống video</string>
+    <string name="video_editor">Trình sửa video</string>
+    <string name="video_is_saving">Video đang lưu</string>
+    <string name="video_lag">Trễ hình ảnh Video</string>
+    <string name="video_quality">Chất lượng video</string>
+    <string name="video_quality_warning">Chất lượng cao hơn có nghĩa là kích thước tệp video lớn hơn</string>
+    <string name="video_volume">Âm lượng video</string>
+    <string name="videos">Video</string>
+    <string name="videos_and_settings">Video &amp; Cài đặt</string>
+    <string name="view">Xem</string>
+    <string name="view_options">Tùy chọn hiển thị</string>
+    <string name="volume">Âm lượng</string>
+    <string name="warning">Cảnh báo</string>
+    <string name="warning_add_background_feature">Chèn background vào video là một tác vụ nặng và có thể cần tới vài phút. Bạn chỉ nên sử dụng chức năng này nếu độ dài của video nhỏ hơn 2 phút. Bạn có muốn tiếp tục không?</string>
+    <string name="warning_cannot_start_when_click_cancel">"Ghi sẽ không bắt đầu nếu bạn nhấn 'Hủy' trên cửa sổ popup. Vui lòng nhấn 'Bắt đầu ngay' để bắt đầu ghi."</string>
+    <string name="warning_enable_fix_green_screen">Bật tính năng này để khắc phục sự cố màu video</string>
+    <string name="warning_to_save">Bạn có muốn xuất video đang chỉnh sửa không?</string>
+    <string name="warning_wif_transfer">Đảm bảo thiết bị của bạn đã kết nối với cùng một mạng Wi-Fi như máy tính của bạn.</string>
+    <string name="water_mark">Hình mờ</string>
+    <string name="watermark_label_prefix">AdMob –</string>
+    <string name="we_love_you_too">Chúng tôi cũng yêu bạn!!!</string>
+    <string name="weekly">Hàng tuần</string>
+    <string name="what_issue_experiencing">Bạn đang gặp phải vấn đề gì?</string>
+    <string name="what_to_improve">Điều gì cần cải thiện nhiều nhất ở ứng dụng này?</string>
+    <string name="wifi_access_suggest">Hãy mở địa chỉ này trên trình duyệt của máy tính</string>
+    <string name="wifi_access_warning_exit_msg">Bạn có muốn dừng chế độ Truyền file qua Wifi không?</string>
+    <string name="wifi_name">Tên Wifi:</string>
+    <string name="wifi_transfer">Truyền File Wifi</string>
+    <string name="x_day_free_trial">%d ngày dùng thử miễn phí</string>
+    <string name="xiaomi_background_permission">Hiển thị cửa sổ popup khi chạy ở nền</string>
+    <string name="xiaomi_background_permission_msg">"Để đảm bảo ghi thành công, vui lòng cho phép 'Hiển thị cửa sổ popup khi chạy ở nền' cho Az Screen Recorder."</string>
+    <string name="xiaomi_background_permission_steps">"1. Mở Cài đặt 
+2. Chạm vào Các quyền khác 
+3. Cho phép quyền này"</string>
+    <string name="yearly">Hàng năm</string>
+    <string name="yes">Có</string>
+    <string name="yesterday">Hôm qua</string>
+    <string name="yours_forever">Của bạn mãi mãi</string>
+    <string name="yt_live_privacy_status_private">Riêng tư</string>
+    <string name="yt_live_privacy_status_public">Công khai</string>
+    <string name="yt_live_privacy_status_unlisted">Không liệt kê</string>
+</resources>

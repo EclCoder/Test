@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/dialog_select_storage_0" android:padding="20.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/choose_storage" />
+    <View android:background="?android:listDivider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="12.0dp" android:layout_marginBottom="12.0dp" />
+    <RadioGroup android:gravity="start|center" android:layout_gravity="center_vertical" android:id="@id/storage_rg" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.google.android.material.radiobutton.MaterialRadioButton android:textSize="16.0sp" android:textColor="@color/text_primary" android:id="@id/internal_storage_rb" android:layout_width="match_parent" android:layout_height="wrap_content" android:checked="true" android:text="@string/internal_storage" android:layoutDirection="rtl" app:buttonTint="@color/radio_button_tint" /> /> 
+        <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:gravity="start" android:id="@id/internal_free_space_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:gravity="start" android:id="@id/internal_duration_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.google.android.material.radiobutton.MaterialRadioButton android:textSize="16.0sp" android:textColor="@color/text_primary" android:id="@id/external_storage_rb" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" android:text="@string/external_sd_card_2" android:layoutDirection="rtl" app:buttonTint="@color/radio_button_tint" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:gravity="start" android:id="@id/sd_free_space_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:gravity="start" android:id="@id/sd_duration_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </RadioGroup>
+</LinearLayout>

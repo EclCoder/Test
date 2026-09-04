@@ -1,0 +1,39 @@
+package com.bytedance.sdk.component.adexpress.dynamic.qor;
+
+import android.content.Context;
+import android.widget.FrameLayout;
+import com.bytedance.sdk.component.adexpress.dkl.eum;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes.dex */
+public class sk extends uua<com.bytedance.sdk.component.adexpress.dkl.dse> {
+    public sk(Context context, com.bytedance.sdk.component.adexpress.dynamic.dynamicview.sk skVar, com.bytedance.sdk.component.adexpress.dynamic.gjv.dse dseVar) {
+        super(context, skVar, dseVar);
+        hnj(dseVar);
+    }
+
+    private void hnj(com.bytedance.sdk.component.adexpress.dynamic.gjv.dse dseVar) {
+        this.hnj = new com.bytedance.sdk.component.adexpress.dkl.aq(this.f12658hn);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
+        layoutParams.gravity = 81;
+        this.hnj.setLayoutParams(layoutParams);
+        eum eumVar = this.hnj;
+        if (eumVar instanceof com.bytedance.sdk.component.adexpress.dkl.aq) {
+            ((com.bytedance.sdk.component.adexpress.dkl.aq) eumVar).setButtonText(this.gjv.eta());
+        }
+    }
+
+    @Override // com.bytedance.sdk.component.adexpress.dynamic.qor.uua, com.bytedance.sdk.component.adexpress.dynamic.qor.dse
+    public void hn() {
+        this.hnj.hn();
+    }
+
+    @Override // com.bytedance.sdk.component.adexpress.dynamic.qor.uua, com.bytedance.sdk.component.adexpress.dynamic.qor.dse
+    public void hnj() {
+        this.hnj.hnj();
+    }
+
+    @Override // com.bytedance.sdk.component.adexpress.dynamic.qor.uua
+    protected void gjv() {
+    }
+}

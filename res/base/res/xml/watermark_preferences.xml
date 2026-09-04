@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/text_all_caps" app:iconSpaceReserved="false">
+        <SwitchPreference android:title="@string/show_text" android:key="@string/pref_enable_watermark" android:defaultValue="false" app:iconSpaceReserved="false" />
+        <EditTextPreference android:title="@string/text" android:key="@string/pref_watermark_text" android:defaultValue="@string/app_name" android:dialogTitle="@string/text" app:iconSpaceReserved="false" />
+        <com.hecorat.screenrecorder.free.data.prefs.FontPreference android:title="@string/font" android:key="@string/pref_watermark_font" app:iconSpaceReserved="false" />
+        <com.hecorat.screenrecorder.free.data.prefs.ColorPickerPreference android:title="@string/text_color" android:key="@string/pref_watermark_text_color" android:defaultValue="-980468" app:iconSpaceReserved="false" />
+        <com.hecorat.screenrecorder.free.data.prefs.ColorPickerPreference android:title="@string/background_color" android:key="@string/pref_watermark_bg_color" android:defaultValue="0" app:iconSpaceReserved="false" />
+        <EditTextPreference android:title="@string/text_size" android:key="@string/pref_watermark_text_size" android:defaultValue="24" android:dialogTitle="@string/text_size" app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/logo" app:iconSpaceReserved="false">
+        <SwitchPreference android:title="@string/show_logo" android:key="@string/pref_enable_logo" app:iconSpaceReserved="false" />
+        <Preference android:title="@string/image" android:key="@string/pref_logo_image_path" app:iconSpaceReserved="false" />
+        <com.hecorat.screenrecorder.free.data.prefs.SeekBarDialogPreference android:title="@string/size" android:key="@string/pref_logo_size" android:defaultValue="0.2" app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

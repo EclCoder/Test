@@ -1,0 +1,14 @@
+package androidx.navigation.fragment;
+
+import androidx.fragment.app.Fragment;
+import kotlin.jvm.internal.s;
+import y3.g0;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes.dex */
+public abstract class a {
+    public static final g0 a(Fragment fragment) {
+        s.h(fragment, "<this>");
+        return NavHostFragment.INSTANCE.a(fragment);
+    }
+}

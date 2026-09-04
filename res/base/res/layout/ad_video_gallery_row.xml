@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:tag="layout/ad_video_gallery_row_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4.0dp" card_view:cardBackgroundColor="@color/white" card_view:cardCornerRadius="4.0dp" card_view:cardElevation="1.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <ProgressBar android:layout_gravity="center" android:id="@id/loading_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.google.android.gms.ads.nativead.NativeAdView android:id="@id/gg_ad_container" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@id/gg_ad_icon" android:padding="4.0dp" android:layout_width="@dimen/width_thumbnail_video" android:layout_height="@dimen/height_thumbnail_video" android:src="@drawable/ic_app_icon" android:layout_alignParentTop="true" android:layout_alignParentStart="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_ad_badge" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/gg_ad_icon" android:layout_alignParentTop="true" android:paddingStart="2.0dp" android:paddingEnd="2.0dp" android:layout_toEndOf="@id/gg_ad_icon">
+                    <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/black" android:ellipsize="end" android:id="@id/gg_ad_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="1.0dp" android:maxLines="2" />
+                    <TextView android:textSize="12.0sp" android:textColor="@color/near_black" android:ellipsize="end" android:id="@id/gg_ad_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="2" />
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton android:textSize="12.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/gg_ad_call_to_action_btn" android:background="@drawable/bg_button_ads_call_action" android:padding="0.0dp" android:layout_width="match_parent" android:layout_height="26.0dp" android:layout_marginBottom="2.0dp" android:text="@string/install" android:layout_below="@id/gg_ad_icon" android:layout_alignParentBottom="true" android:layout_marginStart="1.0dp" android:layout_marginEnd="1.0dp" card_view:backgroundTint="@null" />
+            </RelativeLayout>
+        </com.google.android.gms.ads.nativead.NativeAdView>
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

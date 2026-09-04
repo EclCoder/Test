@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@drawable/bg_white_rounded" android:padding="20.0dp" android:layout_width="320.0dp" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="@string/microphone_unavailable" />
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="80.0dp" android:layout_height="80.0dp" android:layout_marginBottom="20.0dp" android:src="@drawable/ic_mic_off" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp" android:text="@string/microphone_occupied_below_10" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="@string/click_continue_to_record_silent" />
+    <Button android:textColor="@color/white" android:layout_gravity="center_horizontal" android:id="@id/continue_btn" android:background="@drawable/bg_rounded_red_fill_btn" android:layout_width="match_parent" android:layout_height="40.0dp" android:text="@string/common_continue" />
+</LinearLayout>

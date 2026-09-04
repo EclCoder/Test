@@ -1,0 +1,11 @@
+package com.arthenica.ffmpegkit;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes.dex */
+public enum j {
+    ALWAYS_PRINT_LOGS,
+    PRINT_LOGS_WHEN_NO_CALLBACKS_DEFINED,
+    PRINT_LOGS_WHEN_GLOBAL_CALLBACK_NOT_DEFINED,
+    PRINT_LOGS_WHEN_SESSION_CALLBACK_NOT_DEFINED,
+    NEVER_PRINT_LOGS
+}

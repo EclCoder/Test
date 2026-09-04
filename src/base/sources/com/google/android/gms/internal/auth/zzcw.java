@@ -1,0 +1,24 @@
+package com.google.android.gms.internal.auth;
+
+import android.util.Log;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzcw extends zzdc {
+    zzcw(zzcz zzczVar, String str, Boolean bool, boolean z10) {
+        super(zzczVar, str, bool, true, null);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.google.android.gms.internal.auth.zzdc
+    final /* synthetic */ Object zza(Object obj) {
+        if (zzcb.zzc.matcher(obj).matches()) {
+            return Boolean.TRUE;
+        }
+        if (zzcb.zzd.matcher(obj).matches()) {
+            return Boolean.FALSE;
+        }
+        Log.e("PhenotypeFlag", "Invalid boolean value for " + this.zzc + ": " + ((String) obj));
+        return null;
+    }
+}

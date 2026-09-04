@@ -1,0 +1,62 @@
+package gl;
+
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes4.dex */
+public final class c0 implements ListIterator, ul.a {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    public static final c0 f39315a = new c0();
+
+    private c0() {
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    /* JADX INFO: renamed from: a, reason: merged with bridge method [inline-methods] */
+    public Void next() {
+        throw new NoSuchElementException();
+    }
+
+    @Override // java.util.ListIterator
+    public /* bridge */ /* synthetic */ void add(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.ListIterator
+    /* JADX INFO: renamed from: b, reason: merged with bridge method [inline-methods] */
+    public Void previous() {
+        throw new NoSuchElementException();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public boolean hasNext() {
+        return false;
+    }
+
+    @Override // java.util.ListIterator
+    public boolean hasPrevious() {
+        return false;
+    }
+
+    @Override // java.util.ListIterator
+    public int nextIndex() {
+        return 0;
+    }
+
+    @Override // java.util.ListIterator
+    public int previousIndex() {
+        return -1;
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.ListIterator
+    public /* bridge */ /* synthetic */ void set(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+}

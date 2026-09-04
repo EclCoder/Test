@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="20.0dp" android:paddingEnd="15.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textColor="?colorControlNormal" android:id="@id/tv_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" android:layout_marginBottom="15.0dp" />
+    <com.google.android.material.checkbox.MaterialCheckBox android:textColor="@color/bright_red" android:id="@id/checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/read_warning_carefully" app:buttonTint="@color/checkbox_tint" />
+</LinearLayout>

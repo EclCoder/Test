@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="match_parent" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="12.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/texture_container_fl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:alpha="0.0">
+        <com.hecorat.screenrecorder.free.widget.AutoFitTextureView android:id="@id/texture" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <FrameLayout android:orientation="vertical" android:id="@id/action_fl" android:background="@drawable/bg_square_float_camera" android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:layout_gravity="right|bottom" android:id="@id/expand_or_collapse_iv" android:paddingLeft="@dimen/camera_action_padding" android:paddingTop="@dimen/camera_action_padding" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:background="@color/float_menu_item_animation" android:layout_width="@dimen/camera_action_button_size" android:layout_height="@dimen/camera_action_button_size" android:layout_marginRight="@dimen/camera_action_line_width" android:layout_marginBottom="@dimen/camera_action_line_width" android:src="@drawable/ic_resize_24" />
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="left|bottom" android:id="@id/switch_camera_iv" android:paddingTop="@dimen/camera_action_padding" android:paddingRight="@dimen/camera_action_padding" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:background="@color/float_menu_item_animation" android:layout_width="@dimen/camera_action_button_size" android:layout_height="@dimen/camera_action_button_size" android:layout_marginLeft="@dimen/camera_action_line_width" android:layout_marginBottom="@dimen/camera_action_line_width" android:src="@drawable/ic_switch_camera_24" />
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="right|top" android:id="@id/close_iv" android:paddingLeft="@dimen/camera_action_padding" android:paddingBottom="@dimen/camera_action_padding" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:background="@color/float_menu_item_animation" android:layout_width="@dimen/camera_action_button_size" android:layout_height="@dimen/camera_action_button_size" android:layout_marginTop="@dimen/camera_action_line_width" android:layout_marginRight="@dimen/camera_action_line_width" android:src="@drawable/ic_close_white_24" />
+        </FrameLayout>
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

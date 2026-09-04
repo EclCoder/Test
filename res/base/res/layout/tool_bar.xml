@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/tool_bar" android:background="?colorPrimary" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" app:navigationIcon="?homeAsUpIndicator" app:title="@string/language" />
+</LinearLayout>

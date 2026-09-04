@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/item_audio_picker_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/icon_fl" android:background="@color/medium_dark_grey" android:layout_width="56.0dp" android:layout_height="56.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:layout_gravity="center" android:layout_width="30.0dp" android:layout_height="30.0dp" android:src="@drawable/ic_music_note_white_24dp" />
+    </FrameLayout>
+    <TextView android:textColor="@color/white" android:ellipsize="middle" android:id="@id/name_tv" android:layout_width="0.0dp" android:layout_height="wrap_content" android:singleLine="true" android:layout_marginStart="8.0dp" android:layout_marginEnd="16.0dp" app:layout_constraintBottom_toTopOf="@id/duration_tv" app:layout_constraintEnd_toStartOf="@id/play_fl" app:layout_constraintStart_toEndOf="@id/icon_fl" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="12.0sp" android:textColor="@color/white" android:id="@id/duration_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="@id/name_tv" app:layout_constraintTop_toBottomOf="@id/name_tv" />
+    <ImageView android:id="@id/add_iv" android:tag="binding_1" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_add_circle_outline_white_24dp" android:layout_marginEnd="16.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout android:id="@id/play_fl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="16.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/add_iv" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:id="@id/play_iv" android:tag="binding_2" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_play_circle_outline_white_24dp" />
+        <ImageView android:id="@id/resume_iv" android:tag="binding_3" android:visibility="gone" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_pause_circle_outline_white_24dp" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

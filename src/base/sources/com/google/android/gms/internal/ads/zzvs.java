@@ -1,0 +1,20 @@
+package com.google.android.gms.internal.ads;
+
+import com.mbridge.msdk.playercommon.exoplayer2.C;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzvs {
+    public static final zzvs zza = new zzvs(C.TIME_UNSET, C.TIME_UNSET, C.TIME_UNSET);
+    public final long zzb;
+    public final long zzc;
+    public final long zzd;
+    public final zzfh zze = new zzfh(10);
+    public long zzf = C.TIME_UNSET;
+
+    public zzvs(long j10, long j11, long j12) {
+        this.zzb = j10;
+        this.zzc = j11;
+        this.zzd = j12;
+    }
+}

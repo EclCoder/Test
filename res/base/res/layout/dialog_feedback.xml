@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/dialog_feedback_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="14.0sp" android:textColor="@color/near_black" android:textColorHint="@color/grey" android:gravity="top" android:id="@id/feedback_edt" android:background="@color/white_grey" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10.0dp" android:lines="5" android:inputType="textCapSentences|textMultiLine" android:textCursorDrawable="@null" android:textAlignment="gravity" style="@android:style/Widget.DeviceDefault.Light.EditText" />
+</LinearLayout>

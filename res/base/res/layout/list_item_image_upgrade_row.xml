@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:tag="layout/list_item_image_upgrade_row_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4.0dp" card_view:cardBackgroundColor="@color/white" card_view:cardCornerRadius="4.0dp" card_view:cardElevation="1.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/crown_iv" android:layout_width="50.0dp" android:layout_height="50.0dp" android:layout_margin="10.0dp" android:src="@null" card_view:layout_constraintBottom_toBottomOf="parent" card_view:layout_constraintStart_toStartOf="parent" card_view:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout android:orientation="vertical" android:id="@id/text_ll" android:layout_width="wrap_content" android:layout_height="wrap_content" card_view:layout_constraintBottom_toBottomOf="parent" card_view:layout_constraintEnd_toStartOf="@id/upgrade_btn" card_view:layout_constraintHorizontal_bias="0.3" card_view:layout_constraintStart_toEndOf="@id/crown_iv" card_view:layout_constraintTop_toTopOf="parent">
+            <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/az_screen_recorder_pro" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pro_benefit_list" />
+        </LinearLayout>
+        <Button android:textSize="12.0sp" android:textColor="@color/white" android:id="@id/upgrade_btn" android:background="@drawable/bg_button_ads_call_action" android:padding="4.0dp" android:layout_width="wrap_content" android:layout_height="36.0dp" android:layout_margin="4.0dp" android:text="@string/upgrade" card_view:layout_constraintBottom_toBottomOf="parent" card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

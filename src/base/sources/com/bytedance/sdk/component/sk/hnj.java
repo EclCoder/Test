@@ -1,0 +1,11 @@
+package com.bytedance.sdk.component.sk;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes.dex */
+public interface hnj<K, V> {
+    boolean hn(K k10);
+
+    V hnj(K k10);
+
+    boolean hnj(K k10, V v10);
+}

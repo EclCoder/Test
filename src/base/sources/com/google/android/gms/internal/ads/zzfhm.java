@@ -1,0 +1,35 @@
+package com.google.android.gms.internal.ads;
+
+import com.google.common.util.concurrent.ListenableFuture;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzfhm implements zzfhw {
+    private zzdbz zza;
+
+    @Override // com.google.android.gms.internal.ads.zzfhw
+    /* JADX INFO: renamed from: zza, reason: merged with bridge method [inline-methods] */
+    public final synchronized zzdbz zzd() {
+        return this.zza;
+    }
+
+    public final synchronized ListenableFuture zzb(zzfhx zzfhxVar, zzfhv zzfhvVar, zzdbz zzdbzVar) {
+        zzcyx zzcyxVarZza;
+        try {
+            if (zzdbzVar != null) {
+                this.zza = zzdbzVar;
+            } else {
+                this.zza = (zzdbz) zzfhvVar.zza(zzfhxVar.zzb).zzh();
+            }
+            zzcyxVarZza = this.zza.zza();
+        } catch (Throwable th2) {
+            throw th2;
+        }
+        return zzcyxVarZza.zzc(zzcyxVarZza.zzb());
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzfhw
+    public final /* bridge */ /* synthetic */ ListenableFuture zzc(zzfhx zzfhxVar, zzfhv zzfhvVar, Object obj) {
+        return zzb(zzfhxVar, zzfhvVar, null);
+    }
+}

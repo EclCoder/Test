@@ -1,0 +1,115 @@
+package com.google.android.gms.internal.ads;
+
+import android.content.Context;
+import android.view.View;
+import com.google.android.gms.ads.internal.util.client.VersionInfoParcel;
+import com.mbridge.msdk.MBridgeConstans;
+import java.util.Iterator;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzell {
+    private final Context zza;
+    private final VersionInfoParcel zzb;
+    private final zzfkf zzc;
+    private final zzcku zzd;
+    private final zzdzl zze;
+    private zzfuw zzf;
+
+    zzell(Context context, VersionInfoParcel versionInfoParcel, zzfkf zzfkfVar, zzcku zzckuVar, zzdzl zzdzlVar) {
+        this.zza = context;
+        this.zzb = versionInfoParcel;
+        this.zzc = zzfkfVar;
+        this.zzd = zzckuVar;
+        this.zze = zzdzlVar;
+    }
+
+    public final synchronized boolean zza(boolean z10) {
+        zzcku zzckuVar;
+        zzfkf zzfkfVar = this.zzc;
+        if (zzfkfVar.zzT) {
+            if (((Boolean) com.google.android.gms.ads.internal.client.zzba.zzc().zzd(zzbiq.zzgk)).booleanValue()) {
+                if (((Boolean) com.google.android.gms.ads.internal.client.zzba.zzc().zzd(zzbiq.zzgn)).booleanValue() && (zzckuVar = this.zzd) != null) {
+                    if (this.zzf != null) {
+                        int i10 = com.google.android.gms.ads.internal.util.zze.zza;
+                        com.google.android.gms.ads.internal.util.client.zzo.zzi("Omid javascript session service already started for ad.");
+                        return false;
+                    }
+                    if (!com.google.android.gms.ads.internal.zzt.zzu().zza(this.zza)) {
+                        int i11 = com.google.android.gms.ads.internal.util.zze.zza;
+                        com.google.android.gms.ads.internal.util.client.zzo.zzi("Unable to initialize omid.");
+                        return false;
+                    }
+                    if (zzfkfVar.zzV.zzb()) {
+                        zzfuw zzfuwVarZzi = com.google.android.gms.ads.internal.zzt.zzu().zzi(this.zzb, zzckuVar.zzD(), true);
+                        if (((Boolean) com.google.android.gms.ads.internal.client.zzba.zzc().zzd(zzbiq.zzgo)).booleanValue()) {
+                            zzdzl zzdzlVar = this.zze;
+                            String str = zzfuwVarZzi != null ? "1" : MBridgeConstans.ENDCARD_URL_TYPE_PL;
+                            zzdzk zzdzkVarZza = zzdzlVar.zza();
+                            zzdzkVarZza.zzc("omid_js_session_success", str);
+                            zzdzkVarZza.zzd();
+                        }
+                        if (zzfuwVarZzi == null) {
+                            int i12 = com.google.android.gms.ads.internal.util.zze.zza;
+                            com.google.android.gms.ads.internal.util.client.zzo.zzi("Unable to create javascript session service.");
+                            return false;
+                        }
+                        int i13 = com.google.android.gms.ads.internal.util.zze.zza;
+                        com.google.android.gms.ads.internal.util.client.zzo.zzh("Created omid javascript session service.");
+                        this.zzf = zzfuwVarZzi;
+                        zzckuVar.zzal(this);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public final synchronized boolean zzb() {
+        return this.zzf != null;
+    }
+
+    public final synchronized void zzc() {
+        zzcku zzckuVar;
+        try {
+            zzfuw zzfuwVar = this.zzf;
+            if (zzfuwVar == null || (zzckuVar = this.zzd) == null) {
+                return;
+            }
+            Iterator it = zzckuVar.zzF().iterator();
+            while (it.hasNext()) {
+                com.google.android.gms.ads.internal.zzt.zzu().zzk(zzfuwVar, (View) it.next());
+            }
+            zzckuVar.zze("onSdkLoaded", zzgwp.zza());
+        } catch (Throwable th2) {
+            throw th2;
+        }
+    }
+
+    public final synchronized void zzd() {
+        zzcku zzckuVar;
+        if (this.zzf == null || (zzckuVar = this.zzd) == null) {
+            return;
+        }
+        zzckuVar.zze("onSdkImpression", zzgwp.zza());
+    }
+
+    public final synchronized void zze(zzfuv zzfuvVar) {
+        zzcku zzckuVar;
+        zzfuw zzfuwVar = this.zzf;
+        if (zzfuwVar == null || (zzckuVar = this.zzd) == null) {
+            return;
+        }
+        com.google.android.gms.ads.internal.zzt.zzu().zzj(zzfuwVar, zzfuvVar);
+        this.zzf = null;
+        zzckuVar.zzal(null);
+    }
+
+    public final synchronized void zzf(View view) {
+        zzfuw zzfuwVar = this.zzf;
+        if (zzfuwVar != null) {
+            com.google.android.gms.ads.internal.zzt.zzu().zzk(zzfuwVar, view);
+        }
+    }
+}

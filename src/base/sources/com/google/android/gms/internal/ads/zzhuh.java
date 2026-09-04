@@ -1,0 +1,19 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzhuh extends zzidy implements zzifq {
+    private zzhuh() {
+        throw null;
+    }
+
+    public final zzhuh zza(zzhuk zzhukVar) {
+        zzbg();
+        ((zzhui) this.zza).zze(zzhukVar);
+        return this;
+    }
+
+    /* synthetic */ zzhuh(byte[] bArr) {
+        super(zzhui.zzd);
+    }
+}

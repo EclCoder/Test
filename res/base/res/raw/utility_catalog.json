@@ -1,0 +1,17 @@
+{
+  "_comment": "Cloud catalog for the Utilities grid. Screen Mirroring app is available on Play Store.",
+  "version": 4,
+  "items": [
+    { "id": "edit_video" },
+    { "id": "screen_mirroring", "is_new": true, "enabled": true },
+    { "id": "auto_caption", "is_new": true },
+    { "id": "compress_video" },
+    { "id": "edit_image" },
+    { "id": "audio_booster" },
+    { "id": "wifi_transfer" },
+    { "id": "stitch_images" },
+    { "id": "file_recovery" },
+    { "id": "video_downloader" },
+    { "id": "more_apps", "publisher": "AZ Screen Recorder" }
+  ]
+}

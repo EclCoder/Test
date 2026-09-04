@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="320.0dp" android:paddingStart="16.0dp" android:paddingEnd="12.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_build_white_24dp" app:tint="@color/dull_blue" />
+        <TextView android:textSize="22.0sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dialog_verify_account_live_stream_title" android:layout_marginStart="8.0dp" />
+    </LinearLayout>
+    <TextView android:textSize="16.0sp" android:textColor="@color/black" android:gravity="start" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14.0dp" android:text="@string/verify_account_live_stream_message" />
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="120.0dp" android:layout_height="72.0dp" android:layout_marginTop="16.0dp" android:src="@drawable/ic_get_start_live_youtube" />
+    <LinearLayout android:gravity="end" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp">
+        <Button android:textSize="18.0sp" android:textColor="@color/bright_red" android:ellipsize="marquee" android:gravity="center" android:id="@id/btn_grant" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@android:string/ok" android:singleLine="true" android:textAllCaps="true" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/dialog_select_recording_mode_0" android:padding="20.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.textview.MaterialTextView android:textAppearance="?textAppearanceBodyLarge" android:textStyle="bold" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/recording_mode" />
+    <View android:background="?android:listDivider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="12.0dp" android:layout_marginBottom="12.0dp" />
+    <RadioGroup android:gravity="start|center" android:layout_gravity="center_vertical" android:id="@id/mode_rg" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.google.android.material.radiobutton.MaterialRadioButton android:textAppearance="?textAppearanceBodyLarge" android:textColor="?colorOnSurface" android:id="@id/basic_mode_rb" android:layout_width="match_parent" android:layout_height="wrap_content" android:checked="true" android:text="@string/default_mode" android:layoutDirection="rtl" app:buttonTint="@color/radio_button_tint" />
+        <com.google.android.material.textview.MaterialTextView android:textAppearance="?textAppearanceBodySmall" android:textColor="?colorOnSurfaceVariant" android:gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_mode_description" />
+        <com.google.android.material.radiobutton.MaterialRadioButton android:textAppearance="?textAppearanceBodyLarge" android:textColor="?colorOnSurface" android:id="@id/advanced_mode_rb" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="@string/advanced_mode" android:layoutDirection="rtl" app:buttonTint="@color/radio_button_tint" />
+        <com.google.android.material.textview.MaterialTextView android:textAppearance="?textAppearanceBodySmall" android:textColor="?colorOnSurfaceVariant" android:gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/advanced_mode_description" />
+    </RadioGroup>
+</LinearLayout>

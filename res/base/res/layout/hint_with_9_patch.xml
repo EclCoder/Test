@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/hint_down" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/white" android:id="@id/tv_hint" android:padding="5.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="160.0dp" android:text="@string/hint_start_recording" />
+    <View android:background="@color/white" android:layout_width="match_parent" android:layout_height="1.0dp" />
+    <Button android:textColor="@color/white" android:id="@id/btn_got_it" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/hint_got_it" />
+</LinearLayout>

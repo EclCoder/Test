@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/nav_graph" app:startDestination="@id/editorPreviewFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="EditorPreviewFragment" android:name="com.hecorat.screenrecorder.free.videoeditor.PreviewFragment" android:id="@id/editorPreviewFragment">
+        <action android:id="@id/action_editorPreviewFragment_to_trimFragment" app:destination="@id/trimFragment" />
+        <action android:id="@id/action_editorPreviewFragment_to_addAudioFragment" app:destination="@id/addAudioFragment" />
+        <action android:id="@id/action_editorPreviewFragment_to_addTextFragment" app:destination="@id/addTextFragment" />
+        <action android:id="@id/action_editorPreviewFragment_to_addStickerFragment" app:destination="@id/addStickerFragment" />
+        <action android:id="@id/action_editorPreviewFragment_to_cropFragment" app:destination="@id/cropFragment" />
+        <action android:id="@id/action_editorPreviewFragment_to_addBackgroundFragment" app:destination="@id/addBackgroundFragment" />
+        <action android:id="@id/action_editorPreviewFragment_to_ratioFragment" app:destination="@id/ratioFragment" />
+        <action android:id="@id/action_editorPreviewFragment_to_changeSpeedFragment" app:destination="@id/changeSpeedFragment" />
+        <action android:id="@id/action_editorPreviewFragment_to_autoCaptionFragment" app:destination="@id/autoCaptionFragment" />
+    </fragment>
+    <fragment android:label="fragment_trim" android:name="com.hecorat.screenrecorder.free.videoeditor.CutFragment" android:id="@id/trimFragment" />
+    <fragment android:label="AddAudioFragment" android:name="com.hecorat.screenrecorder.free.videoeditor.AddAudioFragment" android:id="@id/addAudioFragment" />
+    <fragment android:label="AddTextFragment" android:name="com.hecorat.screenrecorder.free.videoeditor.AddTextFragment" android:id="@id/addTextFragment">
+        <action android:id="@id/action_addTextFragment_to_textSettingsFragment" app:destination="@id/textSettingsFragment" />
+    </fragment>
+    <fragment android:label="TextSettingsFragment" android:name="com.hecorat.screenrecorder.free.videoeditor.TextSettingsFragment" android:id="@id/textSettingsFragment">
+        <argument android:name="textId" app:argType="string" app:nullable="true" />
+    </fragment>
+    <fragment android:label="AddStickerFragment" android:name="com.hecorat.screenrecorder.free.videoeditor.AddStickerFragment" android:id="@id/addStickerFragment" />
+    <fragment android:label="CropFragment" android:name="com.hecorat.screenrecorder.free.videoeditor.CropFragment" android:id="@id/cropFragment" />
+    <fragment android:label="fragment_add_background" android:name="com.hecorat.screenrecorder.free.videoeditor.AddBackgroundFragment" android:id="@id/addBackgroundFragment" />
+    <fragment android:label="fragment_ratio" android:name="com.hecorat.screenrecorder.free.videoeditor.ChangeRatioFragment" android:id="@id/ratioFragment" />
+    <fragment android:label="fragment_change_speed" android:name="com.hecorat.screenrecorder.free.videoeditor.ChangeSpeedFragment" android:id="@id/changeSpeedFragment" />
+    <fragment android:label="AutoCaptionFragment" android:name="com.hecorat.screenrecorder.free.videoeditor.AutoCaptionFragment" android:id="@id/autoCaptionFragment" />
+</navigation>

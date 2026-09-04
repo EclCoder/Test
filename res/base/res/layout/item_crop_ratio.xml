@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/item_crop_ratio_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/ratio_cl" android:layout_width="28.0dp" android:layout_height="28.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <FrameLayout android:id="@id/ratio_fl" android:background="@color/white_grey" android:layout_width="0.0dp" android:layout_height="0.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="V,9:16" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+            <ImageView android:id="@id/ratio_iv" android:background="@color/black" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="1.0dp" android:adjustViewBounds="true" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView android:id="@id/ratio_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/ratio_cl" />
+</androidx.constraintlayout.widget.ConstraintLayout>

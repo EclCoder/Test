@@ -1,0 +1,15 @@
+package com.inmobi.media;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* JADX INFO: renamed from: com.inmobi.media.ki, reason: case insensitive filesystem */
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes6.dex */
+public abstract /* synthetic */ class AbstractC3098ki {
+    public static JSONObject a(String str, int i10) throws JSONException {
+        JSONObject jSONObject = new JSONObject();
+        jSONObject.put(str, i10);
+        return jSONObject;
+    }
+}

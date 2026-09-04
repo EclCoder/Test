@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/app_bar" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/tool_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="?actionBarSize" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/layout_toolbar" android:layout_below="@id/app_bar">
+        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerInParent="true" />
+        <com.hecorat.screenrecorder.free.widget.DrawingOnBitmapView android:id="@id/iv_draw_image_method_2" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/layout_toolbar" android:background="@color/cod_gray_opacity" android:padding="10.0dp" android:scrollbars="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center" android:layout_width="0.0dp" android:layout_height="28.0dp" android:layout_weight="0.33">
+            <ImageView android:id="@id/iv_pick_color" android:background="?selectableItemBackgroundBorderless" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/ic_color_lens_white_24dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="0.0dp" android:layout_height="28.0dp" android:layout_weight="0.33">
+            <ImageView android:id="@id/iv_brush" android:background="?selectableItemBackgroundBorderless" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/ic_brush_white_24dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="0.0dp" android:layout_height="28.0dp" android:layout_weight="0.33">
+            <ImageView android:id="@id/iv_undo" android:background="?selectableItemBackgroundBorderless" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/ic_undo_24dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="0.0dp" android:layout_height="28.0dp" android:layout_weight="0.34">
+            <ImageView android:id="@id/iv_clear_all" android:background="?selectableItemBackgroundBorderless" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/ic_delete_sweep_white_24dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/layout_progress_bar" android:background="@color/silver_chalice_opacity" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ProgressBar android:id="@id/waiting_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:indeterminateDrawable="@drawable/waiting_circle" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

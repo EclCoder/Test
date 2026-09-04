@@ -1,0 +1,12 @@
+version: 3.0.3
+apkFileName: split_config.ldpi.apk
+usesFramework:
+  ids:
+  - 1
+versionInfo:
+  versionCode: 70388
+resourcesInfo:
+  packageId: 127
+doNotCompress:
+- arsc
+- png

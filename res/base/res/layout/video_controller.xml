@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_controller" android:tag="layout/video_controller_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/video_editor_text_size" android:textColor="@color/white" android:id="@id/tv_current_position" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_time_formatted" android:layout_marginStart="8.0dp" />
+    <SeekBar android:scrollbarSize="3.0dp" android:id="@id/seek_bar" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <TextView android:textSize="@dimen/video_editor_text_size" android:textColor="@color/white" android:id="@id/tv_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_time_formatted" />
+    <ImageView android:id="@id/iv_play_pause" android:background="@drawable/bg_touch_feedback_oval" android:paddingTop="4.0dp" android:paddingBottom="4.0dp" android:focusable="true" android:clickable="true" android:layout_width="32.0dp" android:layout_height="32.0dp" android:src="@drawable/ic_pause_white_32dp" />
+</LinearLayout>

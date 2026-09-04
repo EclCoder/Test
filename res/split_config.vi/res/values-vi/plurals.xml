@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="days">
+        <item quantity="other">%d ngày</item>
+    </plurals>
+    <plurals name="dialog_warning_delete_several_screenshots_mgs">
+        <item quantity="other">Bạn có chắc chắn muốn xóa %d ảnh chụp màn hình?</item>
+    </plurals>
+    <plurals name="dialog_warning_delete_several_videos_msg">
+        <item quantity="other">Bạn có chắc chắn muốn xoá %d video này?</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="one">Tua nhanh %d giây</item>
+        <item quantity="other">Tua nhanh %d giây</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="one">Tua lại %d giây</item>
+        <item quantity="other">Tua lại %d giây</item>
+    </plurals>
+    <plurals name="free_trial_for_x_days">
+        <item quantity="other">Dùng thử miễn phí %d ngày</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d thông báo mới</item>
+        <item quantity="other">%d thông báo mới</item>
+    </plurals>
+    <plurals name="rotate_degrees">
+        <item quantity="other">Xoay %d độ</item>
+    </plurals>
+    <plurals name="toast_deleted_several_images">
+        <item quantity="other">Đã xoá %d ảnh</item>
+    </plurals>
+    <plurals name="toast_deleted_several_media_files">
+        <item quantity="other">Đã xóa %d tệp phương tiện</item>
+    </plurals>
+    <plurals name="toast_deleted_several_video">
+        <item quantity="other">Đã xoá %d video</item>
+    </plurals>
+    <plurals name="toast_moved_several_images_to_trash">
+        <item quantity="other">Đã chuyển %d hình ảnh vào thùng rác</item>
+    </plurals>
+    <plurals name="toast_moved_several_videos_to_trash">
+        <item quantity="other">Đã chuyển %d video vào thùng rác</item>
+    </plurals>
+    <plurals name="toast_restored_several_media_files">
+        <item quantity="other">Đã khôi phục %d tệp phương tiện</item>
+    </plurals>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="5.0dp" android:paddingRight="5.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.hecorat.screenrecorder.free.widget.ColorPickerView android:id="@id/color_picker_view" android:tag="portrait" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dp" android:layerType="software" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="40.0dp" android:layout_marginLeft="10.0dp" android:layout_marginRight="10.0dp" android:layout_marginBottom="4.0dp">
+        <com.hecorat.screenrecorder.free.widget.ColorPickerPanelView android:id="@id/old_color_panel" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" />
+        <TextView android:textSize="20.0sp" android:gravity="center" android:layout_width="30.0dp" android:layout_height="match_parent" android:layout_marginLeft="10.0dp" android:layout_marginRight="10.0dp" android:text="@string/arrow" />
+        <com.hecorat.screenrecorder.free.widget.ColorPickerPanelView android:id="@id/new_color_panel" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:layout_marginRight="10.0dp" android:layout_marginBottom="10.0dp">
+        <TextView android:gravity="center" android:layout_gravity="center" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/old_color" android:layout_weight="1.0" />
+        <View android:layout_width="30.0dp" android:layout_height="match_parent" android:layout_marginLeft="10.0dp" android:layout_marginRight="10.0dp" />
+        <TextView android:gravity="center" android:layout_gravity="center" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/new_color" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

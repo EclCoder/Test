@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/sticker_view_with_bound_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.xiaopo.flying.sticker.StickerView android:id="@id/sticker_view" android:layout_width="match_parent" android:layout_height="match_parent" app:showBorder="true" app:showIcons="true" />
+</FrameLayout>

@@ -1,0 +1,29 @@
+package com.google.android.gms.internal.ads;
+
+import android.view.View;
+import java.util.Objects;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzdpf implements zzhbt {
+    final /* synthetic */ View zza;
+    final /* synthetic */ zzdpo zzb;
+
+    zzdpf(zzdpo zzdpoVar, View view) {
+        this.zza = view;
+        Objects.requireNonNull(zzdpoVar);
+        this.zzb = zzdpoVar;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzhbt
+    public final void zza(Throwable th2) {
+        if (((Boolean) com.google.android.gms.ads.internal.client.zzba.zzc().zzd(zzbiq.zzgs)).booleanValue()) {
+            com.google.android.gms.ads.internal.zzt.zzh().zzh(th2, "omid native display exp");
+        }
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzhbt
+    public final /* bridge */ /* synthetic */ void zzb(Object obj) {
+        this.zzb.zzY(this.zza, (zzeln) obj);
+    }
+}

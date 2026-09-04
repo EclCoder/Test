@@ -1,0 +1,27 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class zzhmy {
+    private final Class zza;
+    private final Class zzb;
+
+    /* synthetic */ zzhmy(Class cls, Class cls2, byte[] bArr) {
+        this.zza = cls;
+        this.zzb = cls2;
+    }
+
+    public static zzhmy zzd(zzhmx zzhmxVar, Class cls, Class cls2) {
+        return new zzhmw(cls, cls2, zzhmxVar);
+    }
+
+    public abstract zzhns zza(zzheh zzhehVar);
+
+    public final Class zzb() {
+        return this.zza;
+    }
+
+    public final Class zzc() {
+        return this.zzb;
+    }
+}

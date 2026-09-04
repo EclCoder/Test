@@ -1,0 +1,19 @@
+package com.google.android.gms.ads.mediation;
+
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.rewarded.RewardItem;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes4.dex */
+public interface MediationRewardedAdCallback extends MediationAdCallback {
+    void onAdFailedToShow(AdError adError);
+
+    void onUserEarnedReward();
+
+    @Deprecated
+    void onUserEarnedReward(RewardItem rewardItem);
+
+    void onVideoComplete();
+
+    void onVideoStart();
+}

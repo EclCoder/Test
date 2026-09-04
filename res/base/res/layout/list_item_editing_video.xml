@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/list_item_editing_video_0" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:tag="binding_1" android:padding="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:foreground="?selectableItemBackground" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/border_cl" android:padding="2.0dp" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ImageView android:id="@id/video_iv" android:layout_width="72.0dp" android:layout_height="72.0dp" android:elevation="2.0dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/white" android:tag="binding_2" android:background="@color/grey" android:padding="2.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:elevation="4.0dp" app:layout_constraintBottom_toBottomOf="@id/video_iv" app:layout_constraintStart_toStartOf="@id/video_iv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton android:id="@id/delete_btn" android:tag="binding_3" android:background="@drawable/bg_circle" android:padding="2.0dp" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_baseline_close_24" android:scaleType="fitCenter" android:elevation="4.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

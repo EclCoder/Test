@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textStyle="bold" android:gravity="center" android:id="@id/countdown_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="140.0dp" android:text="5" android:fontFamily="sans-serif-medium" style="@style/ShadowEffect" />
+    <Button android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/white" android:layout_gravity="center_horizontal" android:id="@id/btn_start_now" android:background="@drawable/bg_button_ok_dialog_primary" android:paddingLeft="24.0dp" android:paddingRight="24.0dp" android:layout_width="wrap_content" android:layout_height="48.0dp" android:layout_marginTop="20.0dp" android:text="@string/start_now" android:textAllCaps="false" android:elevation="2.0dp" android:stateListAnimator="@null" android:backgroundTint="@color/bright_red" android:paddingHorizontal="24.0dp" />
+</LinearLayout>

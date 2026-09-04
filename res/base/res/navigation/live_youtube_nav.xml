@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/live_youtube_nav" app:startDestination="@id/loginYtFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="LiveYtFragment" android:name="com.hecorat.screenrecorder.free.ui.live.youtube.LiveYtFragment" android:id="@id/liveYtFragment">
+        <action android:id="@id/action_liveYtFragment_to_ytSettingsFragment" app:destination="@id/ytSettingsFragment" />
+    </fragment>
+    <fragment android:label="LoginYtFragment" android:name="com.hecorat.screenrecorder.free.ui.live.youtube.LoginYtFragment" android:id="@id/loginYtFragment">
+        <action android:id="@id/action_loginYtFragment_to_liveYtFragment" app:destination="@id/liveYtFragment" app:popUpTo="@id/live_youtube_nav" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="@string/az_common_setting" android:name="com.hecorat.screenrecorder.free.ui.live.youtube.settings.YtSettingsFragment" android:id="@id/ytSettingsFragment" />
+</navigation>

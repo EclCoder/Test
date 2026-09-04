@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/root_view" android:background="@color/white" android:padding="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dp">
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/very_dark_grey" android:id="@id/tv_review_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/screenshot_captured" android:layout_alignParentStart="true" />
+        <ImageView android:id="@id/iv_close" android:background="@drawable/bg_ripple" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close_24dp" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/rl_preview" android:layout_width="@dimen/review_landscape_preview_width" android:layout_height="0.0dp" app:layout_constrainedHeight="true" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHeight_default="wrap" app:layout_constraintHeight_max="@dimen/review_landscape_ads_max_height" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+            <ImageView android:id="@id/iv_thumb" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null" />
+            <FrameLayout android:id="@id/fm_view_result" android:background="?android:selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" />
+            <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/ll_action" android:background="@color/black_opacity" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                <LinearLayout android:gravity="center" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:id="@id/iv_share" android:background="@drawable/bg_touch_feedback_rec" android:padding="@dimen/margin_ads_feature" android:focusable="true" android:clickable="true" android:layout_width="36.0dp" android:layout_height="36.0dp" android:src="@drawable/ic_share_white_32dp" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:id="@id/iv_delete" android:background="@drawable/bg_touch_feedback_rec" android:padding="@dimen/margin_ads_feature" android:focusable="true" android:clickable="true" android:layout_width="36.0dp" android:layout_height="36.0dp" android:src="@drawable/ic_delete_white_32dp" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:id="@id/iv_edit" android:background="@drawable/bg_touch_feedback_rec" android:padding="@dimen/margin_ads_feature" android:focusable="true" android:clickable="true" android:layout_width="36.0dp" android:layout_height="36.0dp" android:src="@drawable/ic_crop_white_24dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <FrameLayout android:id="@id/ads_container" android:background="@color/grey" android:visibility="gone" android:layout_width="@dimen/review_ads_width" android:layout_height="wrap_content" android:layout_marginStart="10.0dp" app:layout_constrainedHeight="true" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_max="@dimen/review_landscape_ads_max_height" app:layout_constraintStart_toEndOf="@id/rl_preview" app:layout_constraintTop_toTopOf="parent">
+            <include android:id="@id/google_ad_container" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/ad_gg_review" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

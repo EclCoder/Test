@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>available_upgrade_products</key>
+        <value> {
+              "version": 1,
+              "products": [
+                { "id": "month_subscription_1", "type": "subscription" },
+                { "id": "year_subscription_1", "type": "subscription" },
+                { "id": "lifetime_full", "type": "onetime", "anchor": true },
+                { "id": "lifetime_sale", "type": "onetime", "promo_duration_ms": 86400000 }
+              ]
+            } </value>
+    </entry>
+</defaultsMap>

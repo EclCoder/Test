@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="#bb000000" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/layoutMain" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:id="@id/btnClose" android:padding="4.0dp" android:layout_width="32.0dp" android:layout_height="32.0dp" android:layout_marginTop="20.0dp" android:src="@drawable/ic_close_white_24" android:contentDescription="@string/close" android:layout_marginEnd="20.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:tint="#ffffff" />
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/dialogContainer" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/ctaContainer" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+            <FrameLayout android:id="@id/tagExclusiveOffer" android:background="@drawable/bg_exclusive_offer_tag" android:paddingLeft="12.0dp" android:paddingTop="6.0dp" android:paddingRight="12.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:elevation="12.0dp" android:paddingHorizontal="12.0dp" android:paddingVertical="6.0dp" app:layout_constraintBottom_toTopOf="@id/layoutDialog" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@id/layoutDialog">
+                <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ff6f00" android:id="@id/tvTag" android:padding="4.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/exclusive_offer" android:fontFamily="sans-serif-medium" />
+            </FrameLayout>
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/layoutDialog" android:background="@drawable/bg_promo_rounded" android:paddingLeft="70.0dp" android:paddingTop="20.0dp" android:paddingRight="70.0dp" android:paddingBottom="20.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:elevation="8.0dp" android:paddingHorizontal="70.0dp" android:paddingVertical="20.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_off_badge" android:paddingLeft="10.0dp" android:paddingTop="4.0dp" android:paddingRight="10.0dp" android:paddingBottom="4.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" android:elevation="4.0dp" android:paddingHorizontal="10.0dp" android:paddingVertical="4.0dp">
+                    <TextView android:textSize="38.0sp" android:textStyle="bold" android:textColor="#ffffff" android:id="@id/tvDiscount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/percent" />
+                    <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/off" android:layout_marginStart="5.0dp" />
+                </LinearLayout>
+                <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/near_black" android:paddingLeft="16.0dp" android:paddingRight="16.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/lifetime_access" android:paddingHorizontal="16.0dp" />
+                <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@color/near_black" android:id="@id/tvPrice" android:paddingLeft="16.0dp" android:paddingRight="16.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="16.0dp" />
+                <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/near_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" android:text="@string/offer_ends_in" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp">
+                    <FrameLayout style="@style/TimerBoxStyle">
+                        <TextView android:id="@id/tvHour" style="@style/TimerTextStyle" />
+                    </FrameLayout>
+                    <TextView android:textSize="20.0sp" android:textColor="#ff6600" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dp" android:layout_marginRight="4.0dp" android:text=":" android:layout_marginHorizontal="4.0dp" />
+                    <FrameLayout style="@style/TimerBoxStyle">
+                        <TextView android:id="@id/tvMinute" style="@style/TimerTextStyle" />
+                    </FrameLayout>
+                    <TextView android:textSize="20.0sp" android:textColor="#ff6600" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dp" android:layout_marginRight="4.0dp" android:text=":" android:layout_marginHorizontal="4.0dp" />
+                    <FrameLayout style="@style/TimerBoxStyle">
+                        <TextView android:id="@id/tvSecond" style="@style/TimerTextStyle" />
+                    </FrameLayout>
+                    <TextView android:textSize="20.0sp" android:textColor="#ff6600" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dp" android:layout_marginRight="4.0dp" android:text="·" android:layout_marginHorizontal="4.0dp" />
+                    <FrameLayout style="@style/TimerBoxStyle">
+                        <TextView android:id="@id/tvDeciSecond" style="@style/TimerTextStyle" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout android:id="@id/ctaContainer" android:layout_width="0.0dp" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@id/dialogContainer" app:layout_constraintStart_toStartOf="@id/dialogContainer" app:layout_constraintTop_toBottomOf="@id/dialogContainer">
+            <View android:background="@drawable/bg_button_shadow_glow" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_alignBottom="@id/layoutCTA" />
+            <FrameLayout android:id="@id/shimmerContainer" android:background="@drawable/bg_cta_button_promo" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="3.0dp" android:layout_marginBottom="3.0dp" android:layout_alignBottom="@id/layoutCTA" android:layout_marginStart="3.0dp" android:layout_marginEnd="3.0dp">
+                <View android:id="@id/shimmer" android:background="@drawable/shimmer_mask" android:layout_width="120.0dp" android:layout_height="match_parent" />
+            </FrameLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/layoutCTA" android:background="?selectableItemBackground" android:paddingLeft="16.0dp" android:paddingTop="12.0dp" android:paddingRight="16.0dp" android:paddingBottom="12.0dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="60.0dp" android:paddingHorizontal="16.0dp" android:paddingVertical="12.0dp">
+                <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/white" android:ellipsize="end" android:gravity="center" android:id="@id/tvCTA" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="@string/get_pro_forever" android:maxLines="2" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView android:textSize="14.0sp" android:textColor="@color/dark_grey" android:gravity="center_vertical" android:id="@id/btn_sub_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="@string/one_time_payment" android:layout_below="@id/layoutCTA" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <nl.dionsegijn.konfetti.xml.KonfettiView android:id="@id/konfettiView" android:layout_width="match_parent" android:layout_height="match_parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

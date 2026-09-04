@@ -1,0 +1,43 @@
+package com.google.android.gms.internal.consent_sdk;
+
+import com.android.vending.billing.fTvD.qEagQqzJZsd;
+
+/* JADX INFO: compiled from: r8-map-id-1868b3f846f91b929d17a1f0de6da199bc8101b6e9bb94a36f131322636ef84b */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzkq extends zzqm implements zzrr {
+    private static final zzkq zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+
+    static {
+        zzkq zzkqVar = new zzkq();
+        zzb = zzkqVar;
+        zzqm.zzz(zzkq.class, zzkqVar);
+    }
+
+    private zzkq() {
+    }
+
+    @Override // com.google.android.gms.internal.consent_sdk.zzqm
+    protected final Object zzb(int i10, Object obj, Object obj2) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
+            return (byte) 1;
+        }
+        if (i11 == 2) {
+            return zzqm.zzw(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002᠌\u0001", new Object[]{"zzd", qEagQqzJZsd.WbveWPO, zzkp.zza, "zzf", zzkn.zza});
+        }
+        if (i11 == 3) {
+            return new zzkq();
+        }
+        zzkz zzkzVar = null;
+        if (i11 == 4) {
+            return new zzko(zzkzVar);
+        }
+        if (i11 == 5) {
+            return zzb;
+        }
+        throw null;
+    }
+}
