@@ -16,14 +16,14 @@ jobs:
         uses: actions/cache@v4
         with:
           path: $HOME/.cache/tools
-          key: tools
+          key: android-tools
 
       - name: Install tools
         run: |
           mkdir -p $HOME/.cache/tools/
           if [ ! -d $HOME/.cache/tools/jadx ]; then
             curl -L -o jadx.zip "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip"
-            unzip jadx.zip -d $HOME/.cache/tools
+            unzip jadx.zip -d $HOME/.cache/tools/jadx
             rm jadx.zip
           fi
 
