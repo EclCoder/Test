@@ -26,8 +26,6 @@ jobs:
           if [ ! -d $HOME/.cache/tools/jadx ]; then
             curl -L -o jadx.zip "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip"
             unzip jadx.zip -d $HOME/.cache/tools
-            chmod +x $HOME/.cache/tools/jadx/bin/jadx
-            echo "$HOME/.cache/tools/jadx/bin" >> "$GITHUB_PATH"
             rm jadx.zip
           fi
 
@@ -37,18 +35,25 @@ jobs:
             cat > $HOME/.cache/tools/apktool/apktool <<'EOF'
 exec java -jar "$(dirname "$0")/apktool.jar" "$@"
 EOF
-            chmod +x $HOME/.cache/tools/apktool/apktool
-            echo "$HOME/.cache/tools/apktool/" >> "$GITHUB_PATH"
           fi
 
+      - name: Setup tools
+        run: |
+          chmod +x $HOME/.cache/tools/jadx/bin/jadx
+          echo "$HOME/.cache/tools/jadx/bin" >> "$GITHUB_PATH"
+          chmod +x $HOME/.cache/tools/apktool/apktool
+          echo "$HOME/.cache/tools/apktool/" >> "$GITHUB_PATH"
+
       - name: Install apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -L -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -o file.zip "https://api.github.com/repos/EclCoder/Test/actions/artifacts/9899830069/zip"
           unzip file.zip
           unzip *.apkm
           rm -rf file.zip *.apkm
 
-       - name: Decompile
-         run: |
-           chmod +x scripts/decompile.sh
-           scripts/decompile.sh
+      - name: Decompile
+        run: |
+          chmod +x scripts/decompile.sh
+          scripts/decompile.sh
