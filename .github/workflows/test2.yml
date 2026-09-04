@@ -36,13 +36,6 @@ jobs:
             rm ghidra.zip
           fi
 
-      - name: Check ghidra
-        run: |
-          du -sh $HOME/.cache/ghidra
-          ls $HOME/.cache/ghidra
-          find $HOME/.cache/ghidra -type f -name "analyzeHeadless" -print
-          exit 1
-
       - name: Setup ghidra
         run: |
           chmod +x $HOME/.cache/ghidra/ghidra_12.1.3_PUBLIC/support/analyzeHeadless
