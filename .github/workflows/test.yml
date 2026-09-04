@@ -17,26 +17,30 @@ jobs:
       - name: Cache tools
         uses: actions/cache@v4
         with:
-          path: ~/.cache/tools
+          path: $HOME/.cache/tools
           key: tools
 
       - name: Install tools
         run: |
-          mkdir -p ~/.cache/tools/
-          if [ ! -d ~/.cache/tools/jadx ]; then
+          mkdir -p $HOME/.cache/tools/
+          if [ ! -d $HOME/.cache/tools/jadx ]; then
             curl -L -o jadx.zip "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip"
-            unzip jadx.zip -d ~/.cache/tools
-            chmod +x ~/.cache/tools/jadx/bin/jadx
-            echo "~/.cache/tools/jadx/bin" >> "$GITHUB_PATH"
+            unzip jadx.zip -d $HOME/.cache/tools
+            chmod +x $HOME/.cache/tools/jadx/bin/jadx
+            echo "$HOME/.cache/tools/jadx/bin" >> "$GITHUB_PATH"
             rm jadx.zip
           fi
 
-          if [ ! -d ~/.cache/tools/apktool ]; then
-            mkdir -p ~/.cache/tools/apktool
+          if [ ! -d $HOME/.cache/tools/apktool ]; then
+            mkdir -p $HOME/.cache/tools/apktool
             curl -L -o ~/.cache/tools/apktool/apktool.jar "https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar"
-            cat > ~/.cache/tools/apktool/apktool <<'EOF' exec java -jar "$(dirname "$0")/apktool.jar" "$@"
+            cat > $HOME/.cache/tools/apktool/apktool <<'EOF'
+exec java -jar "$(dirname "$0")/apktool.jar" "$@"
 EOF
-            chmod +x ~/.cache/tools/apktool/apktool
-            echo "~/.cache/tools/apktool/apktool" >> "$GITHUB_PATH"
+            chmod +x $HOME/.cache/tools/apktool/apktool
+            echo "$HOME/.cache/tools/apktool/" >> "$GITHUB_PATH"
           fi
+
+      - name: Install apk
+        run: |
           
