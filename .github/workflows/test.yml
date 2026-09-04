@@ -53,6 +53,7 @@ jobs:
         run: |
           chmod +x scripts/decompile.sh
           scripts/decompile.sh
+          rm -rf *.apk
 
       - name: Commit and push
         run: |
