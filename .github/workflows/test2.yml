@@ -29,7 +29,7 @@ jobs:
 
       - name: Install ghidra
         run: |
-          mkdir -p $HOME/.cache/ghidra/
+          mkdir -p $HOME/.cache/
           if [ ! -d $HOME/.cache/ghidra ]; then
             curl -L -o ghidra.zip "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.3_build/ghidra_12.1.3_PUBLIC_20260817.zip"
             unzip ghidra.zip -d $HOME/.cache/ghidra           
