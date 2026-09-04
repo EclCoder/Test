@@ -34,10 +34,9 @@ jobs:
           if [ ! -d ~/.cache/tools/apktool ]; then
             mkdir -p ~/.cache/tools/apktool
             curl -L -o ~/.cache/tools/apktool/apktool.jar "https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar"
-            cat > ~/.cache/tools/apktool/apktool <<'EOF'
-            exec java -jar "$(dirname "$0")/apktool.jar" "$@"
-            EOF
+            cat > ~/.cache/tools/apktool/apktool <<'EOF' exec java -jar "$(dirname "$0")/apktool.jar" "$@"
+EOF
             chmod +x ~/.cache/tools/apktool/apktool
-            echo "~/.cache/tools/apktool/apktool/" >> "$GITHUB_PATH"
+            echo "~/.cache/tools/apktool/apktool" >> "$GITHUB_PATH"
           fi
           
