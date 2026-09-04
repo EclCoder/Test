@@ -38,7 +38,7 @@ jobs:
 
       - name: Setup ghidra
         run: |
-          find $HOME/.cache/ghidra -name "analyzeHeadless"
+          find $HOME/.cache/ghidra -type f -name "analyzeHeadless" -print
           chmod +x $HOME/.cache/ghidra/ghidra_12.1.3_PUBLIC/support/analyzeHeadless
           echo "$HOME/.cache/ghidra/ghidra_12.1.3_PUBLIC/support" >> "$GITHUB_PATH"
 
