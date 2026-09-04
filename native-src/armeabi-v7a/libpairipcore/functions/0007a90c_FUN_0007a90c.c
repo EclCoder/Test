@@ -1,0 +1,25 @@
+/*
+ * Ghidra decompilation
+ *
+ * Binary   : libpairipcore.so
+ * Function : FUN_0007a90c
+ * Address  : 0007a90c
+ *
+ * WARNING:
+ * This is C-like pseudocode generated
+ * by Ghidra. It is NOT the original
+ * C/C++ source code.
+ */
+
+
+void FUN_0007a90c(int param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,
+                 undefined4 *param_5)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x0007a938. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (**(code **)(param_1 + 4))(*param_2,*param_3,*param_4,*param_5);
+  return;
+}
+
+
