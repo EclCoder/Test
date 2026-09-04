@@ -17,4 +17,8 @@ jobs:
           curl -L -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -o file.zip "https://api.github.com/repos/EclCoder/Test/actions/artifacts/9899830069/zip"
 
           unzip file.zip
+          unzip *.apkm
+          rm -rf file.zip *.apkm
+          echo "===Apks:==="
+          echo
           ls
