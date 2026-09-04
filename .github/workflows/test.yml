@@ -38,7 +38,7 @@ jobs:
           chmod +x $HOME/.cache/tools/jadx/bin/jadx
           echo "$HOME/.cache/tools/jadx/bin" >> "$GITHUB_PATH"
           chmod +x $HOME/.cache/tools/apktool/apktool
-          echo "$HOME/.cache/tools/apktool/" >> "$GITHUB_PATH"
+          echo "$HOME/.cache/tools/apktool" >> "$GITHUB_PATH"
 
       - name: Install apk
         env:
