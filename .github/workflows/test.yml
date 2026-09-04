@@ -28,7 +28,8 @@ jobs:
             unzip jadx.zip -d ~/.cache/tools
             rm jadx.zip
           fi
-          if [ ! -d ~/.cache/tools/apktool ]; then
-
+          if [ ! -d ~/.cache/tools/apktool.jar ]; then
+            curl -L -o ~/.cache/tools/apktool.jar "https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar"
+            
           fi
           
