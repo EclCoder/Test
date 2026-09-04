@@ -33,7 +33,7 @@ jobs:
 
           if [ ! -d $HOME/.cache/tools/apktool ]; then
             mkdir -p $HOME/.cache/tools/apktool
-            curl -L -o ~/.cache/tools/apktool/apktool.jar "https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar"
+            curl -L -o $HOME/.cache/tools/apktool/apktool.jar "https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar"
             cat > $HOME/.cache/tools/apktool/apktool <<'EOF'
 exec java -jar "$(dirname "$0")/apktool.jar" "$@"
 EOF
@@ -43,4 +43,12 @@ EOF
 
       - name: Install apk
         run: |
-          
+          curl -L -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -o file.zip "https://api.github.com/repos/EclCoder/Test/actions/artifacts/9899830069/zip"
+          unzip file.zip
+          unzip *.apkm
+          rm -rf file.zip *.apkm
+
+       - name: Decompile
+         run: |
+           chmod +x scripts/decompile.sh
+           scripts/decompile.sh
