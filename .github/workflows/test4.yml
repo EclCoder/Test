@@ -1,0 +1,10 @@
+name: Test 4
+on:
+  push:
+jobs:
+  test4:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Home
+        run: |
+          echo $HOME
