@@ -1,18 +1,15 @@
 name: Test 3
 on:
   push:
+permissions:
+  actions: read
+  contents: write
 jobs:
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Check runner resources
-        run: |
-          echo "CPU:"
-          nproc
-
-          echo "RAM:"
-          free -h
-
-          echo "CPU info:"
-          lscpu | grep -E 'Model name|CPU\(s\)'
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+        
