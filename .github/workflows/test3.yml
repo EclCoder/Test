@@ -1,6 +1,6 @@
 name: Test 3
 on:
-  push:
+  workflow_dispatch:
 permissions:
   actions: read
   contents: write
@@ -18,8 +18,8 @@ jobs:
         run: |
           mkdir tmp
           curl -L -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" -o tmp/file.zip "https://api.github.com/repos/EclCoder/Test/actions/artifacts/9899830069/zip"
-          unzip tmp/file.zip
-          unzip tmp/*.apkm
+          unzip tmp/file.zip -d tmp
+          unzip tmp/*.apkm -d tmp
 
       - name: Extract lib
         run: |
