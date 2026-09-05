@@ -7,4 +7,7 @@ jobs:
     steps:
       - name: Check Home
         run: |
-          echo $HOME
+          echo "Home: "
+          echo "$HOME"
+          echo "Current: "
+          echo "$PWD"
