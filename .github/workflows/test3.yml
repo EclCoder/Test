@@ -27,5 +27,12 @@ jobs:
           unzip *arm64_v8a.apk "lib/arm64-v8a/*" -d .
           rm -rf *.apk
 
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          git add .
+          git commit -m "Update files" || exit 0
+          git push
         
