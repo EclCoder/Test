@@ -22,7 +22,7 @@ jobs:
       - name: Cache tools
         uses: actions/cache@v4
         with:
-          path: $HOME/.cache/ghidra
+          path: /home/runner/.cache/ghidra
           key: ghidra-12.1.3-tool
 
 
@@ -45,7 +45,7 @@ jobs:
         run: |
           rm -rf native-src/armeabi-v7a
           mkdir -p ghidra-project native-src/armeabi-v7a
-          analyzeHeadless ghidra-project PairIPCore -import src/armeabi-v7a/libpairipcore.so -scriptPath scripts -postScript ghidra_decompile.java native-src/armeabi-v7a/libpairipcore -deleteProject
+          analyzeHeadless ghidra-project PairIPCore -import lib/armeabi-v7a/libpairipcore.so -scriptPath scripts -postScript Decompile.java 20 native-src/armeabi-v7a/libpairipcore -deleteProject
         
       - name: Commit and push
         run: |
