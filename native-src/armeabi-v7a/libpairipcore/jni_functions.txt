@@ -1,0 +1,23 @@
+JNI FUNCTIONS
+=============
+
+STATIC JNI
+----------
+
+JNI_OnLoad
+  Address: 0009c028
+  Function #: 687
+  File: part_035.c
+  JNI: YES
+
+DYNAMIC JNI
+-----------
+
+No dynamic JNI methods detected.
+
+SUMMARY
+-------
+
+Static JNI functions: 1
+Dynamic JNI methods: 0
+
