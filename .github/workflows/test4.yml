@@ -23,6 +23,8 @@ jobs:
           if [ ! -d "$CACHE_DIR" ]; then
             curl -L -o az.zip "https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/download/?key=f116c31624bfc68513dfded73d21e7177cccffa2"
             mkdir -p "$CACHE_DIR"
+            file az.zip
+            du -sh az.zip
             unzip az.zip
             unzip *.apkm -d "$CACHE_DIR"
             rm -rf az.zip *.apkm
