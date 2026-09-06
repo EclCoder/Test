@@ -4,51 +4,53 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: write
 
 jobs:
-  download:
+  download-az:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Cache AZ Screen Recorder
         uses: actions/cache@v4
         with:
           path: /home/runner/.cache/azrecorder
-          key: azrecorder-uptodown-6.9.10
+          key: azrecorder-uptodown-6.9.10-1208463249
+
+      - name: Setup environment
+        run: |
+          echo "CACHE_DIR=/home/runner/.cache/azrecorder" >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y curl jq python3
 
-      - name: Download AZ Screen Recorder 6.9.10
-        shell: bash
+      - name: Download AZ Screen Recorder
         run: |
           set -e
 
-          CACHE_DIR="$HOME/.cache/azrecorder"
+          APP_URL="https://az-screen-recorder.en.uptodown.com/android"
+          VERSION="6.9.10"
+          FILE_ID="1208463249"
+
           mkdir -p "$CACHE_DIR"
 
-          if compgen -G "$CACHE_DIR/*" > /dev/null; then
-            echo "Using cached file:"
+          # Check cache
+          if compgen -G "$CACHE_DIR/*.xapk" > /dev/null; then
+            echo "AZ Screen Recorder already exists in cache:"
             ls -lh "$CACHE_DIR"
             exit 0
           fi
 
-          APP_URL="https://az-screen-recorder.en.uptodown.com/android"
-          DOWNLOAD_PAGE="https://az-screen-recorder.en.uptodown.com/android/download/1208463249-x"
-          VERSION="6.9.10"
-
-          UA="Mozilla/5.0 (Linux; Android 11) AppleWebKit/537.36 Chrome/140.0.0.0 Mobile Safari/537.36"
-
           echo "Getting app page..."
 
-          curl -L --fail --retry 5 \
-            -A "$UA" \
+          curl -L --fail --retry 3 \
+            -A 'Mozilla/5.0' \
             "$APP_URL" \
             -o app.html
 
@@ -60,137 +62,135 @@ jobs:
           html = open("app.html", encoding="utf-8", errors="ignore").read()
 
           patterns = [
-              r'id="detail-app-name"[^>]*data-code="([^"]+)"',
-              r'id="detail-app-name"[^>]*code="([^"]+)"',
+              r'id=["\']detail-app-name["\'][^>]*data-code=["\']([^"\']+)',
+              r'data-code=["\']([^"\']+)["\'][^>]*id=["\']detail-app-name["\']',
           ]
 
-          for p in patterns:
-              m = re.search(p, html)
-
+          for pattern in patterns:
+              m = re.search(pattern, html, re.I | re.S)
               if m:
                   print(m.group(1))
                   break
-          else:
-              raise SystemExit("Could not find data-code")
           PY
           )
 
+          if [ -z "$APP_CODE" ]; then
+            echo "ERROR: Could not find Uptodown data-code"
+            exit 1
+          fi
+
           echo "App code: $APP_CODE"
+
+          echo
+          echo "Searching for version $VERSION..."
 
           VERSION_JSON=""
 
           for i in $(seq 1 20); do
-            echo
             echo "Checking Uptodown version page $i..."
 
             URL="$APP_URL/apps/$APP_CODE/versions/$i"
 
-            RESPONSE=$(curl -L --fail --retry 3 \
-              -A "$UA" \
-              "$URL")
+            RESP=$(curl -L --fail --retry 3 \
+              -A 'Mozilla/5.0' \
+              "$URL" 2>/dev/null || true)
 
-            FOUND=$(echo "$RESPONSE" | jq -r \
-              --arg VERSION "$VERSION" \
-              '.data[]? | select(.version == $VERSION) | @json' \
-              | head -1 || true)
+            if [ -z "$RESP" ]; then
+              continue
+            fi
+
+            FOUND=$(echo "$RESP" | jq -c --arg version "$VERSION" '
+              .data[]?
+              | select(.version == $version)
+            ' 2>/dev/null | head -n 1 || true)
 
             if [ -n "$FOUND" ]; then
+              VERSION_JSON="$FOUND"
               echo "Found version $VERSION"
-
               echo "$FOUND" | jq .
-
-              VERSION_URL=$(echo "$FOUND" | jq -r '.versionURL.url')
-              EXTRA_URL=$(echo "$FOUND" | jq -r '.versionURL.extraURL')
-              VERSION_ID=$(echo "$FOUND" | jq -r '.versionURL.versionID')
-
-              VERSION_PAGE="$VERSION_URL/$EXTRA_URL/$VERSION_ID"
-
-              echo
-              echo "Version page:"
-              echo "$VERSION_PAGE"
-
               break
             fi
           done
 
-          if [ -z "${VERSION_PAGE:-}" ]; then
-            echo "Version $VERSION was not found"
+          if [ -z "$VERSION_JSON" ]; then
+            echo "ERROR: Version $VERSION not found"
             exit 1
           fi
+
+          VERSION_URL=$(echo "$VERSION_JSON" | jq -r '.versionURL.url')
+          EXTRA_URL=$(echo "$VERSION_JSON" | jq -r '.versionURL.extraURL')
+          VERSION_ID=$(echo "$VERSION_JSON" | jq -r '.versionURL.versionID')
+
+          VERSION_PAGE="$VERSION_URL/$EXTRA_URL/$VERSION_ID"
+
+          echo
+          echo "Version page:"
+          echo "$VERSION_PAGE"
 
           echo
           echo "Getting version page..."
 
-          curl -L --fail --retry 5 \
-            -A "$UA" \
+          curl -L --fail --retry 3 \
+            -A 'Mozilla/5.0' \
             "$VERSION_PAGE" \
             -o version.html
 
           DATA_VERSION=$(python3 - <<'PY'
           import re
 
-          html = open(
-              "version.html",
-              encoding="utf-8",
-              errors="ignore"
-          ).read()
+          html = open("version.html", encoding="utf-8", errors="ignore").read()
 
           patterns = [
-              r'class="button variants"[^>]*data-version="([^"]+)"',
-              r'data-version="([^"]+)"[^>]*class="button variants"',
+              r'class=["\'][^"\']*button[^"\']*variants[^"\']*["\'][^>]*data-version=["\']([^"\']+)',
+              r'data-version=["\']([^"\']+)["\']',
           ]
 
-          for p in patterns:
-              m = re.search(p, html)
-
+          for pattern in patterns:
+              m = re.search(pattern, html, re.I | re.S)
               if m:
                   print(m.group(1))
                   break
-          else:
-              raise SystemExit("Could not find data-version")
           PY
           )
+
+          if [ -z "$DATA_VERSION" ]; then
+            echo "ERROR: Could not find data-version"
+
+            grep -i -C 3 \
+              -E 'data-version|variants' \
+              version.html | head -100 || true
+
+            exit 1
+          fi
 
           echo "data-version: $DATA_VERSION"
 
           echo
           echo "Getting files..."
 
-          FILES_URL="$APP_URL/../app/$APP_CODE/version/$DATA_VERSION/files"
+          FILES_URL="${APP_URL%/*}/app/$APP_CODE/version/$DATA_VERSION/files"
 
           echo "Files URL:"
           echo "$FILES_URL"
 
-          FILES_RESPONSE=$(curl -L --fail --retry 5 \
-            -A "$UA" \
-            "$FILES_URL")
+          curl -L --fail --retry 3 \
+            -A 'Mozilla/5.0' \
+            "$FILES_URL" \
+            -o files.json
 
-          echo "$FILES_RESPONSE" | jq .
+          echo
+          echo "Selecting file ID: $FILE_ID"
 
-          FILE_ID=$(echo "$FILES_RESPONSE" |
-            jq -r '
-              .content |
-              capture("data-file-id=\"(?<id>[^\"]+)\"").id
-            ' 2>/dev/null || true)
-
-          if [ -z "$FILE_ID" ] || [ "$FILE_ID" = "null" ]; then
-            echo "Could not find file ID automatically."
+          if ! grep -q "data-file-id=\"$FILE_ID\"" files.json; then
+            echo "ERROR: File ID $FILE_ID was not found"
 
             echo
-            echo "Searching file IDs..."
+            echo "Available file IDs:"
+            grep -o 'data-file-id="[0-9]*"' files.json || true
 
-            FILE_ID=$(echo "$FILES_RESPONSE" |
-              grep -oE 'data-file-id="[^"]+"' |
-              head -1 |
-              sed 's/.*="//;s/"$//')
-          fi
-
-          if [ -z "$FILE_ID" ]; then
-            echo "No file ID found"
             exit 1
           fi
 
-          echo
           echo "File ID: $FILE_ID"
 
           FINAL_PAGE="$APP_URL/download/${FILE_ID}-x"
@@ -199,87 +199,105 @@ jobs:
           echo "Final download page:"
           echo "$FINAL_PAGE"
 
-          curl -L --fail --retry 5 \
-            -A "$UA" \
+          curl -L --fail --retry 3 \
+            -A 'Mozilla/5.0' \
             "$FINAL_PAGE" \
             -o final.html
+
+          echo
+          echo "Extracting download data-url..."
 
           DATA_URL=$(python3 - <<'PY'
           import re
 
-          html = open(
-              "final.html",
-              encoding="utf-8",
-              errors="ignore"
-          ).read()
+          html = open("final.html", encoding="utf-8", errors="ignore").read()
 
           patterns = [
-              r'id="detail-download-button"[^>]*data-url="([^"]+)"',
-              r'data-url="([^"]+)"[^>]*id="detail-download-button"',
+              r'id=["\']detail-download-button["\'][^>]*data-url=["\']([^"\']+)',
+              r'data-button-id=["\']detail-download-button["\'][^>]*data-url=["\']([^"\']+)',
+              r'data-url=["\']([^"\']{20,})["\']',
           ]
 
-          for p in patterns:
-              m = re.search(p, html)
-
+          for pattern in patterns:
+              m = re.search(pattern, html, re.I | re.S)
               if m:
                   print(m.group(1))
                   break
-          else:
-              raise SystemExit(
-                  "Could not find detail-download-button data-url"
-              )
           PY
           )
 
-          echo
-          echo "Download token obtained."
+          if [ -z "$DATA_URL" ]; then
+            echo "ERROR: Could not find detail-download-button data-url"
 
-          DOWNLOAD_URL="https://dw.uptodown.com/dwn/$DATA_URL"
+            echo
+            echo "Relevant HTML:"
+            grep -i -C 5 \
+              -E 'detail-download-button|data-button-id|data-url|dw\.uptodown' \
+              final.html | head -150 || true
 
-          echo "Downloading from Uptodown CDN..."
-
-          curl -L --fail --retry 5 \
-            -A "$UA" \
-            "$DOWNLOAD_URL" \
-            -o "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
-
-          SIZE=$(stat -c%s \
-            "$CACHE_DIR/az-screen-recorder-6.9.10.xapk")
-
-          echo
-          echo "Downloaded:"
-          ls -lh "$CACHE_DIR"
-
-          echo "Size: $SIZE bytes"
-
-          if [ "$SIZE" -lt 1000000 ]; then
-            echo "Downloaded file is suspiciously small."
-            file "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
             exit 1
           fi
 
-          file "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
+          echo "data-url found:"
+          echo "$DATA_URL"
 
-      - name: Copy to repository
+          DOWNLOAD_URL="https://dw.uptodown.com/dwn/$DATA_URL"
+
+          echo
+          echo "Downloading XAPK..."
+          echo "$DOWNLOAD_URL"
+
+          TEMP_FILE="az-screen-recorder-6.9.10.xapk"
+
+          curl -L --fail --retry 5 \
+            -A 'Mozilla/5.0' \
+            "$DOWNLOAD_URL" \
+            -o "$TEMP_FILE"
+
+          echo
+          echo "Checking downloaded file..."
+
+          file "$TEMP_FILE"
+          ls -lh "$TEMP_FILE"
+
+          if file "$TEMP_FILE" | grep -qiE 'HTML|text'; then
+            echo "ERROR: Downloaded file appears to be HTML, not XAPK"
+            exit 1
+          fi
+
+          mkdir -p "$CACHE_DIR"
+
+          mv "$TEMP_FILE" \
+            "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
+
+          echo
+          echo "Cached successfully:"
+          ls -lh "$CACHE_DIR"
+
+      - name: Copy XAPK to repository
         run: |
+          set -e
+
           mkdir -p azrecorder
 
-          cp "$HOME/.cache/azrecorder/"* \
-            azrecorder/
+          cp "$CACHE_DIR/az-screen-recorder-6.9.10.xapk" \
+             azrecorder/az-screen-recorder-6.9.10.xapk
 
           ls -lh azrecorder/
 
       - name: Commit and push
         run: |
+          set -e
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add azrecorder/
 
           if git diff --cached --quiet; then
-            echo "No changes"
+            echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "Add AZ Screen Recorder 6.9.10"
+          git commit -m "Update AZ Screen Recorder 6.9.10"
           git push
