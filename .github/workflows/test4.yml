@@ -23,32 +23,248 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: Install justapk
+      - name: Install requests
         run: |
-          python -m pip install --upgrade pip
-          pip install justapk
+          python -m pip install requests
 
-      - name: Download AZ Screen Recorder
+      - name: Download AZ Screen Recorder 6.9.10
+        env:
+          TARGET_VERSION: "6.9.10"
         run: |
-          CACHE_DIR="$HOME/.cache/azrecorder"
-          mkdir -p "$CACHE_DIR"
+          mkdir -p "$HOME/.cache/azrecorder"
 
-          if compgen -G "$CACHE_DIR/*" > /dev/null; then
+          if compgen -G "$HOME/.cache/azrecorder/*" > /dev/null; then
             echo "Using cached file:"
-            ls -lh "$CACHE_DIR"
-          else
-            justapk download \
-              com.hecorat.screenrecorder.free \
-              -s uptodown \
-              -v 6.9.10 \
-              -o "$CACHE_DIR" \
-              --no-convert
-
-            echo "Downloaded:"
-            ls -lh "$CACHE_DIR"
+            ls -lh "$HOME/.cache/azrecorder"
+            exit 0
           fi
+
+          python3 <<'PY'
+          import hashlib
+          import time
+          import requests
+          from pathlib import Path
+
+          API = "https://www.uptodown.app/eapi"
+
+          SECRET = "$(=a%·!45J&S"
+
+          TARGET_VERSION = "6.9.10"
+          SEARCH = "az screen recorder"
+
+          OUT = Path.home() / ".cache/azrecorder"
+
+          # Generate Uptodown API key
+          epoch = int(time.time() // 3600 * 3600)
+
+          api_key = hashlib.sha256(
+              (SECRET + str(epoch)).encode()
+          ).hexdigest()
+
+          HEADERS = {
+              "User-Agent":
+                  "Dalvik/2.1.0 (Linux; U; Android 14; SM-G955F Build/AP2A.240805.005)",
+              "Identificador": "Uptodown_Android",
+              "Identificador-Version": "707",
+              "APIKEY": api_key,
+          }
+
+          session = requests.Session()
+
+          def api_get(path):
+              url = API + path
+
+              print()
+              print("GET:", url)
+
+              r = session.get(
+                  url,
+                  headers=HEADERS,
+                  timeout=30
+              )
+
+              print("HTTP:", r.status_code)
+
+              if r.status_code != 200:
+                  print(r.text[:2000])
+
+              r.raise_for_status()
+
+              return r.json()
+
+          # -------------------------------------------------
+          # 1. Search by application name
+          # -------------------------------------------------
+
+          from urllib.parse import quote
+
+          query = quote(SEARCH)
+
+          data = api_get(
+              f"/v2/apps/search/{query}"
+              "?page[limit]=30&page[offset]=0"
+          )
+
+          results = data.get("data", {}).get("results", [])
+
+          print()
+          print("Search results:", len(results))
+
+          for item in results:
+              print(
+                  " -",
+                  item.get("name"),
+                  "| package:",
+                  item.get("packageName") or item.get("packagename"),
+                  "| appID:",
+                  item.get("appID") or item.get("id")
+              )
+
+          # Find AZ Screen Recorder
+          app = None
+
+          for item in results:
+              name = (item.get("name") or "").lower()
+
+              if "az screen recorder" in name:
+                  app = item
+                  break
+
+          if app is None:
+              raise RuntimeError(
+                  "AZ Screen Recorder was not found in Uptodown search"
+              )
+
+          app_id = str(
+              app.get("appID")
+              or app.get("id")
+          )
+
+          print()
+          print("===================================")
+          print("AZ Screen Recorder found")
+          print("Name:", app.get("name"))
+          print("Package:",
+                app.get("packageName")
+                or app.get("packagename"))
+          print("App ID:", app_id)
+          print("===================================")
+
+          # -------------------------------------------------
+          # 2. Get versions
+          # -------------------------------------------------
+
+          data = api_get(
+              f"/v3/app/{app_id}/device/1/compatible/versions"
+              "?page[limit]=100&page[offset]=0"
+          )
+
+          versions = data.get("data", [])
+
+          print()
+          print("Versions returned:", len(versions))
+
+          target = None
+
+          for v in versions:
+              version = v.get("version")
+
+              print(
+                  "version:",
+                  version,
+                  "| fileID:",
+                  v.get("fileID"),
+                  "| type:",
+                  v.get("fileType")
+              )
+
+              if version == TARGET_VERSION:
+                  target = v
+                  break
+
+          if target is None:
+              raise RuntimeError(
+                  f"Version {TARGET_VERSION} was not found"
+              )
+
+          file_id = str(
+              target.get("fileID")
+              or target.get("fileid")
+          )
+
+          file_type = (
+              target.get("fileType")
+              or target.get("filetype")
+              or "apk"
+          ).lower()
+
+          print()
+          print("===================================")
+          print("TARGET FOUND")
+          print("Version:", TARGET_VERSION)
+          print("File ID:", file_id)
+          print("File type:", file_type)
+          print("===================================")
+
+          # -------------------------------------------------
+          # 3. Get CDN download URL
+          # -------------------------------------------------
+
+          data = api_get(
+              f"/apps/{app_id}/file/{file_id}/downloadUrl?update=0"
+          )
+
+          download_url = data["data"]["downloadURL"]
+
+          print()
+          print("CDN URL obtained.")
+
+          # -------------------------------------------------
+          # 4. Download
+          # -------------------------------------------------
+
+          filename = (
+              f"az-screen-recorder-{TARGET_VERSION}.{file_type}"
+          )
+
+          output = OUT / filename
+
+          print("Downloading:", filename)
+
+          with session.get(
+              download_url,
+              headers={
+                  "User-Agent":
+                      "Dalvik/2.1.0 (Linux; U; Android 14; SM-G955F Build/AP2A.240805.005)"
+              },
+              stream=True,
+              timeout=120
+          ) as r:
+
+              r.raise_for_status()
+
+              total = 0
+
+              with open(output, "wb") as f:
+                  for chunk in r.iter_content(
+                      chunk_size=1024 * 1024
+                  ):
+                      if chunk:
+                          f.write(chunk)
+                          total += len(chunk)
+
+          print()
+          print("Downloaded successfully!")
+          print("File:", output)
+          print("Size:", total, "bytes")
+
+          PY
+
+          echo
+          echo "=== CACHE ==="
+          ls -lh "$HOME/.cache/azrecorder"
 
       - name: Copy to repository
         run: |
@@ -56,6 +272,7 @@ jobs:
 
           cp "$HOME/.cache/azrecorder/"* azrecorder/
 
+          echo "=== REPOSITORY ==="
           ls -lh azrecorder/
 
       - name: Commit and push
