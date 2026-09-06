@@ -4,11 +4,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: read
   contents: write
 
 jobs:
-  download-az:
+  download:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,291 +18,203 @@ jobs:
         uses: actions/cache@v4
         with:
           path: /home/runner/.cache/azrecorder
-          key: azrecorder-uptodown-6.9.10-1208463249
+          key: azrecorder-apkmirror-6.9.10
 
-      - name: Setup environment
-        run: |
-          echo "CACHE_DIR=/home/runner/.cache/azrecorder" >> "$GITHUB_ENV"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Install dependencies
+      - name: Install Playwright
         run: |
-          sudo apt-get update
-          sudo apt-get install -y curl jq python3
+          npm init -y
+          npm install playwright
+          npx playwright install --with-deps chromium
 
       - name: Download AZ Screen Recorder
         run: |
           set -e
 
-          APP_URL="https://az-screen-recorder.en.uptodown.com/android"
-          VERSION="6.9.10"
-          EXPECTED_FILE_ID="1208463249"
+          CACHE_DIR="/home/runner/.cache/azrecorder"
 
           mkdir -p "$CACHE_DIR"
+          mkdir -p downloads
 
           echo "Checking cache..."
 
-          if compgen -G "$CACHE_DIR/*.xapk" > /dev/null; then
-            echo "XAPK already exists in cache:"
+          if compgen -G "$CACHE_DIR/*.apk" > /dev/null || \
+             compgen -G "$CACHE_DIR/*.apkm" > /dev/null; then
+
+            echo "APK already exists in cache:"
             ls -lh "$CACHE_DIR"
-            exit 0
+
+          else
+
+            echo "No cached APK found."
+            echo "Starting APKMirror download..."
+
+            cat > download.js <<'EOF'
+          const { chromium } = require("playwright");
+          const fs = require("fs");
+
+          (async () => {
+
+            const browser = await chromium.launch({
+              headless: true
+            });
+
+            const context = await browser.newContext({
+              acceptDownloads: true,
+
+              userAgent:
+                "Mozilla/5.0 (X11; Linux x86_64) " +
+                "AppleWebKit/537.36 " +
+                "(KHTML, like Gecko) " +
+                "Chrome/131.0.0.0 Safari/537.36"
+            });
+
+            const page = await context.newPage();
+
+            const url =
+              "https://www.apkmirror.com/apk/az-screen-recorder/" +
+              "az-screen-recorder-no-root/" +
+              "screen-recorder-az-recorder-6-9-10-release/" +
+              "screen-recorder-az-recorder-6-9-10-android-apk-download/";
+
+            console.log("Opening:", url);
+
+            await page.goto(url, {
+              waitUntil: "domcontentloaded",
+              timeout: 120000
+            });
+
+            console.log("Title:", await page.title());
+
+            await page.waitForTimeout(5000);
+
+            console.log("Current URL:", page.url());
+
+            const links = await page.locator("a").evaluateAll(
+              els => els.map(e => ({
+                text: e.innerText.trim(),
+                href: e.href
+              })).filter(x =>
+                x.text.toLowerCase().includes("download") ||
+                x.href.includes("/download/")
+              )
+            );
+
+            console.log("Download links:");
+            console.log(JSON.stringify(links, null, 2));
+
+            const downloadButton = page.locator(
+              'a[href*="/download/"]'
+            ).first();
+
+            if (await downloadButton.count() === 0) {
+              console.log("Download button not found.");
+
+              await page.screenshot({
+                path: "apkmirror-error.png",
+                fullPage: true
+              });
+
+              fs.writeFileSync(
+                "apkmirror-error.html",
+                await page.content()
+              );
+
+              process.exit(1);
+            }
+
+            console.log(
+              "Download button:",
+              await downloadButton.innerText()
+            );
+
+            const downloadPromise = page.waitForEvent(
+              "download",
+              {
+                timeout: 120000
+              }
+            );
+
+            await downloadButton.click();
+
+            const download = await downloadPromise;
+
+            const filename = download.suggestedFilename();
+
+            console.log("Filename:", filename);
+
+            await download.saveAs(
+              "downloads/" + filename
+            );
+
+            console.log("Download completed.");
+
+            await browser.close();
+
+          })();
+          EOF
+
+            node download.js
+
           fi
 
-          # --------------------------------------------------
-          # 1. Get app page
-          # --------------------------------------------------
+      - name: Put downloaded file into cache
+        run: |
+          set -e
 
-          echo
-          echo "Getting app page..."
+          CACHE_DIR="/home/runner/.cache/azrecorder"
 
-          curl -L --fail --retry 3 \
-            -A 'Mozilla/5.0' \
-            "$APP_URL" \
-            -o app.html
+          if compgen -G "$CACHE_DIR/*.apk" > /dev/null || \
+             compgen -G "$CACHE_DIR/*.apkm" > /dev/null; then
 
-          # --------------------------------------------------
-          # 2. Extract Uptodown app code
-          # --------------------------------------------------
+            echo "Using cached file."
 
-          echo
-          echo "Extracting Uptodown data-code..."
+          else
 
-          APP_CODE=$(python3 - <<'PY'
-          import re
+            FILE=$(find downloads -type f | head -n 1)
 
-          html = open(
-              "app.html",
-              encoding="utf-8",
-              errors="ignore"
-          ).read()
-
-          patterns = [
-              r'id=["\']detail-app-name["\'][^>]*data-code=["\']([^"\']+)',
-              r'data-code=["\']([^"\']+)["\'][^>]*id=["\']detail-app-name["\']',
-          ]
-
-          for pattern in patterns:
-              m = re.search(pattern, html, re.I | re.S)
-              if m:
-                  print(m.group(1))
-                  break
-          PY
-          )
-
-          if [ -z "$APP_CODE" ]; then
-            echo "ERROR: Could not find app code"
-            exit 1
-          fi
-
-          echo "App code: $APP_CODE"
-
-          # --------------------------------------------------
-          # 3. Find requested version
-          # --------------------------------------------------
-
-          echo
-          echo "Searching for version $VERSION..."
-
-          VERSION_JSON=""
-
-          for i in $(seq 1 20); do
-
-            echo "Checking Uptodown version page $i..."
-
-            URL="$APP_URL/apps/$APP_CODE/versions/$i"
-
-            RESP=$(curl -L --fail --retry 3 \
-              -A 'Mozilla/5.0' \
-              "$URL" 2>/dev/null || true)
-
-            if [ -z "$RESP" ]; then
-              continue
+            if [ -z "$FILE" ]; then
+              echo "ERROR: No file downloaded."
+              exit 1
             fi
 
-            FOUND=$(echo "$RESP" | jq -c \
-              --arg version "$VERSION" \
-              '.data[]? | select(.version == $version)' \
-              2>/dev/null | head -n 1 || true)
+            echo "Downloaded file:"
+            ls -lh "$FILE"
 
-            if [ -n "$FOUND" ]; then
-              VERSION_JSON="$FOUND"
+            SIZE=$(stat -c%s "$FILE")
 
-              echo "Found version $VERSION"
-              echo "$FOUND" | jq .
-
-              break
+            if [ "$SIZE" -lt 1000000 ]; then
+              echo "ERROR: File is suspiciously small."
+              exit 1
             fi
 
-          done
+            echo "Moving file into cache..."
 
-          if [ -z "$VERSION_JSON" ]; then
-            echo "ERROR: Version $VERSION not found"
-            exit 1
-          fi
+            cp "$FILE" "$CACHE_DIR/"
 
-          # --------------------------------------------------
-          # 4. Get file ID DIRECTLY from version JSON
-          # --------------------------------------------------
-
-          FILE_ID=$(echo "$VERSION_JSON" | jq -r '.fileID')
-
-          echo
-          echo "File ID from version API: $FILE_ID"
-
-          if [ "$FILE_ID" != "$EXPECTED_FILE_ID" ]; then
-            echo "ERROR: Unexpected file ID"
-            echo "Expected: $EXPECTED_FILE_ID"
-            echo "Got:      $FILE_ID"
-            exit 1
-          fi
-
-          echo "Correct file ID confirmed."
-
-          # --------------------------------------------------
-          # 5. Build final download page
-          # --------------------------------------------------
-
-          FINAL_PAGE="$APP_URL/download/${FILE_ID}-x"
-
-          echo
-          echo "Final download page:"
-          echo "$FINAL_PAGE"
-
-          curl -L --fail --retry 3 \
-            -A 'Mozilla/5.0' \
-            "$FINAL_PAGE" \
-            -o final.html
-
-          # --------------------------------------------------
-          # 6. Extract data-url
-          # --------------------------------------------------
-
-          echo
-          echo "Extracting download data-url..."
-
-          DATA_URL=$(python3 - <<'PY'
-          import re
-
-          html = open(
-              "final.html",
-              encoding="utf-8",
-              errors="ignore"
-          ).read()
-
-          patterns = [
-              # Normal button
-              r'id=["\']detail-download-button["\'][^>]*data-url=["\']([^"\']+)',
-
-              # Attribute order reversed
-              r'data-url=["\']([^"\']+)["\'][^>]*id=["\']detail-download-button["\']',
-
-              # Generic data-url fallback
-              r'data-url=["\']([^"\']{20,})["\']',
-          ]
-
-          for pattern in patterns:
-              m = re.search(pattern, html, re.I | re.S)
-
-              if m:
-                  value = m.group(1)
-
-                  # Ignore obviously unrelated data-url values
-                  if value.startswith("http") or len(value) > 20:
-                      print(value)
-                      break
-          PY
-          )
-
-          if [ -z "$DATA_URL" ]; then
-
-            echo "ERROR: Could not find download data-url"
-
-            echo
-            echo "Searching final HTML..."
-
-            grep -i -C 8 \
-              -E 'detail-download-button|data-button-id|data-url|dw\.uptodown' \
-              final.html | head -200 || true
-
-            exit 1
           fi
 
           echo
-          echo "data-url found:"
-          echo "$DATA_URL"
-
-          # --------------------------------------------------
-          # 7. Build CDN URL
-          # --------------------------------------------------
-
-          DOWNLOAD_URL="https://dw.uptodown.com/dwn/$DATA_URL"
-
-          echo
-          echo "CDN download URL:"
-          echo "$DOWNLOAD_URL"
-
-          # --------------------------------------------------
-          # 8. Download XAPK
-          # --------------------------------------------------
-
-          TEMP_FILE="az-screen-recorder-6.9.10.xapk"
-
-          echo
-          echo "Downloading XAPK..."
-
-          curl -L --fail --retry 5 \
-            -A 'Mozilla/5.0' \
-            "$DOWNLOAD_URL" \
-            -o "$TEMP_FILE"
-
-          # --------------------------------------------------
-          # 9. Verify file
-          # --------------------------------------------------
-
-          echo
-          echo "Downloaded file:"
-
-          ls -lh "$TEMP_FILE"
-          file "$TEMP_FILE"
-
-          FILE_SIZE=$(stat -c%s "$TEMP_FILE")
-
-          echo
-          echo "File size: $FILE_SIZE bytes"
-
-          # 1 MB minimum sanity check
-          if [ "$FILE_SIZE" -lt 1000000 ]; then
-            echo "ERROR: Downloaded file is suspiciously small."
-            exit 1
-          fi
-
-          if file "$TEMP_FILE" | grep -qiE 'HTML|text'; then
-            echo "ERROR: Downloaded file appears to be HTML."
-            exit 1
-          fi
-
-          # --------------------------------------------------
-          # 10. Put into cache
-          # --------------------------------------------------
-
-          mv "$TEMP_FILE" \
-            "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
-
-          echo
-          echo "Successfully cached:"
-
+          echo "Cache contents:"
           ls -lh "$CACHE_DIR"
 
-      - name: Copy XAPK to repository
+      - name: Copy to azrecorder
         run: |
           set -e
 
           mkdir -p azrecorder
 
-          cp \
-            "$CACHE_DIR/az-screen-recorder-6.9.10.xapk" \
-            azrecorder/az-screen-recorder-6.9.10.xapk
+          rm -f azrecorder/*.apk
+          rm -f azrecorder/*.apkm
 
-          echo "Repository file:"
+          cp "$HOME"/.cache/azrecorder/*.apk azrecorder/ 2>/dev/null || true
+          cp "$HOME"/.cache/azrecorder/*.apkm azrecorder/ 2>/dev/null || true
+
+          echo "azrecorder contents:"
           ls -lh azrecorder/
 
       - name: Commit and push
