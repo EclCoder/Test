@@ -14,179 +14,47 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache APK
+      - name: Cache AZ Screen Recorder
         uses: actions/cache@v4
         with:
           path: /home/runner/.cache/azrecorder
           key: azrecorder-uptodown-6.9.10
 
-      - name: Setup
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install justapk
         run: |
-          mkdir -p "$HOME/.cache/azrecorder"
-          python3 -m pip install requests
+          python -m pip install --upgrade pip
+          pip install justapk
 
-      - name: Download from Uptodown
-        env:
-          VERSION: "6.9.10"
-          PACKAGE: "com.hecorat.screenrecorder.free"
+      - name: Download AZ Screen Recorder
         run: |
-          python3 <<'PY'
-          import hashlib
-          import requests
-          import time
-          from pathlib import Path
+          CACHE_DIR="$HOME/.cache/azrecorder"
+          mkdir -p "$CACHE_DIR"
 
-          PACKAGE = "com.hecorat.screenrecorder.free"
-          VERSION = "6.9.10"
-          OUT = Path.home() / ".cache/azrecorder"
+          if compgen -G "$CACHE_DIR/*" > /dev/null; then
+            echo "Using cached file:"
+            ls -lh "$CACHE_DIR"
+          else
+            justapk download \
+              com.hecorat.screenrecorder.free \
+              -s uptodown \
+              -v 6.9.10 \
+              -o "$CACHE_DIR" \
+              --no-convert
 
-          API = "https://www.uptodown.app/eapi"
-          SECRET = "$(=a%·!45J&S"
-
-          # Uptodown API key rotates hourly.
-          hour_epoch = int(time.time() // 3600 * 3600)
-
-          key = hashlib.sha256(
-              (SECRET + str(hour_epoch)).encode()
-          ).hexdigest()
-
-          headers = {
-              "User-Agent":
-                  "Dalvik/2.1.0 (Linux; U; Android 14; SM-G955F Build/AP2A.240805.005)",
-              "Identificador": "Uptodown_Android",
-              "Identificador-Version": "707",
-              "APIKEY": key,
-          }
-
-          session = requests.Session()
-
-          def get(path):
-              url = API + path
-              print("GET", url)
-              r = session.get(url, headers=headers, timeout=30)
-              print("HTTP", r.status_code)
-              r.raise_for_status()
-              return r.json()
-
-          # 1. Resolve package -> Uptodown app ID
-          data = get(f"/apps/byPackagename/{PACKAGE}")
-
-          inner = data.get("data", data)
-
-          app_id = inner.get("appID") or inner.get("id")
-
-          if not app_id:
-              raise RuntimeError("Could not resolve Uptodown app ID")
-
-          print("Uptodown app ID:", app_id)
-
-          # 2. Get versions
-          data = get(
-              f"/v3/app/{app_id}/device/1/compatible/versions"
-              "?page[limit]=100&page[offset]=0"
-          )
-
-          versions = data.get("data", [])
-
-          print("Versions returned:", len(versions))
-
-          target = None
-
-          for v in versions:
-              print(
-                  "version:",
-                  v.get("version"),
-                  "file:",
-                  v.get("fileID"),
-                  "type:",
-                  v.get("fileType")
-              )
-
-              if v.get("version") == VERSION:
-                  target = v
-                  break
-
-          if target is None:
-              available = [
-                  v.get("version", "?")
-                  for v in versions
-              ]
-
-              raise RuntimeError(
-                  f"Version {VERSION} not found. "
-                  f"Available: {available}"
-              )
-
-          file_id = (
-              target.get("fileID")
-              or target.get("fileid")
-          )
-
-          file_type = (
-              target.get("fileType")
-              or target.get("filetype")
-              or "apk"
-          ).lower()
-
-          print("Selected:")
-          print("  version:", target.get("version"))
-          print("  file ID:", file_id)
-          print("  type:", file_type)
-
-          if not file_id:
-              raise RuntimeError("No file ID")
-
-          # 3. Get CDN URL
-          data = get(
-              f"/apps/{app_id}/file/{file_id}/downloadUrl?update=0"
-          )
-
-          download_url = data["data"]["downloadURL"]
-
-          print("CDN URL obtained")
-
-          # 4. Download
-          filename = (
-              f"az-screen-recorder-{VERSION}.{file_type}"
-          )
-
-          output = OUT / filename
-
-          download_headers = {
-              "User-Agent":
-                  "Dalvik/2.1.0 (Linux; U; Android 14; SM-G955F Build/AP2A.240805.005)"
-          }
-
-          print("Downloading to:", output)
-
-          with session.get(
-              download_url,
-              headers=download_headers,
-              stream=True,
-              timeout=60
-          ) as r:
-              r.raise_for_status()
-
-              with open(output, "wb") as f:
-                  for chunk in r.iter_content(1024 * 1024):
-                      if chunk:
-                          f.write(chunk)
-
-          print()
-          print("Downloaded:")
-          print(output)
-          print("Size:", output.stat().st_size)
-
-          PY
-
-          ls -lh "$HOME/.cache/azrecorder"
+            echo "Downloaded:"
+            ls -lh "$CACHE_DIR"
+          fi
 
       - name: Copy to repository
         run: |
           mkdir -p azrecorder
 
-          cp "$HOME/.cache/azrecorder/"* \
-             azrecorder/
+          cp "$HOME/.cache/azrecorder/"* azrecorder/
 
           ls -lh azrecorder/
 
