@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y curl grep sed python3
+          sudo apt-get install -y curl jq python3
 
-      - name: Download from Uptodown
+      - name: Download AZ Screen Recorder 6.9.10
         shell: bash
         run: |
           set -e
@@ -39,154 +39,224 @@ jobs:
             exit 0
           fi
 
-          PAGE="https://az-screen-recorder.en.uptodown.com/android/download/1208463249-x"
+          APP_URL="https://az-screen-recorder.en.uptodown.com/android"
+          DOWNLOAD_PAGE="https://az-screen-recorder.en.uptodown.com/android/download/1208463249-x"
+          VERSION="6.9.10"
 
-          echo "Fetching:"
-          echo "$PAGE"
+          UA="Mozilla/5.0 (Linux; Android 11) AppleWebKit/537.36 Chrome/140.0.0.0 Mobile Safari/537.36"
 
-          curl \
-            -L \
-            --fail \
-            --retry 5 \
-            --retry-delay 2 \
-            -A "Mozilla/5.0 (Linux; Android 11; Mobile) AppleWebKit/537.36 Chrome/140.0.0.0 Mobile Safari/537.36" \
-            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
-            -H "Accept-Language: en-US,en;q=0.9" \
-            "$PAGE" \
-            -o page.html
+          echo "Getting app page..."
 
-          echo
-          echo "Page size:"
-          wc -c page.html
+          curl -L --fail --retry 5 \
+            -A "$UA" \
+            "$APP_URL" \
+            -o app.html
 
-          echo
-          echo "Searching for download URLs..."
+          echo "Extracting Uptodown data-code..."
 
-          python3 <<'PY'
+          APP_CODE=$(python3 - <<'PY'
           import re
-          from pathlib import Path
-          from urllib.parse import unquote
 
-          html = Path("page.html").read_text(
-              encoding="utf-8",
-              errors="ignore"
-          )
-
-          # Decode escaped URLs commonly found in JS/HTML.
-          html = html.replace("\\/", "/")
-          html = html.replace("\\u0026", "&")
-          html = html.replace("&amp;", "&")
+          html = open("app.html", encoding="utf-8", errors="ignore").read()
 
           patterns = [
-              r'https?://[^"\'<> ]+',
-              r'https?:\\\\/\\\\/[^"\'<> ]+',
+              r'id="detail-app-name"[^>]*data-code="([^"]+)"',
+              r'id="detail-app-name"[^>]*code="([^"]+)"',
           ]
 
-          urls = set()
+          for p in patterns:
+              m = re.search(p, html)
 
-          for pattern in patterns:
-              for x in re.findall(pattern, html):
-                  x = x.replace("\\/", "/")
-                  x = unquote(x)
-                  urls.add(x)
-
-          print("Found URLs:", len(urls))
-
-          candidates = []
-
-          for url in urls:
-              low = url.lower()
-
-              if (
-                  "uptodown" in low
-                  and (
-                      ".apk" in low
-                      or ".xapk" in low
-                      or "/dwn/" in low
-                      or "download" in low
-                  )
-              ):
-                  candidates.append(url)
-
-          print()
-          print("Possible download URLs:")
-
-          for url in candidates:
-              print(url)
-
-          # Save candidates for bash.
-          Path("urls.txt").write_text(
-              "\n".join(candidates)
-          )
+              if m:
+                  print(m.group(1))
+                  break
+          else:
+              raise SystemExit("Could not find data-code")
           PY
+          )
 
-          if [ ! -s urls.txt ]; then
+          echo "App code: $APP_CODE"
+
+          VERSION_JSON=""
+
+          for i in $(seq 1 20); do
             echo
-            echo "No download URL found in HTML."
-            echo
-            echo "First 200 lines containing download-related text:"
-            grep -Ein \
-              'download|\.apk|\.xapk|dw\.uptodown|file_url|download_url' \
-              page.html \
-              | head -200 || true
+            echo "Checking Uptodown version page $i..."
 
-            exit 1
-          fi
+            URL="$APP_URL/apps/$APP_CODE/versions/$i"
 
-          echo
-          echo "Trying candidate URLs..."
+            RESPONSE=$(curl -L --fail --retry 3 \
+              -A "$UA" \
+              "$URL")
 
-          SUCCESS=0
+            FOUND=$(echo "$RESPONSE" | jq -r \
+              --arg VERSION "$VERSION" \
+              '.data[]? | select(.version == $VERSION) | @json' \
+              | head -1 || true)
 
-          while IFS= read -r URL; do
+            if [ -n "$FOUND" ]; then
+              echo "Found version $VERSION"
 
-            [ -z "$URL" ] && continue
+              echo "$FOUND" | jq .
 
-            echo
-            echo "Trying:"
-            echo "$URL"
+              VERSION_URL=$(echo "$FOUND" | jq -r '.versionURL.url')
+              EXTRA_URL=$(echo "$FOUND" | jq -r '.versionURL.extraURL')
+              VERSION_ID=$(echo "$FOUND" | jq -r '.versionURL.versionID')
 
-            if curl \
-              -L \
-              --fail \
-              --retry 3 \
-              --retry-delay 2 \
-              -A "Mozilla/5.0 (Linux; Android 11; Mobile)" \
-              "$URL" \
-              -o "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"; then
-
-              SIZE=$(stat -c%s \
-                "$CACHE_DIR/az-screen-recorder-6.9.10.xapk")
+              VERSION_PAGE="$VERSION_URL/$EXTRA_URL/$VERSION_ID"
 
               echo
-              echo "Downloaded $SIZE bytes"
+              echo "Version page:"
+              echo "$VERSION_PAGE"
 
-              # Reject obvious HTML error pages.
-              FILE_TYPE=$(file -b \
-                "$CACHE_DIR/az-screen-recorder-6.9.10.xapk")
-
-              echo "File type: $FILE_TYPE"
-
-              if [[ "$FILE_TYPE" != *"HTML"* ]] && [ "$SIZE" -gt 100000 ]; then
-                SUCCESS=1
-                break
-              fi
-
-              rm -f \
-                "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
+              break
             fi
+          done
 
-          done < urls.txt
-
-          if [ "$SUCCESS" -ne 1 ]; then
-            echo
-            echo "Could not download the APK/XAPK."
+          if [ -z "${VERSION_PAGE:-}" ]; then
+            echo "Version $VERSION was not found"
             exit 1
           fi
 
           echo
-          echo "=== Downloaded file ==="
+          echo "Getting version page..."
+
+          curl -L --fail --retry 5 \
+            -A "$UA" \
+            "$VERSION_PAGE" \
+            -o version.html
+
+          DATA_VERSION=$(python3 - <<'PY'
+          import re
+
+          html = open(
+              "version.html",
+              encoding="utf-8",
+              errors="ignore"
+          ).read()
+
+          patterns = [
+              r'class="button variants"[^>]*data-version="([^"]+)"',
+              r'data-version="([^"]+)"[^>]*class="button variants"',
+          ]
+
+          for p in patterns:
+              m = re.search(p, html)
+
+              if m:
+                  print(m.group(1))
+                  break
+          else:
+              raise SystemExit("Could not find data-version")
+          PY
+          )
+
+          echo "data-version: $DATA_VERSION"
+
+          echo
+          echo "Getting files..."
+
+          FILES_URL="$APP_URL/../app/$APP_CODE/version/$DATA_VERSION/files"
+
+          echo "Files URL:"
+          echo "$FILES_URL"
+
+          FILES_RESPONSE=$(curl -L --fail --retry 5 \
+            -A "$UA" \
+            "$FILES_URL")
+
+          echo "$FILES_RESPONSE" | jq .
+
+          FILE_ID=$(echo "$FILES_RESPONSE" |
+            jq -r '
+              .content |
+              capture("data-file-id=\"(?<id>[^\"]+)\"").id
+            ' 2>/dev/null || true)
+
+          if [ -z "$FILE_ID" ] || [ "$FILE_ID" = "null" ]; then
+            echo "Could not find file ID automatically."
+
+            echo
+            echo "Searching file IDs..."
+
+            FILE_ID=$(echo "$FILES_RESPONSE" |
+              grep -oE 'data-file-id="[^"]+"' |
+              head -1 |
+              sed 's/.*="//;s/"$//')
+          fi
+
+          if [ -z "$FILE_ID" ]; then
+            echo "No file ID found"
+            exit 1
+          fi
+
+          echo
+          echo "File ID: $FILE_ID"
+
+          FINAL_PAGE="$APP_URL/download/${FILE_ID}-x"
+
+          echo
+          echo "Final download page:"
+          echo "$FINAL_PAGE"
+
+          curl -L --fail --retry 5 \
+            -A "$UA" \
+            "$FINAL_PAGE" \
+            -o final.html
+
+          DATA_URL=$(python3 - <<'PY'
+          import re
+
+          html = open(
+              "final.html",
+              encoding="utf-8",
+              errors="ignore"
+          ).read()
+
+          patterns = [
+              r'id="detail-download-button"[^>]*data-url="([^"]+)"',
+              r'data-url="([^"]+)"[^>]*id="detail-download-button"',
+          ]
+
+          for p in patterns:
+              m = re.search(p, html)
+
+              if m:
+                  print(m.group(1))
+                  break
+          else:
+              raise SystemExit(
+                  "Could not find detail-download-button data-url"
+              )
+          PY
+          )
+
+          echo
+          echo "Download token obtained."
+
+          DOWNLOAD_URL="https://dw.uptodown.com/dwn/$DATA_URL"
+
+          echo "Downloading from Uptodown CDN..."
+
+          curl -L --fail --retry 5 \
+            -A "$UA" \
+            "$DOWNLOAD_URL" \
+            -o "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
+
+          SIZE=$(stat -c%s \
+            "$CACHE_DIR/az-screen-recorder-6.9.10.xapk")
+
+          echo
+          echo "Downloaded:"
           ls -lh "$CACHE_DIR"
+
+          echo "Size: $SIZE bytes"
+
+          if [ "$SIZE" -lt 1000000 ]; then
+            echo "Downloaded file is suspiciously small."
+            file "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
+            exit 1
+          fi
 
           file "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
 
@@ -194,11 +264,9 @@ jobs:
         run: |
           mkdir -p azrecorder
 
-          cp \
-            "$HOME/.cache/azrecorder/"* \
+          cp "$HOME/.cache/azrecorder/"* \
             azrecorder/
 
-          echo "=== Repository ==="
           ls -lh azrecorder/
 
       - name: Commit and push
