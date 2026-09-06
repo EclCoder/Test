@@ -1,12 +1,16 @@
 name: Test 4
+
 on:
   workflow_dispatch:
+
 permissions:
   actions: read
   contents: write
+
 jobs:
   test4:
     runs-on: ubuntu-latest
+
     steps:
       - name: Cache apk
         uses: actions/cache@v4
@@ -17,23 +21,56 @@ jobs:
       - name: Setup env
         run: |
           echo "CACHE_DIR=/home/runner/.cache/azrecorder" >> "$GITHUB_ENV"
-         
+
       - name: Download APK
         run: |
-          if [ ! -d "$CACHE_DIR" ]; then
-            curl -L --fail --retry 3 -A 'Mozilla/5.0' "https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/download/?key=f116c31624bfc68513dfded73d21e7177cccffa2" -o az.zip
+          if [ ! -f "$CACHE_DIR"/*.apk ]; then
+
+            PAGE="https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/"
+
+            URL="https://www.apkmirror.com/apk/az-screen-recorder/az-screen-recorder-no-root/screen-recorder-az-recorder-6-9-10-release/screen-recorder-az-recorder-6-9-10-android-apk-download/download/?key=f116c31624bfc68513dfded73d21e7177cccffa2"
+
+            echo "Authorize APKMirror..."
+
+            curl -L --fail --retry 3 \
+              -A 'Mozilla/5.0' \
+              -c cookies.txt \
+              "$PAGE" \
+              -o /dev/null
+
+            echo "Downloading..."
+
+            curl -L --fail --retry 3 \
+              -A 'Mozilla/5.0' \
+              -b cookies.txt \
+              -c cookies.txt \
+              "$URL" \
+              -o az.zip
+
             mkdir -p tmp
-            unzip az.zip -d tmp
+            unzip -q az.zip -d tmp
+
             mkdir -p "$CACHE_DIR"
-            unzip tmp/*.apkm -d "$CACHE_DIR"
-            rm -rf tmp
-            du -sh "$CACHE_DIR"
+
+            unzip -q tmp/*.apkm -d "$CACHE_DIR"
+
+            rm -rf tmp az.zip cookies.txt
+
+            echo "Downloaded files:"
+            ls -lh "$CACHE_DIR"
+
+          else
+            echo "APK already exists in cache."
           fi
 
       - name: Move apks
         run: |
           mkdir -p azrecorder
-          mv "$CACHE_DIR/*.apk" azrecorder
+
+          mv "$CACHE_DIR"/*.apk azrecorder/
+
+          echo "APK files:"
+          ls -lh azrecorder/
 
       - name: Commit and push
         run: |
@@ -41,5 +78,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add .
+
           git commit -m "Update files" || exit 0
+
           git push
