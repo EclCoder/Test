@@ -323,8 +323,8 @@ jobs:
           cp "$HOME"/.cache/azrecorder/*.apkm \
             azrecorder/ 2>/dev/null || true
 
-          echo "azrecorder contents:"
-          ls -lh azrecorder/
+          unzip azrecorder/*.apkm -d azrecorder
+          rm -rf azrecorder/*.apkm
 
       - name: Commit and push
         run: |
