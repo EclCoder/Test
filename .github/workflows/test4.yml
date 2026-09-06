@@ -31,7 +31,7 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chromium
 
-      - name: Download AZ Screen Recorder from APKMirror
+      - name: Download AZ Screen Recorder
         run: |
           set -e
 
@@ -45,7 +45,7 @@ jobs:
           if compgen -G "$CACHE_DIR/*.apk" > /dev/null || \
              compgen -G "$CACHE_DIR/*.apkm" > /dev/null; then
 
-            echo "Cached AZ Screen Recorder found:"
+            echo "Cached APK/APKM found:"
             ls -lh "$CACHE_DIR"
 
           else
@@ -84,7 +84,7 @@ jobs:
 
             await page.goto(releaseUrl, {
               waitUntil: "domcontentloaded",
-              timeout: 120000
+              timeout: 60000
             });
 
             console.log("Title:", await page.title());
@@ -92,13 +92,7 @@ jobs:
 
             await page.waitForTimeout(5000);
 
-            /*
-             * Tìm đúng URL:
-             *
-             * /download/?key=...
-             *
-             * Đây là URL động do APKMirror tạo ra.
-             */
+            // Tìm URL download có key động
             const downloadButton = page.locator(
               'a[href*="/download/?key="]'
             ).first();
@@ -122,37 +116,40 @@ jobs:
               process.exit(1);
             }
 
-            const downloadUrl =
+            const href =
               await downloadButton.getAttribute("href");
+
+            // Chuyển relative URL thành absolute URL
+            const downloadUrl =
+              new URL(href, page.url()).href;
 
             console.log("");
             console.log("APKMirror download URL:");
             console.log(downloadUrl);
             console.log("");
 
-            /*
-             * Theo dõi request/response để debug
-             * nếu APKMirror thay đổi flow download.
-             */
-
+            // Debug request
             page.on("request", request => {
 
               const url = request.url();
 
               if (
                 url.includes("/download/") ||
-                url.includes(".apkm") ||
-                url.includes(".apk")
+                url.includes(".apk") ||
+                url.includes(".apkm")
               ) {
+
                 console.log(
                   "REQUEST:",
                   request.method(),
                   url
                 );
+
               }
 
             });
 
+            // Debug response
             page.on("response", response => {
 
               const url = response.url();
@@ -178,6 +175,7 @@ jobs:
                   "Content-Disposition:",
                   headers["content-disposition"] || ""
                 );
+
               }
 
             });
@@ -186,21 +184,16 @@ jobs:
               "Opening APKMirror download URL..."
             );
 
-            /*
-             * Một số APKMirror flow tạo download event,
-             * một số flow redirect sang file server.
-             *
-             * Vì vậy bắt download event trước rồi mới goto.
-             */
-
+            // Chờ download event tối đa 60 giây
             const downloadPromise =
               page.waitForEvent("download", {
-                timeout: 120000
+                timeout: 60000
               }).catch(() => null);
 
+            // Mở URL đầy đủ
             await page.goto(downloadUrl, {
               waitUntil: "commit",
-              timeout: 120000
+              timeout: 60000
             }).catch(error => {
 
               console.log(
@@ -213,33 +206,10 @@ jobs:
             const download =
               await downloadPromise;
 
-            if (download) {
-
-              const filename =
-                download.suggestedFilename();
+            if (!download) {
 
               console.log(
-                "Download filename:",
-                filename
-              );
-
-              await download.saveAs(
-                "downloads/" + filename
-              );
-
-              console.log(
-                "Download completed."
-              );
-
-            } else {
-
-              /*
-               * Nếu không có download event,
-               * lưu HTML hiện tại để debug.
-               */
-
-              console.log(
-                "No Playwright download event."
+                "ERROR: No Playwright download event."
               );
 
               console.log(
@@ -265,6 +235,22 @@ jobs:
               process.exit(1);
             }
 
+            const filename =
+              download.suggestedFilename();
+
+            console.log(
+              "Filename:",
+              filename
+            );
+
+            await download.saveAs(
+              "downloads/" + filename
+            );
+
+            console.log(
+              "Download completed."
+            );
+
             await browser.close();
 
           })().catch(error => {
@@ -279,7 +265,7 @@ jobs:
 
           fi
 
-      - name: Validate downloaded file
+      - name: Validate and cache downloaded file
         run: |
           set -e
 
@@ -288,7 +274,7 @@ jobs:
           if compgen -G "$CACHE_DIR/*.apk" > /dev/null || \
              compgen -G "$CACHE_DIR/*.apkm" > /dev/null; then
 
-            echo "Using existing cached file."
+            echo "Using cached file."
 
           else
 
@@ -301,19 +287,19 @@ jobs:
               exit 1
             fi
 
-            SIZE=$(stat -c%s "$FILE")
-
             echo "Downloaded file:"
             ls -lh "$FILE"
 
-            echo "Size: $SIZE bytes"
+            SIZE=$(stat -c%s "$FILE")
+
+            echo "File size: $SIZE bytes"
 
             if [ "$SIZE" -lt 1000000 ]; then
               echo "ERROR: File is suspiciously small."
               exit 1
             fi
 
-            echo "Copying into cache..."
+            echo "Copying file into cache..."
 
             cp "$FILE" "$CACHE_DIR/"
           fi
@@ -322,7 +308,7 @@ jobs:
           echo "Cache contents:"
           ls -lh "$CACHE_DIR"
 
-      - name: Copy into azrecorder
+      - name: Copy to azrecorder
         run: |
           set -e
 
