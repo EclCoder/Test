@@ -36,17 +36,23 @@ jobs:
 
           APP_URL="https://az-screen-recorder.en.uptodown.com/android"
           VERSION="6.9.10"
-          FILE_ID="1208463249"
+          EXPECTED_FILE_ID="1208463249"
 
           mkdir -p "$CACHE_DIR"
 
-          # Check cache
+          echo "Checking cache..."
+
           if compgen -G "$CACHE_DIR/*.xapk" > /dev/null; then
-            echo "AZ Screen Recorder already exists in cache:"
+            echo "XAPK already exists in cache:"
             ls -lh "$CACHE_DIR"
             exit 0
           fi
 
+          # --------------------------------------------------
+          # 1. Get app page
+          # --------------------------------------------------
+
+          echo
           echo "Getting app page..."
 
           curl -L --fail --retry 3 \
@@ -54,12 +60,21 @@ jobs:
             "$APP_URL" \
             -o app.html
 
+          # --------------------------------------------------
+          # 2. Extract Uptodown app code
+          # --------------------------------------------------
+
+          echo
           echo "Extracting Uptodown data-code..."
 
           APP_CODE=$(python3 - <<'PY'
           import re
 
-          html = open("app.html", encoding="utf-8", errors="ignore").read()
+          html = open(
+              "app.html",
+              encoding="utf-8",
+              errors="ignore"
+          ).read()
 
           patterns = [
               r'id=["\']detail-app-name["\'][^>]*data-code=["\']([^"\']+)',
@@ -75,11 +90,15 @@ jobs:
           )
 
           if [ -z "$APP_CODE" ]; then
-            echo "ERROR: Could not find Uptodown data-code"
+            echo "ERROR: Could not find app code"
             exit 1
           fi
 
           echo "App code: $APP_CODE"
+
+          # --------------------------------------------------
+          # 3. Find requested version
+          # --------------------------------------------------
 
           echo
           echo "Searching for version $VERSION..."
@@ -87,6 +106,7 @@ jobs:
           VERSION_JSON=""
 
           for i in $(seq 1 20); do
+
             echo "Checking Uptodown version page $i..."
 
             URL="$APP_URL/apps/$APP_CODE/versions/$i"
@@ -99,17 +119,20 @@ jobs:
               continue
             fi
 
-            FOUND=$(echo "$RESP" | jq -c --arg version "$VERSION" '
-              .data[]?
-              | select(.version == $version)
-            ' 2>/dev/null | head -n 1 || true)
+            FOUND=$(echo "$RESP" | jq -c \
+              --arg version "$VERSION" \
+              '.data[]? | select(.version == $version)' \
+              2>/dev/null | head -n 1 || true)
 
             if [ -n "$FOUND" ]; then
               VERSION_JSON="$FOUND"
+
               echo "Found version $VERSION"
               echo "$FOUND" | jq .
+
               break
             fi
+
           done
 
           if [ -z "$VERSION_JSON" ]; then
@@ -117,81 +140,27 @@ jobs:
             exit 1
           fi
 
-          VERSION_URL=$(echo "$VERSION_JSON" | jq -r '.versionURL.url')
-          EXTRA_URL=$(echo "$VERSION_JSON" | jq -r '.versionURL.extraURL')
-          VERSION_ID=$(echo "$VERSION_JSON" | jq -r '.versionURL.versionID')
+          # --------------------------------------------------
+          # 4. Get file ID DIRECTLY from version JSON
+          # --------------------------------------------------
 
-          VERSION_PAGE="$VERSION_URL/$EXTRA_URL/$VERSION_ID"
-
-          echo
-          echo "Version page:"
-          echo "$VERSION_PAGE"
+          FILE_ID=$(echo "$VERSION_JSON" | jq -r '.fileID')
 
           echo
-          echo "Getting version page..."
+          echo "File ID from version API: $FILE_ID"
 
-          curl -L --fail --retry 3 \
-            -A 'Mozilla/5.0' \
-            "$VERSION_PAGE" \
-            -o version.html
-
-          DATA_VERSION=$(python3 - <<'PY'
-          import re
-
-          html = open("version.html", encoding="utf-8", errors="ignore").read()
-
-          patterns = [
-              r'class=["\'][^"\']*button[^"\']*variants[^"\']*["\'][^>]*data-version=["\']([^"\']+)',
-              r'data-version=["\']([^"\']+)["\']',
-          ]
-
-          for pattern in patterns:
-              m = re.search(pattern, html, re.I | re.S)
-              if m:
-                  print(m.group(1))
-                  break
-          PY
-          )
-
-          if [ -z "$DATA_VERSION" ]; then
-            echo "ERROR: Could not find data-version"
-
-            grep -i -C 3 \
-              -E 'data-version|variants' \
-              version.html | head -100 || true
-
+          if [ "$FILE_ID" != "$EXPECTED_FILE_ID" ]; then
+            echo "ERROR: Unexpected file ID"
+            echo "Expected: $EXPECTED_FILE_ID"
+            echo "Got:      $FILE_ID"
             exit 1
           fi
 
-          echo "data-version: $DATA_VERSION"
+          echo "Correct file ID confirmed."
 
-          echo
-          echo "Getting files..."
-
-          FILES_URL="${APP_URL%/*}/app/$APP_CODE/version/$DATA_VERSION/files"
-
-          echo "Files URL:"
-          echo "$FILES_URL"
-
-          curl -L --fail --retry 3 \
-            -A 'Mozilla/5.0' \
-            "$FILES_URL" \
-            -o files.json
-
-          echo
-          echo "Selecting file ID: $FILE_ID"
-
-          if ! grep -q "data-file-id=\"$FILE_ID\"" files.json; then
-            echo "ERROR: File ID $FILE_ID was not found"
-
-            echo
-            echo "Available file IDs:"
-            grep -o 'data-file-id="[0-9]*"' files.json || true
-
-            exit 1
-          fi
-
-          echo "File ID: $FILE_ID"
+          # --------------------------------------------------
+          # 5. Build final download page
+          # --------------------------------------------------
 
           FINAL_PAGE="$APP_URL/download/${FILE_ID}-x"
 
@@ -204,74 +173,124 @@ jobs:
             "$FINAL_PAGE" \
             -o final.html
 
+          # --------------------------------------------------
+          # 6. Extract data-url
+          # --------------------------------------------------
+
           echo
           echo "Extracting download data-url..."
 
           DATA_URL=$(python3 - <<'PY'
           import re
 
-          html = open("final.html", encoding="utf-8", errors="ignore").read()
+          html = open(
+              "final.html",
+              encoding="utf-8",
+              errors="ignore"
+          ).read()
 
           patterns = [
+              # Normal button
               r'id=["\']detail-download-button["\'][^>]*data-url=["\']([^"\']+)',
-              r'data-button-id=["\']detail-download-button["\'][^>]*data-url=["\']([^"\']+)',
+
+              # Attribute order reversed
+              r'data-url=["\']([^"\']+)["\'][^>]*id=["\']detail-download-button["\']',
+
+              # Generic data-url fallback
               r'data-url=["\']([^"\']{20,})["\']',
           ]
 
           for pattern in patterns:
               m = re.search(pattern, html, re.I | re.S)
+
               if m:
-                  print(m.group(1))
-                  break
+                  value = m.group(1)
+
+                  # Ignore obviously unrelated data-url values
+                  if value.startswith("http") or len(value) > 20:
+                      print(value)
+                      break
           PY
           )
 
           if [ -z "$DATA_URL" ]; then
-            echo "ERROR: Could not find detail-download-button data-url"
+
+            echo "ERROR: Could not find download data-url"
 
             echo
-            echo "Relevant HTML:"
-            grep -i -C 5 \
+            echo "Searching final HTML..."
+
+            grep -i -C 8 \
               -E 'detail-download-button|data-button-id|data-url|dw\.uptodown' \
-              final.html | head -150 || true
+              final.html | head -200 || true
 
             exit 1
           fi
 
+          echo
           echo "data-url found:"
           echo "$DATA_URL"
+
+          # --------------------------------------------------
+          # 7. Build CDN URL
+          # --------------------------------------------------
 
           DOWNLOAD_URL="https://dw.uptodown.com/dwn/$DATA_URL"
 
           echo
-          echo "Downloading XAPK..."
+          echo "CDN download URL:"
           echo "$DOWNLOAD_URL"
 
+          # --------------------------------------------------
+          # 8. Download XAPK
+          # --------------------------------------------------
+
           TEMP_FILE="az-screen-recorder-6.9.10.xapk"
+
+          echo
+          echo "Downloading XAPK..."
 
           curl -L --fail --retry 5 \
             -A 'Mozilla/5.0' \
             "$DOWNLOAD_URL" \
             -o "$TEMP_FILE"
 
+          # --------------------------------------------------
+          # 9. Verify file
+          # --------------------------------------------------
+
           echo
-          echo "Checking downloaded file..."
+          echo "Downloaded file:"
 
-          file "$TEMP_FILE"
           ls -lh "$TEMP_FILE"
+          file "$TEMP_FILE"
 
-          if file "$TEMP_FILE" | grep -qiE 'HTML|text'; then
-            echo "ERROR: Downloaded file appears to be HTML, not XAPK"
+          FILE_SIZE=$(stat -c%s "$TEMP_FILE")
+
+          echo
+          echo "File size: $FILE_SIZE bytes"
+
+          # 1 MB minimum sanity check
+          if [ "$FILE_SIZE" -lt 1000000 ]; then
+            echo "ERROR: Downloaded file is suspiciously small."
             exit 1
           fi
 
-          mkdir -p "$CACHE_DIR"
+          if file "$TEMP_FILE" | grep -qiE 'HTML|text'; then
+            echo "ERROR: Downloaded file appears to be HTML."
+            exit 1
+          fi
+
+          # --------------------------------------------------
+          # 10. Put into cache
+          # --------------------------------------------------
 
           mv "$TEMP_FILE" \
             "$CACHE_DIR/az-screen-recorder-6.9.10.xapk"
 
           echo
-          echo "Cached successfully:"
+          echo "Successfully cached:"
+
           ls -lh "$CACHE_DIR"
 
       - name: Copy XAPK to repository
@@ -280,9 +299,11 @@ jobs:
 
           mkdir -p azrecorder
 
-          cp "$CACHE_DIR/az-screen-recorder-6.9.10.xapk" \
-             azrecorder/az-screen-recorder-6.9.10.xapk
+          cp \
+            "$CACHE_DIR/az-screen-recorder-6.9.10.xapk" \
+            azrecorder/az-screen-recorder-6.9.10.xapk
 
+          echo "Repository file:"
           ls -lh azrecorder/
 
       - name: Commit and push
@@ -300,4 +321,5 @@ jobs:
           fi
 
           git commit -m "Update AZ Screen Recorder 6.9.10"
+
           git push
