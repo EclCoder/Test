@@ -28,6 +28,7 @@ jobs:
             unzip tmp/*.apkm -d "$CACHE_DIR"
             rm -rf tmp
             du -sh "$CACHE_DIR"
+          fi
 
       - name: Move apks
         run: |
