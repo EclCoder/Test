@@ -1,7 +1,7 @@
 name: Mod APK with Morphe
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   patch:
@@ -28,9 +28,4 @@ jobs:
 
       - name: Help
         run: |
-          java -jar morphe.jar list-patches \
-          --patches=patches.mpp \
-          --with-descriptions \
-          --with-packages \
-          --with-versions \
-          --with-options
+          java -jar morphe.jar patch --help
