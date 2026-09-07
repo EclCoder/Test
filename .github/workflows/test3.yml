@@ -29,8 +29,8 @@ jobs:
       - name: Help
         run: |
           java -jar morphe.jar list-patches \
-  --patches=patches.mpp \
-  --with-descriptions \
-  --with-packages \
-  --with-versions \
+          --patches=patches.mpp \
+          --with-descriptions \
+          --with-packages \
+          --with-versions \
   --with-options
