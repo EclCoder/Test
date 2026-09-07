@@ -9,7 +9,6 @@ jobs:
 
     steps:
       - name: Checkout
-        if: false
         uses: actions/checkout@v4
 
       - name: Setup Java 21
@@ -26,6 +25,17 @@ jobs:
         run: |
           wget -O patches.mpp "https://github.com/sjshb57/Pairip-Patches/releases/download/v1.10.3/patches-1.10.3.mpp"
 
-      - name: Help
+      - name: Mod apk
         run: |
-          java -jar morphe.jar patch --help
+          mkdir -p azrecordermod        
+          java -jar morphe.jar patch --patches=patches.mpp -e="Remove pairip protection" -o=azrecordermod/basemod.apk azrecorder/base.apk
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "Update files" || exit 0
+          git push
+        
