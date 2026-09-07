@@ -31,7 +31,7 @@ jobs:
       - name: Mod apk
         run: |
           mkdir -p azrecordermod        
-          java -jar morphe.jar patch --patches=patches.mpp -e="Remove pairip protection" -o=azrecordermod/basemod.apk --verify-with-sdk="$ANDROID_HOME" azrecorder/base.apk
+          java -jar morphe.jar patch --patches=patches.mpp -e="Remove pairip protection" -o=azrecordermod/basemod.apk azrecorder/base.apk
 
       - name: Commit and push
         run: |
