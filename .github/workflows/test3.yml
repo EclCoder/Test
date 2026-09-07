@@ -33,4 +33,4 @@ jobs:
           --with-descriptions \
           --with-packages \
           --with-versions \
-  --with-options
+          --with-options
