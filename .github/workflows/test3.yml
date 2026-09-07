@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - name: Checkout
+        if: false
         uses: actions/checkout@v4
 
       - name: Setup Java 21
@@ -27,4 +28,9 @@ jobs:
 
       - name: Help
         run: |
-          java -jar morphe.jar list-patches --patches=patches.mpp -d -p -v -o | grep -i pairip
+          java -jar morphe.jar list-patches \
+  --patches=patches.mpp \
+  --with-descriptions \
+  --with-packages \
+  --with-versions \
+  --with-options
