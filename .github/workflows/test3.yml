@@ -1,38 +1,30 @@
-name: Test 3
+name: Mod APK with Morphe
+
 on:
   workflow_dispatch:
-permissions:
-  actions: read
-  contents: write
-jobs:
 
-  test:
+jobs:
+  patch:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
-      - name: Install apk
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir tmp
-          curl -L -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" -o tmp/file.zip "https://api.github.com/repos/EclCoder/Test/actions/artifacts/9899830069/zip"
-          unzip tmp/file.zip -d tmp
-          unzip tmp/*.apkm -d tmp
 
-      - name: Extract lib
-        run: |
-          unzip tmp/*armeabi_v7a.apk "lib/armeabi-v7a/*" -d .
-          unzip tmp/*arm64_v8a.apk "lib/arm64-v8a/*" -d .
-          rm -rf tmp/
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
 
-      - name: Commit and push
+      - name: Download Morphe Desktop
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          wget -O morphe.jar "https://github.com/MorpheApp/morphe-desktop/releases/download/v1.15.0/morphe-desktop-1.15.0-all.jar"
 
-          git add .
-          git commit -m "Update files" || exit 0
-          git push
-        
+      - name: Download Morphe patches
+        run: |
+          wget -O patches.mpp "https://github.com/MorpheApp/morphe-patches/releases/download/v1.41.0/patches-1.41.0.mpp"
+
+      - name: Help
+        run: |
+          java -jar morphe-desktop-*-all.jar list-patches -p patches.mpp --with-descriptions --with-packages --with-versions | grep -i pairip
