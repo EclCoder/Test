@@ -23,7 +23,7 @@ jobs:
 
       - name: Download Morphe patches
         run: |
-          wget -O patches.mpp "https://github.com/MorpheApp/morphe-patches/releases/download/v1.41.0/patches-1.41.0.mpp"
+          wget -O patches.mpp "https://github.com/sjshb57/Pairip-Patches/releases/download/v1.10.3/patches-1.10.3.mpp"
 
       - name: Help
         run: |
