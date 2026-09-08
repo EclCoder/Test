@@ -1,7 +1,7 @@
 name: Mod APK with Morphe
 
 on:
-  push:
+  workflow_dispatch:
 
 permissions:
   contents: write
