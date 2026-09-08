@@ -126,18 +126,21 @@ jobs:
 
       - name: Launch and collect PairIP logs
         run: |
+          
           adb logcat -c
 
           adb shell monkey \
-            -p com.hecorat.screenrecorder.free \
-            -c android.intent.category.LAUNCHER \
-            1
+          -p com.hecorat.screenrecorder.free \
+          -c android.intent.category.LAUNCHER \
+          1
 
           sleep 10
 
           adb logcat -d -v threadtime > logcat.txt
 
-          grep -B 30 -A 10 'com.google.android.finsky.unauthenticated.activity.UnauthenticatedMainActivity' logcat.txt
+          grep -E \
+          'ActivityTaskManager: START|ActivityTaskManager: Displayed|com.android.vending|com.hecorat.screenrecorder.free|pairip|PairIP|VMRunner|libpairip' \
+          logcat.txt
 
       - name: Commit and push
         run: |
