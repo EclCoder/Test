@@ -47,76 +47,9 @@ jobs:
               console.log("");
 
               /*
-               * Do NOT modify LicenseActivity.
+               * DO NOT modify LicenseActivity.
                *
-               * We want to observe the original PairIP execution flow.
-               */
-
-              try {
-                  var InMemoryDexClassLoader =
-                      Java.use("dalvik.system.InMemoryDexClassLoader");
-
-                  var initArray = InMemoryDexClassLoader.$init.overload(
-                      "[Ljava.nio.ByteBuffer;",
-                      "java.lang.String",
-                      "java.lang.ClassLoader"
-                  );
-
-                  initArray.implementation = function (
-                      buffers,
-                      librarySearchPath,
-                      parent
-                  ) {
-
-                      console.log("");
-                      console.log(
-                          "[+] InMemoryDexClassLoader(ByteBuffer[]) CALLED"
-                      );
-
-                      try {
-                          console.log(
-                              "    -> buffers = " + buffers.length
-                          );
-
-                          for (var i = 0; i < buffers.length; i++) {
-                              try {
-                                  console.log(
-                                      "    -> Buffer[" + i + "] capacity = " +
-                                      buffers[i].capacity()
-                                  );
-                              } catch (e) {
-                                  console.log(
-                                      "    -> Buffer[" + i + "] size unavailable"
-                                  );
-                              }
-                          }
-                      } catch (e) {
-                          console.log(
-                              "    -> Error reading buffers: " + e
-                          );
-                      }
-
-                      return initArray.call(
-                          this,
-                          buffers,
-                          librarySearchPath,
-                          parent
-                      );
-                  };
-
-                  console.log(
-                      "[+] Hooked InMemoryDexClassLoader(ByteBuffer[])"
-                  );
-
-              } catch (e) {
-                  console.log(
-                      "[-] Could not hook InMemoryDexClassLoader: " + e
-                  );
-              }
-
-
-              /*
-               * Log PairIP LicenseActivity lifecycle.
+               * This is the original PairIP execution path.
                */
 
               try {
@@ -149,9 +82,84 @@ jobs:
 
 
               /*
+               * Detect DEX loaded through InMemoryDexClassLoader.
+               */
+
+              try {
+                  var InMemoryDexClassLoader =
+                      Java.use("dalvik.system.InMemoryDexClassLoader");
+
+                  var initArray =
+                      InMemoryDexClassLoader.$init.overload(
+                          "[Ljava.nio.ByteBuffer;",
+                          "java.lang.String",
+                          "java.lang.ClassLoader"
+                      );
+
+                  initArray.implementation = function (
+                      buffers,
+                      librarySearchPath,
+                      parent
+                  ) {
+
+                      console.log("");
+                      console.log(
+                          "[+] [DEX LOADER] InMemoryDexClassLoader CALLED"
+                      );
+
+                      try {
+                          console.log(
+                              "    -> buffers = " + buffers.length
+                          );
+
+                          for (var i = 0; i < buffers.length; i++) {
+                              try {
+                                  console.log(
+                                      "    -> Buffer[" + i + "] capacity = " +
+                                      buffers[i].capacity() +
+                                      " bytes"
+                                  );
+                              } catch (e) {
+                                  console.log(
+                                      "    -> Buffer[" + i + "] size unavailable"
+                                  );
+                              }
+                          }
+
+                          console.log(
+                              "    -> librarySearchPath = " +
+                              librarySearchPath
+                          );
+
+                      } catch (e) {
+                          console.log(
+                              "    -> Buffer inspection error: " + e
+                          );
+                      }
+
+                      return initArray.call(
+                          this,
+                          buffers,
+                          librarySearchPath,
+                          parent
+                      );
+                  };
+
+                  console.log(
+                      "[+] Hooked InMemoryDexClassLoader(ByteBuffer[])"
+                  );
+
+              } catch (e) {
+                  console.log(
+                      "[-] InMemoryDexClassLoader hook failed: " + e
+                  );
+              }
+
+
+              /*
                * Trace Context.startActivity().
                *
-               * This is useful for identifying the Play Store redirect.
+               * This helps identify the Play Store redirect.
                */
 
               try {
@@ -173,25 +181,22 @@ jobs:
 
                           console.log("");
                           console.log("[STARTACTIVITY]");
-
                           console.log(
                               "    action    = " + action
                           );
-
                           console.log(
                               "    data      = " + data
                           );
-
                           console.log(
                               "    package   = " + pkg
                           );
-
                           console.log(
                               "    component = " + component
                           );
 
                           if (
-                              (data && data.indexOf("play.google.com") >= 0) ||
+                              (data &&
+                               data.indexOf("play.google.com") >= 0) ||
                               pkg === "com.android.vending"
                           ) {
                               console.log(
@@ -214,7 +219,7 @@ jobs:
 
               } catch (e) {
                   console.log(
-                      "[-] ContextWrapper.startActivity hook failed: " + e
+                      "[-] startActivity hook failed: " + e
                   );
               }
           });
@@ -223,11 +228,12 @@ jobs:
           /*
            * Native mmap tracing.
            *
-           * Detect a mapped region whose first four bytes are:
+           * Look for memory regions beginning with:
            *     dex\n
            */
 
-          var mmap = Module.findExportByName(null, "mmap");
+          var mmap =
+              Module.findExportByName(null, "mmap");
 
           if (mmap) {
 
@@ -244,17 +250,14 @@ jobs:
                           if (retval.isNull())
                               return;
 
-                          var address = retval;
+                          var data =
+                              Memory.readByteArray(retval, 4);
 
-                          var magic = Memory.readByteArray(
-                              address,
-                              4
-                          );
-
-                          if (!magic)
+                          if (!data)
                               return;
 
-                          var bytes = new Uint8Array(magic);
+                          var bytes =
+                              new Uint8Array(data);
 
                           if (
                               bytes[0] === 0x64 &&
@@ -269,44 +272,41 @@ jobs:
                               );
 
                               console.log(
-                                  "    -> Address = " + address
+                                  "    -> Address = " + retval
                               );
 
                               try {
-
-                                  /*
-                                   * DEX header:
-                                   * file_size is at offset 0x20.
-                                   */
-
                                   var size =
-                                      Memory.readU32(address.add(0x20));
+                                      Memory.readU32(
+                                          retval.add(0x20)
+                                      );
 
                                   console.log(
-                                      "    -> Size    = " + size + " bytes"
+                                      "    -> Size = " +
+                                      size +
+                                      " bytes"
                                   );
 
                               } catch (e) {
-
                                   console.log(
-                                      "    -> Could not read DEX size: " + e
+                                      "    -> Could not read DEX size: " +
+                                      e
                                   );
                               }
                           }
 
                       } catch (e) {
                           /*
-                           * mmap can return arbitrary memory mappings.
-                           * Ignore unreadable regions.
+                           * Ignore unreadable mmap regions.
                            */
                       }
                   }
-              );
+              });
 
           } else {
 
               console.log(
-                  "[-] mmap() was not found"
+                  "[-] mmap() not found"
               );
           }
           EOF
@@ -331,19 +331,11 @@ jobs:
           script: |
 
             echo "===== Emulator information ====="
+
             adb shell getprop ro.build.version.release
             adb shell getprop ro.build.version.sdk
             adb shell getprop ro.product.cpu.abi
             adb shell getprop ro.hardware
-
-            echo "===== Waiting for boot ====="
-            adb wait-for-device
-
-            until [ "$(adb shell getprop sys.boot_completed | tr -d '\r')" = "1" ]; do
-              sleep 2
-            done
-
-            echo "Boot completed."
 
             echo "===== Installing Frida server ====="
 
@@ -355,13 +347,17 @@ jobs:
 
             xz -d -f frida-server.xz
 
-            adb push frida-server /data/local/tmp/frida-server
+            adb push \
+              frida-server \
+              /data/local/tmp/frida-server
 
-            adb shell chmod 755 /data/local/tmp/frida-server
+            adb shell chmod 755 \
+              /data/local/tmp/frida-server
 
             adb shell pkill frida-server || true
 
-            adb shell "/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &"
+            adb shell \
+              "/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &"
 
             sleep 3
 
@@ -379,12 +375,12 @@ jobs:
 
             cd ..
 
-            echo "===== Installed package ====="
+            echo "===== Checking installation ====="
 
             adb shell pm list packages -i | \
               grep com.hecorat.screenrecorder.free || true
 
-            echo "===== Clear logcat ====="
+            echo "===== Clearing logcat ====="
 
             adb logcat -c
 
@@ -402,7 +398,7 @@ jobs:
 
             echo "Frida PID: $FRIDA_PID"
 
-            echo "===== Waiting for application ====="
+            echo "===== Letting PairIP execute ====="
 
             sleep 20
 
@@ -410,23 +406,24 @@ jobs:
 
             adb logcat -d -v threadtime > logcat.txt
 
-            echo "===== Capturing package state ====="
+            echo "===== Capturing package information ====="
 
             adb shell dumpsys package \
               com.hecorat.screenrecorder.free \
               > package.txt
 
-            echo "===== Capturing activity state ====="
+            echo "===== Capturing activity information ====="
 
             adb shell dumpsys activity activities \
               > activity.txt
 
             echo "===== Capturing Frida server log ====="
 
-            adb shell cat /data/local/tmp/frida.log \
+            adb shell cat \
+              /data/local/tmp/frida.log \
               > frida_server.txt || true
 
-            echo "===== Trace complete ====="
+            echo "===== Trace finished ====="
 
             kill "$FRIDA_PID" 2>/dev/null || true
 
