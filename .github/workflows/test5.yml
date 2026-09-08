@@ -62,26 +62,55 @@ jobs:
           ls -l /dev/kvm || true
           [[ -r /dev/kvm && -w /dev/kvm ]] && echo "KVM: OK" || echo "KVM: NOT AVAILABLE"
 
-      
       - name: Start Emulator
         run: |
           nohup "$ANDROID_HOME/emulator/emulator" \
-          -avd android36 \
-          -no-window \
-          -no-audio \
-          -no-snapshot \
-          -gpu swiftshader_indirect \
-          > emulator.log 2>&1 &
+            -avd android36 \
+            -no-window \
+            -no-audio \
+            -no-snapshot \
+            -gpu swiftshader_indirect \
+            > emulator.log 2>&1 &
 
           echo "Waiting for ADB..."
-          timeout 180 "$ANDROID_HOME/platform-tools/adb" wait-for-device
+
+          for i in {1..36}; do
+            echo "[$i/36] Checking ADB..."
+            adb devices -l
+
+            if adb devices | grep -q "emulator-5554"; then
+              echo "Emulator detected by ADB!"
+              break
+            fi
+
+            sleep 5
+          done
+
+          if ! adb devices | grep -q "emulator-5554"; then
+            echo "=== Emulator was NOT detected ==="
+            echo "=== emulator.log ==="
+            cat emulator.log
+            exit 1
+          fi
 
           echo "Waiting for Android to boot..."
-          timeout 180 bash -c '
-            until [ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" = "1" ]; do
-              sleep 5
-            done
-          '
+
+          for i in {1..36}; do
+            BOOT=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+            echo "[$i/36] sys.boot_completed=$BOOT"
+
+            if [ "$BOOT" = "1" ]; then
+              break
+            fi
+
+            sleep 5
+          done
+
+          if [ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" != "1" ]; then
+            echo "=== Android did NOT boot ==="
+            cat emulator.log
+            exit 1
+          fi
 
           echo "=== Emulator booted ==="
           adb devices -l
