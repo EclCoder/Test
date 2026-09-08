@@ -20,19 +20,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libpulse0 xz-utils curl
 
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
-            | sudo tee /etc/udev/rules.d/99-kvm-nodes.rules
-
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm-nodes.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
-
           sudo chmod 666 /dev/kvm
 
       - name: Setup Frida Tools
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install frida-tools
-
           frida --version
 
       - name: Create Frida Script
@@ -47,9 +43,8 @@ jobs:
               console.log("");
 
               /*
-               * DO NOT modify LicenseActivity.
-               *
-               * This is the original PairIP execution path.
+               * Original LicenseActivity execution.
+               * We intentionally DO NOT call finish().
                */
 
               try {
@@ -62,7 +57,6 @@ jobs:
                       );
 
                   onCreate.implementation = function (bundle) {
-
                       console.log(
                           "[PAIRIP] LicenseActivity.onCreate()"
                       );
@@ -82,7 +76,7 @@ jobs:
 
 
               /*
-               * Detect DEX loaded through InMemoryDexClassLoader.
+               * InMemoryDexClassLoader
                */
 
               try {
@@ -115,15 +109,11 @@ jobs:
                           for (var i = 0; i < buffers.length; i++) {
                               try {
                                   console.log(
-                                      "    -> Buffer[" + i + "] capacity = " +
+                                      "    -> Buffer[" + i + "] = " +
                                       buffers[i].capacity() +
                                       " bytes"
                                   );
-                              } catch (e) {
-                                  console.log(
-                                      "    -> Buffer[" + i + "] size unavailable"
-                                  );
-                              }
+                              } catch (e) {}
                           }
 
                           console.log(
@@ -133,7 +123,7 @@ jobs:
 
                       } catch (e) {
                           console.log(
-                              "    -> Buffer inspection error: " + e
+                              "    -> Inspection error: " + e
                           );
                       }
 
@@ -157,9 +147,7 @@ jobs:
 
 
               /*
-               * Trace Context.startActivity().
-               *
-               * This helps identify the Play Store redirect.
+               * Context.startActivity()
                */
 
               try {
@@ -181,18 +169,10 @@ jobs:
 
                           console.log("");
                           console.log("[STARTACTIVITY]");
-                          console.log(
-                              "    action    = " + action
-                          );
-                          console.log(
-                              "    data      = " + data
-                          );
-                          console.log(
-                              "    package   = " + pkg
-                          );
-                          console.log(
-                              "    component = " + component
-                          );
+                          console.log("    action    = " + action);
+                          console.log("    data      = " + data);
+                          console.log("    package   = " + pkg);
+                          console.log("    component = " + component);
 
                           if (
                               (data &&
@@ -206,7 +186,7 @@ jobs:
 
                       } catch (e) {
                           console.log(
-                              "[STARTACTIVITY] inspection error: " + e
+                              "[STARTACTIVITY] error: " + e
                           );
                       }
 
@@ -226,10 +206,7 @@ jobs:
 
 
           /*
-           * Native mmap tracing.
-           *
-           * Look for memory regions beginning with:
-           *     dex\n
+           * Native mmap()
            */
 
           var mmap =
@@ -287,27 +264,15 @@ jobs:
                                       " bytes"
                                   );
 
-                              } catch (e) {
-                                  console.log(
-                                      "    -> Could not read DEX size: " +
-                                      e
-                                  );
-                              }
+                              } catch (e) {}
                           }
 
-                      } catch (e) {
-                          /*
-                           * Ignore unreadable mmap regions.
-                           */
-                      }
+                      } catch (e) {}
                   }
               });
 
           } else {
-
-              console.log(
-                  "[-] mmap() not found"
-              );
+              console.log("[-] mmap() not found");
           }
           EOF
 
@@ -319,12 +284,7 @@ jobs:
           arch: x86_64
           force-avd-creation: true
 
-          emulator-options: >-
-            -no-window
-            -no-audio
-            -no-snapshot
-            -no-snapshot-save
-            -gpu swiftshader_indirect
+          emulator-options: -no-window -no-audio -no-snapshot -no-snapshot-save -gpu swiftshader_indirect
 
           disable-animations: true
 
@@ -341,23 +301,17 @@ jobs:
 
             FRIDA_VERSION="16.5.9"
 
-            curl -L \
-              "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz" \
-              -o frida-server.xz
+            curl -L "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz" -o frida-server.xz
 
             xz -d -f frida-server.xz
 
-            adb push \
-              frida-server \
-              /data/local/tmp/frida-server
+            adb push frida-server /data/local/tmp/frida-server
 
-            adb shell chmod 755 \
-              /data/local/tmp/frida-server
+            adb shell chmod 755 /data/local/tmp/frida-server
 
             adb shell pkill frida-server || true
 
-            adb shell \
-              "/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &"
+            adb shell "/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &"
 
             sleep 3
 
@@ -369,30 +323,21 @@ jobs:
 
             cd azrecorder
 
-            adb install-multiple \
-              -i com.android.vending \
-              $(find . -maxdepth 1 -name '*.apk' -printf '%p ')
+            adb install-multiple -i com.android.vending $(find . -maxdepth 1 -name '*.apk' -printf '%p ')
 
             cd ..
 
             echo "===== Checking installation ====="
 
-            adb shell pm list packages -i | \
-              grep com.hecorat.screenrecorder.free || true
+            adb shell pm list packages -i | grep com.hecorat.screenrecorder.free || true
 
             echo "===== Clearing logcat ====="
 
             adb logcat -c
 
-            echo "===== Starting Frida ====="
+            echo "===== Starting Frida trace ====="
 
-            timeout 30s \
-              frida \
-              -U \
-              -f com.hecorat.screenrecorder.free \
-              -l trace_dex.js \
-              --no-pause \
-              > frida_trace.txt 2>&1 &
+            timeout 30s frida -U -f com.hecorat.screenrecorder.free -l trace_dex.js --no-pause > frida_trace.txt 2>&1 &
 
             FRIDA_PID=$!
 
@@ -408,20 +353,15 @@ jobs:
 
             echo "===== Capturing package information ====="
 
-            adb shell dumpsys package \
-              com.hecorat.screenrecorder.free \
-              > package.txt
+            adb shell dumpsys package com.hecorat.screenrecorder.free > package.txt
 
             echo "===== Capturing activity information ====="
 
-            adb shell dumpsys activity activities \
-              > activity.txt
+            adb shell dumpsys activity activities > activity.txt
 
             echo "===== Capturing Frida server log ====="
 
-            adb shell cat \
-              /data/local/tmp/frida.log \
-              > frida_server.txt || true
+            adb shell cat /data/local/tmp/frida.log > frida_server.txt || true
 
             echo "===== Trace finished ====="
 
@@ -448,7 +388,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add .
-
           git commit -m "Update DEX trace logs" || exit 0
-
           git push
