@@ -40,7 +40,7 @@ jobs:
             
             sleep 2
 
-            
+            cd azrecorder
             adb install-multiple -i com.android.vending base.apk *.x86_64.apk *.en.apk *dpi.apk
             cd ..
 
