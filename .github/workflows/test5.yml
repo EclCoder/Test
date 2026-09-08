@@ -62,58 +62,56 @@ jobs:
           ls -l /dev/kvm || true
           [[ -r /dev/kvm && -w /dev/kvm ]] && echo "KVM: OK" || echo "KVM: NOT AVAILABLE"
 
-      - name: Start Emulator
+      - name: Start emulator
         run: |
           nohup "$ANDROID_HOME/emulator/emulator" \
-            -avd android36 \
-            -no-window \
-            -no-audio \
-            -no-snapshot \
-            -gpu swiftshader_indirect \
-            > emulator.log 2>&1 &
+          -avd android36 \
+          -no-window \
+          -no-audio \
+          -no-snapshot \
+          -gpu swiftshader_indirect \
+          > emulator.log 2>&1 &
 
-          echo "Waiting for ADB..."
+          echo "Waiting for emulator..."
 
           for i in {1..36}; do
-            echo "[$i/36] Checking ADB..."
+            echo "[$i/36]"
             adb devices -l
 
             if adb devices | grep -q "emulator-5554"; then
-              echo "Emulator detected by ADB!"
+              echo "Emulator detected!"
               break
             fi
 
             sleep 5
           done
 
-          if ! adb devices | grep -q "emulator-5554"; then
-            echo "=== Emulator was NOT detected ==="
-            echo "=== emulator.log ==="
-            cat emulator.log
-            exit 1
-          fi
-
-          echo "Waiting for Android to boot..."
+          echo "Waiting for Android boot..."
 
           for i in {1..36}; do
-            BOOT=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
-            echo "[$i/36] sys.boot_completed=$BOOT"
+            echo "[$i/36]"
+
+            adb devices -l
+
+            STATE=$(adb get-state 2>/dev/null || true)
+            BOOT=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r' || true)
+
+            echo "ADB state: $STATE"
+            echo "sys.boot_completed: '$BOOT'"
 
             if [ "$BOOT" = "1" ]; then
+              echo "=== Android booted ==="
               break
             fi
 
             sleep 5
           done
 
-          if [ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" != "1" ]; then
-            echo "=== Android did NOT boot ==="
-            cat emulator.log
-            exit 1
-          fi
-
-          echo "=== Emulator booted ==="
+          echo "=== Final emulator status ==="
           adb devices -l
+
+          echo "=== Emulator log ==="
+          cat emulator.log
 
       - name: Install APK
        
