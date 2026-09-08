@@ -63,13 +63,13 @@ jobs:
             -no-snapshot \
             -gpu swiftshader_indirect > emulator.log 2>&1 &
 
-          "$ANDROID_HOME/platform-tools/adb" wait-for-device
+          sleep 20
 
-          while [ "$("$ANDROID_HOME/platform-tools/adb" shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do
-            sleep 5
-          done
+          echo "=== Emulator log ==="
+         cat emulator.log
 
-          echo "Emulator booted"
+         echo "=== ADB devices ==="
+         "$ANDROID_HOME/platform-tools/adb" devices -l
 
       - name: Install APK
        
