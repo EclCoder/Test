@@ -67,18 +67,18 @@ jobs:
           -gpu swiftshader_indirect \
           > emulator.log 2>&1 &
 
-          echo "Waiting for ADB..."
-          timeout 180 "$ANDROID_HOME/platform-tools/adb" wait-for-device
+        echo "Waiting for ADB..."
+        timeout 180 "$ANDROID_HOME/platform-tools/adb" wait-for-device
 
-          echo "Waiting for Android to boot..."
-          timeout 180 bash -c '
-            until [ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" = "1" ]; do
-              sleep 5
-            done
+        echo "Waiting for Android to boot..."
+        timeout 180 bash -c '
+          until [ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" = "1" ]; do
+            sleep 5
+          done
     '
 
-          echo "=== Emulator booted ==="
-          adb devices -l
+        echo "=== Emulator booted ==="
+        adb devices -l
 
       - name: Install APK
        
