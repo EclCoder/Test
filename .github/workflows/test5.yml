@@ -137,5 +137,6 @@ jobs:
 
           sleep 10
 
-          adb logcat -d -v threadtime | \
-            grep -iE 'pairip|license|vending|play|integrity|vmrunner' || true
+          adb logcat -d -v threadtime > logcat.txt
+
+          grep -B 30 -A 10 'com.google.android.finsky.unauthenticated.activity.UnauthenticatedMainActivity' logcat.txt
