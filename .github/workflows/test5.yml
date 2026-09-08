@@ -1,0 +1,45 @@
+name: Check Android SDK
+
+on:
+  push:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Android environment
+        run: |
+          echo "=== Environment ==="
+          uname -a
+          java -version || true
+
+          echo
+          echo "=== ANDROID_HOME ==="
+          echo "$ANDROID_HOME"
+
+          echo
+          echo "=== SDK packages ==="
+          sdkmanager --list_installed || true
+
+          echo
+          echo "=== Platforms ==="
+          ls -lah "$ANDROID_HOME/platforms" 2>/dev/null || true
+
+          echo
+          echo "=== System Images ==="
+          find "$ANDROID_HOME/system-images" \
+            -maxdepth 3 \
+            -type d 2>/dev/null || true
+
+          echo
+          echo "=== Emulator ==="
+          emulator -version || true
+
+          echo
+          echo "=== AVDs ==="
+          avdmanager list avd || true
+
+          echo
+          echo "=== Platform Tools ==="
+          adb version || true
