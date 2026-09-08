@@ -28,6 +28,15 @@ jobs:
             "platform-tools" \
             "system-images;android-36;google_apis_playstore;x86_64"
 
+      - name: Save Cache 
+        uses: actions/save@v4
+        with:
+          path: |
+            ${{ env.ANDROID_HOME }}/emulator
+            ${{ env.ANDROID_HOME }}/platform-tools
+            ${{ env.ANDROID_HOME }}/system-images
+          key: android-emulator-api36-${{ runner.os }}-${{ runner.arch }}
+
       - name: Create AVD
         run: |
           echo "no" | avdmanager create avd \
@@ -51,4 +60,5 @@ jobs:
 
       - name: Install APK
         run: |
+          adb install-multiple -i com.android.vending 
           
