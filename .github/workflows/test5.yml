@@ -1,4 +1,460 @@
-name: Android Emulator Test & Trace PairIP DEX
+name: name: Android Emulator Test & Trace PairIP DEX
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Enable KVM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpulse0 xz-utils curl
+
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
+            | sudo tee /etc/udev/rules.d/99-kvm-nodes.rules
+
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+          sudo chmod 666 /dev/kvm
+
+      - name: Setup Frida Tools
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install frida-tools
+
+          frida --version
+
+      - name: Create Frida Script
+        run: |
+          cat > trace_dex.js <<'EOF'
+          Java.perform(function () {
+
+              console.log("");
+              console.log("==================================================");
+              console.log("[*] FRIDA: PAIRIP DEX / LICENSE TRACE");
+              console.log("==================================================");
+              console.log("");
+
+              /*
+               * Do NOT modify LicenseActivity.
+               *
+               * We want to observe the original PairIP execution flow.
+               */
+
+              try {
+                  var InMemoryDexClassLoader =
+                      Java.use("dalvik.system.InMemoryDexClassLoader");
+
+                  var initArray = InMemoryDexClassLoader.$init.overload(
+                      "[Ljava.nio.ByteBuffer;",
+                      "java.lang.String",
+                      "java.lang.ClassLoader"
+                  );
+
+                  initArray.implementation = function (
+                      buffers,
+                      librarySearchPath,
+                      parent
+                  ) {
+
+                      console.log("");
+                      console.log(
+                          "[+] InMemoryDexClassLoader(ByteBuffer[]) CALLED"
+                      );
+
+                      try {
+                          console.log(
+                              "    -> buffers = " + buffers.length
+                          );
+
+                          for (var i = 0; i < buffers.length; i++) {
+                              try {
+                                  console.log(
+                                      "    -> Buffer[" + i + "] capacity = " +
+                                      buffers[i].capacity()
+                                  );
+                              } catch (e) {
+                                  console.log(
+                                      "    -> Buffer[" + i + "] size unavailable"
+                                  );
+                              }
+                          }
+                      } catch (e) {
+                          console.log(
+                              "    -> Error reading buffers: " + e
+                          );
+                      }
+
+                      return initArray.call(
+                          this,
+                          buffers,
+                          librarySearchPath,
+                          parent
+                      );
+                  };
+
+                  console.log(
+                      "[+] Hooked InMemoryDexClassLoader(ByteBuffer[])"
+                  );
+
+              } catch (e) {
+                  console.log(
+                      "[-] Could not hook InMemoryDexClassLoader: " + e
+                  );
+              }
+
+
+              /*
+               * Log PairIP LicenseActivity lifecycle.
+               */
+
+              try {
+                  var LicenseActivity =
+                      Java.use("com.pairip.licensecheck.LicenseActivity");
+
+                  var onCreate =
+                      LicenseActivity.onCreate.overload(
+                          "android.os.Bundle"
+                      );
+
+                  onCreate.implementation = function (bundle) {
+
+                      console.log(
+                          "[PAIRIP] LicenseActivity.onCreate()"
+                      );
+
+                      return onCreate.call(this, bundle);
+                  };
+
+                  console.log(
+                      "[+] Hooked LicenseActivity.onCreate()"
+                  );
+
+              } catch (e) {
+                  console.log(
+                      "[-] LicenseActivity hook failed: " + e
+                  );
+              }
+
+
+              /*
+               * Trace Context.startActivity().
+               *
+               * This is useful for identifying the Play Store redirect.
+               */
+
+              try {
+                  var ContextWrapper =
+                      Java.use("android.content.ContextWrapper");
+
+                  var startActivity =
+                      ContextWrapper.startActivity.overload(
+                          "android.content.Intent"
+                      );
+
+                  startActivity.implementation = function (intent) {
+
+                      try {
+                          var action = intent.getAction();
+                          var data = intent.getDataString();
+                          var pkg = intent.getPackage();
+                          var component = intent.getComponent();
+
+                          console.log("");
+                          console.log("[STARTACTIVITY]");
+
+                          console.log(
+                              "    action    = " + action
+                          );
+
+                          console.log(
+                              "    data      = " + data
+                          );
+
+                          console.log(
+                              "    package   = " + pkg
+                          );
+
+                          console.log(
+                              "    component = " + component
+                          );
+
+                          if (
+                              (data && data.indexOf("play.google.com") >= 0) ||
+                              pkg === "com.android.vending"
+                          ) {
+                              console.log(
+                                  "    >>> PLAY STORE REDIRECT DETECTED <<<"
+                              );
+                          }
+
+                      } catch (e) {
+                          console.log(
+                              "[STARTACTIVITY] inspection error: " + e
+                          );
+                      }
+
+                      return startActivity.call(this, intent);
+                  };
+
+                  console.log(
+                      "[+] Hooked ContextWrapper.startActivity(Intent)"
+                  );
+
+              } catch (e) {
+                  console.log(
+                      "[-] ContextWrapper.startActivity hook failed: " + e
+                  );
+              }
+          });
+
+
+          /*
+           * Native mmap tracing.
+           *
+           * Detect a mapped region whose first four bytes are:
+           *     dex\n
+           */
+
+          var mmap = Module.findExportByName(null, "mmap");
+
+          if (mmap) {
+
+              console.log(
+                  "[+] Native mmap() found: " + mmap
+              );
+
+              Interceptor.attach(mmap, {
+
+                  onLeave: function (retval) {
+
+                      try {
+
+                          if (retval.isNull())
+                              return;
+
+                          var address = retval;
+
+                          var magic = Memory.readByteArray(
+                              address,
+                              4
+                          );
+
+                          if (!magic)
+                              return;
+
+                          var bytes = new Uint8Array(magic);
+
+                          if (
+                              bytes[0] === 0x64 &&
+                              bytes[1] === 0x65 &&
+                              bytes[2] === 0x78 &&
+                              bytes[3] === 0x0a
+                          ) {
+
+                              console.log("");
+                              console.log(
+                                  "[+] [NATIVE MEMORY] DEX MAGIC FOUND"
+                              );
+
+                              console.log(
+                                  "    -> Address = " + address
+                              );
+
+                              try {
+
+                                  /*
+                                   * DEX header:
+                                   * file_size is at offset 0x20.
+                                   */
+
+                                  var size =
+                                      Memory.readU32(address.add(0x20));
+
+                                  console.log(
+                                      "    -> Size    = " + size + " bytes"
+                                  );
+
+                              } catch (e) {
+
+                                  console.log(
+                                      "    -> Could not read DEX size: " + e
+                                  );
+                              }
+                          }
+
+                      } catch (e) {
+                          /*
+                           * mmap can return arbitrary memory mappings.
+                           * Ignore unreadable regions.
+                           */
+                      }
+                  }
+              );
+
+          } else {
+
+              console.log(
+                  "[-] mmap() was not found"
+              );
+          }
+          EOF
+
+      - name: Run Android Emulator & Trace
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 36
+          target: google_apis_playstore
+          arch: x86_64
+          force-avd-creation: true
+
+          emulator-options: >-
+            -no-window
+            -no-audio
+            -no-snapshot
+            -no-snapshot-save
+            -gpu swiftshader_indirect
+
+          disable-animations: true
+
+          script: |
+
+            echo "===== Emulator information ====="
+            adb shell getprop ro.build.version.release
+            adb shell getprop ro.build.version.sdk
+            adb shell getprop ro.product.cpu.abi
+            adb shell getprop ro.hardware
+
+            echo "===== Waiting for boot ====="
+            adb wait-for-device
+
+            until [ "$(adb shell getprop sys.boot_completed | tr -d '\r')" = "1" ]; do
+              sleep 2
+            done
+
+            echo "Boot completed."
+
+            echo "===== Installing Frida server ====="
+
+            FRIDA_VERSION="16.5.9"
+
+            curl -L \
+              "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz" \
+              -o frida-server.xz
+
+            xz -d -f frida-server.xz
+
+            adb push frida-server /data/local/tmp/frida-server
+
+            adb shell chmod 755 /data/local/tmp/frida-server
+
+            adb shell pkill frida-server || true
+
+            adb shell "/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &"
+
+            sleep 3
+
+            echo "===== Checking Frida ====="
+
+            frida-ps -U
+
+            echo "===== Installing AZ Screen Recorder ====="
+
+            cd azrecorder
+
+            adb install-multiple \
+              -i com.android.vending \
+              $(find . -maxdepth 1 -name '*.apk' -printf '%p ')
+
+            cd ..
+
+            echo "===== Installed package ====="
+
+            adb shell pm list packages -i | \
+              grep com.hecorat.screenrecorder.free || true
+
+            echo "===== Clear logcat ====="
+
+            adb logcat -c
+
+            echo "===== Starting Frida ====="
+
+            timeout 30s \
+              frida \
+              -U \
+              -f com.hecorat.screenrecorder.free \
+              -l trace_dex.js \
+              --no-pause \
+              > frida_trace.txt 2>&1 &
+
+            FRIDA_PID=$!
+
+            echo "Frida PID: $FRIDA_PID"
+
+            echo "===== Waiting for application ====="
+
+            sleep 20
+
+            echo "===== Capturing logcat ====="
+
+            adb logcat -d -v threadtime > logcat.txt
+
+            echo "===== Capturing package state ====="
+
+            adb shell dumpsys package \
+              com.hecorat.screenrecorder.free \
+              > package.txt
+
+            echo "===== Capturing activity state ====="
+
+            adb shell dumpsys activity activities \
+              > activity.txt
+
+            echo "===== Capturing Frida server log ====="
+
+            adb shell cat /data/local/tmp/frida.log \
+              > frida_server.txt || true
+
+            echo "===== Trace complete ====="
+
+            kill "$FRIDA_PID" 2>/dev/null || true
+
+      - name: Upload Trace Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pairip-trace
+          path: |
+            logcat.txt
+            frida_trace.txt
+            frida_server.txt
+            package.txt
+            activity.txt
+            trace_dex.js
+          if-no-files-found: warn
+
+      - name: Commit and push
+        if: false
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+
+          git commit -m "Update DEX trace logs" || exit 0
+
+          git push Emulator Test & Trace PairIP DEX
 
 on:
   workflow_dispatch:
