@@ -138,3 +138,13 @@ jobs:
           adb logcat -d -v threadtime > logcat.txt
 
           grep -B 30 -A 10 'com.google.android.finsky.unauthenticated.activity.UnauthenticatedMainActivity' logcat.txt
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "Update files" || exit 0
+          git push
+        
