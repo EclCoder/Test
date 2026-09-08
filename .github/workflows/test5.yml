@@ -47,6 +47,10 @@ jobs:
             -k "system-images;android-36;google_apis_playstore;x86_64" \
             --force
 
+      - name: Enable KVM
+        run: |
+          sudo chmod 666 /dev/kvm
+
       - name: Check Emulator
         run: |
           echo "=== Emulator ==="
