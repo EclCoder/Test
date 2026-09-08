@@ -60,5 +60,7 @@ jobs:
 
       - name: Install APK
         run: |
-          adb install-multiple -i com.android.vending 
+          cd azrecorder
+          adb install-multiple -i com.android.vending base.apk *.x86_64.apk *.en.apk *dpi.apk
+          cd ..
           
