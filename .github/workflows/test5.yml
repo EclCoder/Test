@@ -56,23 +56,29 @@ jobs:
           ls -l /dev/kvm || true
           [[ -r /dev/kvm && -w /dev/kvm ]] && echo "KVM: OK" || echo "KVM: NOT AVAILABLE"
 
+      
       - name: Start Emulator
-       
         run: |
           nohup "$ANDROID_HOME/emulator/emulator" \
-            -avd android36 \
-            -no-window \
-            -no-audio \
-            -no-snapshot \
-            -gpu swiftshader_indirect > emulator.log 2>&1 &
+          -avd android36 \
+          -no-window \
+          -no-audio \
+          -no-snapshot \
+          -gpu swiftshader_indirect \
+          > emulator.log 2>&1 &
 
-          sleep 20
+          echo "Waiting for ADB..."
+          timeout 180 "$ANDROID_HOME/platform-tools/adb" wait-for-device
 
-          echo "=== Emulator log ==="
-          cat emulator.log
+          echo "Waiting for Android to boot..."
+          timeout 180 bash -c '
+            until [ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" = "1" ]; do
+              sleep 5
+            done
+    '
 
-          echo "=== ADB devices ==="
-          "$ANDROID_HOME/platform-tools/adb" devices -l
+          echo "=== Emulator booted ==="
+          adb devices -l
 
       - name: Install APK
        
