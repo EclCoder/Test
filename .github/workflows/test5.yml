@@ -25,6 +25,54 @@ jobs:
           sudo apt-get install -y xz-utils python3-pip
           pip install frida-tools
 
+      - name: Create Frida Script File
+        run: |
+          cat << 'EOF' > trace_dex.js
+          Java.perform(function () {
+              console.log("\n==================================================");
+              console.log("[*] FRIDA: HOOKING PAIRIP DEX DECRYPTION PROCESS...");
+              console.log("==================================================\n");
+
+              try {
+                  var LicenseActivity = Java.use("com.pairip.licensecheck.LicenseActivity");
+                  LicenseActivity.onCreate.implementation = function (bundle) {
+                      console.log("[!] [PAIRIP] Intercepted LicenseActivity! Destroying window...");
+                      this.finish();
+                  };
+              } catch (e) {}
+
+              try {
+                  var InMemoryDexClassLoader = Java.use("dalvik.system.InMemoryDexClassLoader");
+                  InMemoryDexClassLoader.$init.overload('[Ljava.nio.ByteBuffer;', 'java.lang.String', 'java.lang.ClassLoader').implementation = function (buffers, librarySearchPath, parent) {
+                      console.log("[+] [DEX DECRYPTED] InMemoryDexClassLoader called with " + buffers.length + " buffer(s)!");
+                      for (var i = 0; i < buffers.length; i++) {
+                          console.log("    -> Buffer [" + i + "] Size: " + buffers[i].capacity() + " bytes");
+                      }
+                      return this.$init(buffers, librarySearchPath, parent);
+                  };
+              } catch (e) {}
+          });
+
+          var mmap = Module.findExportByName(null, "mmap");
+          if (mmap) {
+              Interceptor.attach(mmap, {
+                  onLeave: function (retval) {
+                      try {
+                          if (retval.toInt32() !== -1) {
+                              var magic = Memory.readUtf8String(retval, 4);
+                              if (magic === "dex\n") {
+                                  var size = Memory.readU32(retval.add(32));
+                                  console.log("[+] [NATIVE MEMORY] Decrypted DEX magic found in RAM!");
+                                  console.log("    -> Address : " + retval);
+                                  console.log("    -> Size    : " + size + " bytes");
+                              }
+                          }
+                      } catch (e) {}
+                  }
+              });
+          }
+          EOF
+
       - name: Run Emulator & Trace DEX
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -37,67 +85,19 @@ jobs:
           script: |
             adb root
             sleep 2
-
-            cat << 'EOF' > trace_dex.js
-            Java.perform(function () {
-                console.log("\n==================================================");
-                console.log("[*] FRIDA: HOOKING PAIRIP DEX DECRYPTION PROCESS...");
-                console.log("==================================================\n");
-
-                try {
-                    var LicenseActivity = Java.use("com.pairip.licensecheck.LicenseActivity");
-                    LicenseActivity.onCreate.implementation = function (bundle) {
-                        console.log("[!] [PAIRIP] Intercepted LicenseActivity! Destroying window...");
-                        this.finish();
-                    };
-                } catch (e) {}
-
-                try {
-                    var InMemoryDexClassLoader = Java.use("dalvik.system.InMemoryDexClassLoader");
-                    InMemoryDexClassLoader.$init.overload('[Ljava.nio.ByteBuffer;', 'java.lang.String', 'java.lang.ClassLoader').implementation = function (buffers, librarySearchPath, parent) {
-                        console.log("[+] [DEX DECRYPTED] InMemoryDexClassLoader called with " + buffers.length + " buffer(s)!");
-                        for (var i = 0; i < buffers.length; i++) {
-                            console.log("    -> Buffer [" + i + "] Size: " + buffers[i].capacity() + " bytes");
-                        }
-                        return this.$init(buffers, librarySearchPath, parent);
-                    };
-                } catch (e) {}
-            });
-
-            var mmap = Module.findExportByName(null, "mmap");
-            if (mmap) {
-                Interceptor.attach(mmap, {
-                    onLeave: function (retval) {
-                        try {
-                            if (retval.toInt32() !== -1) {
-                                var magic = Memory.readUtf8String(retval, 4);
-                                if (magic === "dex\n") {
-                                    var size = Memory.readU32(retval.add(32));
-                                    console.log("[+] [NATIVE MEMORY] Decrypted DEX magic found in RAM!");
-                                    console.log("    -> Address : " + retval);
-                                    console.log("    -> Size    : " + size + " bytes");
-                                }
-                            }
-                        } catch (e) {}
-                    }
-                });
-            }
-            EOF
-
             FRIDA_VERSION="16.5.9"
             curl -L "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz" | xz -dc | adb shell "cat > /data/local/tmp/frida-server"
             adb shell "chmod 755 /data/local/tmp/frida-server"
             adb shell "/data/local/tmp/frida-server &"
             sleep 3
-
             cd azrecorder && adb install-multiple -i com.android.vending $(ls *.apk) && cd ..
-
             adb logcat -c
             frida -U -f com.hecorat.screenrecorder.free -l trace_dex.js --no-pause &
             sleep 15
             adb logcat -d -v threadtime > logcat.txt
 
       - name: Commit and push
+        if: false
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
