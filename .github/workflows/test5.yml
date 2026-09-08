@@ -66,10 +66,10 @@ jobs:
           sleep 20
 
           echo "=== Emulator log ==="
-         cat emulator.log
+          cat emulator.log
 
-         echo "=== ADB devices ==="
-         "$ANDROID_HOME/platform-tools/adb" devices -l
+          echo "=== ADB devices ==="
+          "$ANDROID_HOME/platform-tools/adb" devices -l
 
       - name: Install APK
        
