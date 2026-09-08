@@ -12,6 +12,7 @@ jobs:
         uses: android-actions/setup-android@v4
 
       - name: Restore Cache
+        id: cache
         uses: actions/cache/restore@v4
         with:
           path: |
@@ -20,14 +21,14 @@ jobs:
 
       - name: Install Emulator
         run: |
-          yes | sdkmanager --license || true
+          yes | sdkmanager --licenses || true
           sdkmanager \
             "emulator" \
             "platform-tools" \
             "system-images;android-36;google_apis_playstore;x86_64"
 
       - name: Save Cache
-        if:  steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: |
@@ -43,21 +44,27 @@ jobs:
 
       - name: Start Emulator
         run: |
-          nohup "$ANDROID_HOME/emulator/emulator" -avd android36 \
-          -no-window \
-          -no-audio \
-          -no-snapshot \
-          -gpu swiftshader_indirect > emulator.log 2>&1 &
+          nohup "$ANDROID_HOME/emulator/emulator" \
+            -avd android36 \
+            -no-window \
+            -no-audio \
+            -no-snapshot \
+            -gpu swiftshader_indirect > emulator.log 2>&1 &
 
-          "ANDROID_HOME/platform-tools/adb" wait-for-device
+          "$ANDROID_HOME/platform-tools/adb" wait-for-device
 
-          while [ "$(adb shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do
+          while [ "$("$ANDROID_HOME/platform-tools/adb" shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do
             sleep 5
           done
+
+          echo "Emulator booted"
 
       - name: Install APK
         run: |
           cd azrecorder
-          adb install-multiple -i com.android.vending base.apk *.x86_64.apk *.en.apk *dpi.apk
-          cd ..
-          
+          "$ANDROID_HOME/platform-tools/adb" install-multiple \
+            -i com.android.vending \
+            base.apk \
+            *.x86_64.apk \
+            *.en.apk \
+            *dpi.apk
