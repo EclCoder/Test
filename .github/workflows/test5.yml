@@ -37,16 +37,14 @@ jobs:
           script: |
             echo "=== Emulator booted successfully ==="
             
-            # 1. Bật root ADB
-            adb root
+            
             sleep 2
 
-            # 2. Cài đặt APK
-            cd azrecorder
+            
             adb install-multiple -i com.android.vending base.apk *.x86_64.apk *.en.apk *dpi.apk
             cd ..
 
-            # 3. Tải Frida Server và đẩy trực tiếp vào Emulator
+            
             FRIDA_VERSION="16.5.9"
             curl -L "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz" \
               | xz -dc \
@@ -56,14 +54,14 @@ jobs:
             adb shell "/data/local/tmp/frida-server &"
             sleep 3
 
-            # 4. Tạo Frida script theo dõi giải mã DEX
+            
             cat << 'EOF' > trace_dex.js
             Java.perform(function () {
                 console.log("\n==================================================");
                 console.log("[*] FRIDA: HOOKING PAIRIP DEX DECRYPTION PROCESS...");
                 console.log("==================================================\n");
 
-                // Bypass LicenseActivity chặn văng Play Store
+                
                 try {
                     var LicenseActivity = Java.use("com.pairip.licensecheck.LicenseActivity");
                     LicenseActivity.onCreate.implementation = function (bundle) {
@@ -85,7 +83,7 @@ jobs:
                 } catch (e) {}
             });
 
-            // Hook mmap bộ nhớ Native để bắt magic header dex\n
+            
             var mmap = Module.findExportByName(null, "mmap");
             if (mmap) {
                 Interceptor.attach(mmap, {
@@ -106,7 +104,7 @@ jobs:
             }
             EOF
 
-            # 5. Khởi chạy app với Frida và thu thập log
+            
             adb logcat -c
             frida -U -f com.hecorat.screenrecorder.free -l trace_dex.js --no-pause &
             
