@@ -46,11 +46,11 @@ jobs:
 
       - name: Start Emulator
         run: |
-          nohup emulator -avd android36 \
-            -no-window \
-            -no-audio \
-            -no-snapshot \
-            -gpu swiftshader_indirect &
+          nohup "$ANDROID_HOME/emulator/emulator" -avd android36 \
+          -no-window \
+          -no-audio \
+          -no-snapshot \
+          -gpu swiftshader_indirect > emulator.log 2>&1 &
 
           adb wait-for-device
 
