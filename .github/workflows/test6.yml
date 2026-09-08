@@ -2,24 +2,24 @@ name: Test 6
 on:
   workflow_dispatch:
 jobs:
+  test6:
+    runs-on: ubuntu-latest
+    steps:
 
-  runs-on: ubuntu-latest
-  steps:
+      - name: Check KVM
+        run: |
+          echo "=== /dev/kvm ==="
+          ls -l /dev/kvm
 
-    - name: Check KVM
-      run: |
-        echo "=== /dev/kvm ==="
-        ls -l /dev/kvm
+          echo "=== Current user ==="
+          id
 
-        echo "=== Current user ==="
-        id
+          echo "=== Groups ==="
+          groups
 
-        echo "=== Groups ==="
-        groups
-
-        echo "=== KVM access ==="
-        if [ -r /dev/kvm ] && [ -w /dev/kvm ]; then
-          echo "KVM: OK"
-        else
-          echo "KVM: NOT AVAILABLE"
-        fi
+          echo "=== KVM access ==="
+          if [ -r /dev/kvm ] && [ -w /dev/kvm ]; then
+            echo "KVM: OK"
+          else
+            echo "KVM: NOT AVAILABLE"
+          fi
