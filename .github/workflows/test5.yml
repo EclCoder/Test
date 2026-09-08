@@ -42,7 +42,26 @@ jobs:
             -k "system-images;android-36;google_apis_playstore;x86_64" \
             --force
 
+      - name: Check Emulator
+        run: |
+          echo "=== Emulator ==="
+          "$ANDROID_HOME/emulator/emulator" -version
+
+          echo "=== ADB ==="
+          "$ANDROID_HOME/platform-tools/adb" version
+
+          echo "=== AVD ==="
+          avdmanager list avd
+
+          echo "=== System Image ==="
+          sdkmanager --list_installed | grep "system-images;android-36"
+
+          echo "=== KVM ==="
+          ls -l /dev/kvm || true
+          [[ -r /dev/kvm && -w /dev/kvm ]] && echo "KVM: OK" || echo "KVM: NOT AVAILABLE"
+
       - name: Start Emulator
+        if: false
         run: |
           nohup "$ANDROID_HOME/emulator/emulator" \
             -avd android36 \
@@ -60,6 +79,7 @@ jobs:
           echo "Emulator booted"
 
       - name: Install APK
+        if: false
         run: |
           cd azrecorder
           "$ANDROID_HOME/platform-tools/adb" install-multiple \
