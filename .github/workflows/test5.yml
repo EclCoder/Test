@@ -11,14 +11,6 @@ jobs:
       - name: Setup Android
         uses: android-actions/setup-android@v4
 
-      - name: Restore Cache
-        id: cache
-        uses: actions/cache/restore@v4
-        with:
-          path: |
-            ${{ env.ANDROID_HOME }}/system-images
-          key: android-emulator-api36-${{ runner.os }}-${{ runner.arch }}
-
       - name: Install Emulator Dependencies
         run: |
           sudo apt-get update
@@ -31,14 +23,6 @@ jobs:
             "emulator" \
             "platform-tools" \
             "system-images;android-36;google_apis_playstore;x86_64"
-
-      - name: Save Cache
-        if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            ${{ env.ANDROID_HOME }}/system-images
-          key: android-emulator-api36-${{ runner.os }}-${{ runner.arch }}
 
       - name: Create AVD
         run: |
@@ -70,7 +54,7 @@ jobs:
           [[ -r /dev/kvm && -w /dev/kvm ]] && echo "KVM: OK" || echo "KVM: NOT AVAILABLE"
 
       - name: Start Emulator
-        if: false
+       
         run: |
           nohup "$ANDROID_HOME/emulator/emulator" \
             -avd android36 \
@@ -88,7 +72,7 @@ jobs:
           echo "Emulator booted"
 
       - name: Install APK
-        if: false
+       
         run: |
           cd azrecorder
           "$ANDROID_HOME/platform-tools/adb" install-multiple \
