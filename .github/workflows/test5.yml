@@ -29,7 +29,7 @@ jobs:
             "system-images;android-36;google_apis_playstore;x86_64"
 
       - name: Save Cache 
-        uses: actions/save@v4
+        uses: actions/cache/save@v4
         with:
           path: |
             ${{ env.ANDROID_HOME }}/emulator
