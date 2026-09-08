@@ -23,3 +23,10 @@ jobs:
           else
             echo "KVM: NOT AVAILABLE"
           fi
+
+      - name: Enable KVM
+        run: |
+          sudo chmod 666 /dev/kvm
+          ls -l /dev/kvm
+
+          [[ -r /dev/kvm && -w /dev/kvm ]] && echo "KVM: OK"
