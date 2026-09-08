@@ -96,3 +96,17 @@ jobs:
             *.x86_64.apk \
             *.en.apk \
             *dpi.apk
+
+      - name: Launch and collect PairIP logs
+        run: |
+          adb logcat -c
+
+          adb shell monkey \
+            -p com.hecorat.screenrecorder.free \
+            -c android.intent.category.LAUNCHER \
+            1
+
+          sleep 10
+
+          adb logcat -d -v threadtime | \
+            grep -iE 'pairip|license|vending|play|integrity|vmrunner' || true
