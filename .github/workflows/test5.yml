@@ -35,33 +35,15 @@ jobs:
           emulator-options: -no-snapshot-save -no-window -no-audio -gpu swiftshader_indirect
           disable-animations: true
           script: |
-            echo "=== Emulator booted successfully ==="
-            
-            
+            adb root
             sleep 2
 
-            cd azrecorder
-            adb install-multiple -i com.android.vending base.apk *.x86_64.apk *.en.apk *dpi.apk
-            cd ..
-
-            
-            FRIDA_VERSION="16.5.9"
-            curl -L "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz" \
-              | xz -dc \
-              | adb shell "cat > /data/local/tmp/frida-server"
-
-            adb shell "chmod 755 /data/local/tmp/frida-server"
-            adb shell "/data/local/tmp/frida-server &"
-            sleep 3
-
-            
             cat << 'EOF' > trace_dex.js
             Java.perform(function () {
                 console.log("\n==================================================");
                 console.log("[*] FRIDA: HOOKING PAIRIP DEX DECRYPTION PROCESS...");
                 console.log("==================================================\n");
 
-                
                 try {
                     var LicenseActivity = Java.use("com.pairip.licensecheck.LicenseActivity");
                     LicenseActivity.onCreate.implementation = function (bundle) {
@@ -70,7 +52,6 @@ jobs:
                     };
                 } catch (e) {}
 
-                // Hook InMemoryDexClassLoader
                 try {
                     var InMemoryDexClassLoader = Java.use("dalvik.system.InMemoryDexClassLoader");
                     InMemoryDexClassLoader.$init.overload('[Ljava.nio.ByteBuffer;', 'java.lang.String', 'java.lang.ClassLoader').implementation = function (buffers, librarySearchPath, parent) {
@@ -83,7 +64,6 @@ jobs:
                 } catch (e) {}
             });
 
-            
             var mmap = Module.findExportByName(null, "mmap");
             if (mmap) {
                 Interceptor.attach(mmap, {
@@ -104,19 +84,23 @@ jobs:
             }
             EOF
 
-            
+            FRIDA_VERSION="16.5.9"
+            curl -L "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz" | xz -dc | adb shell "cat > /data/local/tmp/frida-server"
+            adb shell "chmod 755 /data/local/tmp/frida-server"
+            adb shell "/data/local/tmp/frida-server &"
+            sleep 3
+
+            cd azrecorder && adb install-multiple -i com.android.vending $(ls *.apk) && cd ..
+
             adb logcat -c
             frida -U -f com.hecorat.screenrecorder.free -l trace_dex.js --no-pause &
-            
             sleep 15
-            
             adb logcat -d -v threadtime > logcat.txt
 
       - name: Commit and push
-        if: false
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "Update DEX trace logs" || exit 0
           git push
