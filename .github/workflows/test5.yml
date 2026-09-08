@@ -1,14 +1,54 @@
-name: Check Android SDK
+name: Android Emulator Test
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
-  check:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check Android environment
+      - name: Setup Android
+        uses: android-actions/setup-android@v4
+
+      - name: Cache Android Emulator
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.ANDROID_HOME }}/emulator
+            ${{ env.ANDROID_HOME }}/platform-tools
+            ${{ env.ANDROID_HOME }}/system-images
+          key: android-emulator-api36-${{ runner.os }}-${{ runner.arch }}
+
+      - name: Install Emulator
         run: |
-          env | grep -i android
+          yes | sdkmanager --license || true
+          sdkmanager \
+            "emulator" \
+            "platform-tools" \
+            "system-images;android-36;google_apis_playstore;x86_64"
+
+      - name: Create AVD
+        run: |
+          echo "no" | avdmanager create avd \
+            -n android36 \
+            -k "system-images;android-36;google_apis_playstore;x86_64" \
+            --force
+
+      - name: Start Emulator
+        run: |
+          nohup emulator -avd android36 \
+            -no-window \
+            -no-audio \
+            -no-snapshot \
+            -gpu swiftshader_indirect &
+
+          adb wait-for-device
+
+          while [ "$(adb shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do
+            sleep 5
+          done
+
+      - name: Install APK
+        run: |
           
