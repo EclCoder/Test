@@ -1,4 +1,4 @@
-name: Android Emulator Test
+name: Android Emulator Test & Trace PairIP DEX
 
 on:
   workflow_dispatch:
@@ -6,185 +6,119 @@ on:
 permissions:
   actions: read
   contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      ANDROID_HOME: /usr/local/lib/android/sdk
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-      ANDROID_AVD_HOME: /home/runner/.config/.android/avd
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Android
-        uses: android-actions/setup-android@v4
-
-      - name: Install Emulator Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libpulse0
-
-      - name: Install Emulator
-        run: |
-          yes | sdkmanager --licenses || true
-          sdkmanager \
-            "emulator" \
-            "platform-tools" \
-            "system-images;android-36;google_apis_playstore;x86_64"
-
-      - name: Create AVD
-        run: |
-          echo "no" | avdmanager create avd \
-            -n android36 \
-            -k "system-images;android-36;google_apis_playstore;x86_64" \
-            --force
-
       - name: Enable KVM
         run: |
-          sudo chmod 666 /dev/kvm
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm-nodes.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
 
-      - name: Check Emulator
+      - name: Setup Python & Frida Tools
         run: |
-          echo "=== Emulator ==="
-          "$ANDROID_HOME/emulator/emulator" -version
-
-          echo "=== ADB ==="
-          "$ANDROID_HOME/platform-tools/adb" version
-
-          echo "=== AVD ==="
-          avdmanager list avd
-
-          echo "=== System Image ==="
-          sdkmanager --list_installed | grep "system-images;android-36"
-
-          echo "=== KVM ==="
-          ls -l /dev/kvm || true
-          [[ -r /dev/kvm && -w /dev/kvm ]] && echo "KVM: OK" || echo "KVM: NOT AVAILABLE"
-
-      - name: Start emulator
-        run: |
-          nohup "$ANDROID_HOME/emulator/emulator" \
-          -avd android36 \
-          -no-window \
-          -no-audio \
-          -no-snapshot \
-          -gpu swiftshader_indirect \
-          > emulator.log 2>&1 &
-
-          echo "Waiting for emulator..."
-
-          for i in {1..36}; do
-            echo "[$i/36]"
-            adb devices -l
-
-            if adb devices | grep -q "emulator-5554"; then
-              echo "Emulator detected!"
-              break
-            fi
-
-            sleep 5
-          done
-
-          echo "Waiting for Android boot..."
-
-          for i in {1..36}; do
-            echo "[$i/36]"
-
-            adb devices -l
-
-            STATE=$(adb get-state 2>/dev/null || true)
-            BOOT=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r' || true)
-
-            echo "ADB state: $STATE"
-            echo "sys.boot_completed: '$BOOT'"
-
-            if [ "$BOOT" = "1" ]; then
-              echo "=== Android booted ==="
-              break
-            fi
-
-            sleep 5
-          done
-
-          echo "=== Final emulator status ==="
-          adb devices -l
-
-          echo "=== Emulator log ==="
-          cat emulator.log
-
-      - name: Install APK
-       
-        run: |
-          cd azrecorder
-          "$ANDROID_HOME/platform-tools/adb" install-multiple \
-            -i com.android.vending \
-            base.apk \
-            *.x86_64.apk \
-            *.en.apk \
-            *dpi.apk
-
-      - name: Setup Frida Server & Bypass Script
-        run: |
-          adb root
-          sleep 2
-          FRIDA_VERSION="16.5.9"
-          curl -L -o frida-server.xz "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz"
-          xz -d frida-server.xz
-
-          adb push frida-server /data/local/tmp/
-          adb shell "chmod 755 /data/local/tmp/frida-server"
-          
-          adb shell "/data/local/tmp/frida-server &"
-          sleep 3
-
+          sudo apt-get update
+          sudo apt-get install -y xz-utils python3-pip
           pip install frida-tools
 
-          cat << 'EOF' > bypass_pairip.js
-          Java.perform(function () {
-              console.log("[*] Starting PairIP & License Hook...");
+      - name: Run Emulator & Trace DEX
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          force-avd-creation: false
+          emulator-options: -no-snapshot-save -no-window -no-audio -gpu swiftshader_indirect
+          disable-animations: true
+          script: |
+            echo "=== Emulator booted successfully ==="
+            
+            # 1. Bật root ADB
+            adb root
+            sleep 2
 
-              try {
-                  var LicenseActivity = Java.use("com.pairip.licensecheck.LicenseActivity");
-                  LicenseActivity.onCreate.implementation = function (bundle) {
-                      console.log("[+] Intercepted and blocked PairIP LicenseActivity!");
-                      this.finish();
-                  };
-              } catch (e) {
-                  console.log("[-] LicenseActivity not found or already modified: " + e);
-              }
+            # 2. Cài đặt APK
+            cd azrecorder
+            adb install-multiple -i com.android.vending base.apk *.x86_64.apk *.en.apk *dpi.apk
+            cd ..
 
-              try {
-                  var PackageManager = Java.use("android.app.ApplicationPackageManager");
-                  PackageManager.getInstallerPackageName.implementation = function (pkg) {
-                      return "com.android.vending";
-                  };
-              } catch (e) {}
-          });
-          EOF
+            # 3. Tải Frida Server và đẩy trực tiếp vào Emulator
+            FRIDA_VERSION="16.5.9"
+            curl -L "https://github.com/frida/frida/releases/download/${FRIDA_VERSION}/frida-server-${FRIDA_VERSION}-android-x86_64.xz" \
+              | xz -dc \
+              | adb shell "cat > /data/local/tmp/frida-server"
 
-      - name: Launch App with Frida Bypass
-        run: |
-          adb logcat -c
+            adb shell "chmod 755 /data/local/tmp/frida-server"
+            adb shell "/data/local/tmp/frida-server &"
+            sleep 3
 
-          frida -U -f com.hecorat.screenrecorder.free -l bypass_pairip.js --no-pause &
+            # 4. Tạo Frida script theo dõi giải mã DEX
+            cat << 'EOF' > trace_dex.js
+            Java.perform(function () {
+                console.log("\n==================================================");
+                console.log("[*] FRIDA: HOOKING PAIRIP DEX DECRYPTION PROCESS...");
+                console.log("==================================================\n");
 
-          sleep 12
+                // Bypass LicenseActivity chặn văng Play Store
+                try {
+                    var LicenseActivity = Java.use("com.pairip.licensecheck.LicenseActivity");
+                    LicenseActivity.onCreate.implementation = function (bundle) {
+                        console.log("[!] [PAIRIP] Intercepted LicenseActivity! Destroying window...");
+                        this.finish();
+                    };
+                } catch (e) {}
 
-          adb logcat -d -v threadtime > logcat.txt
+                // Hook InMemoryDexClassLoader
+                try {
+                    var InMemoryDexClassLoader = Java.use("dalvik.system.InMemoryDexClassLoader");
+                    InMemoryDexClassLoader.$init.overload('[Ljava.nio.ByteBuffer;', 'java.lang.String', 'java.lang.ClassLoader').implementation = function (buffers, librarySearchPath, parent) {
+                        console.log("[+] [DEX DECRYPTED] InMemoryDexClassLoader called with " + buffers.length + " buffer(s)!");
+                        for (var i = 0; i < buffers.length; i++) {
+                            console.log("    -> Buffer [" + i + "] Size: " + buffers[i].capacity() + " bytes");
+                        }
+                        return this.$init(buffers, librarySearchPath, parent);
+                    };
+                } catch (e) {}
+            });
 
-          grep -E \
-          'ActivityTaskManager: START|ActivityTaskManager: Displayed|com.android.vending|com.hecorat.screenrecorder.free|pairip|PairIP|VMRunner|libpairip|Frida' \
-          logcat.txt
+            // Hook mmap bộ nhớ Native để bắt magic header dex\n
+            var mmap = Module.findExportByName(null, "mmap");
+            if (mmap) {
+                Interceptor.attach(mmap, {
+                    onLeave: function (retval) {
+                        try {
+                            if (retval.toInt32() !== -1) {
+                                var magic = Memory.readUtf8String(retval, 4);
+                                if (magic === "dex\n") {
+                                    var size = Memory.readU32(retval.add(32));
+                                    console.log("[+] [NATIVE MEMORY] Decrypted DEX magic found in RAM!");
+                                    console.log("    -> Address : " + retval);
+                                    console.log("    -> Size    : " + size + " bytes");
+                                }
+                            }
+                        } catch (e) {}
+                    }
+                });
+            }
+            EOF
 
+            # 5. Khởi chạy app với Frida và thu thập log
+            adb logcat -c
+            frida -U -f com.hecorat.screenrecorder.free -l trace_dex.js --no-pause &
+            
+            sleep 15
+            
+            adb logcat -d -v threadtime > logcat.txt
 
       - name: Commit and push
         if: false
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          git config user.email "41898282+github-actions[bot]"
           git add .
-          git commit -m "Update files" || exit 0
+          git commit -m "Update DEX trace logs" || exit 0
           git push
-        
