@@ -23,7 +23,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y xz-utils python3-pip
-          pip install frida-tools
+          pip install frida-tools frida
 
       - name: Install Split APKs
         uses: reactivecircus/android-emulator-runner@v2
@@ -32,6 +32,7 @@ jobs:
           target: google_apis
           arch: x86_64
           force-avd-creation: false
+          emulator-boot-timeout: 10
           emulator-options: -no-snapshot-save -no-window -no-audio -gpu swiftshader_indirect
           disable-animations: true
           script: |
@@ -46,18 +47,22 @@ jobs:
           target: google_apis
           arch: x86_64
           force-avd-creation: false
+          emulator-boot-timeout: 10
           emulator-options: -no-snapshot-save -no-window -no-audio -gpu swiftshader_indirect
           disable-animations: true
           script: |
             adb root
             sleep 2
+            
+            # Tải và chạy Frida Server dạng detached hoàn toàn
             curl -L "https://github.com/frida/frida/releases/download/16.5.9/frida-server-16.5.9-android-x86_64.xz" | xz -dc | adb shell "cat > /data/local/tmp/frida-server"
             adb shell "chmod 755 /data/local/tmp/frida-server"
-            adb shell "/data/local/tmp/frida-server &"
+            adb shell "nohup /data/local/tmp/frida-server > /dev/null 2>&1 &"
             sleep 3
-            adb logcat -c
-            frida -U -f com.hecorat.screenrecorder.free -l scripts/trace_pairip_advanced.js &
-            sleep 30
+            
+            python3 run_trace.py
+            
+            
             mkdir -p dumped_dex
             adb shell "ls /data/local/tmp/pairip_dump_*.dex" | while read file; do file=$(echo $file | tr -d '\r'); adb pull "$file" ./dumped_dex/; done
 
