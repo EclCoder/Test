@@ -1,34 +1,34 @@
 name: Download PvZ2 APK
 
 on:
-workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
-download:
-runs-on: ubuntu-latest
+  download:
+    runs-on: ubuntu-latest
 
-steps:
-  - name: Download APK
-    run: |
-      curl -fL --retry 3 \
-        "https://appteka.store/download/294579/com.trans.PvZ2PAKTV_1.1.5_2.apk?e=1792870348&s=1Ll54sMwqwlrAXv0IPTK3A" \
-        -o "PvZ2PAKTV_1.1.5_2.apk"
+    steps:
+      - name: Download APK
+        run: |
+          curl -fL --retry 3 \
+            "https://appteka.store/download/294579/com.trans.PvZ2PAKTV_1.1.5_2.apk?e=1792870348&s=1Ll54sMwqwlrAXv0IPTK3A" \
+            -o "PvZ2PAKTV_1.1.5_2.apk"
 
-  - name: Verify downloaded file
-    run: |
-      if [ ! -s "PvZ2PAKTV_1.1.5_2.apk" ]; then
-        echo "Error: APK download failed or file is empty."
-        exit 1
-      fi
+      - name: Verify downloaded file
+        run: |
+          if [ ! -s "PvZ2PAKTV_1.1.5_2.apk" ]; then
+            echo "Error: APK download failed or file is empty."
+            exit 1
+          fi
 
-      file "PvZ2PAKTV_1.1.5_2.apk"
-      ls -lh "PvZ2PAKTV_1.1.5_2.apk"
+          file "PvZ2PAKTV_1.1.5_2.apk"
+          ls -lh "PvZ2PAKTV_1.1.5_2.apk"
 
-  - name: Upload APK to Artifacts
-    uses: actions/upload-artifact@v4
-    with:
-      name: PvZ2PAKTV-APK
-      path: PvZ2PAKTV_1.1.5_2.apk
-      if-no-files-found: error
-      retention-days: 7
-      compression-level: 0
+      - name: Upload APK to Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: PvZ2PAKTV-APK
+          path: PvZ2PAKTV_1.1.5_2.apk
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
