@@ -1,36 +1,44 @@
-name: Download and Split PvZ2 APK
+name: Download and Release PvZ2 APK
 
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  download:
+  release:
     runs-on: ubuntu-latest
 
     steps:
       - name: Download APK
         run: |
           curl -fL --retry 3 \
-            "https://appteka.store/download/294579/com.trans.PvZ2PAKTV_1.1.5_2.apk?e=1792964974&s=FQ5qtTBl9kHyV9L2AI3nvA" \
-            -o "PvZ2PAKTV_1.1.5_2.apk"
+            "https://appteka.store/download/294579/com.trans.PvZ2PAKTV_1.1.5_2.apk?e=1792870348&s=1Ll54sMwqwlrAXv0IPTK3A" \
+            -o PvZ2PAKTV.apk
 
-      - name: Split APK into 50MB parts
+      - name: Split APK into 50 MiB parts
         run: |
-          mkdir -p split_apk
+          mkdir -p release_files
 
-          split -b 50M \
-            -d \
-            -a 3 \
-            "PvZ2PAKTV_1.1.5_2.apk" \
-            "split_apk/part_"
+          split -b 50M -d -a 3 \
+            PvZ2PAKTV.apk \
+            release_files/PvZ2PAKTV.part_
 
-          ls -lh split_apk/
+          cd release_files
 
-      - name: Upload split files to Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: PvZ2PAKTV-Splitted
-          path: split_apk/part_*
-          if-no-files-found: error
-          retention-days: 7
-          compression-level: 0
+          for f in PvZ2PAKTV.part_*; do
+            mv "$f" "${f}.bin"
+          done
+
+          ls -lh
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create pvz2-v1.1.5 \
+            release_files/* \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "PvZ2 PAKTV 1.1.5" \
+            --notes "APK split into 50 MiB parts. Download all parts and concatenate them in filename order to reconstruct the original APK."
