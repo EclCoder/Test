@@ -1,4 +1,4 @@
-name: Download PvZ2 APK
+name: Download and Split PvZ2 APK
 
 on:
   workflow_dispatch:
@@ -11,24 +11,26 @@ jobs:
       - name: Download APK
         run: |
           curl -fL --retry 3 \
-            "https://appteka.store/download/294579/com.trans.PvZ2PAKTV_1.1.5_2.apk?e=1792870348&s=1Ll54sMwqwlrAXv0IPTK3A" \
+            "https://appteka.store/download/294579/com.trans.PvZ2PAKTV_1.1.5_2.apk?e=1792964974&s=FQ5qtTBl9kHyV9L2AI3nvA" \
             -o "PvZ2PAKTV_1.1.5_2.apk"
 
-      - name: Verify downloaded file
+      - name: Split APK into 50MB parts
         run: |
-          if [ ! -s "PvZ2PAKTV_1.1.5_2.apk" ]; then
-            echo "Error: APK download failed or file is empty."
-            exit 1
-          fi
+          mkdir -p split_apk
 
-          file "PvZ2PAKTV_1.1.5_2.apk"
-          ls -lh "PvZ2PAKTV_1.1.5_2.apk"
+          split -b 50M \
+            -d \
+            -a 3 \
+            "PvZ2PAKTV_1.1.5_2.apk" \
+            "split_apk/part_"
 
-      - name: Upload APK to Artifacts
+          ls -lh split_apk/
+
+      - name: Upload split files to Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PvZ2PAKTV-APK
-          path: PvZ2PAKTV_1.1.5_2.apk
+          name: PvZ2PAKTV-Splitted
+          path: split_apk/part_*
           if-no-files-found: error
           retention-days: 7
           compression-level: 0
