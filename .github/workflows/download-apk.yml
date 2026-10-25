@@ -14,7 +14,7 @@ jobs:
       - name: Download APK
         run: |
           curl -fL --retry 3 \
-            "https://appteka.store/download/294579/com.trans.PvZ2PAKTV_1.1.5_2.apk?e=1792870348&s=1Ll54sMwqwlrAXv0IPTK3A" \
+            "https://appteka.store/download/294579/com.trans.PvZ2PAKTV_1.1.5_2.apk?e=1792965603&s=xY0UvUQLnB25jNrIZb0MJw" \
             -o PvZ2PAKTV.apk
 
       - name: Split APK into 50 MiB parts
